@@ -473,6 +473,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
+.flex-col {
+  flex-direction: column;
+}
 .items-center {
   align-items: center;
 }
@@ -481,6 +484,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .justify-items-center {
   justify-items: center;
+}
+.gap-y-10 {
+  row-gap: 2.5rem;
 }
 .space-y-6 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
@@ -589,6 +595,18 @@ Ensure the default browser behavior of the `hidden` attribute.
     display: flex;
   }
 
+  .md\:grid {
+    display: grid;
+  }
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .md\:items-center {
     align-items: center;
   }
@@ -601,6 +619,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:mt-20 {
     margin-top: 5rem;
+  }
+
+  .lg\:grid {
+    display: grid;
+  }
+
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 

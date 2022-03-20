@@ -1,6 +1,6 @@
 <x-mainLayout>
 
-    <section class="grid grid-cols-3 justify-items-center items-center py-5 px-6">
+    <section class="grid lg:grid-cols-3 md:grid-cols-2 gap-y-10 justify-items-center items-center py-5 px-6">
         <Featurecard />
     </section>
 
