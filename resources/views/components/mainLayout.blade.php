@@ -17,24 +17,25 @@
 </head>
 
 <body id="app" style="font-family: Open Sans, sans-serif">
+    <nav class="md:flex md:justify-between md:items-center bg-gray-200/25 p-7">
+        <div>
+            <a href="/">
+                <img src="/images/my-logo-dark.png" alt="">
+            </a>
+        </div>
+
+        <div class="mt-8 md:mt-0">
+            <a href="/" class="text-xs font-bold uppercase">Home Page</a>
+
+            <a href="#" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
+                Botton
+            </a>
+        </div>
+    </nav>
     <section class="px-6 py-8">
-        <nav class="md:flex md:justify-between md:items-center bg-gray-200 rounded-xl">
-            <div>
-                <a href="/">
-                    Wordleup Logo
-                </a>
-            </div>
 
-            <div class="mt-8 md:mt-0">
-                <a href="/" class="text-xs font-bold uppercase">Home Page</a>
 
-                <a href="#" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
-                    Botton
-                </a>
-            </div>
-        </nav>
-
-        <header class="max-w-xl mx-auto mt-20 text-center">
+        <header class="max-w-xl mx-auto mt-10 text-center">
             <h1 class="text-4xl">
                 Wordle Up
             </h1>

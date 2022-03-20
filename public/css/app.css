@@ -449,6 +449,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-3 {
   margin-top: 0.75rem;
 }
+.mt-10 {
+  margin-top: 2.5rem;
+}
 .flex {
   display: flex;
 }
@@ -520,6 +523,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+.bg-gray-200\/50 {
+  background-color: rgb(229 231 235 / 0.5);
+}
+.bg-gray-200\/25 {
+  background-color: rgb(229 231 235 / 0.25);
+}
+.p-7 {
+  padding: 1.75rem;
 }
 .py-5 {
   padding-top: 1.25rem;
