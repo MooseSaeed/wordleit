@@ -2,11 +2,11 @@ require("./bootstrap");
 
 import { createApp } from "vue";
 import router from "./router";
-import Helloworld from "./components/Helloworld";
+import Featurecard from "./components/Featurecard";
 
 createApp({
     components: {
-        Helloworld,
+        Featurecard,
     },
 })
     .use(router)

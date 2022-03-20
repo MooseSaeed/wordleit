@@ -1,12 +1,14 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import Helloworld from "../components/Helloworld.vue";
+import Featurecard from "../components/Featurecard.vue";
+import Card from "../components/Card.vue";
 
 const routes = [
     {
         path: "/",
-        name: "Helloworld",
-        component: Helloworld,
+        name: "Card",
+        component: Featurecard,
+        Card,
     },
 ];
 
