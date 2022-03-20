@@ -1,8 +1,13 @@
 <template>
     <Card dataImage="./images/pic-sample.jpg">
-        <template v-slot:cardImage> </template>
-        <template v-slot:header> This is the header</template>
-        <template v-slot:content> This is the header</template>
+        <template v-slot:header>
+            <h2 class="text-white text-2xl font-bold">
+                This is the card Title
+            </h2>
+        </template>
+        <template v-slot:content>
+            <p class="relative text-white">This is the card description</p>
+        </template>
     </Card>
 </template>
 
@@ -14,4 +19,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+h2,
+p {
+    text-shadow: -3px 2px 4px rgba(0, 0, 0, 0.8);
+}
+</style>
