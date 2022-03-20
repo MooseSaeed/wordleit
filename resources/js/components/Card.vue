@@ -1,13 +1,25 @@
 <template>
     <div
-        class="card-wrap"
+        class="card-wrap relative"
         @mousemove="handleMouseMove"
         @mouseenter="handleMouseEnter"
         @mouseleave="handleMouseLeave"
         ref="card"
     >
-        <div class="card" :style="cardStyle">
-            <slot />
+        <div class="card rounded-xl" :style="cardStyle">
+            <article class="bg-red-500 overflow-hidden">
+                <div class="py-6 px-5">
+                    <img
+                        class="card-bg max-w-2xl absolute -top-14 -left-14"
+                        :style="[cardBgTransform, cardBgImage]"
+                        src="/images/pic-sample.jpg"
+                        alt=""
+                    />
+                    <div class="card-info">
+                        <slot />
+                    </div>
+                </div>
+            </article>
         </div>
     </div>
 </template>
