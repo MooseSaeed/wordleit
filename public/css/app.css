@@ -485,6 +485,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .grid {
   display: grid;
 }
+.h-96 {
+  height: 24rem;
+}
+.w-20 {
+  width: 5rem;
+}
+.w-96 {
+  width: 24rem;
+}
 .max-w-xl {
   max-width: 36rem;
 }
@@ -493,6 +502,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .max-w-2xl {
   max-width: 42rem;
+}
+.max-w-3xl {
+  max-width: 48rem;
 }
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -602,6 +614,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 @media (min-width: 768px) {
 

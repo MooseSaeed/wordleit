@@ -6,18 +6,18 @@
         @mouseleave="handleMouseLeave"
         ref="card"
     >
-        <div class="card rounded-xl" :style="cardStyle">
+        <div class="card rounded-xl w-96 h-96" :style="cardStyle">
             <article class="bg-red-500 overflow-hidden">
                 <div class="py-6 px-5">
-                    <img
-                        class="card-bg max-w-2xl absolute -top-14 -left-14"
-                        :style="[cardBgTransform, cardBgImage]"
-                        src="/images/pic-sample.jpg"
-                        alt=""
-                    />
-                    <div class="card-info">
-                        <slot />
-                    </div>
+                    <slot name="cardImage"></slot>
+
+                    <h2 class="relative text-red-500">
+                        <slot name="header"></slot>
+                    </h2>
+
+                    <p class="relative text-blue-500">
+                        <slot name="content"></slot>
+                    </p>
                 </div>
             </article>
         </div>

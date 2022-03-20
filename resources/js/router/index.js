@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 import Featurecard from "../components/Featurecard.vue";
-import Card from "../components/Card.vue";
+import Card from "../components/card/Card.vue";
 
 const routes = [
     {
         path: "/",
-        name: "Card",
+        name: "Featurecard",
         component: Featurecard,
         Card,
     },
