@@ -19736,16 +19736,11 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNod
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Card = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Card");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Card, null, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Card, {
+    dataImage: "./images/pic-sample.jpg"
+  }, {
     cardImage: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-        "class": "card-bg max-w-3xl absolute -top-14 -left-14",
-        style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)([_ctx.cardBgTransform, _ctx.cardBgImage]),
-        src: "/images/pic-sample.jpg",
-        alt: ""
-      }, null, 4
-      /* STYLE */
-      )];
+      return [];
     }),
     header: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_1];
@@ -19775,20 +19770,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "bg-red-500 overflow-hidden"
-};
-var _hoisted_2 = {
   "class": "py-6 px-5"
 };
-var _hoisted_3 = {
+var _hoisted_2 = {
   "class": "relative text-red-500"
 };
-var _hoisted_4 = {
+var _hoisted_3 = {
   "class": "relative text-blue-500"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
-    "class": "card-wrap relative",
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "card-wrap",
     onMousemove: _cache[0] || (_cache[0] = function () {
       return $options.handleMouseMove && $options.handleMouseMove.apply($options, arguments);
     }),
@@ -19800,13 +19792,18 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     ref: "card"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "card rounded-xl w-96 h-96",
+    "class": "card relative rounded-xl w-80 h-80",
     style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)($options.cardStyle)
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "cardImage"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "header")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "content")])])])], 4
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "card-bg",
+    style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)([$options.cardBgTransform, $options.cardBgImage])
+  }, null, 4
+  /* STYLE */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "header")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "content")])], 4
   /* STYLE */
   )], 544
   /* HYDRATE_EVENTS, NEED_PATCH */
-  );
+  )]);
 }
 
 /***/ }),

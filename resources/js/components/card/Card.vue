@@ -1,25 +1,26 @@
 <template>
-    <div
-        class="card-wrap relative"
-        @mousemove="handleMouseMove"
-        @mouseenter="handleMouseEnter"
-        @mouseleave="handleMouseLeave"
-        ref="card"
-    >
-        <div class="card rounded-xl w-96 h-96" :style="cardStyle">
-            <article class="bg-red-500 overflow-hidden">
-                <div class="py-6 px-5">
-                    <slot name="cardImage"></slot>
+    <div class="py-6 px-5">
+        <div
+            class="card-wrap"
+            @mousemove="handleMouseMove"
+            @mouseenter="handleMouseEnter"
+            @mouseleave="handleMouseLeave"
+            ref="card"
+        >
+            <div class="card relative rounded-xl w-80 h-80" :style="cardStyle">
+                <div
+                    class="card-bg"
+                    :style="[cardBgTransform, cardBgImage]"
+                ></div>
 
-                    <h2 class="relative text-red-500">
-                        <slot name="header"></slot>
-                    </h2>
+                <h2 class="relative text-red-500">
+                    <slot name="header"></slot>
+                </h2>
 
-                    <p class="relative text-blue-500">
-                        <slot name="content"></slot>
-                    </p>
-                </div>
-            </article>
+                <p class="relative text-blue-500">
+                    <slot name="content"></slot>
+                </p>
+            </div>
         </div>
     </div>
 </template>

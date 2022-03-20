@@ -38,7 +38,10 @@
 
 .card-bg {
     position: absolute;
-    padding: 20px;
+    top: -20px;
+    left: -20px;
+    width: 150%;
+    height: 150%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
