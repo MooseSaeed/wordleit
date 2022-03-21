@@ -16,9 +16,9 @@
 
 </head>
 
-<body id="app" style="font-family: Open Sans, sans-serif">
+<body id="app" class="relative" style="font-family: Open Sans, sans-serif">
     <Bodycomponent>
-        <nav class="md:flex md:justify-between md:items-center bg-gray-200/25 p-7">
+        <nav class="md:flex md:justify-between md:items-center p-7">
             <div>
                 <a href="/">
                     <img src="/images/my-logo-dark.png" alt="">
@@ -36,13 +36,13 @@
         <section class="px-6 py-8">
 
 
-            <header class="max-w-xl mx-auto mt-10 text-center">
-                <h1 class="text-4xl">
+            <header class="max-w-xl mx-auto text-center">
+                <h1 class="text-4xl text-white">
                     Wordle Up
                 </h1>
             </header>
 
-            <main class="max-w-6xl mx-auto mt-6 lg:mt-20 text-center">
+            <main class="max-w-6xl mx-auto mt-4 lg:mt-20 text-center">
                 {{ $slot }}
             </main>
 

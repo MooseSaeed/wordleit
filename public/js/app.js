@@ -19623,9 +19623,74 @@ module.exports = {
 /*!*******************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Bodycomponent.vue?vue&type=script&lang=js ***!
   \*******************************************************************************************************************************************************************************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: F:\\Projects\\wordleup\\resources\\js\\components\\Bodycomponent.vue: Identifier 'v' has already been declared. (19:21)\n\n\u001b[0m \u001b[90m 17 |\u001b[39m     }\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 18 |\u001b[39m     methods\u001b[33m:\u001b[39m {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 19 |\u001b[39m         increaseGrad(v) {\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 20 |\u001b[39m             \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mlightingRotation\u001b[33m++\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 21 |\u001b[39m             console\u001b[33m.\u001b[39mlog(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mlightingRotation)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 22 |\u001b[39m\u001b[0m\n    at instantiate (F:\\Projects\\wordleup\\node_modules\\@babel\\parser\\lib\\index.js:72:32)\n    at constructor (F:\\Projects\\wordleup\\node_modules\\@babel\\parser\\lib\\index.js:358:12)\n    at Parser.raise (F:\\Projects\\wordleup\\node_modules\\@babel\\parser\\lib\\index.js:3334:19)\n    at ScopeHandler.checkRedeclarationInScope (F:\\Projects\\wordleup\\node_modules\\@babel\\parser\\lib\\index.js:3518:19)\n    at ScopeHandler.declareName (F:\\Projects\\wordleup\\node_modules\\@babel\\parser\\lib\\index.js:3498:14)\n    at Parser.declareNameFromIdentifier (F:\\Projects\\wordleup\\node_modules\\@babel\\parser\\lib\\index.js:12057:16)\n    at Parser.checkIdentifier (F:\\Projects\\wordleup\\node_modules\\@babel\\parser\\lib\\index.js:12052:12)\n    at Parser.checkLVal (F:\\Projects\\wordleup\\node_modules\\@babel\\parser\\lib\\index.js:11978:12)\n    at Parser.checkParams (F:\\Projects\\wordleup\\node_modules\\@babel\\parser\\lib\\index.js:13878:12)\n    at Parser.<anonymous> (F:\\Projects\\wordleup\\node_modules\\@babel\\parser\\lib\\index.js:13846:14)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  mounted: function mounted() {
+    this.width = this.$refs.card.offsetWidth;
+    this.height = this.$refs.card.offsetHeight;
+  },
+  props: ["dataImage"],
+  data: function data() {
+    return {
+      width: 0,
+      height: 0,
+      mouseX: 0,
+      mouseY: 0,
+      mouseLeaveDelay: null
+    };
+  },
+  computed: {
+    mousePX: function mousePX() {
+      return this.mouseX / this.width;
+    },
+    mousePY: function mousePY() {
+      return this.mouseY / this.height;
+    },
+    cardStyle: function cardStyle() {
+      var rX = this.mousePX * 30;
+      var rY = this.mousePY * -30;
+      return {
+        transform: "rotateY(".concat(rX, "deg) rotateX(").concat(rY, "deg)")
+      };
+    },
+    cardBgTransform: function cardBgTransform() {
+      var tX = this.mousePX * 40;
+      var tY = this.mousePY * -40;
+      return {
+        transform: "translateX(".concat(tX, "px) translateY(").concat(tY, "px)")
+      };
+    },
+    cardBgImage: function cardBgImage() {
+      var firstThing = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(" + this.mousePX * -200 + "," + 680 + "," + 312 + ")'%3E%3Cstop offset='0' stop-color='%23000000'/%3E%3Cstop offset='1' stop-color='%2301005C'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='474' height='395' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.03'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E";
+      return {
+        backgroundImage: "url(\"".concat(firstThing, "\")")
+      };
+    }
+  },
+  methods: {
+    handleMouseMove: function handleMouseMove(e) {
+      this.mouseX = e.pageX - this.$refs.card.offsetLeft - this.width / 2;
+      this.mouseY = e.pageY - this.$refs.card.offsetTop - this.height / 2;
+    },
+    handleMouseEnter: function handleMouseEnter() {
+      clearTimeout(this.mouseLeaveDelay);
+    },
+    handleMouseLeave: function handleMouseLeave() {
+      var _this = this;
+
+      this.mouseLeaveDelay = setTimeout(function () {
+        _this.mouseX = 0;
+        _this.mouseY = 0;
+      }, 100);
+    }
+  }
+});
 
 /***/ }),
 
@@ -19739,15 +19804,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "body"
+  "class": "relative"
 };
-function render(_ctx, _cache) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "w-96 h-96 bg-red-500",
-    onClick: _cache[0] || (_cache[0] = function () {
-      return _ctx.increaseGrad && _ctx.increaseGrad.apply(_ctx, arguments);
-    })
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")]);
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+    onMousemove: _cache[0] || (_cache[0] = function () {
+      return $options.handleMouseMove && $options.handleMouseMove.apply($options, arguments);
+    }),
+    onMouseenter: _cache[1] || (_cache[1] = function () {
+      return $options.handleMouseEnter && $options.handleMouseEnter.apply($options, arguments);
+    }),
+    onMouseleave: _cache[2] || (_cache[2] = function () {
+      return $options.handleMouseLeave && $options.handleMouseLeave.apply($options, arguments);
+    }),
+    ref: "card",
+    "class": "overflow-hidden"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "body-bg",
+    style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)([$options.cardBgImage])
+  }, null, 4
+  /* STYLE */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")])], 544
+  /* HYDRATE_EVENTS, NEED_PATCH */
+  );
 }
 
 /***/ }),
@@ -19802,18 +19881,6 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
-  "class": "text-white text-2xl font-bold"
-}, " This is the card Title ", -1
-/* HOISTED */
-);
-
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "relative text-white"
-}, "This is the card description", -1
-/* HOISTED */
-);
-
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Card = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Card");
 
@@ -19849,18 +19916,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     content: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_6];
-    }),
-    _: 1
-    /* STABLE */
-
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Card, {
-    dataImage: "./images/pic-sample.jpg"
-  }, {
-    header: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_7];
-    }),
-    content: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_8];
     }),
     _: 1
     /* STABLE */
@@ -20023,7 +20078,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.body {\r\n    background-color: black;\r\n    background-image: var(--3d9f2080-bgSvgOrigin);\r\n    background-attachment: fixed;\r\n    background-size: cover;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.body-bg {\r\n    background-color: rgb(0, 0, 0);\r\n    position: absolute;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n    background-size: cover;\r\n    transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);\r\n    pointer-events: none;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
