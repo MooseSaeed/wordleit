@@ -1,16 +1,19 @@
 <template>
-    <div class="bg-gray-100/25 rounded-xl h-screen px-6 py-5 flex flex-row">
-        <div class="bg-red-500 flex-1 h-full p-2">
+    <div
+        class="bg-black border border-b-white rounded-xl h-screen px-6 py-5 flex flex-row basis-full justify-center items-center"
+    >
+        <div class="bg-red-500 item p-2 h-full">
             <textarea
                 name="myTextArea"
                 id="myTextArea"
                 v-model="markdown"
-                class="w-full h-full p-5"
+                class="w-full h-full"
             ></textarea>
         </div>
+
         <div
             v-html="markdownToHtml"
-            class="bg-blue-500 flex-1 h-full p-2"
+            class="bg-gray-800 flex-1 p-2 devto overflow-x-auto break-words item h-full"
         ></div>
     </div>
 </template>
@@ -19,7 +22,7 @@
 export default {
     data() {
         return {
-            markdown: " # Hello World ",
+            markdown: "",
         };
     },
     computed: {
@@ -30,4 +33,13 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.devto {
+    overflow: break word;
+}
+.item {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 0;
+}
+</style>

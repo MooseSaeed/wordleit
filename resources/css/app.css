@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.devto {
+    @apply prose text-left
+    prose-headings:text-white 
+    prose-headings:m-1.5
+    prose-p:m-0
+    prose-p:text-white;
+}
