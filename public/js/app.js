@@ -19976,12 +19976,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "bg-black border border-b-white rounded-xl h-screen px-6 py-5 flex flex-row basis-full justify-center items-center"
+  "class": "bg-gray-100/25 border border-b-white rounded-xl h-screen px-6 py-5 flex gap-2 flex-row basis-full justify-center items-center"
 };
 var _hoisted_2 = {
-  "class": "bg-red-500 item p-2 h-full"
+  "class": "item h-full"
 };
-var _hoisted_3 = ["innerHTML"];
+var _hoisted_3 = {
+  "class": "rounded-xl bg-gray-900 devto overflow-x-auto break-words item w-full h-full"
+};
+var _hoisted_4 = ["innerHTML"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
     name: "myTextArea",
@@ -19989,15 +19992,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $data.markdown = $event;
     }),
-    "class": "w-full h-full"
+    "class": "w-full h-full rounded-xl p-2 focus:ring-0"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.markdown]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.markdown]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     innerHTML: $options.markdownToHtml,
-    "class": "bg-gray-800 flex-1 p-2 devto overflow-x-auto break-words item h-full"
+    "class": "p-2"
   }, null, 8
   /* PROPS */
-  , _hoisted_3)]);
+  , _hoisted_4)])]);
 }
 
 /***/ }),
@@ -20022,6 +20025,9 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
+marked__WEBPACK_IMPORTED_MODULE_4__.marked.setOptions({
+  breaks: true
+});
 var markedMixin = {
   methods: {
     md: function md(input) {

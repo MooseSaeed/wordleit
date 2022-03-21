@@ -6,6 +6,21 @@
     @apply prose text-left
     prose-headings:text-white 
     prose-headings:m-1.5
-    prose-p:m-0
-    prose-p:text-white;
+    prose-strong:text-inherit
+    prose-p:m-1
+    prose-p:text-white
+    prose-devtoStyle
+    prose-li:text-white
+    prose-li:m-0
+    prose-ul:m-0
+    prose-th:text-white
+    prose-th:font-bold
+    prose-th:bg-black
+    prose-th:p-2
+    prose-td:p-2
+    prose-th:text-base
+    prose-table:border-2
+    prose-table:border-gray-600
+    prose-code:overflow-auto
+    prose-code:text-white;
 }

@@ -6,6 +6,10 @@ import Featurecard from "./components/Featurecard";
 import Bodycomponent from "./components/Bodycomponent";
 import { marked } from "marked";
 
+marked.setOptions({
+    breaks: true,
+});
+
 const markedMixin = {
     methods: {
         md: function (input) {
