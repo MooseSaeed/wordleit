@@ -19,7 +19,6 @@ export default {
         this.width = this.$refs.card.offsetWidth;
         this.height = this.$refs.card.offsetHeight;
     },
-    props: ["dataImage"],
     data: () => ({
         width: 0,
         height: 0,

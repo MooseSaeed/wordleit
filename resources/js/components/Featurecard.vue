@@ -1,34 +1,22 @@
 <template>
-    <Card dataImage="./images/pic-sample.jpg">
-        <template v-slot:header>
-            <h2 class="text-white text-2xl font-bold">
-                This is the card Title
-            </h2>
-        </template>
-        <template v-slot:content>
-            <p class="relative text-white">This is the card description</p>
-        </template>
-    </Card>
-    <Card dataImage="./images/pic-sample.jpg">
-        <template v-slot:header>
-            <h2 class="text-white text-2xl font-bold">
-                This is the card Title
-            </h2>
-        </template>
-        <template v-slot:content>
-            <p class="relative text-white">This is the card description</p>
-        </template>
-    </Card>
-    <Card dataImage="./images/pic-sample.jpg">
-        <template v-slot:header>
-            <h2 class="text-white text-2xl font-bold">
-                This is the card Title
-            </h2>
-        </template>
-        <template v-slot:content>
-            <p class="relative text-white">This is the card description</p>
-        </template>
-    </Card>
+    <section
+        class="grid lg:grid-cols-3 md:grid-cols-2 gap-y-10 justify-items-center items-center"
+    >
+        <router-link to="/article">
+            <Card dataImage="./images/pic-sample.jpg">
+                <template v-slot:header>
+                    <h2 class="text-white text-2xl font-bold">
+                        This is the card Title
+                    </h2>
+                </template>
+                <template v-slot:content>
+                    <p class="relative text-white">
+                        This is the card description
+                    </p>
+                </template>
+            </Card>
+        </router-link>
+    </section>
 </template>
 
 <script>

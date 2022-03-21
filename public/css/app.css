@@ -473,11 +473,26 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-80 {
   height: 20rem;
 }
+.h-72 {
+  height: 18rem;
+}
+.h-screen {
+  height: 100vh;
+}
+.h-full {
+  height: 100%;
+}
 .w-32 {
   width: 8rem;
 }
 .w-72 {
   width: 18rem;
+}
+.w-64 {
+  width: 16rem;
+}
+.w-full {
+  width: 100%;
 }
 .max-w-xl {
   max-width: 36rem;
@@ -491,8 +506,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .max-w-screen-2xl {
   max-width: 1536px;
 }
+.flex-1 {
+  flex: 1 1 0%;
+}
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.flex-row {
+  flex-direction: row;
 }
 .items-center {
   align-items: center;
@@ -540,8 +561,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+.bg-gray-100\/25 {
+  background-color: rgb(243 244 246 / 0.25);
+}
 .p-7 {
   padding: 1.75rem;
+}
+.p-2 {
+  padding: 0.5rem;
+}
+.p-5 {
+  padding: 1.25rem;
 }
 .py-5 {
   padding-top: 1.25rem;

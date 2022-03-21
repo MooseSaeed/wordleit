@@ -7,7 +7,7 @@
         ref="card"
     >
         <div
-            class="card relative flex justify-center items-center rounded-xl w-72 h-80"
+            class="card relative flex justify-center items-center rounded-xl w-64 h-72"
             :style="cardStyle"
         >
             <div class="card-bg" :style="[cardBgTransform, cardBgImage]"></div>
