@@ -22,5 +22,6 @@
     prose-table:border-2
     prose-table:border-gray-600
     prose-code:overflow-auto
-    prose-code:text-white;
+    prose-code:text-white
+    prose-ol:text-white;
 }

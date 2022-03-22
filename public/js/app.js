@@ -19800,6 +19800,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _github_markdown_toolbar_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @github/markdown-toolbar-element */ "./node_modules/@github/markdown-toolbar-element/dist/index.js");
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -19979,28 +19981,229 @@ var _hoisted_1 = {
   "class": "bg-gray-100/25 border border-b-white rounded-xl h-screen px-6 py-5 flex gap-2 flex-row basis-full justify-center items-center"
 };
 var _hoisted_2 = {
-  "class": "item h-full"
+  "class": "item flex flex-col h-full"
 };
 var _hoisted_3 = {
+  "class": "hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+};
+
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  src: "/images/bold-editor.svg",
+  width: "18",
+  alt: "Bold Button"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_5 = {
+  "class": "hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+};
+
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  src: "/images/italic-editor.svg",
+  width: "18",
+  alt: "Italic Button"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_7 = {
+  "class": "hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+};
+
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  src: "/images/link-editor.svg",
+  width: "18",
+  alt: "Link Button"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_9 = {
+  "class": "hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+};
+
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  src: "/images/odlist-editor.svg",
+  width: "18",
+  alt: "Ordered List Button"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_11 = {
+  "class": "hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+};
+
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  src: "/images/ullist-editor.svg",
+  width: "18",
+  alt: "Unordered List Button"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_13 = {
+  "class": "hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+};
+
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  src: "/images/heading-editor.png",
+  width: "18",
+  alt: "Heading Button"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_15 = {
+  "class": "hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+};
+
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  src: "/images/quote-editor.png",
+  width: "20",
+  alt: "Heading Button"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_17 = {
+  "class": "hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+};
+
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  src: "/images/code-editor.png",
+  width: "20",
+  alt: "Heading Button"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_19 = {
+  "class": "hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+};
+
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  src: "/images/image-editor.svg",
+  width: "20",
+  alt: "Heading Button"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_21 = {
   "class": "rounded-xl bg-gray-900 devto overflow-x-auto break-words item w-full h-full"
 };
-var _hoisted_4 = ["innerHTML"];
+var _hoisted_22 = ["innerHTML"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
+  var _component_md_bold = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("md-bold");
+
+  var _component_md_italic = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("md-italic");
+
+  var _component_md_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("md-link");
+
+  var _component_md_ordered_list = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("md-ordered-list");
+
+  var _component_md_unordered_list = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("md-unordered-list");
+
+  var _component_md_header = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("md-header");
+
+  var _component_md_quote = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("md-quote");
+
+  var _component_md_code = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("md-code");
+
+  var _component_md_image = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("md-image");
+
+  var _component_markdown_toolbar = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("markdown-toolbar");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_markdown_toolbar, {
+    "class": "bg-gray-900 p-2 text-white rounded-xl mb-2 grid grid-cols-2 sm:grid-cols-5 md:grid-cols-9 flex-row gap-1",
+    "for": "myTextArea"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_md_bold, null, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_4];
+        }),
+        _: 1
+        /* STABLE */
+
+      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_md_italic, null, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_6];
+        }),
+        _: 1
+        /* STABLE */
+
+      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_md_link, null, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_8];
+        }),
+        _: 1
+        /* STABLE */
+
+      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_md_ordered_list, null, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_10];
+        }),
+        _: 1
+        /* STABLE */
+
+      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_md_unordered_list, null, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_12];
+        }),
+        _: 1
+        /* STABLE */
+
+      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_md_header, null, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_14];
+        }),
+        _: 1
+        /* STABLE */
+
+      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_md_quote, null, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_16];
+        }),
+        _: 1
+        /* STABLE */
+
+      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_md_code, null, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_18];
+        }),
+        _: 1
+        /* STABLE */
+
+      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_md_image, null, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_20];
+        }),
+        _: 1
+        /* STABLE */
+
+      })])];
+    }),
+    _: 1
+    /* STABLE */
+
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
     name: "myTextArea",
     id: "myTextArea",
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $data.markdown = $event;
     }),
-    "class": "w-full h-full rounded-xl p-2 focus:ring-0"
+    "class": "w-full flex-1 rounded-xl p-2 focus:ring-0"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.markdown]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.markdown]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     innerHTML: $options.markdownToHtml,
     "class": "p-2"
   }, null, 8
   /* PROPS */
-  , _hoisted_4)])]);
+  , _hoisted_22)])]);
 }
 
 /***/ }),
@@ -20201,7 +20404,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.devto {\r\n    overflow: break word;\n}\n.item {\r\n    flex-grow: 1;\r\n    flex-shrink: 0;\r\n    flex-basis: 0;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.devto {\r\n    overflow: break word;\n}\n.item {\r\n    flex-grow: 1;\r\n    flex-shrink: 0;\r\n    flex-basis: 0;\n}\n.removeShadow:hover {\r\n    text-shadow: 0 !important;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -42142,6 +42345,627 @@ function compileToFunction(template, options) {
 (0,_vue_runtime_dom__WEBPACK_IMPORTED_MODULE_2__.registerRuntimeCompiler)(compileToFunction);
 
 
+
+
+/***/ }),
+
+/***/ "./node_modules/@github/markdown-toolbar-element/dist/index.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@github/markdown-toolbar-element/dist/index.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const buttonSelectors = [
+    '[data-md-button]',
+    'md-header',
+    'md-bold',
+    'md-italic',
+    'md-quote',
+    'md-code',
+    'md-link',
+    'md-image',
+    'md-unordered-list',
+    'md-ordered-list',
+    'md-task-list',
+    'md-mention',
+    'md-ref',
+    'md-strikethrough'
+];
+function getButtons(toolbar) {
+    const els = [];
+    for (const button of toolbar.querySelectorAll(buttonSelectors.join(', '))) {
+        if (button.hidden || (button.offsetWidth <= 0 && button.offsetHeight <= 0))
+            continue;
+        if (button.closest('markdown-toolbar') === toolbar)
+            els.push(button);
+    }
+    return els;
+}
+function keydown(fn) {
+    return function (event) {
+        if (event.key === ' ' || event.key === 'Enter') {
+            event.preventDefault();
+            fn(event);
+        }
+    };
+}
+const styles = new WeakMap();
+class MarkdownButtonElement extends HTMLElement {
+    constructor() {
+        super();
+        const apply = () => {
+            const style = styles.get(this);
+            if (!style)
+                return;
+            applyStyle(this, style);
+        };
+        this.addEventListener('keydown', keydown(apply));
+        this.addEventListener('click', apply);
+    }
+    connectedCallback() {
+        if (!this.hasAttribute('role')) {
+            this.setAttribute('role', 'button');
+        }
+    }
+    click() {
+        const style = styles.get(this);
+        if (!style)
+            return;
+        applyStyle(this, style);
+    }
+}
+class MarkdownHeaderButtonElement extends MarkdownButtonElement {
+    constructor() {
+        super();
+        const level = parseInt(this.getAttribute('level') || '3', 10);
+        if (level < 1 || level > 6) {
+            return;
+        }
+        const prefix = `${'#'.repeat(level)} `;
+        styles.set(this, {
+            prefix
+        });
+    }
+}
+if (!window.customElements.get('md-header')) {
+    window.MarkdownHeaderButtonElement = MarkdownHeaderButtonElement;
+    window.customElements.define('md-header', MarkdownHeaderButtonElement);
+}
+class MarkdownBoldButtonElement extends MarkdownButtonElement {
+    constructor() {
+        super();
+        styles.set(this, { prefix: '**', suffix: '**', trimFirst: true });
+    }
+}
+if (!window.customElements.get('md-bold')) {
+    window.MarkdownBoldButtonElement = MarkdownBoldButtonElement;
+    window.customElements.define('md-bold', MarkdownBoldButtonElement);
+}
+class MarkdownItalicButtonElement extends MarkdownButtonElement {
+    constructor() {
+        super();
+        styles.set(this, { prefix: '_', suffix: '_', trimFirst: true });
+    }
+}
+if (!window.customElements.get('md-italic')) {
+    window.MarkdownItalicButtonElement = MarkdownItalicButtonElement;
+    window.customElements.define('md-italic', MarkdownItalicButtonElement);
+}
+class MarkdownQuoteButtonElement extends MarkdownButtonElement {
+    constructor() {
+        super();
+        styles.set(this, { prefix: '> ', multiline: true, surroundWithNewlines: true });
+    }
+}
+if (!window.customElements.get('md-quote')) {
+    window.MarkdownQuoteButtonElement = MarkdownQuoteButtonElement;
+    window.customElements.define('md-quote', MarkdownQuoteButtonElement);
+}
+class MarkdownCodeButtonElement extends MarkdownButtonElement {
+    constructor() {
+        super();
+        styles.set(this, { prefix: '`', suffix: '`', blockPrefix: '```', blockSuffix: '```' });
+    }
+}
+if (!window.customElements.get('md-code')) {
+    window.MarkdownCodeButtonElement = MarkdownCodeButtonElement;
+    window.customElements.define('md-code', MarkdownCodeButtonElement);
+}
+class MarkdownLinkButtonElement extends MarkdownButtonElement {
+    constructor() {
+        super();
+        styles.set(this, { prefix: '[', suffix: '](url)', replaceNext: 'url', scanFor: 'https?://' });
+    }
+}
+if (!window.customElements.get('md-link')) {
+    window.MarkdownLinkButtonElement = MarkdownLinkButtonElement;
+    window.customElements.define('md-link', MarkdownLinkButtonElement);
+}
+class MarkdownImageButtonElement extends MarkdownButtonElement {
+    constructor() {
+        super();
+        styles.set(this, { prefix: '![', suffix: '](url)', replaceNext: 'url', scanFor: 'https?://' });
+    }
+}
+if (!window.customElements.get('md-image')) {
+    window.MarkdownImageButtonElement = MarkdownImageButtonElement;
+    window.customElements.define('md-image', MarkdownImageButtonElement);
+}
+class MarkdownUnorderedListButtonElement extends MarkdownButtonElement {
+    constructor() {
+        super();
+        styles.set(this, { prefix: '- ', multiline: true, unorderedList: true });
+    }
+}
+if (!window.customElements.get('md-unordered-list')) {
+    window.MarkdownUnorderedListButtonElement = MarkdownUnorderedListButtonElement;
+    window.customElements.define('md-unordered-list', MarkdownUnorderedListButtonElement);
+}
+class MarkdownOrderedListButtonElement extends MarkdownButtonElement {
+    constructor() {
+        super();
+        styles.set(this, { prefix: '1. ', multiline: true, orderedList: true });
+    }
+}
+if (!window.customElements.get('md-ordered-list')) {
+    window.MarkdownOrderedListButtonElement = MarkdownOrderedListButtonElement;
+    window.customElements.define('md-ordered-list', MarkdownOrderedListButtonElement);
+}
+class MarkdownTaskListButtonElement extends MarkdownButtonElement {
+    constructor() {
+        super();
+        styles.set(this, { prefix: '- [ ] ', multiline: true, surroundWithNewlines: true });
+    }
+}
+if (!window.customElements.get('md-task-list')) {
+    window.MarkdownTaskListButtonElement = MarkdownTaskListButtonElement;
+    window.customElements.define('md-task-list', MarkdownTaskListButtonElement);
+}
+class MarkdownMentionButtonElement extends MarkdownButtonElement {
+    constructor() {
+        super();
+        styles.set(this, { prefix: '@', prefixSpace: true });
+    }
+}
+if (!window.customElements.get('md-mention')) {
+    window.MarkdownMentionButtonElement = MarkdownMentionButtonElement;
+    window.customElements.define('md-mention', MarkdownMentionButtonElement);
+}
+class MarkdownRefButtonElement extends MarkdownButtonElement {
+    constructor() {
+        super();
+        styles.set(this, { prefix: '#', prefixSpace: true });
+    }
+}
+if (!window.customElements.get('md-ref')) {
+    window.MarkdownRefButtonElement = MarkdownRefButtonElement;
+    window.customElements.define('md-ref', MarkdownRefButtonElement);
+}
+class MarkdownStrikethroughButtonElement extends MarkdownButtonElement {
+    constructor() {
+        super();
+        styles.set(this, { prefix: '~~', suffix: '~~', trimFirst: true });
+    }
+}
+if (!window.customElements.get('md-strikethrough')) {
+    window.MarkdownStrikethroughButtonElement = MarkdownStrikethroughButtonElement;
+    window.customElements.define('md-strikethrough', MarkdownStrikethroughButtonElement);
+}
+class MarkdownToolbarElement extends HTMLElement {
+    constructor() {
+        super();
+    }
+    connectedCallback() {
+        if (!this.hasAttribute('role')) {
+            this.setAttribute('role', 'toolbar');
+        }
+        this.addEventListener('keydown', focusKeydown);
+        this.setAttribute('tabindex', '0');
+        this.addEventListener('focus', onToolbarFocus, { once: true });
+    }
+    disconnectedCallback() {
+        this.removeEventListener('keydown', focusKeydown);
+    }
+    get field() {
+        const id = this.getAttribute('for');
+        if (!id)
+            return null;
+        const root = 'getRootNode' in this ? this.getRootNode() : document;
+        let field;
+        if (root instanceof Document || root instanceof ShadowRoot) {
+            field = root.getElementById(id);
+        }
+        return field instanceof HTMLTextAreaElement ? field : null;
+    }
+}
+function onToolbarFocus({ target }) {
+    if (!(target instanceof Element))
+        return;
+    target.removeAttribute('tabindex');
+    let tabindex = '0';
+    for (const button of getButtons(target)) {
+        button.setAttribute('tabindex', tabindex);
+        if (tabindex === '0') {
+            button.focus();
+            tabindex = '-1';
+        }
+    }
+}
+function focusKeydown(event) {
+    const key = event.key;
+    if (key !== 'ArrowRight' && key !== 'ArrowLeft' && key !== 'Home' && key !== 'End')
+        return;
+    const toolbar = event.currentTarget;
+    if (!(toolbar instanceof HTMLElement))
+        return;
+    const buttons = getButtons(toolbar);
+    const index = buttons.indexOf(event.target);
+    const length = buttons.length;
+    if (index === -1)
+        return;
+    let n = 0;
+    if (key === 'ArrowLeft')
+        n = index - 1;
+    if (key === 'ArrowRight')
+        n = index + 1;
+    if (key === 'End')
+        n = length - 1;
+    if (n < 0)
+        n = length - 1;
+    if (n > length - 1)
+        n = 0;
+    for (let i = 0; i < length; i += 1) {
+        buttons[i].setAttribute('tabindex', i === n ? '0' : '-1');
+    }
+    event.preventDefault();
+    buttons[n].focus();
+}
+if (!window.customElements.get('markdown-toolbar')) {
+    window.MarkdownToolbarElement = MarkdownToolbarElement;
+    window.customElements.define('markdown-toolbar', MarkdownToolbarElement);
+}
+function isMultipleLines(string) {
+    return string.trim().split('\n').length > 1;
+}
+function repeat(string, n) {
+    return Array(n + 1).join(string);
+}
+function wordSelectionStart(text, i) {
+    let index = i;
+    while (text[index] && text[index - 1] != null && !text[index - 1].match(/\s/)) {
+        index--;
+    }
+    return index;
+}
+function wordSelectionEnd(text, i, multiline) {
+    let index = i;
+    const breakpoint = multiline ? /\n/ : /\s/;
+    while (text[index] && !text[index].match(breakpoint)) {
+        index++;
+    }
+    return index;
+}
+let canInsertText = null;
+function insertText(textarea, { text, selectionStart, selectionEnd }) {
+    const originalSelectionStart = textarea.selectionStart;
+    const before = textarea.value.slice(0, originalSelectionStart);
+    const after = textarea.value.slice(textarea.selectionEnd);
+    if (canInsertText === null || canInsertText === true) {
+        textarea.contentEditable = 'true';
+        try {
+            canInsertText = document.execCommand('insertText', false, text);
+        }
+        catch (error) {
+            canInsertText = false;
+        }
+        textarea.contentEditable = 'false';
+    }
+    if (canInsertText && !textarea.value.slice(0, textarea.selectionStart).endsWith(text)) {
+        canInsertText = false;
+    }
+    if (!canInsertText) {
+        try {
+            document.execCommand('ms-beginUndoUnit');
+        }
+        catch (e) {
+        }
+        textarea.value = before + text + after;
+        try {
+            document.execCommand('ms-endUndoUnit');
+        }
+        catch (e) {
+        }
+        textarea.dispatchEvent(new CustomEvent('input', { bubbles: true, cancelable: true }));
+    }
+    if (selectionStart != null && selectionEnd != null) {
+        textarea.setSelectionRange(selectionStart, selectionEnd);
+    }
+    else {
+        textarea.setSelectionRange(originalSelectionStart, textarea.selectionEnd);
+    }
+}
+function styleSelectedText(textarea, styleArgs) {
+    const text = textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
+    let result;
+    if (styleArgs.orderedList || styleArgs.unorderedList) {
+        result = listStyle(textarea, styleArgs);
+    }
+    else if (styleArgs.multiline && isMultipleLines(text)) {
+        result = multilineStyle(textarea, styleArgs);
+    }
+    else {
+        result = blockStyle(textarea, styleArgs);
+    }
+    insertText(textarea, result);
+}
+function expandSelectionToLine(textarea) {
+    const lines = textarea.value.split('\n');
+    let counter = 0;
+    for (let index = 0; index < lines.length; index++) {
+        const lineLength = lines[index].length + 1;
+        if (textarea.selectionStart >= counter && textarea.selectionStart < counter + lineLength) {
+            textarea.selectionStart = counter;
+        }
+        if (textarea.selectionEnd >= counter && textarea.selectionEnd < counter + lineLength) {
+            textarea.selectionEnd = counter + lineLength - 1;
+        }
+        counter += lineLength;
+    }
+}
+function expandSelectedText(textarea, prefixToUse, suffixToUse, multiline = false) {
+    if (textarea.selectionStart === textarea.selectionEnd) {
+        textarea.selectionStart = wordSelectionStart(textarea.value, textarea.selectionStart);
+        textarea.selectionEnd = wordSelectionEnd(textarea.value, textarea.selectionEnd, multiline);
+    }
+    else {
+        const expandedSelectionStart = textarea.selectionStart - prefixToUse.length;
+        const expandedSelectionEnd = textarea.selectionEnd + suffixToUse.length;
+        const beginsWithPrefix = textarea.value.slice(expandedSelectionStart, textarea.selectionStart) === prefixToUse;
+        const endsWithSuffix = textarea.value.slice(textarea.selectionEnd, expandedSelectionEnd) === suffixToUse;
+        if (beginsWithPrefix && endsWithSuffix) {
+            textarea.selectionStart = expandedSelectionStart;
+            textarea.selectionEnd = expandedSelectionEnd;
+        }
+    }
+    return textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
+}
+function newlinesToSurroundSelectedText(textarea) {
+    const beforeSelection = textarea.value.slice(0, textarea.selectionStart);
+    const afterSelection = textarea.value.slice(textarea.selectionEnd);
+    const breaksBefore = beforeSelection.match(/\n*$/);
+    const breaksAfter = afterSelection.match(/^\n*/);
+    const newlinesBeforeSelection = breaksBefore ? breaksBefore[0].length : 0;
+    const newlinesAfterSelection = breaksAfter ? breaksAfter[0].length : 0;
+    let newlinesToAppend;
+    let newlinesToPrepend;
+    if (beforeSelection.match(/\S/) && newlinesBeforeSelection < 2) {
+        newlinesToAppend = repeat('\n', 2 - newlinesBeforeSelection);
+    }
+    if (afterSelection.match(/\S/) && newlinesAfterSelection < 2) {
+        newlinesToPrepend = repeat('\n', 2 - newlinesAfterSelection);
+    }
+    if (newlinesToAppend == null) {
+        newlinesToAppend = '';
+    }
+    if (newlinesToPrepend == null) {
+        newlinesToPrepend = '';
+    }
+    return { newlinesToAppend, newlinesToPrepend };
+}
+function blockStyle(textarea, arg) {
+    let newlinesToAppend;
+    let newlinesToPrepend;
+    const { prefix, suffix, blockPrefix, blockSuffix, replaceNext, prefixSpace, scanFor, surroundWithNewlines } = arg;
+    const originalSelectionStart = textarea.selectionStart;
+    const originalSelectionEnd = textarea.selectionEnd;
+    let selectedText = textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
+    let prefixToUse = isMultipleLines(selectedText) && blockPrefix.length > 0 ? `${blockPrefix}\n` : prefix;
+    let suffixToUse = isMultipleLines(selectedText) && blockSuffix.length > 0 ? `\n${blockSuffix}` : suffix;
+    if (prefixSpace) {
+        const beforeSelection = textarea.value[textarea.selectionStart - 1];
+        if (textarea.selectionStart !== 0 && beforeSelection != null && !beforeSelection.match(/\s/)) {
+            prefixToUse = ` ${prefixToUse}`;
+        }
+    }
+    selectedText = expandSelectedText(textarea, prefixToUse, suffixToUse, arg.multiline);
+    let selectionStart = textarea.selectionStart;
+    let selectionEnd = textarea.selectionEnd;
+    const hasReplaceNext = replaceNext.length > 0 && suffixToUse.indexOf(replaceNext) > -1 && selectedText.length > 0;
+    if (surroundWithNewlines) {
+        const ref = newlinesToSurroundSelectedText(textarea);
+        newlinesToAppend = ref.newlinesToAppend;
+        newlinesToPrepend = ref.newlinesToPrepend;
+        prefixToUse = newlinesToAppend + prefix;
+        suffixToUse += newlinesToPrepend;
+    }
+    if (selectedText.startsWith(prefixToUse) && selectedText.endsWith(suffixToUse)) {
+        const replacementText = selectedText.slice(prefixToUse.length, selectedText.length - suffixToUse.length);
+        if (originalSelectionStart === originalSelectionEnd) {
+            let position = originalSelectionStart - prefixToUse.length;
+            position = Math.max(position, selectionStart);
+            position = Math.min(position, selectionStart + replacementText.length);
+            selectionStart = selectionEnd = position;
+        }
+        else {
+            selectionEnd = selectionStart + replacementText.length;
+        }
+        return { text: replacementText, selectionStart, selectionEnd };
+    }
+    else if (!hasReplaceNext) {
+        let replacementText = prefixToUse + selectedText + suffixToUse;
+        selectionStart = originalSelectionStart + prefixToUse.length;
+        selectionEnd = originalSelectionEnd + prefixToUse.length;
+        const whitespaceEdges = selectedText.match(/^\s*|\s*$/g);
+        if (arg.trimFirst && whitespaceEdges) {
+            const leadingWhitespace = whitespaceEdges[0] || '';
+            const trailingWhitespace = whitespaceEdges[1] || '';
+            replacementText = leadingWhitespace + prefixToUse + selectedText.trim() + suffixToUse + trailingWhitespace;
+            selectionStart += leadingWhitespace.length;
+            selectionEnd -= trailingWhitespace.length;
+        }
+        return { text: replacementText, selectionStart, selectionEnd };
+    }
+    else if (scanFor.length > 0 && selectedText.match(scanFor)) {
+        suffixToUse = suffixToUse.replace(replaceNext, selectedText);
+        const replacementText = prefixToUse + suffixToUse;
+        selectionStart = selectionEnd = selectionStart + prefixToUse.length;
+        return { text: replacementText, selectionStart, selectionEnd };
+    }
+    else {
+        const replacementText = prefixToUse + selectedText + suffixToUse;
+        selectionStart = selectionStart + prefixToUse.length + selectedText.length + suffixToUse.indexOf(replaceNext);
+        selectionEnd = selectionStart + replaceNext.length;
+        return { text: replacementText, selectionStart, selectionEnd };
+    }
+}
+function multilineStyle(textarea, arg) {
+    const { prefix, suffix, surroundWithNewlines } = arg;
+    let text = textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
+    let selectionStart = textarea.selectionStart;
+    let selectionEnd = textarea.selectionEnd;
+    const lines = text.split('\n');
+    const undoStyle = lines.every(line => line.startsWith(prefix) && line.endsWith(suffix));
+    if (undoStyle) {
+        text = lines.map(line => line.slice(prefix.length, line.length - suffix.length)).join('\n');
+        selectionEnd = selectionStart + text.length;
+    }
+    else {
+        text = lines.map(line => prefix + line + suffix).join('\n');
+        if (surroundWithNewlines) {
+            const { newlinesToAppend, newlinesToPrepend } = newlinesToSurroundSelectedText(textarea);
+            selectionStart += newlinesToAppend.length;
+            selectionEnd = selectionStart + text.length;
+            text = newlinesToAppend + text + newlinesToPrepend;
+        }
+    }
+    return { text, selectionStart, selectionEnd };
+}
+function undoOrderedListStyle(text) {
+    const lines = text.split('\n');
+    const orderedListRegex = /^\d+\.\s+/;
+    const shouldUndoOrderedList = lines.every(line => orderedListRegex.test(line));
+    let result = lines;
+    if (shouldUndoOrderedList) {
+        result = lines.map(line => line.replace(orderedListRegex, ''));
+    }
+    return {
+        text: result.join('\n'),
+        processed: shouldUndoOrderedList
+    };
+}
+function undoUnorderedListStyle(text) {
+    const lines = text.split('\n');
+    const unorderedListPrefix = '- ';
+    const shouldUndoUnorderedList = lines.every(line => line.startsWith(unorderedListPrefix));
+    let result = lines;
+    if (shouldUndoUnorderedList) {
+        result = lines.map(line => line.slice(unorderedListPrefix.length, line.length));
+    }
+    return {
+        text: result.join('\n'),
+        processed: shouldUndoUnorderedList
+    };
+}
+function makePrefix(index, unorderedList) {
+    if (unorderedList) {
+        return '- ';
+    }
+    else {
+        return `${index + 1}. `;
+    }
+}
+function clearExistingListStyle(style, selectedText) {
+    let undoResultOpositeList;
+    let undoResult;
+    let pristineText;
+    if (style.orderedList) {
+        undoResult = undoOrderedListStyle(selectedText);
+        undoResultOpositeList = undoUnorderedListStyle(undoResult.text);
+        pristineText = undoResultOpositeList.text;
+    }
+    else {
+        undoResult = undoUnorderedListStyle(selectedText);
+        undoResultOpositeList = undoOrderedListStyle(undoResult.text);
+        pristineText = undoResultOpositeList.text;
+    }
+    return [undoResult, undoResultOpositeList, pristineText];
+}
+function listStyle(textarea, style) {
+    const noInitialSelection = textarea.selectionStart === textarea.selectionEnd;
+    let selectionStart = textarea.selectionStart;
+    let selectionEnd = textarea.selectionEnd;
+    expandSelectionToLine(textarea);
+    const selectedText = textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
+    const [undoResult, undoResultOpositeList, pristineText] = clearExistingListStyle(style, selectedText);
+    const prefixedLines = pristineText.split('\n').map((value, index) => {
+        return `${makePrefix(index, style.unorderedList)}${value}`;
+    });
+    const totalPrefixLength = prefixedLines.reduce((previousValue, _currentValue, currentIndex) => {
+        return previousValue + makePrefix(currentIndex, style.unorderedList).length;
+    }, 0);
+    const totalPrefixLengthOpositeList = prefixedLines.reduce((previousValue, _currentValue, currentIndex) => {
+        return previousValue + makePrefix(currentIndex, !style.unorderedList).length;
+    }, 0);
+    if (undoResult.processed) {
+        if (noInitialSelection) {
+            selectionStart = Math.max(selectionStart - makePrefix(0, style.unorderedList).length, 0);
+            selectionEnd = selectionStart;
+        }
+        else {
+            selectionStart = textarea.selectionStart;
+            selectionEnd = textarea.selectionEnd - totalPrefixLength;
+        }
+        return { text: pristineText, selectionStart, selectionEnd };
+    }
+    const { newlinesToAppend, newlinesToPrepend } = newlinesToSurroundSelectedText(textarea);
+    const text = newlinesToAppend + prefixedLines.join('\n') + newlinesToPrepend;
+    if (noInitialSelection) {
+        selectionStart = Math.max(selectionStart + makePrefix(0, style.unorderedList).length + newlinesToAppend.length, 0);
+        selectionEnd = selectionStart;
+    }
+    else {
+        if (undoResultOpositeList.processed) {
+            selectionStart = Math.max(textarea.selectionStart + newlinesToAppend.length, 0);
+            selectionEnd = textarea.selectionEnd + newlinesToAppend.length + totalPrefixLength - totalPrefixLengthOpositeList;
+        }
+        else {
+            selectionStart = Math.max(textarea.selectionStart + newlinesToAppend.length, 0);
+            selectionEnd = textarea.selectionEnd + newlinesToAppend.length + totalPrefixLength;
+        }
+    }
+    return { text, selectionStart, selectionEnd };
+}
+function applyStyle(button, stylesToApply) {
+    const toolbar = button.closest('markdown-toolbar');
+    if (!(toolbar instanceof MarkdownToolbarElement))
+        return;
+    const defaults = {
+        prefix: '',
+        suffix: '',
+        blockPrefix: '',
+        blockSuffix: '',
+        multiline: false,
+        replaceNext: '',
+        prefixSpace: false,
+        scanFor: '',
+        surroundWithNewlines: false,
+        orderedList: false,
+        unorderedList: false,
+        trimFirst: false
+    };
+    const style = Object.assign(Object.assign({}, defaults), stylesToApply);
+    const field = toolbar.field;
+    if (field) {
+        field.focus();
+        styleSelectedText(field, style);
+    }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MarkdownToolbarElement);
 
 
 /***/ }),

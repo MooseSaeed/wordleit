@@ -42,7 +42,7 @@
                 </h1>
             </header>
 
-            <main class="max-w-6xl mx-auto mt-4 lg:mt-20 text-center">
+            <main class="max-w-6xl mx-auto mt-4 text-center">
                 {{ $slot }}
             </main>
 
