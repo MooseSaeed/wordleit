@@ -20058,7 +20058,7 @@ var _hoisted_1 = {
 };
 var _hoisted_2 = {
   type: "button",
-  "class": "flex flex-row justify-between items-center font-bold text-white text-bold w-full bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg text-sm px-5 py-1 text-center mr-2 mb-2"
+  "class": "flex flex-col gap-1 lg:flex-row justify-between items-center font-bold text-white text-bold w-full bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg text-sm px-5 py-1 text-center mr-2 mb-2"
 };
 
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)(" Start AI Speech <select class=\"max-w-max block w-full px-3 py-1.5 text-sm text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none\" name=\"lang\" id=\"lang\"><option value=\"en\">General English</option><option value=\"en-US\">United States - English</option><option value=\"en-GB\">United Kingdom - English</option><option value=\"en-AU\">Australia - English</option><option value=\"en-IN\">India - English</option><option value=\"en-NZ\">New Zealand - English</option><option value=\"uk\">Ukrainian</option><option value=\"fr\">French</option><option value=\"fr-CA\">Canada - French</option><option value=\"de\">German</option><option value=\"ru\">Russian</option><option value=\"es\">Spanish</option><option value=\"es-419\">Latin America - Spanish</option><option value=\"hi\">Hindi</option><option value=\"nl\">Dutch</option></select>", 2);
