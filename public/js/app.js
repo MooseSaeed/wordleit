@@ -19828,6 +19828,16 @@ __webpack_require__.r(__webpack_exports__);
       markdown: ""
     };
   },
+  mounted: function mounted() {
+    if (localStorage.markdown) {
+      this.markdown = localStorage.markdown;
+    }
+  },
+  watch: {
+    markdown: function markdown(newInput) {
+      localStorage.markdown = newInput;
+    }
+  },
   computed: {
     markdownToHtml: function markdownToHtml() {
       return this.md(this.markdown);

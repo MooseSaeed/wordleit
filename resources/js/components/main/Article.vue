@@ -32,6 +32,16 @@ export default {
             markdown: "",
         };
     },
+    mounted() {
+        if (localStorage.markdown) {
+            this.markdown = localStorage.markdown;
+        }
+    },
+    watch: {
+        markdown(newInput) {
+            localStorage.markdown = newInput;
+        },
+    },
     computed: {
         markdownToHtml() {
             return this.md(this.markdown);
