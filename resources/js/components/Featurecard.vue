@@ -6,12 +6,13 @@
             <Card dataImage="./images/pic-sample.jpg">
                 <template v-slot:header>
                     <h2 class="text-white text-2xl font-bold">
-                        This is the card Title
+                        WordleUp Text Editor
                     </h2>
                 </template>
                 <template v-slot:content>
                     <p class="relative text-white">
-                        This is the card description
+                        A text editor supported with Github Markdown features
+                        and AI Speech
                     </p>
                 </template>
             </Card>

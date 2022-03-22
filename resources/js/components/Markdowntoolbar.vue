@@ -1,4 +1,43 @@
 <template>
+    <div class="grid grid-cols-1 gap-1">
+        <div
+            type="button"
+            class="flex flex-row justify-between items-center font-bold text-white text-bold w-full bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg text-sm px-5 py-1 text-center mr-2 mb-2"
+        >
+            Start AI Speech
+            <select
+                class="max-w-max block w-full px-3 py-1.5 text-sm text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                name="lang"
+                id="lang"
+            >
+                <option value="en">General English</option>
+                <option value="en-US">United States - English</option>
+                <option value="en-GB">United Kingdom - English</option>
+                <option value="en-AU">Australia - English</option>
+                <option value="en-IN">India - English</option>
+                <option value="en-NZ">New Zealand - English</option>
+                <option value="uk">Ukrainian</option>
+                <option value="fr">French</option>
+                <option value="fr-CA">Canada - French</option>
+                <option value="de">German</option>
+                <option value="ru">Russian</option>
+                <option value="es">Spanish</option>
+                <option value="es-419">Latin America - Spanish</option>
+                <option value="hi">Hindi</option>
+                <option value="nl">Dutch</option>
+            </select>
+            <div class="relative">
+                <Stoprecroding v-if="recording" @click="toggleRecording" />
+                <Stoprecroding
+                    @click="toggleRecording"
+                    v-if="recording"
+                    class="animate-ping absolute top-0 right-0"
+                />
+            </div>
+
+            <Microphone v-if="!recording" @click="toggleRecording" />
+        </div>
+    </div>
     <markdown-toolbar
         class="bg-gray-900 p-2 text-white rounded-xl mb-2 grid grid-cols-2 sm:grid-cols-5 md:grid-cols-9 flex-row gap-1"
         for="myTextArea"
@@ -88,7 +127,78 @@
 </template>
 
 <script>
-export default {};
+import "@github/markdown-toolbar-element";
+import Microphone from "../components/SVGs/Microphone.vue";
+import Stoprecroding from "../components/SVGs/Stoprecroding.vue";
+export default {
+    components: {
+        Microphone,
+        Stoprecroding,
+        lang: "",
+    },
+    data() {
+        return {
+            recording: false,
+        };
+    },
+    methods: {
+        toggleRecording() {
+            this.recording = !this.recording;
+            console.log(this.recording);
+            if (this.recording) {
+                this.initRecorder();
+            } else {
+                this.stopRecording();
+            }
+        },
+
+        initRecorder() {
+            this.startTranscript();
+        },
+
+        stopRecording() {
+            WebSocket.close;
+        },
+
+        startTranscript() {
+            navigator.mediaDevices
+                .getUserMedia({ audio: true })
+                .then((stream) => {
+                    const mediaRecorder = new MediaRecorder(stream, {
+                        mimeType: "audio/webm",
+                    });
+
+                    const language = document.querySelector("select").value;
+
+                    const socket = new WebSocket(
+                        "wss://api.deepgram.com/v1/listen?language=" + language,
+                        ["token", process.env.MIX_VUE_APP_DEEPGRAM_KEY]
+                    );
+
+                    socket.onopen = () => {
+                        mediaRecorder.addEventListener(
+                            "dataavailable",
+                            (event) => {
+                                socket.send(event.data);
+                            }
+                        );
+
+                        mediaRecorder.start(250);
+                    };
+
+                    socket.onmessage = (message) => {
+                        const received = JSON.parse(message.data);
+                        const transcript =
+                            received.channel.alternatives[0].transcript;
+                        if (transcript && received.is_final) {
+                            document.querySelector("#myTextArea").textContent +=
+                                transcript + " ";
+                        }
+                    };
+                });
+        },
+    },
+};
 </script>
 
 <style></style>
