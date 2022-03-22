@@ -51,15 +51,9 @@ export default {
 </script>
 
 <style>
-.devto {
-    overflow: break word;
-}
 .item {
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: 0;
-}
-.removeShadow:hover {
-    text-shadow: 0 !important;
 }
 </style>
