@@ -11,7 +11,7 @@
             :style="cardStyle"
         >
             <div class="card-bg" :style="[cardBgTransform, cardBgImage]"></div>
-            <div class="relative">
+            <div class="relative card-info">
                 <slot name="header"></slot>
                 <slot name="content"></slot>
             </div>
