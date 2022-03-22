@@ -35,13 +35,6 @@
         </nav>
         <section class="px-6 py-8">
 
-
-            <header class="max-w-xl mx-auto text-center">
-                <h1 class="text-4xl text-white">
-                    Wordle Up
-                </h1>
-            </header>
-
             <main class="max-w-6xl mx-auto mt-4 text-center">
                 {{ $slot }}
             </main>

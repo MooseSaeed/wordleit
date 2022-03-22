@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .card-wrap {
     transform: perspective(200rem);
     transform-style: preserve-3d;

@@ -39,7 +39,7 @@
         </div>
     </div>
     <markdown-toolbar
-        class="bg-gray-900 p-2 text-white rounded-xl mb-2 grid grid-cols-2 sm:grid-cols-5 md:grid-cols-9 flex-row gap-1"
+        class="bg-gray-900 p-2 text-white rounded-xl mb-2 grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 flex-row gap-1"
         for="myTextArea"
     >
         <md-bold
@@ -127,7 +127,6 @@
 </template>
 
 <script>
-import "@github/markdown-toolbar-element";
 import Microphone from "../components/SVGs/Microphone.vue";
 import Stoprecroding from "../components/SVGs/Stoprecroding.vue";
 export default {
