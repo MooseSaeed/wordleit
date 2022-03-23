@@ -17,32 +17,7 @@
 </head>
 
 <body id="app" class="relative" style="font-family: Open Sans, sans-serif">
-    <Bodycomponent>
-        <nav class="md:flex md:justify-between md:items-center p-7">
-            <div>
-                <a href="/">
-                    <img src="/images/my-logo-dark.png" alt="">
-                </a>
-            </div>
 
-            <div class="mt-8 md:mt-0">
-                <a href="/" class="text-xs font-bold uppercase">Home Page</a>
+    {{ $slot }}
 
-                <a href="#" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
-                    Botton
-                </a>
-            </div>
-        </nav>
-        <section class="px-6 py-8">
-
-            <main class="max-w-6xl mx-auto mt-4 text-center">
-                {{ $slot }}
-            </main>
-
-            <footer class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
-                <h5 class="text-3xl">Some Text</h5>
-                <p class="text-sm mt-3">Some description</p>
-            </footer>
-        </section>
-    </Bodycomponent>
 </body>

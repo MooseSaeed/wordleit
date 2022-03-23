@@ -10,11 +10,19 @@ const routes = [
         name: "Featurecard",
         component: Featurecard,
         Card,
+        meta: {
+            enterClass: "animate__animated animate__bounceInDown animate__slow",
+            leaveClass: "animate__animated animate__bounceOutUp",
+        },
     },
     {
         path: "/article",
         name: "Article",
         component: Article,
+        meta: {
+            enterClass: "animate__animated animate__fadeInLeft",
+            leaveClass: "animate__animated animate__bounceOutUp",
+        },
     },
 ];
 

@@ -2,7 +2,7 @@
     <header class="max-w-xl mx-auto text-center mb-16 text-white">
         <h1 class="text-4xl text-white font-bold mb-5">WordleUp Text Editor</h1>
         <a
-            class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+            class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-xs sm:text-sm px-3 py-1 sm:px-5 sm:py-2.5 text-center mr-2 mb-2"
             href="#learnmore"
             >Click me to learn more about it 🤓</a
         >
