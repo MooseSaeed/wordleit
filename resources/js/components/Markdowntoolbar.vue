@@ -123,6 +123,16 @@
                 alt="Heading Button"
             />
         </md-image>
+        <md-table
+            data-md-button
+            class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+        >
+            <img
+                src="/images/table-editor.svg"
+                width="20"
+                alt="Heading Button"
+            />
+        </md-table>
     </markdown-toolbar>
 </template>
 

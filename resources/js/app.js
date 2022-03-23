@@ -5,7 +5,7 @@ import "animate.css";
 import Featurecard from "./components/Featurecard";
 import Bodycomponent from "./components/Bodycomponent";
 import { marked } from "marked";
-import "@github/markdown-toolbar-element";
+import "../../public/markdowntoolbar";
 
 marked.setOptions({
     breaks: true,

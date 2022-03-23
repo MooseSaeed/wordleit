@@ -18188,6 +18188,14 @@ var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  src: "/images/table-editor.svg",
+  width: "20",
+  alt: "Heading Button"
+}, null, -1
+/* HOISTED */
+);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Stoprecroding = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Stoprecroding");
 
@@ -18210,6 +18218,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_md_code = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("md-code");
 
   var _component_md_image = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("md-image");
+
+  var _component_md_table = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("md-table");
 
   var _component_markdown_toolbar = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("markdown-toolbar");
 
@@ -18311,6 +18321,16 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
           return [_hoisted_14];
+        }),
+        _: 1
+        /* STABLE */
+
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_md_table, {
+        "data-md-button": "",
+        "class": "hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+      }, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_15];
         }),
         _: 1
         /* STABLE */
@@ -18600,6 +18620,1089 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
+/***/ "./public/markdowntoolbar/index.js":
+/*!*****************************************!*\
+  !*** ./public/markdowntoolbar/index.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _wrapNativeSuper(Class) { var _cache = typeof Map === "function" ? new Map() : undefined; _wrapNativeSuper = function _wrapNativeSuper(Class) { if (Class === null || !_isNativeFunction(Class)) return Class; if (typeof Class !== "function") { throw new TypeError("Super expression must either be null or a function"); } if (typeof _cache !== "undefined") { if (_cache.has(Class)) return _cache.get(Class); _cache.set(Class, Wrapper); } function Wrapper() { return _construct(Class, arguments, _getPrototypeOf(this).constructor); } Wrapper.prototype = Object.create(Class.prototype, { constructor: { value: Wrapper, enumerable: false, writable: true, configurable: true } }); return _setPrototypeOf(Wrapper, Class); }; return _wrapNativeSuper(Class); }
+
+function _construct(Parent, args, Class) { if (_isNativeReflectConstruct()) { _construct = Reflect.construct; } else { _construct = function _construct(Parent, args, Class) { var a = [null]; a.push.apply(a, args); var Constructor = Function.bind.apply(Parent, a); var instance = new Constructor(); if (Class) _setPrototypeOf(instance, Class.prototype); return instance; }; } return _construct.apply(null, arguments); }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _isNativeFunction(fn) { return Function.toString.call(fn).indexOf("[native code]") !== -1; }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var buttonSelectors = ['[data-md-button]', 'md-header', 'md-bold', 'md-italic', 'md-quote', 'md-code', 'md-link', 'md-image', 'md-unordered-list', 'md-ordered-list', 'md-task-list', 'md-mention', 'md-ref', 'md-strikethrough', 'md-table'];
+
+function getButtons(toolbar) {
+  var els = [];
+
+  var _iterator = _createForOfIteratorHelper(toolbar.querySelectorAll(buttonSelectors.join(', '))),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var button = _step.value;
+      if (button.hidden || button.offsetWidth <= 0 && button.offsetHeight <= 0) continue;
+      if (button.closest('markdown-toolbar') === toolbar) els.push(button);
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+
+  return els;
+}
+
+function keydown(fn) {
+  return function (event) {
+    if (event.key === ' ' || event.key === 'Enter') {
+      event.preventDefault();
+      fn(event);
+    }
+  };
+}
+
+var styles = new WeakMap();
+
+var MarkdownButtonElement = /*#__PURE__*/function (_HTMLElement) {
+  _inherits(MarkdownButtonElement, _HTMLElement);
+
+  var _super = _createSuper(MarkdownButtonElement);
+
+  function MarkdownButtonElement() {
+    var _this;
+
+    _classCallCheck(this, MarkdownButtonElement);
+
+    _this = _super.call(this);
+
+    var apply = function apply() {
+      var style = styles.get(_assertThisInitialized(_this));
+      if (!style) return;
+      applyStyle(_assertThisInitialized(_this), style);
+    };
+
+    _this.addEventListener('keydown', keydown(apply));
+
+    _this.addEventListener('click', apply);
+
+    return _this;
+  }
+
+  _createClass(MarkdownButtonElement, [{
+    key: "connectedCallback",
+    value: function connectedCallback() {
+      if (!this.hasAttribute('role')) {
+        this.setAttribute('role', 'button');
+      }
+    }
+  }, {
+    key: "click",
+    value: function click() {
+      var style = styles.get(this);
+      if (!style) return;
+      applyStyle(this, style);
+    }
+  }]);
+
+  return MarkdownButtonElement;
+}( /*#__PURE__*/_wrapNativeSuper(HTMLElement));
+
+var MarkdownHeaderButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen) {
+  _inherits(MarkdownHeaderButtonElement, _MarkdownButtonElemen);
+
+  var _super2 = _createSuper(MarkdownHeaderButtonElement);
+
+  function MarkdownHeaderButtonElement() {
+    var _this2;
+
+    _classCallCheck(this, MarkdownHeaderButtonElement);
+
+    _this2 = _super2.call(this);
+    var level = parseInt(_this2.getAttribute('level') || '3', 10);
+
+    if (level < 1 || level > 6) {
+      return _possibleConstructorReturn(_this2);
+    }
+
+    var prefix = "".concat('#'.repeat(level), " ");
+    styles.set(_assertThisInitialized(_this2), {
+      prefix: prefix
+    });
+    return _this2;
+  }
+
+  return _createClass(MarkdownHeaderButtonElement);
+}(MarkdownButtonElement);
+
+if (!window.customElements.get('md-header')) {
+  window.MarkdownHeaderButtonElement = MarkdownHeaderButtonElement;
+  window.customElements.define('md-header', MarkdownHeaderButtonElement);
+}
+
+var MarkdownBoldButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen2) {
+  _inherits(MarkdownBoldButtonElement, _MarkdownButtonElemen2);
+
+  var _super3 = _createSuper(MarkdownBoldButtonElement);
+
+  function MarkdownBoldButtonElement() {
+    var _this3;
+
+    _classCallCheck(this, MarkdownBoldButtonElement);
+
+    _this3 = _super3.call(this);
+    styles.set(_assertThisInitialized(_this3), {
+      prefix: '**',
+      suffix: '**',
+      trimFirst: true
+    });
+    return _this3;
+  }
+
+  return _createClass(MarkdownBoldButtonElement);
+}(MarkdownButtonElement);
+
+if (!window.customElements.get('md-bold')) {
+  window.MarkdownBoldButtonElement = MarkdownBoldButtonElement;
+  window.customElements.define('md-bold', MarkdownBoldButtonElement);
+}
+
+var MarkdownItalicButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen3) {
+  _inherits(MarkdownItalicButtonElement, _MarkdownButtonElemen3);
+
+  var _super4 = _createSuper(MarkdownItalicButtonElement);
+
+  function MarkdownItalicButtonElement() {
+    var _this4;
+
+    _classCallCheck(this, MarkdownItalicButtonElement);
+
+    _this4 = _super4.call(this);
+    styles.set(_assertThisInitialized(_this4), {
+      prefix: '_',
+      suffix: '_',
+      trimFirst: true
+    });
+    return _this4;
+  }
+
+  return _createClass(MarkdownItalicButtonElement);
+}(MarkdownButtonElement);
+
+if (!window.customElements.get('md-italic')) {
+  window.MarkdownItalicButtonElement = MarkdownItalicButtonElement;
+  window.customElements.define('md-italic', MarkdownItalicButtonElement);
+}
+
+var MarkdownQuoteButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen4) {
+  _inherits(MarkdownQuoteButtonElement, _MarkdownButtonElemen4);
+
+  var _super5 = _createSuper(MarkdownQuoteButtonElement);
+
+  function MarkdownQuoteButtonElement() {
+    var _this5;
+
+    _classCallCheck(this, MarkdownQuoteButtonElement);
+
+    _this5 = _super5.call(this);
+    styles.set(_assertThisInitialized(_this5), {
+      prefix: '> ',
+      multiline: true,
+      surroundWithNewlines: true
+    });
+    return _this5;
+  }
+
+  return _createClass(MarkdownQuoteButtonElement);
+}(MarkdownButtonElement);
+
+if (!window.customElements.get('md-quote')) {
+  window.MarkdownQuoteButtonElement = MarkdownQuoteButtonElement;
+  window.customElements.define('md-quote', MarkdownQuoteButtonElement);
+}
+
+var MarkdownCodeButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen5) {
+  _inherits(MarkdownCodeButtonElement, _MarkdownButtonElemen5);
+
+  var _super6 = _createSuper(MarkdownCodeButtonElement);
+
+  function MarkdownCodeButtonElement() {
+    var _this6;
+
+    _classCallCheck(this, MarkdownCodeButtonElement);
+
+    _this6 = _super6.call(this);
+    styles.set(_assertThisInitialized(_this6), {
+      prefix: '`',
+      suffix: '`',
+      blockPrefix: '```',
+      blockSuffix: '```'
+    });
+    return _this6;
+  }
+
+  return _createClass(MarkdownCodeButtonElement);
+}(MarkdownButtonElement);
+
+if (!window.customElements.get('md-code')) {
+  window.MarkdownCodeButtonElement = MarkdownCodeButtonElement;
+  window.customElements.define('md-code', MarkdownCodeButtonElement);
+}
+
+var MarkdownLinkButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen6) {
+  _inherits(MarkdownLinkButtonElement, _MarkdownButtonElemen6);
+
+  var _super7 = _createSuper(MarkdownLinkButtonElement);
+
+  function MarkdownLinkButtonElement() {
+    var _this7;
+
+    _classCallCheck(this, MarkdownLinkButtonElement);
+
+    _this7 = _super7.call(this);
+    styles.set(_assertThisInitialized(_this7), {
+      prefix: '[',
+      suffix: '](url)',
+      replaceNext: 'url',
+      scanFor: 'https?://'
+    });
+    return _this7;
+  }
+
+  return _createClass(MarkdownLinkButtonElement);
+}(MarkdownButtonElement);
+
+if (!window.customElements.get('md-link')) {
+  window.MarkdownLinkButtonElement = MarkdownLinkButtonElement;
+  window.customElements.define('md-link', MarkdownLinkButtonElement);
+}
+
+var MarkdownImageButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen7) {
+  _inherits(MarkdownImageButtonElement, _MarkdownButtonElemen7);
+
+  var _super8 = _createSuper(MarkdownImageButtonElement);
+
+  function MarkdownImageButtonElement() {
+    var _this8;
+
+    _classCallCheck(this, MarkdownImageButtonElement);
+
+    _this8 = _super8.call(this);
+    styles.set(_assertThisInitialized(_this8), {
+      prefix: '![',
+      suffix: '](url)',
+      replaceNext: 'url',
+      scanFor: 'https?://'
+    });
+    return _this8;
+  }
+
+  return _createClass(MarkdownImageButtonElement);
+}(MarkdownButtonElement);
+
+if (!window.customElements.get('md-image')) {
+  window.MarkdownImageButtonElement = MarkdownImageButtonElement;
+  window.customElements.define('md-image', MarkdownImageButtonElement);
+}
+
+var MarkdownTableButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen8) {
+  _inherits(MarkdownTableButtonElement, _MarkdownButtonElemen8);
+
+  var _super9 = _createSuper(MarkdownTableButtonElement);
+
+  function MarkdownTableButtonElement() {
+    var _this9;
+
+    _classCallCheck(this, MarkdownTableButtonElement);
+
+    _this9 = _super9.call(this);
+    styles.set(_assertThisInitialized(_this9), {
+      prefix: '| Cool Header  | Cool Header | \n',
+      suffix: '| ----------------- | ------------------ |\n| Content Cell  | Content Cell  |',
+      surroundWithNewlines: true
+    });
+    return _this9;
+  }
+
+  return _createClass(MarkdownTableButtonElement);
+}(MarkdownButtonElement);
+
+if (!window.customElements.get('md-table')) {
+  window.MarkdownBoldButtonElement = MarkdownTableButtonElement;
+  window.customElements.define('md-table', MarkdownTableButtonElement);
+}
+
+var MarkdownUnorderedListButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen9) {
+  _inherits(MarkdownUnorderedListButtonElement, _MarkdownButtonElemen9);
+
+  var _super10 = _createSuper(MarkdownUnorderedListButtonElement);
+
+  function MarkdownUnorderedListButtonElement() {
+    var _this10;
+
+    _classCallCheck(this, MarkdownUnorderedListButtonElement);
+
+    _this10 = _super10.call(this);
+    styles.set(_assertThisInitialized(_this10), {
+      prefix: '- ',
+      multiline: true,
+      unorderedList: true
+    });
+    return _this10;
+  }
+
+  return _createClass(MarkdownUnorderedListButtonElement);
+}(MarkdownButtonElement);
+
+if (!window.customElements.get('md-unordered-list')) {
+  window.MarkdownUnorderedListButtonElement = MarkdownUnorderedListButtonElement;
+  window.customElements.define('md-unordered-list', MarkdownUnorderedListButtonElement);
+}
+
+var MarkdownOrderedListButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen10) {
+  _inherits(MarkdownOrderedListButtonElement, _MarkdownButtonElemen10);
+
+  var _super11 = _createSuper(MarkdownOrderedListButtonElement);
+
+  function MarkdownOrderedListButtonElement() {
+    var _this11;
+
+    _classCallCheck(this, MarkdownOrderedListButtonElement);
+
+    _this11 = _super11.call(this);
+    styles.set(_assertThisInitialized(_this11), {
+      prefix: '1. ',
+      multiline: true,
+      orderedList: true
+    });
+    return _this11;
+  }
+
+  return _createClass(MarkdownOrderedListButtonElement);
+}(MarkdownButtonElement);
+
+if (!window.customElements.get('md-ordered-list')) {
+  window.MarkdownOrderedListButtonElement = MarkdownOrderedListButtonElement;
+  window.customElements.define('md-ordered-list', MarkdownOrderedListButtonElement);
+}
+
+var MarkdownTaskListButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen11) {
+  _inherits(MarkdownTaskListButtonElement, _MarkdownButtonElemen11);
+
+  var _super12 = _createSuper(MarkdownTaskListButtonElement);
+
+  function MarkdownTaskListButtonElement() {
+    var _this12;
+
+    _classCallCheck(this, MarkdownTaskListButtonElement);
+
+    _this12 = _super12.call(this);
+    styles.set(_assertThisInitialized(_this12), {
+      prefix: '- [ ] ',
+      multiline: true,
+      surroundWithNewlines: true
+    });
+    return _this12;
+  }
+
+  return _createClass(MarkdownTaskListButtonElement);
+}(MarkdownButtonElement);
+
+if (!window.customElements.get('md-task-list')) {
+  window.MarkdownTaskListButtonElement = MarkdownTaskListButtonElement;
+  window.customElements.define('md-task-list', MarkdownTaskListButtonElement);
+}
+
+var MarkdownMentionButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen12) {
+  _inherits(MarkdownMentionButtonElement, _MarkdownButtonElemen12);
+
+  var _super13 = _createSuper(MarkdownMentionButtonElement);
+
+  function MarkdownMentionButtonElement() {
+    var _this13;
+
+    _classCallCheck(this, MarkdownMentionButtonElement);
+
+    _this13 = _super13.call(this);
+    styles.set(_assertThisInitialized(_this13), {
+      prefix: '@',
+      prefixSpace: true
+    });
+    return _this13;
+  }
+
+  return _createClass(MarkdownMentionButtonElement);
+}(MarkdownButtonElement);
+
+if (!window.customElements.get('md-mention')) {
+  window.MarkdownMentionButtonElement = MarkdownMentionButtonElement;
+  window.customElements.define('md-mention', MarkdownMentionButtonElement);
+}
+
+var MarkdownRefButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen13) {
+  _inherits(MarkdownRefButtonElement, _MarkdownButtonElemen13);
+
+  var _super14 = _createSuper(MarkdownRefButtonElement);
+
+  function MarkdownRefButtonElement() {
+    var _this14;
+
+    _classCallCheck(this, MarkdownRefButtonElement);
+
+    _this14 = _super14.call(this);
+    styles.set(_assertThisInitialized(_this14), {
+      prefix: '#',
+      prefixSpace: true
+    });
+    return _this14;
+  }
+
+  return _createClass(MarkdownRefButtonElement);
+}(MarkdownButtonElement);
+
+if (!window.customElements.get('md-ref')) {
+  window.MarkdownRefButtonElement = MarkdownRefButtonElement;
+  window.customElements.define('md-ref', MarkdownRefButtonElement);
+}
+
+var MarkdownStrikethroughButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen14) {
+  _inherits(MarkdownStrikethroughButtonElement, _MarkdownButtonElemen14);
+
+  var _super15 = _createSuper(MarkdownStrikethroughButtonElement);
+
+  function MarkdownStrikethroughButtonElement() {
+    var _this15;
+
+    _classCallCheck(this, MarkdownStrikethroughButtonElement);
+
+    _this15 = _super15.call(this);
+    styles.set(_assertThisInitialized(_this15), {
+      prefix: '~~',
+      suffix: '~~',
+      trimFirst: true
+    });
+    return _this15;
+  }
+
+  return _createClass(MarkdownStrikethroughButtonElement);
+}(MarkdownButtonElement);
+
+if (!window.customElements.get('md-strikethrough')) {
+  window.MarkdownStrikethroughButtonElement = MarkdownStrikethroughButtonElement;
+  window.customElements.define('md-strikethrough', MarkdownStrikethroughButtonElement);
+}
+
+var MarkdownToolbarElement = /*#__PURE__*/function (_HTMLElement2) {
+  _inherits(MarkdownToolbarElement, _HTMLElement2);
+
+  var _super16 = _createSuper(MarkdownToolbarElement);
+
+  function MarkdownToolbarElement() {
+    _classCallCheck(this, MarkdownToolbarElement);
+
+    return _super16.call(this);
+  }
+
+  _createClass(MarkdownToolbarElement, [{
+    key: "connectedCallback",
+    value: function connectedCallback() {
+      if (!this.hasAttribute('role')) {
+        this.setAttribute('role', 'toolbar');
+      }
+
+      this.addEventListener('keydown', focusKeydown);
+      this.setAttribute('tabindex', '0');
+      this.addEventListener('focus', onToolbarFocus, {
+        once: true
+      });
+    }
+  }, {
+    key: "disconnectedCallback",
+    value: function disconnectedCallback() {
+      this.removeEventListener('keydown', focusKeydown);
+    }
+  }, {
+    key: "field",
+    get: function get() {
+      var id = this.getAttribute('for');
+      if (!id) return null;
+      var root = 'getRootNode' in this ? this.getRootNode() : document;
+      var field;
+
+      if (root instanceof Document || root instanceof ShadowRoot) {
+        field = root.getElementById(id);
+      }
+
+      return field instanceof HTMLTextAreaElement ? field : null;
+    }
+  }]);
+
+  return MarkdownToolbarElement;
+}( /*#__PURE__*/_wrapNativeSuper(HTMLElement));
+
+function onToolbarFocus(_ref) {
+  var target = _ref.target;
+  if (!(target instanceof Element)) return;
+  target.removeAttribute('tabindex');
+  var tabindex = '0';
+
+  var _iterator2 = _createForOfIteratorHelper(getButtons(target)),
+      _step2;
+
+  try {
+    for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+      var button = _step2.value;
+      button.setAttribute('tabindex', tabindex);
+
+      if (tabindex === '0') {
+        button.focus();
+        tabindex = '-1';
+      }
+    }
+  } catch (err) {
+    _iterator2.e(err);
+  } finally {
+    _iterator2.f();
+  }
+}
+
+function focusKeydown(event) {
+  var key = event.key;
+  if (key !== 'ArrowRight' && key !== 'ArrowLeft' && key !== 'Home' && key !== 'End') return;
+  var toolbar = event.currentTarget;
+  if (!(toolbar instanceof HTMLElement)) return;
+  var buttons = getButtons(toolbar);
+  var index = buttons.indexOf(event.target);
+  var length = buttons.length;
+  if (index === -1) return;
+  var n = 0;
+  if (key === 'ArrowLeft') n = index - 1;
+  if (key === 'ArrowRight') n = index + 1;
+  if (key === 'End') n = length - 1;
+  if (n < 0) n = length - 1;
+  if (n > length - 1) n = 0;
+
+  for (var i = 0; i < length; i += 1) {
+    buttons[i].setAttribute('tabindex', i === n ? '0' : '-1');
+  }
+
+  event.preventDefault();
+  buttons[n].focus();
+}
+
+if (!window.customElements.get('markdown-toolbar')) {
+  window.MarkdownToolbarElement = MarkdownToolbarElement;
+  window.customElements.define('markdown-toolbar', MarkdownToolbarElement);
+}
+
+function isMultipleLines(string) {
+  return string.trim().split('\n').length > 1;
+}
+
+function repeat(string, n) {
+  return Array(n + 1).join(string);
+}
+
+function wordSelectionStart(text, i) {
+  var index = i;
+
+  while (text[index] && text[index - 1] != null && !text[index - 1].match(/\s/)) {
+    index--;
+  }
+
+  return index;
+}
+
+function wordSelectionEnd(text, i, multiline) {
+  var index = i;
+  var breakpoint = multiline ? /\n/ : /\s/;
+
+  while (text[index] && !text[index].match(breakpoint)) {
+    index++;
+  }
+
+  return index;
+}
+
+var canInsertText = null;
+
+function insertText(textarea, _ref2) {
+  var text = _ref2.text,
+      selectionStart = _ref2.selectionStart,
+      selectionEnd = _ref2.selectionEnd;
+  var originalSelectionStart = textarea.selectionStart;
+  var before = textarea.value.slice(0, originalSelectionStart);
+  var after = textarea.value.slice(textarea.selectionEnd);
+
+  if (canInsertText === null || canInsertText === true) {
+    textarea.contentEditable = 'true';
+
+    try {
+      canInsertText = document.execCommand('insertText', false, text);
+    } catch (error) {
+      canInsertText = false;
+    }
+
+    textarea.contentEditable = 'false';
+  }
+
+  if (canInsertText && !textarea.value.slice(0, textarea.selectionStart).endsWith(text)) {
+    canInsertText = false;
+  }
+
+  if (!canInsertText) {
+    try {
+      document.execCommand('ms-beginUndoUnit');
+    } catch (e) {}
+
+    textarea.value = before + text + after;
+
+    try {
+      document.execCommand('ms-endUndoUnit');
+    } catch (e) {}
+
+    textarea.dispatchEvent(new CustomEvent('input', {
+      bubbles: true,
+      cancelable: true
+    }));
+  }
+
+  if (selectionStart != null && selectionEnd != null) {
+    textarea.setSelectionRange(selectionStart, selectionEnd);
+  } else {
+    textarea.setSelectionRange(originalSelectionStart, textarea.selectionEnd);
+  }
+}
+
+function styleSelectedText(textarea, styleArgs) {
+  var text = textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
+  var result;
+
+  if (styleArgs.orderedList || styleArgs.unorderedList) {
+    result = listStyle(textarea, styleArgs);
+  } else if (styleArgs.multiline && isMultipleLines(text)) {
+    result = multilineStyle(textarea, styleArgs);
+  } else {
+    result = blockStyle(textarea, styleArgs);
+  }
+
+  insertText(textarea, result);
+}
+
+function expandSelectionToLine(textarea) {
+  var lines = textarea.value.split('\n');
+  var counter = 0;
+
+  for (var index = 0; index < lines.length; index++) {
+    var lineLength = lines[index].length + 1;
+
+    if (textarea.selectionStart >= counter && textarea.selectionStart < counter + lineLength) {
+      textarea.selectionStart = counter;
+    }
+
+    if (textarea.selectionEnd >= counter && textarea.selectionEnd < counter + lineLength) {
+      textarea.selectionEnd = counter + lineLength - 1;
+    }
+
+    counter += lineLength;
+  }
+}
+
+function expandSelectedText(textarea, prefixToUse, suffixToUse) {
+  var multiline = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+
+  if (textarea.selectionStart === textarea.selectionEnd) {
+    textarea.selectionStart = wordSelectionStart(textarea.value, textarea.selectionStart);
+    textarea.selectionEnd = wordSelectionEnd(textarea.value, textarea.selectionEnd, multiline);
+  } else {
+    var expandedSelectionStart = textarea.selectionStart - prefixToUse.length;
+    var expandedSelectionEnd = textarea.selectionEnd + suffixToUse.length;
+    var beginsWithPrefix = textarea.value.slice(expandedSelectionStart, textarea.selectionStart) === prefixToUse;
+    var endsWithSuffix = textarea.value.slice(textarea.selectionEnd, expandedSelectionEnd) === suffixToUse;
+
+    if (beginsWithPrefix && endsWithSuffix) {
+      textarea.selectionStart = expandedSelectionStart;
+      textarea.selectionEnd = expandedSelectionEnd;
+    }
+  }
+
+  return textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
+}
+
+function newlinesToSurroundSelectedText(textarea) {
+  var beforeSelection = textarea.value.slice(0, textarea.selectionStart);
+  var afterSelection = textarea.value.slice(textarea.selectionEnd);
+  var breaksBefore = beforeSelection.match(/\n*$/);
+  var breaksAfter = afterSelection.match(/^\n*/);
+  var newlinesBeforeSelection = breaksBefore ? breaksBefore[0].length : 0;
+  var newlinesAfterSelection = breaksAfter ? breaksAfter[0].length : 0;
+  var newlinesToAppend;
+  var newlinesToPrepend;
+
+  if (beforeSelection.match(/\S/) && newlinesBeforeSelection < 2) {
+    newlinesToAppend = repeat('\n', 2 - newlinesBeforeSelection);
+  }
+
+  if (afterSelection.match(/\S/) && newlinesAfterSelection < 2) {
+    newlinesToPrepend = repeat('\n', 2 - newlinesAfterSelection);
+  }
+
+  if (newlinesToAppend == null) {
+    newlinesToAppend = '';
+  }
+
+  if (newlinesToPrepend == null) {
+    newlinesToPrepend = '';
+  }
+
+  return {
+    newlinesToAppend: newlinesToAppend,
+    newlinesToPrepend: newlinesToPrepend
+  };
+}
+
+function blockStyle(textarea, arg) {
+  var newlinesToAppend;
+  var newlinesToPrepend;
+  var prefix = arg.prefix,
+      suffix = arg.suffix,
+      blockPrefix = arg.blockPrefix,
+      blockSuffix = arg.blockSuffix,
+      replaceNext = arg.replaceNext,
+      prefixSpace = arg.prefixSpace,
+      scanFor = arg.scanFor,
+      surroundWithNewlines = arg.surroundWithNewlines;
+  var originalSelectionStart = textarea.selectionStart;
+  var originalSelectionEnd = textarea.selectionEnd;
+  var selectedText = textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
+  var prefixToUse = isMultipleLines(selectedText) && blockPrefix.length > 0 ? "".concat(blockPrefix, "\n") : prefix;
+  var suffixToUse = isMultipleLines(selectedText) && blockSuffix.length > 0 ? "\n".concat(blockSuffix) : suffix;
+
+  if (prefixSpace) {
+    var beforeSelection = textarea.value[textarea.selectionStart - 1];
+
+    if (textarea.selectionStart !== 0 && beforeSelection != null && !beforeSelection.match(/\s/)) {
+      prefixToUse = " ".concat(prefixToUse);
+    }
+  }
+
+  selectedText = expandSelectedText(textarea, prefixToUse, suffixToUse, arg.multiline);
+  var selectionStart = textarea.selectionStart;
+  var selectionEnd = textarea.selectionEnd;
+  var hasReplaceNext = replaceNext.length > 0 && suffixToUse.indexOf(replaceNext) > -1 && selectedText.length > 0;
+
+  if (surroundWithNewlines) {
+    var ref = newlinesToSurroundSelectedText(textarea);
+    newlinesToAppend = ref.newlinesToAppend;
+    newlinesToPrepend = ref.newlinesToPrepend;
+    prefixToUse = newlinesToAppend + prefix;
+    suffixToUse += newlinesToPrepend;
+  }
+
+  if (selectedText.startsWith(prefixToUse) && selectedText.endsWith(suffixToUse)) {
+    var replacementText = selectedText.slice(prefixToUse.length, selectedText.length - suffixToUse.length);
+
+    if (originalSelectionStart === originalSelectionEnd) {
+      var position = originalSelectionStart - prefixToUse.length;
+      position = Math.max(position, selectionStart);
+      position = Math.min(position, selectionStart + replacementText.length);
+      selectionStart = selectionEnd = position;
+    } else {
+      selectionEnd = selectionStart + replacementText.length;
+    }
+
+    return {
+      text: replacementText,
+      selectionStart: selectionStart,
+      selectionEnd: selectionEnd
+    };
+  } else if (!hasReplaceNext) {
+    var _replacementText = prefixToUse + selectedText + suffixToUse;
+
+    selectionStart = originalSelectionStart + prefixToUse.length;
+    selectionEnd = originalSelectionEnd + prefixToUse.length;
+    var whitespaceEdges = selectedText.match(/^\s*|\s*$/g);
+
+    if (arg.trimFirst && whitespaceEdges) {
+      var leadingWhitespace = whitespaceEdges[0] || '';
+      var trailingWhitespace = whitespaceEdges[1] || '';
+      _replacementText = leadingWhitespace + prefixToUse + selectedText.trim() + suffixToUse + trailingWhitespace;
+      selectionStart += leadingWhitespace.length;
+      selectionEnd -= trailingWhitespace.length;
+    }
+
+    return {
+      text: _replacementText,
+      selectionStart: selectionStart,
+      selectionEnd: selectionEnd
+    };
+  } else if (scanFor.length > 0 && selectedText.match(scanFor)) {
+    suffixToUse = suffixToUse.replace(replaceNext, selectedText);
+
+    var _replacementText2 = prefixToUse + suffixToUse;
+
+    selectionStart = selectionEnd = selectionStart + prefixToUse.length;
+    return {
+      text: _replacementText2,
+      selectionStart: selectionStart,
+      selectionEnd: selectionEnd
+    };
+  } else {
+    var _replacementText3 = prefixToUse + selectedText + suffixToUse;
+
+    selectionStart = selectionStart + prefixToUse.length + selectedText.length + suffixToUse.indexOf(replaceNext);
+    selectionEnd = selectionStart + replaceNext.length;
+    return {
+      text: _replacementText3,
+      selectionStart: selectionStart,
+      selectionEnd: selectionEnd
+    };
+  }
+}
+
+function multilineStyle(textarea, arg) {
+  var prefix = arg.prefix,
+      suffix = arg.suffix,
+      surroundWithNewlines = arg.surroundWithNewlines;
+  var text = textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
+  var selectionStart = textarea.selectionStart;
+  var selectionEnd = textarea.selectionEnd;
+  var lines = text.split('\n');
+  var undoStyle = lines.every(function (line) {
+    return line.startsWith(prefix) && line.endsWith(suffix);
+  });
+
+  if (undoStyle) {
+    text = lines.map(function (line) {
+      return line.slice(prefix.length, line.length - suffix.length);
+    }).join('\n');
+    selectionEnd = selectionStart + text.length;
+  } else {
+    text = lines.map(function (line) {
+      return prefix + line + suffix;
+    }).join('\n');
+
+    if (surroundWithNewlines) {
+      var _newlinesToSurroundSe = newlinesToSurroundSelectedText(textarea),
+          newlinesToAppend = _newlinesToSurroundSe.newlinesToAppend,
+          newlinesToPrepend = _newlinesToSurroundSe.newlinesToPrepend;
+
+      selectionStart += newlinesToAppend.length;
+      selectionEnd = selectionStart + text.length;
+      text = newlinesToAppend + text + newlinesToPrepend;
+    }
+  }
+
+  return {
+    text: text,
+    selectionStart: selectionStart,
+    selectionEnd: selectionEnd
+  };
+}
+
+function undoOrderedListStyle(text) {
+  var lines = text.split('\n');
+  var orderedListRegex = /^\d+\.\s+/;
+  var shouldUndoOrderedList = lines.every(function (line) {
+    return orderedListRegex.test(line);
+  });
+  var result = lines;
+
+  if (shouldUndoOrderedList) {
+    result = lines.map(function (line) {
+      return line.replace(orderedListRegex, '');
+    });
+  }
+
+  return {
+    text: result.join('\n'),
+    processed: shouldUndoOrderedList
+  };
+}
+
+function undoUnorderedListStyle(text) {
+  var lines = text.split('\n');
+  var unorderedListPrefix = '- ';
+  var shouldUndoUnorderedList = lines.every(function (line) {
+    return line.startsWith(unorderedListPrefix);
+  });
+  var result = lines;
+
+  if (shouldUndoUnorderedList) {
+    result = lines.map(function (line) {
+      return line.slice(unorderedListPrefix.length, line.length);
+    });
+  }
+
+  return {
+    text: result.join('\n'),
+    processed: shouldUndoUnorderedList
+  };
+}
+
+function makePrefix(index, unorderedList) {
+  if (unorderedList) {
+    return '- ';
+  } else {
+    return "".concat(index + 1, ". ");
+  }
+}
+
+function clearExistingListStyle(style, selectedText) {
+  var undoResultOpositeList;
+  var undoResult;
+  var pristineText;
+
+  if (style.orderedList) {
+    undoResult = undoOrderedListStyle(selectedText);
+    undoResultOpositeList = undoUnorderedListStyle(undoResult.text);
+    pristineText = undoResultOpositeList.text;
+  } else {
+    undoResult = undoUnorderedListStyle(selectedText);
+    undoResultOpositeList = undoOrderedListStyle(undoResult.text);
+    pristineText = undoResultOpositeList.text;
+  }
+
+  return [undoResult, undoResultOpositeList, pristineText];
+}
+
+function listStyle(textarea, style) {
+  var noInitialSelection = textarea.selectionStart === textarea.selectionEnd;
+  var selectionStart = textarea.selectionStart;
+  var selectionEnd = textarea.selectionEnd;
+  expandSelectionToLine(textarea);
+  var selectedText = textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
+
+  var _clearExistingListSty = clearExistingListStyle(style, selectedText),
+      _clearExistingListSty2 = _slicedToArray(_clearExistingListSty, 3),
+      undoResult = _clearExistingListSty2[0],
+      undoResultOpositeList = _clearExistingListSty2[1],
+      pristineText = _clearExistingListSty2[2];
+
+  var prefixedLines = pristineText.split('\n').map(function (value, index) {
+    return "".concat(makePrefix(index, style.unorderedList)).concat(value);
+  });
+  var totalPrefixLength = prefixedLines.reduce(function (previousValue, _currentValue, currentIndex) {
+    return previousValue + makePrefix(currentIndex, style.unorderedList).length;
+  }, 0);
+  var totalPrefixLengthOpositeList = prefixedLines.reduce(function (previousValue, _currentValue, currentIndex) {
+    return previousValue + makePrefix(currentIndex, !style.unorderedList).length;
+  }, 0);
+
+  if (undoResult.processed) {
+    if (noInitialSelection) {
+      selectionStart = Math.max(selectionStart - makePrefix(0, style.unorderedList).length, 0);
+      selectionEnd = selectionStart;
+    } else {
+      selectionStart = textarea.selectionStart;
+      selectionEnd = textarea.selectionEnd - totalPrefixLength;
+    }
+
+    return {
+      text: pristineText,
+      selectionStart: selectionStart,
+      selectionEnd: selectionEnd
+    };
+  }
+
+  var _newlinesToSurroundSe2 = newlinesToSurroundSelectedText(textarea),
+      newlinesToAppend = _newlinesToSurroundSe2.newlinesToAppend,
+      newlinesToPrepend = _newlinesToSurroundSe2.newlinesToPrepend;
+
+  var text = newlinesToAppend + prefixedLines.join('\n') + newlinesToPrepend;
+
+  if (noInitialSelection) {
+    selectionStart = Math.max(selectionStart + makePrefix(0, style.unorderedList).length + newlinesToAppend.length, 0);
+    selectionEnd = selectionStart;
+  } else {
+    if (undoResultOpositeList.processed) {
+      selectionStart = Math.max(textarea.selectionStart + newlinesToAppend.length, 0);
+      selectionEnd = textarea.selectionEnd + newlinesToAppend.length + totalPrefixLength - totalPrefixLengthOpositeList;
+    } else {
+      selectionStart = Math.max(textarea.selectionStart + newlinesToAppend.length, 0);
+      selectionEnd = textarea.selectionEnd + newlinesToAppend.length + totalPrefixLength;
+    }
+  }
+
+  return {
+    text: text,
+    selectionStart: selectionStart,
+    selectionEnd: selectionEnd
+  };
+}
+
+function applyStyle(button, stylesToApply) {
+  var toolbar = button.closest('markdown-toolbar');
+  if (!(toolbar instanceof MarkdownToolbarElement)) return;
+  var defaults = {
+    prefix: '',
+    suffix: '',
+    blockPrefix: '',
+    blockSuffix: '',
+    multiline: false,
+    replaceNext: '',
+    prefixSpace: false,
+    scanFor: '',
+    surroundWithNewlines: false,
+    orderedList: false,
+    unorderedList: false,
+    trimFirst: false
+  };
+  var style = Object.assign(Object.assign({}, defaults), stylesToApply);
+  var field = toolbar.field;
+
+  if (field) {
+    field.focus();
+    styleSelectedText(field, style);
+  }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MarkdownToolbarElement);
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -18614,7 +19717,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Featurecard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Featurecard */ "./resources/js/components/Featurecard.vue");
 /* harmony import */ var _components_Bodycomponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Bodycomponent */ "./resources/js/components/Bodycomponent.vue");
 /* harmony import */ var marked__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! marked */ "./node_modules/marked/lib/marked.esm.js");
-/* harmony import */ var _github_markdown_toolbar_element__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @github/markdown-toolbar-element */ "./node_modules/@github/markdown-toolbar-element/dist/index.js");
+/* harmony import */ var _public_markdowntoolbar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../public/markdowntoolbar */ "./public/markdowntoolbar/index.js");
 
 
 
@@ -23789,626 +24892,6 @@ function compileToFunction(template, options) {
 (0,_vue_runtime_dom__WEBPACK_IMPORTED_MODULE_2__.registerRuntimeCompiler)(compileToFunction);
 
 
-
-
-/***/ }),
-
-/***/ "./node_modules/@github/markdown-toolbar-element/dist/index.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/@github/markdown-toolbar-element/dist/index.js ***!
-  \*********************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-const buttonSelectors = [
-    '[data-md-button]',
-    'md-header',
-    'md-bold',
-    'md-italic',
-    'md-quote',
-    'md-code',
-    'md-link',
-    'md-image',
-    'md-unordered-list',
-    'md-ordered-list',
-    'md-task-list',
-    'md-mention',
-    'md-ref',
-    'md-strikethrough'
-];
-function getButtons(toolbar) {
-    const els = [];
-    for (const button of toolbar.querySelectorAll(buttonSelectors.join(', '))) {
-        if (button.hidden || (button.offsetWidth <= 0 && button.offsetHeight <= 0))
-            continue;
-        if (button.closest('markdown-toolbar') === toolbar)
-            els.push(button);
-    }
-    return els;
-}
-function keydown(fn) {
-    return function (event) {
-        if (event.key === ' ' || event.key === 'Enter') {
-            event.preventDefault();
-            fn(event);
-        }
-    };
-}
-const styles = new WeakMap();
-class MarkdownButtonElement extends HTMLElement {
-    constructor() {
-        super();
-        const apply = () => {
-            const style = styles.get(this);
-            if (!style)
-                return;
-            applyStyle(this, style);
-        };
-        this.addEventListener('keydown', keydown(apply));
-        this.addEventListener('click', apply);
-    }
-    connectedCallback() {
-        if (!this.hasAttribute('role')) {
-            this.setAttribute('role', 'button');
-        }
-    }
-    click() {
-        const style = styles.get(this);
-        if (!style)
-            return;
-        applyStyle(this, style);
-    }
-}
-class MarkdownHeaderButtonElement extends MarkdownButtonElement {
-    constructor() {
-        super();
-        const level = parseInt(this.getAttribute('level') || '3', 10);
-        if (level < 1 || level > 6) {
-            return;
-        }
-        const prefix = `${'#'.repeat(level)} `;
-        styles.set(this, {
-            prefix
-        });
-    }
-}
-if (!window.customElements.get('md-header')) {
-    window.MarkdownHeaderButtonElement = MarkdownHeaderButtonElement;
-    window.customElements.define('md-header', MarkdownHeaderButtonElement);
-}
-class MarkdownBoldButtonElement extends MarkdownButtonElement {
-    constructor() {
-        super();
-        styles.set(this, { prefix: '**', suffix: '**', trimFirst: true });
-    }
-}
-if (!window.customElements.get('md-bold')) {
-    window.MarkdownBoldButtonElement = MarkdownBoldButtonElement;
-    window.customElements.define('md-bold', MarkdownBoldButtonElement);
-}
-class MarkdownItalicButtonElement extends MarkdownButtonElement {
-    constructor() {
-        super();
-        styles.set(this, { prefix: '_', suffix: '_', trimFirst: true });
-    }
-}
-if (!window.customElements.get('md-italic')) {
-    window.MarkdownItalicButtonElement = MarkdownItalicButtonElement;
-    window.customElements.define('md-italic', MarkdownItalicButtonElement);
-}
-class MarkdownQuoteButtonElement extends MarkdownButtonElement {
-    constructor() {
-        super();
-        styles.set(this, { prefix: '> ', multiline: true, surroundWithNewlines: true });
-    }
-}
-if (!window.customElements.get('md-quote')) {
-    window.MarkdownQuoteButtonElement = MarkdownQuoteButtonElement;
-    window.customElements.define('md-quote', MarkdownQuoteButtonElement);
-}
-class MarkdownCodeButtonElement extends MarkdownButtonElement {
-    constructor() {
-        super();
-        styles.set(this, { prefix: '`', suffix: '`', blockPrefix: '```', blockSuffix: '```' });
-    }
-}
-if (!window.customElements.get('md-code')) {
-    window.MarkdownCodeButtonElement = MarkdownCodeButtonElement;
-    window.customElements.define('md-code', MarkdownCodeButtonElement);
-}
-class MarkdownLinkButtonElement extends MarkdownButtonElement {
-    constructor() {
-        super();
-        styles.set(this, { prefix: '[', suffix: '](url)', replaceNext: 'url', scanFor: 'https?://' });
-    }
-}
-if (!window.customElements.get('md-link')) {
-    window.MarkdownLinkButtonElement = MarkdownLinkButtonElement;
-    window.customElements.define('md-link', MarkdownLinkButtonElement);
-}
-class MarkdownImageButtonElement extends MarkdownButtonElement {
-    constructor() {
-        super();
-        styles.set(this, { prefix: '![', suffix: '](url)', replaceNext: 'url', scanFor: 'https?://' });
-    }
-}
-if (!window.customElements.get('md-image')) {
-    window.MarkdownImageButtonElement = MarkdownImageButtonElement;
-    window.customElements.define('md-image', MarkdownImageButtonElement);
-}
-class MarkdownUnorderedListButtonElement extends MarkdownButtonElement {
-    constructor() {
-        super();
-        styles.set(this, { prefix: '- ', multiline: true, unorderedList: true });
-    }
-}
-if (!window.customElements.get('md-unordered-list')) {
-    window.MarkdownUnorderedListButtonElement = MarkdownUnorderedListButtonElement;
-    window.customElements.define('md-unordered-list', MarkdownUnorderedListButtonElement);
-}
-class MarkdownOrderedListButtonElement extends MarkdownButtonElement {
-    constructor() {
-        super();
-        styles.set(this, { prefix: '1. ', multiline: true, orderedList: true });
-    }
-}
-if (!window.customElements.get('md-ordered-list')) {
-    window.MarkdownOrderedListButtonElement = MarkdownOrderedListButtonElement;
-    window.customElements.define('md-ordered-list', MarkdownOrderedListButtonElement);
-}
-class MarkdownTaskListButtonElement extends MarkdownButtonElement {
-    constructor() {
-        super();
-        styles.set(this, { prefix: '- [ ] ', multiline: true, surroundWithNewlines: true });
-    }
-}
-if (!window.customElements.get('md-task-list')) {
-    window.MarkdownTaskListButtonElement = MarkdownTaskListButtonElement;
-    window.customElements.define('md-task-list', MarkdownTaskListButtonElement);
-}
-class MarkdownMentionButtonElement extends MarkdownButtonElement {
-    constructor() {
-        super();
-        styles.set(this, { prefix: '@', prefixSpace: true });
-    }
-}
-if (!window.customElements.get('md-mention')) {
-    window.MarkdownMentionButtonElement = MarkdownMentionButtonElement;
-    window.customElements.define('md-mention', MarkdownMentionButtonElement);
-}
-class MarkdownRefButtonElement extends MarkdownButtonElement {
-    constructor() {
-        super();
-        styles.set(this, { prefix: '#', prefixSpace: true });
-    }
-}
-if (!window.customElements.get('md-ref')) {
-    window.MarkdownRefButtonElement = MarkdownRefButtonElement;
-    window.customElements.define('md-ref', MarkdownRefButtonElement);
-}
-class MarkdownStrikethroughButtonElement extends MarkdownButtonElement {
-    constructor() {
-        super();
-        styles.set(this, { prefix: '~~', suffix: '~~', trimFirst: true });
-    }
-}
-if (!window.customElements.get('md-strikethrough')) {
-    window.MarkdownStrikethroughButtonElement = MarkdownStrikethroughButtonElement;
-    window.customElements.define('md-strikethrough', MarkdownStrikethroughButtonElement);
-}
-class MarkdownToolbarElement extends HTMLElement {
-    constructor() {
-        super();
-    }
-    connectedCallback() {
-        if (!this.hasAttribute('role')) {
-            this.setAttribute('role', 'toolbar');
-        }
-        this.addEventListener('keydown', focusKeydown);
-        this.setAttribute('tabindex', '0');
-        this.addEventListener('focus', onToolbarFocus, { once: true });
-    }
-    disconnectedCallback() {
-        this.removeEventListener('keydown', focusKeydown);
-    }
-    get field() {
-        const id = this.getAttribute('for');
-        if (!id)
-            return null;
-        const root = 'getRootNode' in this ? this.getRootNode() : document;
-        let field;
-        if (root instanceof Document || root instanceof ShadowRoot) {
-            field = root.getElementById(id);
-        }
-        return field instanceof HTMLTextAreaElement ? field : null;
-    }
-}
-function onToolbarFocus({ target }) {
-    if (!(target instanceof Element))
-        return;
-    target.removeAttribute('tabindex');
-    let tabindex = '0';
-    for (const button of getButtons(target)) {
-        button.setAttribute('tabindex', tabindex);
-        if (tabindex === '0') {
-            button.focus();
-            tabindex = '-1';
-        }
-    }
-}
-function focusKeydown(event) {
-    const key = event.key;
-    if (key !== 'ArrowRight' && key !== 'ArrowLeft' && key !== 'Home' && key !== 'End')
-        return;
-    const toolbar = event.currentTarget;
-    if (!(toolbar instanceof HTMLElement))
-        return;
-    const buttons = getButtons(toolbar);
-    const index = buttons.indexOf(event.target);
-    const length = buttons.length;
-    if (index === -1)
-        return;
-    let n = 0;
-    if (key === 'ArrowLeft')
-        n = index - 1;
-    if (key === 'ArrowRight')
-        n = index + 1;
-    if (key === 'End')
-        n = length - 1;
-    if (n < 0)
-        n = length - 1;
-    if (n > length - 1)
-        n = 0;
-    for (let i = 0; i < length; i += 1) {
-        buttons[i].setAttribute('tabindex', i === n ? '0' : '-1');
-    }
-    event.preventDefault();
-    buttons[n].focus();
-}
-if (!window.customElements.get('markdown-toolbar')) {
-    window.MarkdownToolbarElement = MarkdownToolbarElement;
-    window.customElements.define('markdown-toolbar', MarkdownToolbarElement);
-}
-function isMultipleLines(string) {
-    return string.trim().split('\n').length > 1;
-}
-function repeat(string, n) {
-    return Array(n + 1).join(string);
-}
-function wordSelectionStart(text, i) {
-    let index = i;
-    while (text[index] && text[index - 1] != null && !text[index - 1].match(/\s/)) {
-        index--;
-    }
-    return index;
-}
-function wordSelectionEnd(text, i, multiline) {
-    let index = i;
-    const breakpoint = multiline ? /\n/ : /\s/;
-    while (text[index] && !text[index].match(breakpoint)) {
-        index++;
-    }
-    return index;
-}
-let canInsertText = null;
-function insertText(textarea, { text, selectionStart, selectionEnd }) {
-    const originalSelectionStart = textarea.selectionStart;
-    const before = textarea.value.slice(0, originalSelectionStart);
-    const after = textarea.value.slice(textarea.selectionEnd);
-    if (canInsertText === null || canInsertText === true) {
-        textarea.contentEditable = 'true';
-        try {
-            canInsertText = document.execCommand('insertText', false, text);
-        }
-        catch (error) {
-            canInsertText = false;
-        }
-        textarea.contentEditable = 'false';
-    }
-    if (canInsertText && !textarea.value.slice(0, textarea.selectionStart).endsWith(text)) {
-        canInsertText = false;
-    }
-    if (!canInsertText) {
-        try {
-            document.execCommand('ms-beginUndoUnit');
-        }
-        catch (e) {
-        }
-        textarea.value = before + text + after;
-        try {
-            document.execCommand('ms-endUndoUnit');
-        }
-        catch (e) {
-        }
-        textarea.dispatchEvent(new CustomEvent('input', { bubbles: true, cancelable: true }));
-    }
-    if (selectionStart != null && selectionEnd != null) {
-        textarea.setSelectionRange(selectionStart, selectionEnd);
-    }
-    else {
-        textarea.setSelectionRange(originalSelectionStart, textarea.selectionEnd);
-    }
-}
-function styleSelectedText(textarea, styleArgs) {
-    const text = textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
-    let result;
-    if (styleArgs.orderedList || styleArgs.unorderedList) {
-        result = listStyle(textarea, styleArgs);
-    }
-    else if (styleArgs.multiline && isMultipleLines(text)) {
-        result = multilineStyle(textarea, styleArgs);
-    }
-    else {
-        result = blockStyle(textarea, styleArgs);
-    }
-    insertText(textarea, result);
-}
-function expandSelectionToLine(textarea) {
-    const lines = textarea.value.split('\n');
-    let counter = 0;
-    for (let index = 0; index < lines.length; index++) {
-        const lineLength = lines[index].length + 1;
-        if (textarea.selectionStart >= counter && textarea.selectionStart < counter + lineLength) {
-            textarea.selectionStart = counter;
-        }
-        if (textarea.selectionEnd >= counter && textarea.selectionEnd < counter + lineLength) {
-            textarea.selectionEnd = counter + lineLength - 1;
-        }
-        counter += lineLength;
-    }
-}
-function expandSelectedText(textarea, prefixToUse, suffixToUse, multiline = false) {
-    if (textarea.selectionStart === textarea.selectionEnd) {
-        textarea.selectionStart = wordSelectionStart(textarea.value, textarea.selectionStart);
-        textarea.selectionEnd = wordSelectionEnd(textarea.value, textarea.selectionEnd, multiline);
-    }
-    else {
-        const expandedSelectionStart = textarea.selectionStart - prefixToUse.length;
-        const expandedSelectionEnd = textarea.selectionEnd + suffixToUse.length;
-        const beginsWithPrefix = textarea.value.slice(expandedSelectionStart, textarea.selectionStart) === prefixToUse;
-        const endsWithSuffix = textarea.value.slice(textarea.selectionEnd, expandedSelectionEnd) === suffixToUse;
-        if (beginsWithPrefix && endsWithSuffix) {
-            textarea.selectionStart = expandedSelectionStart;
-            textarea.selectionEnd = expandedSelectionEnd;
-        }
-    }
-    return textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
-}
-function newlinesToSurroundSelectedText(textarea) {
-    const beforeSelection = textarea.value.slice(0, textarea.selectionStart);
-    const afterSelection = textarea.value.slice(textarea.selectionEnd);
-    const breaksBefore = beforeSelection.match(/\n*$/);
-    const breaksAfter = afterSelection.match(/^\n*/);
-    const newlinesBeforeSelection = breaksBefore ? breaksBefore[0].length : 0;
-    const newlinesAfterSelection = breaksAfter ? breaksAfter[0].length : 0;
-    let newlinesToAppend;
-    let newlinesToPrepend;
-    if (beforeSelection.match(/\S/) && newlinesBeforeSelection < 2) {
-        newlinesToAppend = repeat('\n', 2 - newlinesBeforeSelection);
-    }
-    if (afterSelection.match(/\S/) && newlinesAfterSelection < 2) {
-        newlinesToPrepend = repeat('\n', 2 - newlinesAfterSelection);
-    }
-    if (newlinesToAppend == null) {
-        newlinesToAppend = '';
-    }
-    if (newlinesToPrepend == null) {
-        newlinesToPrepend = '';
-    }
-    return { newlinesToAppend, newlinesToPrepend };
-}
-function blockStyle(textarea, arg) {
-    let newlinesToAppend;
-    let newlinesToPrepend;
-    const { prefix, suffix, blockPrefix, blockSuffix, replaceNext, prefixSpace, scanFor, surroundWithNewlines } = arg;
-    const originalSelectionStart = textarea.selectionStart;
-    const originalSelectionEnd = textarea.selectionEnd;
-    let selectedText = textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
-    let prefixToUse = isMultipleLines(selectedText) && blockPrefix.length > 0 ? `${blockPrefix}\n` : prefix;
-    let suffixToUse = isMultipleLines(selectedText) && blockSuffix.length > 0 ? `\n${blockSuffix}` : suffix;
-    if (prefixSpace) {
-        const beforeSelection = textarea.value[textarea.selectionStart - 1];
-        if (textarea.selectionStart !== 0 && beforeSelection != null && !beforeSelection.match(/\s/)) {
-            prefixToUse = ` ${prefixToUse}`;
-        }
-    }
-    selectedText = expandSelectedText(textarea, prefixToUse, suffixToUse, arg.multiline);
-    let selectionStart = textarea.selectionStart;
-    let selectionEnd = textarea.selectionEnd;
-    const hasReplaceNext = replaceNext.length > 0 && suffixToUse.indexOf(replaceNext) > -1 && selectedText.length > 0;
-    if (surroundWithNewlines) {
-        const ref = newlinesToSurroundSelectedText(textarea);
-        newlinesToAppend = ref.newlinesToAppend;
-        newlinesToPrepend = ref.newlinesToPrepend;
-        prefixToUse = newlinesToAppend + prefix;
-        suffixToUse += newlinesToPrepend;
-    }
-    if (selectedText.startsWith(prefixToUse) && selectedText.endsWith(suffixToUse)) {
-        const replacementText = selectedText.slice(prefixToUse.length, selectedText.length - suffixToUse.length);
-        if (originalSelectionStart === originalSelectionEnd) {
-            let position = originalSelectionStart - prefixToUse.length;
-            position = Math.max(position, selectionStart);
-            position = Math.min(position, selectionStart + replacementText.length);
-            selectionStart = selectionEnd = position;
-        }
-        else {
-            selectionEnd = selectionStart + replacementText.length;
-        }
-        return { text: replacementText, selectionStart, selectionEnd };
-    }
-    else if (!hasReplaceNext) {
-        let replacementText = prefixToUse + selectedText + suffixToUse;
-        selectionStart = originalSelectionStart + prefixToUse.length;
-        selectionEnd = originalSelectionEnd + prefixToUse.length;
-        const whitespaceEdges = selectedText.match(/^\s*|\s*$/g);
-        if (arg.trimFirst && whitespaceEdges) {
-            const leadingWhitespace = whitespaceEdges[0] || '';
-            const trailingWhitespace = whitespaceEdges[1] || '';
-            replacementText = leadingWhitespace + prefixToUse + selectedText.trim() + suffixToUse + trailingWhitespace;
-            selectionStart += leadingWhitespace.length;
-            selectionEnd -= trailingWhitespace.length;
-        }
-        return { text: replacementText, selectionStart, selectionEnd };
-    }
-    else if (scanFor.length > 0 && selectedText.match(scanFor)) {
-        suffixToUse = suffixToUse.replace(replaceNext, selectedText);
-        const replacementText = prefixToUse + suffixToUse;
-        selectionStart = selectionEnd = selectionStart + prefixToUse.length;
-        return { text: replacementText, selectionStart, selectionEnd };
-    }
-    else {
-        const replacementText = prefixToUse + selectedText + suffixToUse;
-        selectionStart = selectionStart + prefixToUse.length + selectedText.length + suffixToUse.indexOf(replaceNext);
-        selectionEnd = selectionStart + replaceNext.length;
-        return { text: replacementText, selectionStart, selectionEnd };
-    }
-}
-function multilineStyle(textarea, arg) {
-    const { prefix, suffix, surroundWithNewlines } = arg;
-    let text = textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
-    let selectionStart = textarea.selectionStart;
-    let selectionEnd = textarea.selectionEnd;
-    const lines = text.split('\n');
-    const undoStyle = lines.every(line => line.startsWith(prefix) && line.endsWith(suffix));
-    if (undoStyle) {
-        text = lines.map(line => line.slice(prefix.length, line.length - suffix.length)).join('\n');
-        selectionEnd = selectionStart + text.length;
-    }
-    else {
-        text = lines.map(line => prefix + line + suffix).join('\n');
-        if (surroundWithNewlines) {
-            const { newlinesToAppend, newlinesToPrepend } = newlinesToSurroundSelectedText(textarea);
-            selectionStart += newlinesToAppend.length;
-            selectionEnd = selectionStart + text.length;
-            text = newlinesToAppend + text + newlinesToPrepend;
-        }
-    }
-    return { text, selectionStart, selectionEnd };
-}
-function undoOrderedListStyle(text) {
-    const lines = text.split('\n');
-    const orderedListRegex = /^\d+\.\s+/;
-    const shouldUndoOrderedList = lines.every(line => orderedListRegex.test(line));
-    let result = lines;
-    if (shouldUndoOrderedList) {
-        result = lines.map(line => line.replace(orderedListRegex, ''));
-    }
-    return {
-        text: result.join('\n'),
-        processed: shouldUndoOrderedList
-    };
-}
-function undoUnorderedListStyle(text) {
-    const lines = text.split('\n');
-    const unorderedListPrefix = '- ';
-    const shouldUndoUnorderedList = lines.every(line => line.startsWith(unorderedListPrefix));
-    let result = lines;
-    if (shouldUndoUnorderedList) {
-        result = lines.map(line => line.slice(unorderedListPrefix.length, line.length));
-    }
-    return {
-        text: result.join('\n'),
-        processed: shouldUndoUnorderedList
-    };
-}
-function makePrefix(index, unorderedList) {
-    if (unorderedList) {
-        return '- ';
-    }
-    else {
-        return `${index + 1}. `;
-    }
-}
-function clearExistingListStyle(style, selectedText) {
-    let undoResultOpositeList;
-    let undoResult;
-    let pristineText;
-    if (style.orderedList) {
-        undoResult = undoOrderedListStyle(selectedText);
-        undoResultOpositeList = undoUnorderedListStyle(undoResult.text);
-        pristineText = undoResultOpositeList.text;
-    }
-    else {
-        undoResult = undoUnorderedListStyle(selectedText);
-        undoResultOpositeList = undoOrderedListStyle(undoResult.text);
-        pristineText = undoResultOpositeList.text;
-    }
-    return [undoResult, undoResultOpositeList, pristineText];
-}
-function listStyle(textarea, style) {
-    const noInitialSelection = textarea.selectionStart === textarea.selectionEnd;
-    let selectionStart = textarea.selectionStart;
-    let selectionEnd = textarea.selectionEnd;
-    expandSelectionToLine(textarea);
-    const selectedText = textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
-    const [undoResult, undoResultOpositeList, pristineText] = clearExistingListStyle(style, selectedText);
-    const prefixedLines = pristineText.split('\n').map((value, index) => {
-        return `${makePrefix(index, style.unorderedList)}${value}`;
-    });
-    const totalPrefixLength = prefixedLines.reduce((previousValue, _currentValue, currentIndex) => {
-        return previousValue + makePrefix(currentIndex, style.unorderedList).length;
-    }, 0);
-    const totalPrefixLengthOpositeList = prefixedLines.reduce((previousValue, _currentValue, currentIndex) => {
-        return previousValue + makePrefix(currentIndex, !style.unorderedList).length;
-    }, 0);
-    if (undoResult.processed) {
-        if (noInitialSelection) {
-            selectionStart = Math.max(selectionStart - makePrefix(0, style.unorderedList).length, 0);
-            selectionEnd = selectionStart;
-        }
-        else {
-            selectionStart = textarea.selectionStart;
-            selectionEnd = textarea.selectionEnd - totalPrefixLength;
-        }
-        return { text: pristineText, selectionStart, selectionEnd };
-    }
-    const { newlinesToAppend, newlinesToPrepend } = newlinesToSurroundSelectedText(textarea);
-    const text = newlinesToAppend + prefixedLines.join('\n') + newlinesToPrepend;
-    if (noInitialSelection) {
-        selectionStart = Math.max(selectionStart + makePrefix(0, style.unorderedList).length + newlinesToAppend.length, 0);
-        selectionEnd = selectionStart;
-    }
-    else {
-        if (undoResultOpositeList.processed) {
-            selectionStart = Math.max(textarea.selectionStart + newlinesToAppend.length, 0);
-            selectionEnd = textarea.selectionEnd + newlinesToAppend.length + totalPrefixLength - totalPrefixLengthOpositeList;
-        }
-        else {
-            selectionStart = Math.max(textarea.selectionStart + newlinesToAppend.length, 0);
-            selectionEnd = textarea.selectionEnd + newlinesToAppend.length + totalPrefixLength;
-        }
-    }
-    return { text, selectionStart, selectionEnd };
-}
-function applyStyle(button, stylesToApply) {
-    const toolbar = button.closest('markdown-toolbar');
-    if (!(toolbar instanceof MarkdownToolbarElement))
-        return;
-    const defaults = {
-        prefix: '',
-        suffix: '',
-        blockPrefix: '',
-        blockSuffix: '',
-        multiline: false,
-        replaceNext: '',
-        prefixSpace: false,
-        scanFor: '',
-        surroundWithNewlines: false,
-        orderedList: false,
-        unorderedList: false,
-        trimFirst: false
-    };
-    const style = Object.assign(Object.assign({}, defaults), stylesToApply);
-    const field = toolbar.field;
-    if (field) {
-        field.focus();
-        styleSelectedText(field, style);
-    }
-}
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MarkdownToolbarElement);
 
 
 /***/ }),
