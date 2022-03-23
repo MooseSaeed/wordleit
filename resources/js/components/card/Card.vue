@@ -32,6 +32,7 @@ export default {
         mouseX: 0,
         mouseY: 0,
         mouseLeaveDelay: null,
+        screenSize: "",
     }),
 
     computed: {
@@ -44,16 +45,28 @@ export default {
         cardStyle() {
             const rX = this.mousePX * 40;
             const rY = this.mousePY * -40;
-            return {
-                transform: `rotateY(${rX}deg) rotateX(${rY}deg)`,
-            };
+            this.screenSize = window.innerHeight = window.innerWidth;
+            if (this.screenSize >= 1024) {
+                return {
+                    transform: `rotateY(${rX}deg) rotateX(${rY}deg)`,
+                };
+            }
+            if (this.screenSize >= 1024) {
+                ("");
+            }
         },
         cardBgTransform() {
+            this.screenSize = window.innerHeight = window.innerWidth;
             const tX = this.mousePX * -30;
             const tY = this.mousePY * -30;
-            return {
-                transform: `translateX(${tX}px) translateY(${tY}px)`,
-            };
+            if (this.screenSize >= 1024) {
+                return {
+                    transform: `translateX(${tX}px) translateY(${tY}px)`,
+                };
+            }
+            if (this.screenSize >= 1024) {
+                ("");
+            }
         },
         cardBgImage() {
             return {

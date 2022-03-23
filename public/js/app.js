@@ -17738,7 +17738,8 @@ __webpack_require__.r(__webpack_exports__);
       height: 0,
       mouseX: 0,
       mouseY: 0,
-      mouseLeaveDelay: null
+      mouseLeaveDelay: null,
+      screenSize: ""
     };
   },
   computed: {
@@ -17751,16 +17752,32 @@ __webpack_require__.r(__webpack_exports__);
     cardStyle: function cardStyle() {
       var rX = this.mousePX * 40;
       var rY = this.mousePY * -40;
-      return {
-        transform: "rotateY(".concat(rX, "deg) rotateX(").concat(rY, "deg)")
-      };
+      this.screenSize = window.innerHeight = window.innerWidth;
+
+      if (this.screenSize >= 1024) {
+        return {
+          transform: "rotateY(".concat(rX, "deg) rotateX(").concat(rY, "deg)")
+        };
+      }
+
+      if (this.screenSize >= 1024) {
+        "";
+      }
     },
     cardBgTransform: function cardBgTransform() {
+      this.screenSize = window.innerHeight = window.innerWidth;
       var tX = this.mousePX * -30;
       var tY = this.mousePY * -30;
-      return {
-        transform: "translateX(".concat(tX, "px) translateY(").concat(tY, "px)")
-      };
+
+      if (this.screenSize >= 1024) {
+        return {
+          transform: "translateX(".concat(tX, "px) translateY(").concat(tY, "px)")
+        };
+      }
+
+      if (this.screenSize >= 1024) {
+        "";
+      }
     },
     cardBgImage: function cardBgImage() {
       return {
