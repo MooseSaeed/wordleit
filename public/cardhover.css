@@ -1,9 +1,11 @@
 html {
     scroll-behavior: smooth;
 }
-
+body {
+    -webkit-font-smoothing: antialiased;
+}
 .card-wrap {
-    transform: perspective(200rem);
+    transform: perspective(1150px);
     transform-style: preserve-3d;
     border-radius: 0.75rem;
 }
@@ -35,7 +37,14 @@ html {
 
 .card {
     position: relative;
+    flex: 0 0 256px;
+    position: relative;
     overflow: hidden;
+    width: 256px;
+    height: 288px;
+    transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    box-shadow: rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px,
+        inset rgba(255, 255, 255, 0.5) 0 0 0 6px;
     transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
@@ -95,4 +104,40 @@ html {
 .card-info h1 {
     font-family: "Playfair Display";
     text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
+}
+
+@media screen and (max-width: 1024px) {
+    .card {
+        transform: none !important;
+    }
+    .card-bg {
+        transform: none !important;
+    }
+    .card-info p {
+        transform: none !important;
+        opacity: 1;
+    }
+    .card-wrap:hover .card-info:after {
+        transform: none !important;
+    }
+    .card-wrap:hover .card-info,
+    .card-wrap:hover .card-info p {
+        transition: none;
+        transform: none;
+    }
+    .card-wrap:hover .card-info {
+        transform: none;
+    }
+    .card-info:after {
+        position: relative;
+        background-image: none;
+        transform: none;
+        transition: none;
+    }
+    .card-info {
+        position: relative;
+        color: #fff;
+        transform: none;
+        transition: none;
+    }
 }

@@ -28,7 +28,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 h2,
 p {
     text-shadow: -3px 2px 4px rgba(0, 0, 0, 0.8);

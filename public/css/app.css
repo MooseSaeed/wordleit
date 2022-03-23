@@ -439,9 +439,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .m-0 {
   margin: 0px;
 }
-.m-5 {
-  margin: 1.25rem;
-}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -467,20 +464,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-3 {
   margin-top: 0.75rem;
 }
+.mb-16 {
+  margin-bottom: 4rem;
+}
 .mb-5 {
   margin-bottom: 1.25rem;
 }
 .mt-5 {
   margin-top: 1.25rem;
-}
-.mb-7 {
-  margin-bottom: 1.75rem;
-}
-.mb-10 {
-  margin-bottom: 2.5rem;
-}
-.mb-16 {
-  margin-bottom: 4rem;
 }
 .block {
   display: block;
@@ -524,9 +515,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .max-w-xl {
   max-width: 36rem;
-}
-.max-w-none {
-  max-width: none;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -668,10 +656,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-gradient-from: #9333ea;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(147 51 234 / 0));
 }
-.from-neutral-400 {
-  --tw-gradient-from: #a3a3a3;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(163 163 163 / 0));
-}
 .from-purple-500 {
   --tw-gradient-from: #a855f7;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(168 85 247 / 0));
@@ -751,9 +735,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-center {
   text-align: center;
 }
-.font-serif {
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-}
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -773,10 +754,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
-}
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 .font-bold {
   font-weight: 700;

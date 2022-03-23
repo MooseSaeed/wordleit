@@ -42,15 +42,15 @@ export default {
             return this.mouseY / this.height;
         },
         cardStyle() {
-            const rX = this.mousePX * 30;
-            const rY = this.mousePY * -30;
+            const rX = this.mousePX * 40;
+            const rY = this.mousePY * -40;
             return {
                 transform: `rotateY(${rX}deg) rotateX(${rY}deg)`,
             };
         },
         cardBgTransform() {
-            const tX = this.mousePX * -40;
-            const tY = this.mousePY * -40;
+            const tX = this.mousePX * -30;
+            const tY = this.mousePY * -30;
             return {
                 transform: `translateX(${tX}px) translateY(${tY}px)`,
             };
@@ -80,10 +80,4 @@ export default {
 };
 </script>
 
-<style>
-@media screen and (max-width: 1024px) {
-    .card {
-        transform: none !important;
-    }
-}
-</style>
+<style></style>
