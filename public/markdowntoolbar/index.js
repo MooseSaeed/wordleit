@@ -1,33 +1,37 @@
 const buttonSelectors = [
-    '[data-md-button]',
-    'md-header',
-    'md-bold',
-    'md-italic',
-    'md-quote',
-    'md-code',
-    'md-link',
-    'md-image',
-    'md-unordered-list',
-    'md-ordered-list',
-    'md-task-list',
-    'md-mention',
-    'md-ref',
-    'md-strikethrough',
-    'md-table',
+    "[data-md-button]",
+    "md-header",
+    "md-bold",
+    "md-italic",
+    "md-quote",
+    "md-code",
+    "md-link",
+    "md-image",
+    "md-unordered-list",
+    "md-ordered-list",
+    "md-task-list",
+    "md-mention",
+    "md-ref",
+    "md-strikethrough",
+    "md-table",
+    "md-underline",
+    "md-linedivider",
 ];
 function getButtons(toolbar) {
     const els = [];
-    for (const button of toolbar.querySelectorAll(buttonSelectors.join(', '))) {
-        if (button.hidden || (button.offsetWidth <= 0 && button.offsetHeight <= 0))
+    for (const button of toolbar.querySelectorAll(buttonSelectors.join(", "))) {
+        if (
+            button.hidden ||
+            (button.offsetWidth <= 0 && button.offsetHeight <= 0)
+        )
             continue;
-        if (button.closest('markdown-toolbar') === toolbar)
-            els.push(button);
+        if (button.closest("markdown-toolbar") === toolbar) els.push(button);
     }
     return els;
 }
 function keydown(fn) {
     return function (event) {
-        if (event.key === ' ' || event.key === 'Enter') {
+        if (event.key === " " || event.key === "Enter") {
             event.preventDefault();
             fn(event);
         }
@@ -39,192 +43,257 @@ class MarkdownButtonElement extends HTMLElement {
         super();
         const apply = () => {
             const style = styles.get(this);
-            if (!style)
-                return;
+            if (!style) return;
             applyStyle(this, style);
         };
-        this.addEventListener('keydown', keydown(apply));
-        this.addEventListener('click', apply);
+        this.addEventListener("keydown", keydown(apply));
+        this.addEventListener("click", apply);
     }
     connectedCallback() {
-        if (!this.hasAttribute('role')) {
-            this.setAttribute('role', 'button');
+        if (!this.hasAttribute("role")) {
+            this.setAttribute("role", "button");
         }
     }
     click() {
         const style = styles.get(this);
-        if (!style)
-            return;
+        if (!style) return;
         applyStyle(this, style);
     }
 }
 class MarkdownHeaderButtonElement extends MarkdownButtonElement {
     constructor() {
         super();
-        const level = parseInt(this.getAttribute('level') || '3', 10);
+        const level = parseInt(this.getAttribute("level") || "3", 10);
         if (level < 1 || level > 6) {
             return;
         }
-        const prefix = `${'#'.repeat(level)} `;
+        const prefix = `${"#".repeat(level)} `;
         styles.set(this, {
-            prefix
+            prefix,
         });
     }
 }
-if (!window.customElements.get('md-header')) {
+if (!window.customElements.get("md-header")) {
     window.MarkdownHeaderButtonElement = MarkdownHeaderButtonElement;
-    window.customElements.define('md-header', MarkdownHeaderButtonElement);
+    window.customElements.define("md-header", MarkdownHeaderButtonElement);
 }
 class MarkdownBoldButtonElement extends MarkdownButtonElement {
     constructor() {
         super();
-        styles.set(this, { prefix: '**', suffix: '**', trimFirst: true });
+        styles.set(this, { prefix: "**", suffix: "**", trimFirst: true });
     }
 }
-if (!window.customElements.get('md-bold')) {
+if (!window.customElements.get("md-bold")) {
     window.MarkdownBoldButtonElement = MarkdownBoldButtonElement;
-    window.customElements.define('md-bold', MarkdownBoldButtonElement);
+    window.customElements.define("md-bold", MarkdownBoldButtonElement);
 }
 class MarkdownItalicButtonElement extends MarkdownButtonElement {
     constructor() {
         super();
-        styles.set(this, { prefix: '_', suffix: '_', trimFirst: true });
+        styles.set(this, { prefix: "_", suffix: "_", trimFirst: true });
     }
 }
-if (!window.customElements.get('md-italic')) {
+if (!window.customElements.get("md-italic")) {
     window.MarkdownItalicButtonElement = MarkdownItalicButtonElement;
-    window.customElements.define('md-italic', MarkdownItalicButtonElement);
+    window.customElements.define("md-italic", MarkdownItalicButtonElement);
 }
 class MarkdownQuoteButtonElement extends MarkdownButtonElement {
     constructor() {
         super();
-        styles.set(this, { prefix: '> ', multiline: true, surroundWithNewlines: true });
+        styles.set(this, {
+            prefix: "> ",
+            multiline: true,
+            surroundWithNewlines: true,
+        });
     }
 }
-if (!window.customElements.get('md-quote')) {
+if (!window.customElements.get("md-quote")) {
     window.MarkdownQuoteButtonElement = MarkdownQuoteButtonElement;
-    window.customElements.define('md-quote', MarkdownQuoteButtonElement);
+    window.customElements.define("md-quote", MarkdownQuoteButtonElement);
 }
 class MarkdownCodeButtonElement extends MarkdownButtonElement {
     constructor() {
         super();
-        styles.set(this, { prefix: '`', suffix: '`', blockPrefix: '```', blockSuffix: '```' });
+        styles.set(this, {
+            prefix: "`",
+            suffix: "`",
+            blockPrefix: "```",
+            blockSuffix: "```",
+        });
     }
 }
-if (!window.customElements.get('md-code')) {
+if (!window.customElements.get("md-code")) {
     window.MarkdownCodeButtonElement = MarkdownCodeButtonElement;
-    window.customElements.define('md-code', MarkdownCodeButtonElement);
+    window.customElements.define("md-code", MarkdownCodeButtonElement);
 }
 class MarkdownLinkButtonElement extends MarkdownButtonElement {
     constructor() {
         super();
-        styles.set(this, { prefix: '[', suffix: '](url)', replaceNext: 'url', scanFor: 'https?://' });
+        styles.set(this, {
+            prefix: "[",
+            suffix: "](url)",
+            replaceNext: "url",
+            scanFor: "https?://",
+        });
     }
 }
-if (!window.customElements.get('md-link')) {
+if (!window.customElements.get("md-link")) {
     window.MarkdownLinkButtonElement = MarkdownLinkButtonElement;
-    window.customElements.define('md-link', MarkdownLinkButtonElement);
+    window.customElements.define("md-link", MarkdownLinkButtonElement);
 }
 class MarkdownImageButtonElement extends MarkdownButtonElement {
     constructor() {
         super();
-        styles.set(this, { prefix: '![', suffix: '](url)', replaceNext: 'url', scanFor: 'https?://' });
+        styles.set(this, {
+            prefix: "![",
+            suffix: "](url)",
+            replaceNext: "url",
+            scanFor: "https?://",
+        });
     }
 }
-if (!window.customElements.get('md-image')) {
+if (!window.customElements.get("md-image")) {
     window.MarkdownImageButtonElement = MarkdownImageButtonElement;
-    window.customElements.define('md-image', MarkdownImageButtonElement);
+    window.customElements.define("md-image", MarkdownImageButtonElement);
 }
 class MarkdownTableButtonElement extends MarkdownButtonElement {
     constructor() {
         super();
-        styles.set(this, { prefix: '| Cool Header  | Cool Header | \n' , suffix: '| ----------------- | ------------------ |\n| Content Cell  | Content Cell  |', surroundWithNewlines: true });
+        styles.set(this, {
+            prefix: "| Cool Header  | Cool Header | \n",
+            suffix: "| ----------------- | ------------------ |\n| Content Cell  | Content Cell  |",
+            surroundWithNewlines: true,
+        });
     }
 }
-if (!window.customElements.get('md-table')) {
-    window.MarkdownBoldButtonElement = MarkdownTableButtonElement;
-    window.customElements.define('md-table', MarkdownTableButtonElement);
+if (!window.customElements.get("md-table")) {
+    window.MarkdownTableButtonElement = MarkdownTableButtonElement;
+    window.customElements.define("md-table", MarkdownTableButtonElement);
+}
+class MarkdownUnderlineButtonElement extends MarkdownButtonElement {
+    constructor() {
+        super();
+        styles.set(this, { prefix: "<u>", suffix: "</u>" });
+    }
+}
+if (!window.customElements.get("md-underline")) {
+    window.MarkdownUnderlineButtonElement = MarkdownUnderlineButtonElement;
+    window.customElements.define(
+        "md-underline",
+        MarkdownUnderlineButtonElement
+    );
+}
+class MarkdownLinedividerButtonElement extends MarkdownButtonElement {
+    constructor() {
+        super();
+        styles.set(this, { prefix: "---", surroundWithNewlines: true });
+    }
+}
+if (!window.customElements.get("md-linedivider")) {
+    window.MarkdownLinedividerButtonElement = MarkdownLinedividerButtonElement;
+    window.customElements.define(
+        "md-linedivider",
+        MarkdownLinedividerButtonElement
+    );
 }
 class MarkdownUnorderedListButtonElement extends MarkdownButtonElement {
     constructor() {
         super();
-        styles.set(this, { prefix: '- ', multiline: true, unorderedList: true });
+        styles.set(this, {
+            prefix: "- ",
+            multiline: true,
+            unorderedList: true,
+        });
     }
 }
-if (!window.customElements.get('md-unordered-list')) {
-    window.MarkdownUnorderedListButtonElement = MarkdownUnorderedListButtonElement;
-    window.customElements.define('md-unordered-list', MarkdownUnorderedListButtonElement);
+if (!window.customElements.get("md-unordered-list")) {
+    window.MarkdownUnorderedListButtonElement =
+        MarkdownUnorderedListButtonElement;
+    window.customElements.define(
+        "md-unordered-list",
+        MarkdownUnorderedListButtonElement
+    );
 }
 class MarkdownOrderedListButtonElement extends MarkdownButtonElement {
     constructor() {
         super();
-        styles.set(this, { prefix: '1. ', multiline: true, orderedList: true });
+        styles.set(this, { prefix: "1. ", multiline: true, orderedList: true });
     }
 }
-if (!window.customElements.get('md-ordered-list')) {
+if (!window.customElements.get("md-ordered-list")) {
     window.MarkdownOrderedListButtonElement = MarkdownOrderedListButtonElement;
-    window.customElements.define('md-ordered-list', MarkdownOrderedListButtonElement);
+    window.customElements.define(
+        "md-ordered-list",
+        MarkdownOrderedListButtonElement
+    );
 }
 class MarkdownTaskListButtonElement extends MarkdownButtonElement {
     constructor() {
         super();
-        styles.set(this, { prefix: '- [ ] ', multiline: true, surroundWithNewlines: true });
+        styles.set(this, {
+            prefix: "- [ ] ",
+            multiline: true,
+            surroundWithNewlines: true,
+        });
     }
 }
-if (!window.customElements.get('md-task-list')) {
+if (!window.customElements.get("md-task-list")) {
     window.MarkdownTaskListButtonElement = MarkdownTaskListButtonElement;
-    window.customElements.define('md-task-list', MarkdownTaskListButtonElement);
+    window.customElements.define("md-task-list", MarkdownTaskListButtonElement);
 }
 class MarkdownMentionButtonElement extends MarkdownButtonElement {
     constructor() {
         super();
-        styles.set(this, { prefix: '@', prefixSpace: true });
+        styles.set(this, { prefix: "@", prefixSpace: true });
     }
 }
-if (!window.customElements.get('md-mention')) {
+if (!window.customElements.get("md-mention")) {
     window.MarkdownMentionButtonElement = MarkdownMentionButtonElement;
-    window.customElements.define('md-mention', MarkdownMentionButtonElement);
+    window.customElements.define("md-mention", MarkdownMentionButtonElement);
 }
 class MarkdownRefButtonElement extends MarkdownButtonElement {
     constructor() {
         super();
-        styles.set(this, { prefix: '#', prefixSpace: true });
+        styles.set(this, { prefix: "#", prefixSpace: true });
     }
 }
-if (!window.customElements.get('md-ref')) {
+if (!window.customElements.get("md-ref")) {
     window.MarkdownRefButtonElement = MarkdownRefButtonElement;
-    window.customElements.define('md-ref', MarkdownRefButtonElement);
+    window.customElements.define("md-ref", MarkdownRefButtonElement);
 }
 class MarkdownStrikethroughButtonElement extends MarkdownButtonElement {
     constructor() {
         super();
-        styles.set(this, { prefix: '~~', suffix: '~~', trimFirst: true });
+        styles.set(this, { prefix: "~~", suffix: "~~", trimFirst: true });
     }
 }
-if (!window.customElements.get('md-strikethrough')) {
-    window.MarkdownStrikethroughButtonElement = MarkdownStrikethroughButtonElement;
-    window.customElements.define('md-strikethrough', MarkdownStrikethroughButtonElement);
+if (!window.customElements.get("md-strikethrough")) {
+    window.MarkdownStrikethroughButtonElement =
+        MarkdownStrikethroughButtonElement;
+    window.customElements.define(
+        "md-strikethrough",
+        MarkdownStrikethroughButtonElement
+    );
 }
 class MarkdownToolbarElement extends HTMLElement {
     constructor() {
         super();
     }
     connectedCallback() {
-        if (!this.hasAttribute('role')) {
-            this.setAttribute('role', 'toolbar');
+        if (!this.hasAttribute("role")) {
+            this.setAttribute("role", "toolbar");
         }
-        this.addEventListener('keydown', focusKeydown);
-        this.setAttribute('tabindex', '0');
-        this.addEventListener('focus', onToolbarFocus, { once: true });
+        this.addEventListener("keydown", focusKeydown);
+        this.setAttribute("tabindex", "0");
+        this.addEventListener("focus", onToolbarFocus, { once: true });
     }
     disconnectedCallback() {
-        this.removeEventListener('keydown', focusKeydown);
+        this.removeEventListener("keydown", focusKeydown);
     }
     get field() {
-        const id = this.getAttribute('for');
-        if (!id)
-            return null;
-        const root = 'getRootNode' in this ? this.getRootNode() : document;
+        const id = this.getAttribute("for");
+        if (!id) return null;
+        const root = "getRootNode" in this ? this.getRootNode() : document;
         let field;
         if (root instanceof Document || root instanceof ShadowRoot) {
             field = root.getElementById(id);
@@ -233,60 +302,61 @@ class MarkdownToolbarElement extends HTMLElement {
     }
 }
 function onToolbarFocus({ target }) {
-    if (!(target instanceof Element))
-        return;
-    target.removeAttribute('tabindex');
-    let tabindex = '0';
+    if (!(target instanceof Element)) return;
+    target.removeAttribute("tabindex");
+    let tabindex = "0";
     for (const button of getButtons(target)) {
-        button.setAttribute('tabindex', tabindex);
-        if (tabindex === '0') {
+        button.setAttribute("tabindex", tabindex);
+        if (tabindex === "0") {
             button.focus();
-            tabindex = '-1';
+            tabindex = "-1";
         }
     }
 }
 function focusKeydown(event) {
     const key = event.key;
-    if (key !== 'ArrowRight' && key !== 'ArrowLeft' && key !== 'Home' && key !== 'End')
+    if (
+        key !== "ArrowRight" &&
+        key !== "ArrowLeft" &&
+        key !== "Home" &&
+        key !== "End"
+    )
         return;
     const toolbar = event.currentTarget;
-    if (!(toolbar instanceof HTMLElement))
-        return;
+    if (!(toolbar instanceof HTMLElement)) return;
     const buttons = getButtons(toolbar);
     const index = buttons.indexOf(event.target);
     const length = buttons.length;
-    if (index === -1)
-        return;
+    if (index === -1) return;
     let n = 0;
-    if (key === 'ArrowLeft')
-        n = index - 1;
-    if (key === 'ArrowRight')
-        n = index + 1;
-    if (key === 'End')
-        n = length - 1;
-    if (n < 0)
-        n = length - 1;
-    if (n > length - 1)
-        n = 0;
+    if (key === "ArrowLeft") n = index - 1;
+    if (key === "ArrowRight") n = index + 1;
+    if (key === "End") n = length - 1;
+    if (n < 0) n = length - 1;
+    if (n > length - 1) n = 0;
     for (let i = 0; i < length; i += 1) {
-        buttons[i].setAttribute('tabindex', i === n ? '0' : '-1');
+        buttons[i].setAttribute("tabindex", i === n ? "0" : "-1");
     }
     event.preventDefault();
     buttons[n].focus();
 }
-if (!window.customElements.get('markdown-toolbar')) {
+if (!window.customElements.get("markdown-toolbar")) {
     window.MarkdownToolbarElement = MarkdownToolbarElement;
-    window.customElements.define('markdown-toolbar', MarkdownToolbarElement);
+    window.customElements.define("markdown-toolbar", MarkdownToolbarElement);
 }
 function isMultipleLines(string) {
-    return string.trim().split('\n').length > 1;
+    return string.trim().split("\n").length > 1;
 }
 function repeat(string, n) {
     return Array(n + 1).join(string);
 }
 function wordSelectionStart(text, i) {
     let index = i;
-    while (text[index] && text[index - 1] != null && !text[index - 1].match(/\s/)) {
+    while (
+        text[index] &&
+        text[index - 1] != null &&
+        !text[index - 1].match(/\s/)
+    ) {
         index--;
     }
     return index;
@@ -305,77 +375,106 @@ function insertText(textarea, { text, selectionStart, selectionEnd }) {
     const before = textarea.value.slice(0, originalSelectionStart);
     const after = textarea.value.slice(textarea.selectionEnd);
     if (canInsertText === null || canInsertText === true) {
-        textarea.contentEditable = 'true';
+        textarea.contentEditable = "true";
         try {
-            canInsertText = document.execCommand('insertText', false, text);
-        }
-        catch (error) {
+            canInsertText = document.execCommand("insertText", false, text);
+        } catch (error) {
             canInsertText = false;
         }
-        textarea.contentEditable = 'false';
+        textarea.contentEditable = "false";
     }
-    if (canInsertText && !textarea.value.slice(0, textarea.selectionStart).endsWith(text)) {
+    if (
+        canInsertText &&
+        !textarea.value.slice(0, textarea.selectionStart).endsWith(text)
+    ) {
         canInsertText = false;
     }
     if (!canInsertText) {
         try {
-            document.execCommand('ms-beginUndoUnit');
-        }
-        catch (e) {
-        }
+            document.execCommand("ms-beginUndoUnit");
+        } catch (e) {}
         textarea.value = before + text + after;
         try {
-            document.execCommand('ms-endUndoUnit');
-        }
-        catch (e) {
-        }
-        textarea.dispatchEvent(new CustomEvent('input', { bubbles: true, cancelable: true }));
+            document.execCommand("ms-endUndoUnit");
+        } catch (e) {}
+        textarea.dispatchEvent(
+            new CustomEvent("input", { bubbles: true, cancelable: true })
+        );
     }
     if (selectionStart != null && selectionEnd != null) {
         textarea.setSelectionRange(selectionStart, selectionEnd);
-    }
-    else {
-        textarea.setSelectionRange(originalSelectionStart, textarea.selectionEnd);
+    } else {
+        textarea.setSelectionRange(
+            originalSelectionStart,
+            textarea.selectionEnd
+        );
     }
 }
 function styleSelectedText(textarea, styleArgs) {
-    const text = textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
+    const text = textarea.value.slice(
+        textarea.selectionStart,
+        textarea.selectionEnd
+    );
     let result;
     if (styleArgs.orderedList || styleArgs.unorderedList) {
         result = listStyle(textarea, styleArgs);
-    }
-    else if (styleArgs.multiline && isMultipleLines(text)) {
+    } else if (styleArgs.multiline && isMultipleLines(text)) {
         result = multilineStyle(textarea, styleArgs);
-    }
-    else {
+    } else {
         result = blockStyle(textarea, styleArgs);
     }
     insertText(textarea, result);
 }
 function expandSelectionToLine(textarea) {
-    const lines = textarea.value.split('\n');
+    const lines = textarea.value.split("\n");
     let counter = 0;
     for (let index = 0; index < lines.length; index++) {
         const lineLength = lines[index].length + 1;
-        if (textarea.selectionStart >= counter && textarea.selectionStart < counter + lineLength) {
+        if (
+            textarea.selectionStart >= counter &&
+            textarea.selectionStart < counter + lineLength
+        ) {
             textarea.selectionStart = counter;
         }
-        if (textarea.selectionEnd >= counter && textarea.selectionEnd < counter + lineLength) {
+        if (
+            textarea.selectionEnd >= counter &&
+            textarea.selectionEnd < counter + lineLength
+        ) {
             textarea.selectionEnd = counter + lineLength - 1;
         }
         counter += lineLength;
     }
 }
-function expandSelectedText(textarea, prefixToUse, suffixToUse, multiline = false) {
+function expandSelectedText(
+    textarea,
+    prefixToUse,
+    suffixToUse,
+    multiline = false
+) {
     if (textarea.selectionStart === textarea.selectionEnd) {
-        textarea.selectionStart = wordSelectionStart(textarea.value, textarea.selectionStart);
-        textarea.selectionEnd = wordSelectionEnd(textarea.value, textarea.selectionEnd, multiline);
-    }
-    else {
-        const expandedSelectionStart = textarea.selectionStart - prefixToUse.length;
+        textarea.selectionStart = wordSelectionStart(
+            textarea.value,
+            textarea.selectionStart
+        );
+        textarea.selectionEnd = wordSelectionEnd(
+            textarea.value,
+            textarea.selectionEnd,
+            multiline
+        );
+    } else {
+        const expandedSelectionStart =
+            textarea.selectionStart - prefixToUse.length;
         const expandedSelectionEnd = textarea.selectionEnd + suffixToUse.length;
-        const beginsWithPrefix = textarea.value.slice(expandedSelectionStart, textarea.selectionStart) === prefixToUse;
-        const endsWithSuffix = textarea.value.slice(textarea.selectionEnd, expandedSelectionEnd) === suffixToUse;
+        const beginsWithPrefix =
+            textarea.value.slice(
+                expandedSelectionStart,
+                textarea.selectionStart
+            ) === prefixToUse;
+        const endsWithSuffix =
+            textarea.value.slice(
+                textarea.selectionEnd,
+                expandedSelectionEnd
+            ) === suffixToUse;
         if (beginsWithPrefix && endsWithSuffix) {
             textarea.selectionStart = expandedSelectionStart;
             textarea.selectionEnd = expandedSelectionEnd;
@@ -393,38 +492,68 @@ function newlinesToSurroundSelectedText(textarea) {
     let newlinesToAppend;
     let newlinesToPrepend;
     if (beforeSelection.match(/\S/) && newlinesBeforeSelection < 2) {
-        newlinesToAppend = repeat('\n', 2 - newlinesBeforeSelection);
+        newlinesToAppend = repeat("\n", 2 - newlinesBeforeSelection);
     }
     if (afterSelection.match(/\S/) && newlinesAfterSelection < 2) {
-        newlinesToPrepend = repeat('\n', 2 - newlinesAfterSelection);
+        newlinesToPrepend = repeat("\n", 2 - newlinesAfterSelection);
     }
     if (newlinesToAppend == null) {
-        newlinesToAppend = '';
+        newlinesToAppend = "";
     }
     if (newlinesToPrepend == null) {
-        newlinesToPrepend = '';
+        newlinesToPrepend = "";
     }
     return { newlinesToAppend, newlinesToPrepend };
 }
 function blockStyle(textarea, arg) {
     let newlinesToAppend;
     let newlinesToPrepend;
-    const { prefix, suffix, blockPrefix, blockSuffix, replaceNext, prefixSpace, scanFor, surroundWithNewlines } = arg;
+    const {
+        prefix,
+        suffix,
+        blockPrefix,
+        blockSuffix,
+        replaceNext,
+        prefixSpace,
+        scanFor,
+        surroundWithNewlines,
+    } = arg;
     const originalSelectionStart = textarea.selectionStart;
     const originalSelectionEnd = textarea.selectionEnd;
-    let selectedText = textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
-    let prefixToUse = isMultipleLines(selectedText) && blockPrefix.length > 0 ? `${blockPrefix}\n` : prefix;
-    let suffixToUse = isMultipleLines(selectedText) && blockSuffix.length > 0 ? `\n${blockSuffix}` : suffix;
+    let selectedText = textarea.value.slice(
+        textarea.selectionStart,
+        textarea.selectionEnd
+    );
+    let prefixToUse =
+        isMultipleLines(selectedText) && blockPrefix.length > 0
+            ? `${blockPrefix}\n`
+            : prefix;
+    let suffixToUse =
+        isMultipleLines(selectedText) && blockSuffix.length > 0
+            ? `\n${blockSuffix}`
+            : suffix;
     if (prefixSpace) {
         const beforeSelection = textarea.value[textarea.selectionStart - 1];
-        if (textarea.selectionStart !== 0 && beforeSelection != null && !beforeSelection.match(/\s/)) {
+        if (
+            textarea.selectionStart !== 0 &&
+            beforeSelection != null &&
+            !beforeSelection.match(/\s/)
+        ) {
             prefixToUse = ` ${prefixToUse}`;
         }
     }
-    selectedText = expandSelectedText(textarea, prefixToUse, suffixToUse, arg.multiline);
+    selectedText = expandSelectedText(
+        textarea,
+        prefixToUse,
+        suffixToUse,
+        arg.multiline
+    );
     let selectionStart = textarea.selectionStart;
     let selectionEnd = textarea.selectionEnd;
-    const hasReplaceNext = replaceNext.length > 0 && suffixToUse.indexOf(replaceNext) > -1 && selectedText.length > 0;
+    const hasReplaceNext =
+        replaceNext.length > 0 &&
+        suffixToUse.indexOf(replaceNext) > -1 &&
+        selectedText.length > 0;
     if (surroundWithNewlines) {
         const ref = newlinesToSurroundSelectedText(textarea);
         newlinesToAppend = ref.newlinesToAppend;
@@ -432,61 +561,84 @@ function blockStyle(textarea, arg) {
         prefixToUse = newlinesToAppend + prefix;
         suffixToUse += newlinesToPrepend;
     }
-    if (selectedText.startsWith(prefixToUse) && selectedText.endsWith(suffixToUse)) {
-        const replacementText = selectedText.slice(prefixToUse.length, selectedText.length - suffixToUse.length);
+    if (
+        selectedText.startsWith(prefixToUse) &&
+        selectedText.endsWith(suffixToUse)
+    ) {
+        const replacementText = selectedText.slice(
+            prefixToUse.length,
+            selectedText.length - suffixToUse.length
+        );
         if (originalSelectionStart === originalSelectionEnd) {
             let position = originalSelectionStart - prefixToUse.length;
             position = Math.max(position, selectionStart);
-            position = Math.min(position, selectionStart + replacementText.length);
+            position = Math.min(
+                position,
+                selectionStart + replacementText.length
+            );
             selectionStart = selectionEnd = position;
-        }
-        else {
+        } else {
             selectionEnd = selectionStart + replacementText.length;
         }
         return { text: replacementText, selectionStart, selectionEnd };
-    }
-    else if (!hasReplaceNext) {
+    } else if (!hasReplaceNext) {
         let replacementText = prefixToUse + selectedText + suffixToUse;
         selectionStart = originalSelectionStart + prefixToUse.length;
         selectionEnd = originalSelectionEnd + prefixToUse.length;
         const whitespaceEdges = selectedText.match(/^\s*|\s*$/g);
         if (arg.trimFirst && whitespaceEdges) {
-            const leadingWhitespace = whitespaceEdges[0] || '';
-            const trailingWhitespace = whitespaceEdges[1] || '';
-            replacementText = leadingWhitespace + prefixToUse + selectedText.trim() + suffixToUse + trailingWhitespace;
+            const leadingWhitespace = whitespaceEdges[0] || "";
+            const trailingWhitespace = whitespaceEdges[1] || "";
+            replacementText =
+                leadingWhitespace +
+                prefixToUse +
+                selectedText.trim() +
+                suffixToUse +
+                trailingWhitespace;
             selectionStart += leadingWhitespace.length;
             selectionEnd -= trailingWhitespace.length;
         }
         return { text: replacementText, selectionStart, selectionEnd };
-    }
-    else if (scanFor.length > 0 && selectedText.match(scanFor)) {
+    } else if (scanFor.length > 0 && selectedText.match(scanFor)) {
         suffixToUse = suffixToUse.replace(replaceNext, selectedText);
         const replacementText = prefixToUse + suffixToUse;
         selectionStart = selectionEnd = selectionStart + prefixToUse.length;
         return { text: replacementText, selectionStart, selectionEnd };
-    }
-    else {
+    } else {
         const replacementText = prefixToUse + selectedText + suffixToUse;
-        selectionStart = selectionStart + prefixToUse.length + selectedText.length + suffixToUse.indexOf(replaceNext);
+        selectionStart =
+            selectionStart +
+            prefixToUse.length +
+            selectedText.length +
+            suffixToUse.indexOf(replaceNext);
         selectionEnd = selectionStart + replaceNext.length;
         return { text: replacementText, selectionStart, selectionEnd };
     }
 }
 function multilineStyle(textarea, arg) {
     const { prefix, suffix, surroundWithNewlines } = arg;
-    let text = textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
+    let text = textarea.value.slice(
+        textarea.selectionStart,
+        textarea.selectionEnd
+    );
     let selectionStart = textarea.selectionStart;
     let selectionEnd = textarea.selectionEnd;
-    const lines = text.split('\n');
-    const undoStyle = lines.every(line => line.startsWith(prefix) && line.endsWith(suffix));
+    const lines = text.split("\n");
+    const undoStyle = lines.every(
+        (line) => line.startsWith(prefix) && line.endsWith(suffix)
+    );
     if (undoStyle) {
-        text = lines.map(line => line.slice(prefix.length, line.length - suffix.length)).join('\n');
+        text = lines
+            .map((line) =>
+                line.slice(prefix.length, line.length - suffix.length)
+            )
+            .join("\n");
         selectionEnd = selectionStart + text.length;
-    }
-    else {
-        text = lines.map(line => prefix + line + suffix).join('\n');
+    } else {
+        text = lines.map((line) => prefix + line + suffix).join("\n");
         if (surroundWithNewlines) {
-            const { newlinesToAppend, newlinesToPrepend } = newlinesToSurroundSelectedText(textarea);
+            const { newlinesToAppend, newlinesToPrepend } =
+                newlinesToSurroundSelectedText(textarea);
             selectionStart += newlinesToAppend.length;
             selectionEnd = selectionStart + text.length;
             text = newlinesToAppend + text + newlinesToPrepend;
@@ -495,36 +647,41 @@ function multilineStyle(textarea, arg) {
     return { text, selectionStart, selectionEnd };
 }
 function undoOrderedListStyle(text) {
-    const lines = text.split('\n');
+    const lines = text.split("\n");
     const orderedListRegex = /^\d+\.\s+/;
-    const shouldUndoOrderedList = lines.every(line => orderedListRegex.test(line));
+    const shouldUndoOrderedList = lines.every((line) =>
+        orderedListRegex.test(line)
+    );
     let result = lines;
     if (shouldUndoOrderedList) {
-        result = lines.map(line => line.replace(orderedListRegex, ''));
+        result = lines.map((line) => line.replace(orderedListRegex, ""));
     }
     return {
-        text: result.join('\n'),
-        processed: shouldUndoOrderedList
+        text: result.join("\n"),
+        processed: shouldUndoOrderedList,
     };
 }
 function undoUnorderedListStyle(text) {
-    const lines = text.split('\n');
-    const unorderedListPrefix = '- ';
-    const shouldUndoUnorderedList = lines.every(line => line.startsWith(unorderedListPrefix));
+    const lines = text.split("\n");
+    const unorderedListPrefix = "- ";
+    const shouldUndoUnorderedList = lines.every((line) =>
+        line.startsWith(unorderedListPrefix)
+    );
     let result = lines;
     if (shouldUndoUnorderedList) {
-        result = lines.map(line => line.slice(unorderedListPrefix.length, line.length));
+        result = lines.map((line) =>
+            line.slice(unorderedListPrefix.length, line.length)
+        );
     }
     return {
-        text: result.join('\n'),
-        processed: shouldUndoUnorderedList
+        text: result.join("\n"),
+        processed: shouldUndoUnorderedList,
     };
 }
 function makePrefix(index, unorderedList) {
     if (unorderedList) {
-        return '- ';
-    }
-    else {
+        return "- ";
+    } else {
         return `${index + 1}. `;
     }
 }
@@ -536,8 +693,7 @@ function clearExistingListStyle(style, selectedText) {
         undoResult = undoOrderedListStyle(selectedText);
         undoResultOpositeList = undoUnorderedListStyle(undoResult.text);
         pristineText = undoResultOpositeList.text;
-    }
-    else {
+    } else {
         undoResult = undoUnorderedListStyle(selectedText);
         undoResultOpositeList = undoOrderedListStyle(undoResult.text);
         pristineText = undoResultOpositeList.text;
@@ -545,67 +701,103 @@ function clearExistingListStyle(style, selectedText) {
     return [undoResult, undoResultOpositeList, pristineText];
 }
 function listStyle(textarea, style) {
-    const noInitialSelection = textarea.selectionStart === textarea.selectionEnd;
+    const noInitialSelection =
+        textarea.selectionStart === textarea.selectionEnd;
     let selectionStart = textarea.selectionStart;
     let selectionEnd = textarea.selectionEnd;
     expandSelectionToLine(textarea);
-    const selectedText = textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
-    const [undoResult, undoResultOpositeList, pristineText] = clearExistingListStyle(style, selectedText);
-    const prefixedLines = pristineText.split('\n').map((value, index) => {
+    const selectedText = textarea.value.slice(
+        textarea.selectionStart,
+        textarea.selectionEnd
+    );
+    const [undoResult, undoResultOpositeList, pristineText] =
+        clearExistingListStyle(style, selectedText);
+    const prefixedLines = pristineText.split("\n").map((value, index) => {
         return `${makePrefix(index, style.unorderedList)}${value}`;
     });
-    const totalPrefixLength = prefixedLines.reduce((previousValue, _currentValue, currentIndex) => {
-        return previousValue + makePrefix(currentIndex, style.unorderedList).length;
-    }, 0);
-    const totalPrefixLengthOpositeList = prefixedLines.reduce((previousValue, _currentValue, currentIndex) => {
-        return previousValue + makePrefix(currentIndex, !style.unorderedList).length;
-    }, 0);
+    const totalPrefixLength = prefixedLines.reduce(
+        (previousValue, _currentValue, currentIndex) => {
+            return (
+                previousValue +
+                makePrefix(currentIndex, style.unorderedList).length
+            );
+        },
+        0
+    );
+    const totalPrefixLengthOpositeList = prefixedLines.reduce(
+        (previousValue, _currentValue, currentIndex) => {
+            return (
+                previousValue +
+                makePrefix(currentIndex, !style.unorderedList).length
+            );
+        },
+        0
+    );
     if (undoResult.processed) {
         if (noInitialSelection) {
-            selectionStart = Math.max(selectionStart - makePrefix(0, style.unorderedList).length, 0);
+            selectionStart = Math.max(
+                selectionStart - makePrefix(0, style.unorderedList).length,
+                0
+            );
             selectionEnd = selectionStart;
-        }
-        else {
+        } else {
             selectionStart = textarea.selectionStart;
             selectionEnd = textarea.selectionEnd - totalPrefixLength;
         }
         return { text: pristineText, selectionStart, selectionEnd };
     }
-    const { newlinesToAppend, newlinesToPrepend } = newlinesToSurroundSelectedText(textarea);
-    const text = newlinesToAppend + prefixedLines.join('\n') + newlinesToPrepend;
+    const { newlinesToAppend, newlinesToPrepend } =
+        newlinesToSurroundSelectedText(textarea);
+    const text =
+        newlinesToAppend + prefixedLines.join("\n") + newlinesToPrepend;
     if (noInitialSelection) {
-        selectionStart = Math.max(selectionStart + makePrefix(0, style.unorderedList).length + newlinesToAppend.length, 0);
+        selectionStart = Math.max(
+            selectionStart +
+                makePrefix(0, style.unorderedList).length +
+                newlinesToAppend.length,
+            0
+        );
         selectionEnd = selectionStart;
-    }
-    else {
+    } else {
         if (undoResultOpositeList.processed) {
-            selectionStart = Math.max(textarea.selectionStart + newlinesToAppend.length, 0);
-            selectionEnd = textarea.selectionEnd + newlinesToAppend.length + totalPrefixLength - totalPrefixLengthOpositeList;
-        }
-        else {
-            selectionStart = Math.max(textarea.selectionStart + newlinesToAppend.length, 0);
-            selectionEnd = textarea.selectionEnd + newlinesToAppend.length + totalPrefixLength;
+            selectionStart = Math.max(
+                textarea.selectionStart + newlinesToAppend.length,
+                0
+            );
+            selectionEnd =
+                textarea.selectionEnd +
+                newlinesToAppend.length +
+                totalPrefixLength -
+                totalPrefixLengthOpositeList;
+        } else {
+            selectionStart = Math.max(
+                textarea.selectionStart + newlinesToAppend.length,
+                0
+            );
+            selectionEnd =
+                textarea.selectionEnd +
+                newlinesToAppend.length +
+                totalPrefixLength;
         }
     }
     return { text, selectionStart, selectionEnd };
 }
 function applyStyle(button, stylesToApply) {
-    const toolbar = button.closest('markdown-toolbar');
-    if (!(toolbar instanceof MarkdownToolbarElement))
-        return;
+    const toolbar = button.closest("markdown-toolbar");
+    if (!(toolbar instanceof MarkdownToolbarElement)) return;
     const defaults = {
-        prefix: '',
-        suffix: '',
-        blockPrefix: '',
-        blockSuffix: '',
+        prefix: "",
+        suffix: "",
+        blockPrefix: "",
+        blockSuffix: "",
         multiline: false,
-        replaceNext: '',
+        replaceNext: "",
         prefixSpace: false,
-        scanFor: '',
+        scanFor: "",
         surroundWithNewlines: false,
         orderedList: false,
         unorderedList: false,
-        trimFirst: false
+        trimFirst: false,
     };
     const style = Object.assign(Object.assign({}, defaults), stylesToApply);
     const field = toolbar.field;

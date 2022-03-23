@@ -114,25 +114,47 @@
             />
         </md-code>
 
-        <md-image
-            class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
-        >
-            <img
-                src="/images/image-editor.svg"
-                width="20"
-                alt="Heading Button"
-            />
-        </md-image>
         <md-table
             data-md-button
             class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
         >
-            <img
-                src="/images/table-editor.svg"
-                width="20"
-                alt="Heading Button"
-            />
+            <img src="/images/table-editor.svg" width="20" alt="Table Button" />
         </md-table>
+
+        <md-image
+            class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+        >
+            <img src="/images/image-editor.svg" width="20" alt="Image Button" />
+        </md-image>
+
+        <md-underline
+            class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+        >
+            <img
+                src="/images/underline-editor.svg"
+                width="20"
+                alt="Underline Button"
+            />
+        </md-underline>
+        <md-strikethrough
+            class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+        >
+            <img
+                src="/images/strikethrough-editor.svg"
+                width="20"
+                alt="Strikethrough Button"
+            />
+        </md-strikethrough>
+        <md-linedivider
+            class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+        >
+            <img
+                src="/images/linedivider-editor.svg"
+                width="20"
+                alt="Line Divider Button"
+                class="linedivider"
+            />
+        </md-linedivider>
     </markdown-toolbar>
 </template>
 
@@ -210,4 +232,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.linedivider {
+    fill: rgb(33, 33, 219) !important;
+}
+</style>

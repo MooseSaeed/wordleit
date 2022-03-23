@@ -18181,17 +18181,42 @@ var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 );
 
 var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "/images/image-editor.svg",
+  src: "/images/table-editor.svg",
   width: "20",
-  alt: "Heading Button"
+  alt: "Table Button"
 }, null, -1
 /* HOISTED */
 );
 
 var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "/images/table-editor.svg",
+  src: "/images/image-editor.svg",
   width: "20",
-  alt: "Heading Button"
+  alt: "Image Button"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  src: "/images/underline-editor.svg",
+  width: "20",
+  alt: "Underline Button"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  src: "/images/strikethrough-editor.svg",
+  width: "20",
+  alt: "Strikethrough Button"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  src: "/images/linedivider-editor.svg",
+  width: "20",
+  alt: "Line Divider Button",
+  "class": "linedivider"
 }, null, -1
 /* HOISTED */
 );
@@ -18217,9 +18242,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_md_code = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("md-code");
 
+  var _component_md_table = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("md-table");
+
   var _component_md_image = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("md-image");
 
-  var _component_md_table = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("md-table");
+  var _component_md_underline = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("md-underline");
+
+  var _component_md_strikethrough = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("md-strikethrough");
+
+  var _component_md_linedivider = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("md-linedivider");
 
   var _component_markdown_toolbar = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("markdown-toolbar");
 
@@ -18316,7 +18347,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         _: 1
         /* STABLE */
 
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_md_image, {
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_md_table, {
+        "data-md-button": "",
         "class": "hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -18325,12 +18357,38 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         _: 1
         /* STABLE */
 
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_md_table, {
-        "data-md-button": "",
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_md_image, {
         "class": "hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
           return [_hoisted_15];
+        }),
+        _: 1
+        /* STABLE */
+
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_md_underline, {
+        "class": "hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+      }, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_16];
+        }),
+        _: 1
+        /* STABLE */
+
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_md_strikethrough, {
+        "class": "hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+      }, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_17];
+        }),
+        _: 1
+        /* STABLE */
+
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_md_linedivider, {
+        "class": "hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+      }, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_18];
         }),
         _: 1
         /* STABLE */
@@ -18672,19 +18730,19 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-var buttonSelectors = ['[data-md-button]', 'md-header', 'md-bold', 'md-italic', 'md-quote', 'md-code', 'md-link', 'md-image', 'md-unordered-list', 'md-ordered-list', 'md-task-list', 'md-mention', 'md-ref', 'md-strikethrough', 'md-table'];
+var buttonSelectors = ["[data-md-button]", "md-header", "md-bold", "md-italic", "md-quote", "md-code", "md-link", "md-image", "md-unordered-list", "md-ordered-list", "md-task-list", "md-mention", "md-ref", "md-strikethrough", "md-table", "md-underline", "md-linedivider"];
 
 function getButtons(toolbar) {
   var els = [];
 
-  var _iterator = _createForOfIteratorHelper(toolbar.querySelectorAll(buttonSelectors.join(', '))),
+  var _iterator = _createForOfIteratorHelper(toolbar.querySelectorAll(buttonSelectors.join(", "))),
       _step;
 
   try {
     for (_iterator.s(); !(_step = _iterator.n()).done;) {
       var button = _step.value;
       if (button.hidden || button.offsetWidth <= 0 && button.offsetHeight <= 0) continue;
-      if (button.closest('markdown-toolbar') === toolbar) els.push(button);
+      if (button.closest("markdown-toolbar") === toolbar) els.push(button);
     }
   } catch (err) {
     _iterator.e(err);
@@ -18697,7 +18755,7 @@ function getButtons(toolbar) {
 
 function keydown(fn) {
   return function (event) {
-    if (event.key === ' ' || event.key === 'Enter') {
+    if (event.key === " " || event.key === "Enter") {
       event.preventDefault();
       fn(event);
     }
@@ -18724,9 +18782,9 @@ var MarkdownButtonElement = /*#__PURE__*/function (_HTMLElement) {
       applyStyle(_assertThisInitialized(_this), style);
     };
 
-    _this.addEventListener('keydown', keydown(apply));
+    _this.addEventListener("keydown", keydown(apply));
 
-    _this.addEventListener('click', apply);
+    _this.addEventListener("click", apply);
 
     return _this;
   }
@@ -18734,8 +18792,8 @@ var MarkdownButtonElement = /*#__PURE__*/function (_HTMLElement) {
   _createClass(MarkdownButtonElement, [{
     key: "connectedCallback",
     value: function connectedCallback() {
-      if (!this.hasAttribute('role')) {
-        this.setAttribute('role', 'button');
+      if (!this.hasAttribute("role")) {
+        this.setAttribute("role", "button");
       }
     }
   }, {
@@ -18761,13 +18819,13 @@ var MarkdownHeaderButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen) 
     _classCallCheck(this, MarkdownHeaderButtonElement);
 
     _this2 = _super2.call(this);
-    var level = parseInt(_this2.getAttribute('level') || '3', 10);
+    var level = parseInt(_this2.getAttribute("level") || "3", 10);
 
     if (level < 1 || level > 6) {
       return _possibleConstructorReturn(_this2);
     }
 
-    var prefix = "".concat('#'.repeat(level), " ");
+    var prefix = "".concat("#".repeat(level), " ");
     styles.set(_assertThisInitialized(_this2), {
       prefix: prefix
     });
@@ -18777,9 +18835,9 @@ var MarkdownHeaderButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen) 
   return _createClass(MarkdownHeaderButtonElement);
 }(MarkdownButtonElement);
 
-if (!window.customElements.get('md-header')) {
+if (!window.customElements.get("md-header")) {
   window.MarkdownHeaderButtonElement = MarkdownHeaderButtonElement;
-  window.customElements.define('md-header', MarkdownHeaderButtonElement);
+  window.customElements.define("md-header", MarkdownHeaderButtonElement);
 }
 
 var MarkdownBoldButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen2) {
@@ -18794,8 +18852,8 @@ var MarkdownBoldButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen2) {
 
     _this3 = _super3.call(this);
     styles.set(_assertThisInitialized(_this3), {
-      prefix: '**',
-      suffix: '**',
+      prefix: "**",
+      suffix: "**",
       trimFirst: true
     });
     return _this3;
@@ -18804,9 +18862,9 @@ var MarkdownBoldButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen2) {
   return _createClass(MarkdownBoldButtonElement);
 }(MarkdownButtonElement);
 
-if (!window.customElements.get('md-bold')) {
+if (!window.customElements.get("md-bold")) {
   window.MarkdownBoldButtonElement = MarkdownBoldButtonElement;
-  window.customElements.define('md-bold', MarkdownBoldButtonElement);
+  window.customElements.define("md-bold", MarkdownBoldButtonElement);
 }
 
 var MarkdownItalicButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen3) {
@@ -18821,8 +18879,8 @@ var MarkdownItalicButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen3)
 
     _this4 = _super4.call(this);
     styles.set(_assertThisInitialized(_this4), {
-      prefix: '_',
-      suffix: '_',
+      prefix: "_",
+      suffix: "_",
       trimFirst: true
     });
     return _this4;
@@ -18831,9 +18889,9 @@ var MarkdownItalicButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen3)
   return _createClass(MarkdownItalicButtonElement);
 }(MarkdownButtonElement);
 
-if (!window.customElements.get('md-italic')) {
+if (!window.customElements.get("md-italic")) {
   window.MarkdownItalicButtonElement = MarkdownItalicButtonElement;
-  window.customElements.define('md-italic', MarkdownItalicButtonElement);
+  window.customElements.define("md-italic", MarkdownItalicButtonElement);
 }
 
 var MarkdownQuoteButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen4) {
@@ -18848,7 +18906,7 @@ var MarkdownQuoteButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen4) 
 
     _this5 = _super5.call(this);
     styles.set(_assertThisInitialized(_this5), {
-      prefix: '> ',
+      prefix: "> ",
       multiline: true,
       surroundWithNewlines: true
     });
@@ -18858,9 +18916,9 @@ var MarkdownQuoteButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen4) 
   return _createClass(MarkdownQuoteButtonElement);
 }(MarkdownButtonElement);
 
-if (!window.customElements.get('md-quote')) {
+if (!window.customElements.get("md-quote")) {
   window.MarkdownQuoteButtonElement = MarkdownQuoteButtonElement;
-  window.customElements.define('md-quote', MarkdownQuoteButtonElement);
+  window.customElements.define("md-quote", MarkdownQuoteButtonElement);
 }
 
 var MarkdownCodeButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen5) {
@@ -18875,10 +18933,10 @@ var MarkdownCodeButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen5) {
 
     _this6 = _super6.call(this);
     styles.set(_assertThisInitialized(_this6), {
-      prefix: '`',
-      suffix: '`',
-      blockPrefix: '```',
-      blockSuffix: '```'
+      prefix: "`",
+      suffix: "`",
+      blockPrefix: "```",
+      blockSuffix: "```"
     });
     return _this6;
   }
@@ -18886,9 +18944,9 @@ var MarkdownCodeButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen5) {
   return _createClass(MarkdownCodeButtonElement);
 }(MarkdownButtonElement);
 
-if (!window.customElements.get('md-code')) {
+if (!window.customElements.get("md-code")) {
   window.MarkdownCodeButtonElement = MarkdownCodeButtonElement;
-  window.customElements.define('md-code', MarkdownCodeButtonElement);
+  window.customElements.define("md-code", MarkdownCodeButtonElement);
 }
 
 var MarkdownLinkButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen6) {
@@ -18903,10 +18961,10 @@ var MarkdownLinkButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen6) {
 
     _this7 = _super7.call(this);
     styles.set(_assertThisInitialized(_this7), {
-      prefix: '[',
-      suffix: '](url)',
-      replaceNext: 'url',
-      scanFor: 'https?://'
+      prefix: "[",
+      suffix: "](url)",
+      replaceNext: "url",
+      scanFor: "https?://"
     });
     return _this7;
   }
@@ -18914,9 +18972,9 @@ var MarkdownLinkButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen6) {
   return _createClass(MarkdownLinkButtonElement);
 }(MarkdownButtonElement);
 
-if (!window.customElements.get('md-link')) {
+if (!window.customElements.get("md-link")) {
   window.MarkdownLinkButtonElement = MarkdownLinkButtonElement;
-  window.customElements.define('md-link', MarkdownLinkButtonElement);
+  window.customElements.define("md-link", MarkdownLinkButtonElement);
 }
 
 var MarkdownImageButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen7) {
@@ -18931,10 +18989,10 @@ var MarkdownImageButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen7) 
 
     _this8 = _super8.call(this);
     styles.set(_assertThisInitialized(_this8), {
-      prefix: '![',
-      suffix: '](url)',
-      replaceNext: 'url',
-      scanFor: 'https?://'
+      prefix: "![",
+      suffix: "](url)",
+      replaceNext: "url",
+      scanFor: "https?://"
     });
     return _this8;
   }
@@ -18942,9 +19000,9 @@ var MarkdownImageButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen7) 
   return _createClass(MarkdownImageButtonElement);
 }(MarkdownButtonElement);
 
-if (!window.customElements.get('md-image')) {
+if (!window.customElements.get("md-image")) {
   window.MarkdownImageButtonElement = MarkdownImageButtonElement;
-  window.customElements.define('md-image', MarkdownImageButtonElement);
+  window.customElements.define("md-image", MarkdownImageButtonElement);
 }
 
 var MarkdownTableButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen8) {
@@ -18959,8 +19017,8 @@ var MarkdownTableButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen8) 
 
     _this9 = _super9.call(this);
     styles.set(_assertThisInitialized(_this9), {
-      prefix: '| Cool Header  | Cool Header | \n',
-      suffix: '| ----------------- | ------------------ |\n| Content Cell  | Content Cell  |',
+      prefix: "| Cool Header  | Cool Header | \n",
+      suffix: "| ----------------- | ------------------ |\n| Content Cell  | Content Cell  |",
       surroundWithNewlines: true
     });
     return _this9;
@@ -18969,206 +19027,258 @@ var MarkdownTableButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen8) 
   return _createClass(MarkdownTableButtonElement);
 }(MarkdownButtonElement);
 
-if (!window.customElements.get('md-table')) {
-  window.MarkdownBoldButtonElement = MarkdownTableButtonElement;
-  window.customElements.define('md-table', MarkdownTableButtonElement);
+if (!window.customElements.get("md-table")) {
+  window.MarkdownTableButtonElement = MarkdownTableButtonElement;
+  window.customElements.define("md-table", MarkdownTableButtonElement);
 }
 
-var MarkdownUnorderedListButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen9) {
-  _inherits(MarkdownUnorderedListButtonElement, _MarkdownButtonElemen9);
+var MarkdownUnderlineButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen9) {
+  _inherits(MarkdownUnderlineButtonElement, _MarkdownButtonElemen9);
 
-  var _super10 = _createSuper(MarkdownUnorderedListButtonElement);
+  var _super10 = _createSuper(MarkdownUnderlineButtonElement);
 
-  function MarkdownUnorderedListButtonElement() {
+  function MarkdownUnderlineButtonElement() {
     var _this10;
 
-    _classCallCheck(this, MarkdownUnorderedListButtonElement);
+    _classCallCheck(this, MarkdownUnderlineButtonElement);
 
     _this10 = _super10.call(this);
     styles.set(_assertThisInitialized(_this10), {
-      prefix: '- ',
+      prefix: "<u>",
+      suffix: "</u>"
+    });
+    return _this10;
+  }
+
+  return _createClass(MarkdownUnderlineButtonElement);
+}(MarkdownButtonElement);
+
+if (!window.customElements.get("md-underline")) {
+  window.MarkdownUnderlineButtonElement = MarkdownUnderlineButtonElement;
+  window.customElements.define("md-underline", MarkdownUnderlineButtonElement);
+}
+
+var MarkdownLinedividerButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen10) {
+  _inherits(MarkdownLinedividerButtonElement, _MarkdownButtonElemen10);
+
+  var _super11 = _createSuper(MarkdownLinedividerButtonElement);
+
+  function MarkdownLinedividerButtonElement() {
+    var _this11;
+
+    _classCallCheck(this, MarkdownLinedividerButtonElement);
+
+    _this11 = _super11.call(this);
+    styles.set(_assertThisInitialized(_this11), {
+      prefix: "---",
+      surroundWithNewlines: true
+    });
+    return _this11;
+  }
+
+  return _createClass(MarkdownLinedividerButtonElement);
+}(MarkdownButtonElement);
+
+if (!window.customElements.get("md-linedivider")) {
+  window.MarkdownLinedividerButtonElement = MarkdownLinedividerButtonElement;
+  window.customElements.define("md-linedivider", MarkdownLinedividerButtonElement);
+}
+
+var MarkdownUnorderedListButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen11) {
+  _inherits(MarkdownUnorderedListButtonElement, _MarkdownButtonElemen11);
+
+  var _super12 = _createSuper(MarkdownUnorderedListButtonElement);
+
+  function MarkdownUnorderedListButtonElement() {
+    var _this12;
+
+    _classCallCheck(this, MarkdownUnorderedListButtonElement);
+
+    _this12 = _super12.call(this);
+    styles.set(_assertThisInitialized(_this12), {
+      prefix: "- ",
       multiline: true,
       unorderedList: true
     });
-    return _this10;
+    return _this12;
   }
 
   return _createClass(MarkdownUnorderedListButtonElement);
 }(MarkdownButtonElement);
 
-if (!window.customElements.get('md-unordered-list')) {
+if (!window.customElements.get("md-unordered-list")) {
   window.MarkdownUnorderedListButtonElement = MarkdownUnorderedListButtonElement;
-  window.customElements.define('md-unordered-list', MarkdownUnorderedListButtonElement);
+  window.customElements.define("md-unordered-list", MarkdownUnorderedListButtonElement);
 }
 
-var MarkdownOrderedListButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen10) {
-  _inherits(MarkdownOrderedListButtonElement, _MarkdownButtonElemen10);
+var MarkdownOrderedListButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen12) {
+  _inherits(MarkdownOrderedListButtonElement, _MarkdownButtonElemen12);
 
-  var _super11 = _createSuper(MarkdownOrderedListButtonElement);
+  var _super13 = _createSuper(MarkdownOrderedListButtonElement);
 
   function MarkdownOrderedListButtonElement() {
-    var _this11;
+    var _this13;
 
     _classCallCheck(this, MarkdownOrderedListButtonElement);
 
-    _this11 = _super11.call(this);
-    styles.set(_assertThisInitialized(_this11), {
-      prefix: '1. ',
+    _this13 = _super13.call(this);
+    styles.set(_assertThisInitialized(_this13), {
+      prefix: "1. ",
       multiline: true,
       orderedList: true
     });
-    return _this11;
+    return _this13;
   }
 
   return _createClass(MarkdownOrderedListButtonElement);
 }(MarkdownButtonElement);
 
-if (!window.customElements.get('md-ordered-list')) {
+if (!window.customElements.get("md-ordered-list")) {
   window.MarkdownOrderedListButtonElement = MarkdownOrderedListButtonElement;
-  window.customElements.define('md-ordered-list', MarkdownOrderedListButtonElement);
+  window.customElements.define("md-ordered-list", MarkdownOrderedListButtonElement);
 }
 
-var MarkdownTaskListButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen11) {
-  _inherits(MarkdownTaskListButtonElement, _MarkdownButtonElemen11);
+var MarkdownTaskListButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen13) {
+  _inherits(MarkdownTaskListButtonElement, _MarkdownButtonElemen13);
 
-  var _super12 = _createSuper(MarkdownTaskListButtonElement);
+  var _super14 = _createSuper(MarkdownTaskListButtonElement);
 
   function MarkdownTaskListButtonElement() {
-    var _this12;
+    var _this14;
 
     _classCallCheck(this, MarkdownTaskListButtonElement);
 
-    _this12 = _super12.call(this);
-    styles.set(_assertThisInitialized(_this12), {
-      prefix: '- [ ] ',
+    _this14 = _super14.call(this);
+    styles.set(_assertThisInitialized(_this14), {
+      prefix: "- [ ] ",
       multiline: true,
       surroundWithNewlines: true
     });
-    return _this12;
+    return _this14;
   }
 
   return _createClass(MarkdownTaskListButtonElement);
 }(MarkdownButtonElement);
 
-if (!window.customElements.get('md-task-list')) {
+if (!window.customElements.get("md-task-list")) {
   window.MarkdownTaskListButtonElement = MarkdownTaskListButtonElement;
-  window.customElements.define('md-task-list', MarkdownTaskListButtonElement);
+  window.customElements.define("md-task-list", MarkdownTaskListButtonElement);
 }
 
-var MarkdownMentionButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen12) {
-  _inherits(MarkdownMentionButtonElement, _MarkdownButtonElemen12);
+var MarkdownMentionButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen14) {
+  _inherits(MarkdownMentionButtonElement, _MarkdownButtonElemen14);
 
-  var _super13 = _createSuper(MarkdownMentionButtonElement);
+  var _super15 = _createSuper(MarkdownMentionButtonElement);
 
   function MarkdownMentionButtonElement() {
-    var _this13;
+    var _this15;
 
     _classCallCheck(this, MarkdownMentionButtonElement);
 
-    _this13 = _super13.call(this);
-    styles.set(_assertThisInitialized(_this13), {
-      prefix: '@',
+    _this15 = _super15.call(this);
+    styles.set(_assertThisInitialized(_this15), {
+      prefix: "@",
       prefixSpace: true
     });
-    return _this13;
+    return _this15;
   }
 
   return _createClass(MarkdownMentionButtonElement);
 }(MarkdownButtonElement);
 
-if (!window.customElements.get('md-mention')) {
+if (!window.customElements.get("md-mention")) {
   window.MarkdownMentionButtonElement = MarkdownMentionButtonElement;
-  window.customElements.define('md-mention', MarkdownMentionButtonElement);
+  window.customElements.define("md-mention", MarkdownMentionButtonElement);
 }
 
-var MarkdownRefButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen13) {
-  _inherits(MarkdownRefButtonElement, _MarkdownButtonElemen13);
+var MarkdownRefButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen15) {
+  _inherits(MarkdownRefButtonElement, _MarkdownButtonElemen15);
 
-  var _super14 = _createSuper(MarkdownRefButtonElement);
+  var _super16 = _createSuper(MarkdownRefButtonElement);
 
   function MarkdownRefButtonElement() {
-    var _this14;
+    var _this16;
 
     _classCallCheck(this, MarkdownRefButtonElement);
 
-    _this14 = _super14.call(this);
-    styles.set(_assertThisInitialized(_this14), {
-      prefix: '#',
+    _this16 = _super16.call(this);
+    styles.set(_assertThisInitialized(_this16), {
+      prefix: "#",
       prefixSpace: true
     });
-    return _this14;
+    return _this16;
   }
 
   return _createClass(MarkdownRefButtonElement);
 }(MarkdownButtonElement);
 
-if (!window.customElements.get('md-ref')) {
+if (!window.customElements.get("md-ref")) {
   window.MarkdownRefButtonElement = MarkdownRefButtonElement;
-  window.customElements.define('md-ref', MarkdownRefButtonElement);
+  window.customElements.define("md-ref", MarkdownRefButtonElement);
 }
 
-var MarkdownStrikethroughButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen14) {
-  _inherits(MarkdownStrikethroughButtonElement, _MarkdownButtonElemen14);
+var MarkdownStrikethroughButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen16) {
+  _inherits(MarkdownStrikethroughButtonElement, _MarkdownButtonElemen16);
 
-  var _super15 = _createSuper(MarkdownStrikethroughButtonElement);
+  var _super17 = _createSuper(MarkdownStrikethroughButtonElement);
 
   function MarkdownStrikethroughButtonElement() {
-    var _this15;
+    var _this17;
 
     _classCallCheck(this, MarkdownStrikethroughButtonElement);
 
-    _this15 = _super15.call(this);
-    styles.set(_assertThisInitialized(_this15), {
-      prefix: '~~',
-      suffix: '~~',
+    _this17 = _super17.call(this);
+    styles.set(_assertThisInitialized(_this17), {
+      prefix: "~~",
+      suffix: "~~",
       trimFirst: true
     });
-    return _this15;
+    return _this17;
   }
 
   return _createClass(MarkdownStrikethroughButtonElement);
 }(MarkdownButtonElement);
 
-if (!window.customElements.get('md-strikethrough')) {
+if (!window.customElements.get("md-strikethrough")) {
   window.MarkdownStrikethroughButtonElement = MarkdownStrikethroughButtonElement;
-  window.customElements.define('md-strikethrough', MarkdownStrikethroughButtonElement);
+  window.customElements.define("md-strikethrough", MarkdownStrikethroughButtonElement);
 }
 
 var MarkdownToolbarElement = /*#__PURE__*/function (_HTMLElement2) {
   _inherits(MarkdownToolbarElement, _HTMLElement2);
 
-  var _super16 = _createSuper(MarkdownToolbarElement);
+  var _super18 = _createSuper(MarkdownToolbarElement);
 
   function MarkdownToolbarElement() {
     _classCallCheck(this, MarkdownToolbarElement);
 
-    return _super16.call(this);
+    return _super18.call(this);
   }
 
   _createClass(MarkdownToolbarElement, [{
     key: "connectedCallback",
     value: function connectedCallback() {
-      if (!this.hasAttribute('role')) {
-        this.setAttribute('role', 'toolbar');
+      if (!this.hasAttribute("role")) {
+        this.setAttribute("role", "toolbar");
       }
 
-      this.addEventListener('keydown', focusKeydown);
-      this.setAttribute('tabindex', '0');
-      this.addEventListener('focus', onToolbarFocus, {
+      this.addEventListener("keydown", focusKeydown);
+      this.setAttribute("tabindex", "0");
+      this.addEventListener("focus", onToolbarFocus, {
         once: true
       });
     }
   }, {
     key: "disconnectedCallback",
     value: function disconnectedCallback() {
-      this.removeEventListener('keydown', focusKeydown);
+      this.removeEventListener("keydown", focusKeydown);
     }
   }, {
     key: "field",
     get: function get() {
-      var id = this.getAttribute('for');
+      var id = this.getAttribute("for");
       if (!id) return null;
-      var root = 'getRootNode' in this ? this.getRootNode() : document;
+      var root = "getRootNode" in this ? this.getRootNode() : document;
       var field;
 
       if (root instanceof Document || root instanceof ShadowRoot) {
@@ -19185,8 +19295,8 @@ var MarkdownToolbarElement = /*#__PURE__*/function (_HTMLElement2) {
 function onToolbarFocus(_ref) {
   var target = _ref.target;
   if (!(target instanceof Element)) return;
-  target.removeAttribute('tabindex');
-  var tabindex = '0';
+  target.removeAttribute("tabindex");
+  var tabindex = "0";
 
   var _iterator2 = _createForOfIteratorHelper(getButtons(target)),
       _step2;
@@ -19194,11 +19304,11 @@ function onToolbarFocus(_ref) {
   try {
     for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
       var button = _step2.value;
-      button.setAttribute('tabindex', tabindex);
+      button.setAttribute("tabindex", tabindex);
 
-      if (tabindex === '0') {
+      if (tabindex === "0") {
         button.focus();
-        tabindex = '-1';
+        tabindex = "-1";
       }
     }
   } catch (err) {
@@ -19210,7 +19320,7 @@ function onToolbarFocus(_ref) {
 
 function focusKeydown(event) {
   var key = event.key;
-  if (key !== 'ArrowRight' && key !== 'ArrowLeft' && key !== 'Home' && key !== 'End') return;
+  if (key !== "ArrowRight" && key !== "ArrowLeft" && key !== "Home" && key !== "End") return;
   var toolbar = event.currentTarget;
   if (!(toolbar instanceof HTMLElement)) return;
   var buttons = getButtons(toolbar);
@@ -19218,27 +19328,27 @@ function focusKeydown(event) {
   var length = buttons.length;
   if (index === -1) return;
   var n = 0;
-  if (key === 'ArrowLeft') n = index - 1;
-  if (key === 'ArrowRight') n = index + 1;
-  if (key === 'End') n = length - 1;
+  if (key === "ArrowLeft") n = index - 1;
+  if (key === "ArrowRight") n = index + 1;
+  if (key === "End") n = length - 1;
   if (n < 0) n = length - 1;
   if (n > length - 1) n = 0;
 
   for (var i = 0; i < length; i += 1) {
-    buttons[i].setAttribute('tabindex', i === n ? '0' : '-1');
+    buttons[i].setAttribute("tabindex", i === n ? "0" : "-1");
   }
 
   event.preventDefault();
   buttons[n].focus();
 }
 
-if (!window.customElements.get('markdown-toolbar')) {
+if (!window.customElements.get("markdown-toolbar")) {
   window.MarkdownToolbarElement = MarkdownToolbarElement;
-  window.customElements.define('markdown-toolbar', MarkdownToolbarElement);
+  window.customElements.define("markdown-toolbar", MarkdownToolbarElement);
 }
 
 function isMultipleLines(string) {
-  return string.trim().split('\n').length > 1;
+  return string.trim().split("\n").length > 1;
 }
 
 function repeat(string, n) {
@@ -19277,15 +19387,15 @@ function insertText(textarea, _ref2) {
   var after = textarea.value.slice(textarea.selectionEnd);
 
   if (canInsertText === null || canInsertText === true) {
-    textarea.contentEditable = 'true';
+    textarea.contentEditable = "true";
 
     try {
-      canInsertText = document.execCommand('insertText', false, text);
+      canInsertText = document.execCommand("insertText", false, text);
     } catch (error) {
       canInsertText = false;
     }
 
-    textarea.contentEditable = 'false';
+    textarea.contentEditable = "false";
   }
 
   if (canInsertText && !textarea.value.slice(0, textarea.selectionStart).endsWith(text)) {
@@ -19294,16 +19404,16 @@ function insertText(textarea, _ref2) {
 
   if (!canInsertText) {
     try {
-      document.execCommand('ms-beginUndoUnit');
+      document.execCommand("ms-beginUndoUnit");
     } catch (e) {}
 
     textarea.value = before + text + after;
 
     try {
-      document.execCommand('ms-endUndoUnit');
+      document.execCommand("ms-endUndoUnit");
     } catch (e) {}
 
-    textarea.dispatchEvent(new CustomEvent('input', {
+    textarea.dispatchEvent(new CustomEvent("input", {
       bubbles: true,
       cancelable: true
     }));
@@ -19332,7 +19442,7 @@ function styleSelectedText(textarea, styleArgs) {
 }
 
 function expandSelectionToLine(textarea) {
-  var lines = textarea.value.split('\n');
+  var lines = textarea.value.split("\n");
   var counter = 0;
 
   for (var index = 0; index < lines.length; index++) {
@@ -19382,19 +19492,19 @@ function newlinesToSurroundSelectedText(textarea) {
   var newlinesToPrepend;
 
   if (beforeSelection.match(/\S/) && newlinesBeforeSelection < 2) {
-    newlinesToAppend = repeat('\n', 2 - newlinesBeforeSelection);
+    newlinesToAppend = repeat("\n", 2 - newlinesBeforeSelection);
   }
 
   if (afterSelection.match(/\S/) && newlinesAfterSelection < 2) {
-    newlinesToPrepend = repeat('\n', 2 - newlinesAfterSelection);
+    newlinesToPrepend = repeat("\n", 2 - newlinesAfterSelection);
   }
 
   if (newlinesToAppend == null) {
-    newlinesToAppend = '';
+    newlinesToAppend = "";
   }
 
   if (newlinesToPrepend == null) {
-    newlinesToPrepend = '';
+    newlinesToPrepend = "";
   }
 
   return {
@@ -19466,8 +19576,8 @@ function blockStyle(textarea, arg) {
     var whitespaceEdges = selectedText.match(/^\s*|\s*$/g);
 
     if (arg.trimFirst && whitespaceEdges) {
-      var leadingWhitespace = whitespaceEdges[0] || '';
-      var trailingWhitespace = whitespaceEdges[1] || '';
+      var leadingWhitespace = whitespaceEdges[0] || "";
+      var trailingWhitespace = whitespaceEdges[1] || "";
       _replacementText = leadingWhitespace + prefixToUse + selectedText.trim() + suffixToUse + trailingWhitespace;
       selectionStart += leadingWhitespace.length;
       selectionEnd -= trailingWhitespace.length;
@@ -19509,7 +19619,7 @@ function multilineStyle(textarea, arg) {
   var text = textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
   var selectionStart = textarea.selectionStart;
   var selectionEnd = textarea.selectionEnd;
-  var lines = text.split('\n');
+  var lines = text.split("\n");
   var undoStyle = lines.every(function (line) {
     return line.startsWith(prefix) && line.endsWith(suffix);
   });
@@ -19517,12 +19627,12 @@ function multilineStyle(textarea, arg) {
   if (undoStyle) {
     text = lines.map(function (line) {
       return line.slice(prefix.length, line.length - suffix.length);
-    }).join('\n');
+    }).join("\n");
     selectionEnd = selectionStart + text.length;
   } else {
     text = lines.map(function (line) {
       return prefix + line + suffix;
-    }).join('\n');
+    }).join("\n");
 
     if (surroundWithNewlines) {
       var _newlinesToSurroundSe = newlinesToSurroundSelectedText(textarea),
@@ -19543,7 +19653,7 @@ function multilineStyle(textarea, arg) {
 }
 
 function undoOrderedListStyle(text) {
-  var lines = text.split('\n');
+  var lines = text.split("\n");
   var orderedListRegex = /^\d+\.\s+/;
   var shouldUndoOrderedList = lines.every(function (line) {
     return orderedListRegex.test(line);
@@ -19552,19 +19662,19 @@ function undoOrderedListStyle(text) {
 
   if (shouldUndoOrderedList) {
     result = lines.map(function (line) {
-      return line.replace(orderedListRegex, '');
+      return line.replace(orderedListRegex, "");
     });
   }
 
   return {
-    text: result.join('\n'),
+    text: result.join("\n"),
     processed: shouldUndoOrderedList
   };
 }
 
 function undoUnorderedListStyle(text) {
-  var lines = text.split('\n');
-  var unorderedListPrefix = '- ';
+  var lines = text.split("\n");
+  var unorderedListPrefix = "- ";
   var shouldUndoUnorderedList = lines.every(function (line) {
     return line.startsWith(unorderedListPrefix);
   });
@@ -19577,14 +19687,14 @@ function undoUnorderedListStyle(text) {
   }
 
   return {
-    text: result.join('\n'),
+    text: result.join("\n"),
     processed: shouldUndoUnorderedList
   };
 }
 
 function makePrefix(index, unorderedList) {
   if (unorderedList) {
-    return '- ';
+    return "- ";
   } else {
     return "".concat(index + 1, ". ");
   }
@@ -19621,7 +19731,7 @@ function listStyle(textarea, style) {
       undoResultOpositeList = _clearExistingListSty2[1],
       pristineText = _clearExistingListSty2[2];
 
-  var prefixedLines = pristineText.split('\n').map(function (value, index) {
+  var prefixedLines = pristineText.split("\n").map(function (value, index) {
     return "".concat(makePrefix(index, style.unorderedList)).concat(value);
   });
   var totalPrefixLength = prefixedLines.reduce(function (previousValue, _currentValue, currentIndex) {
@@ -19651,7 +19761,7 @@ function listStyle(textarea, style) {
       newlinesToAppend = _newlinesToSurroundSe2.newlinesToAppend,
       newlinesToPrepend = _newlinesToSurroundSe2.newlinesToPrepend;
 
-  var text = newlinesToAppend + prefixedLines.join('\n') + newlinesToPrepend;
+  var text = newlinesToAppend + prefixedLines.join("\n") + newlinesToPrepend;
 
   if (noInitialSelection) {
     selectionStart = Math.max(selectionStart + makePrefix(0, style.unorderedList).length + newlinesToAppend.length, 0);
@@ -19674,17 +19784,17 @@ function listStyle(textarea, style) {
 }
 
 function applyStyle(button, stylesToApply) {
-  var toolbar = button.closest('markdown-toolbar');
+  var toolbar = button.closest("markdown-toolbar");
   if (!(toolbar instanceof MarkdownToolbarElement)) return;
   var defaults = {
-    prefix: '',
-    suffix: '',
-    blockPrefix: '',
-    blockSuffix: '',
+    prefix: "",
+    suffix: "",
+    blockPrefix: "",
+    blockSuffix: "",
     multiline: false,
-    replaceNext: '',
+    replaceNext: "",
     prefixSpace: false,
-    scanFor: '',
+    scanFor: "",
     surroundWithNewlines: false,
     orderedList: false,
     unorderedList: false,
@@ -19853,6 +19963,29 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "\nh2[data-v-046892eb],\r\np[data-v-046892eb] {\r\n    text-shadow: -3px 2px 4px rgba(0, 0, 0, 0.8);\n}\r\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n.linedivider {\r\n    fill: rgb(33, 33, 219) !important;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -20076,6 +20209,35 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Featurecard_vue_vue_type_style_index_0_id_046892eb_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Markdowntoolbar_vue_vue_type_style_index_0_id_db896bde_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Markdowntoolbar_vue_vue_type_style_index_0_id_db896bde_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Markdowntoolbar_vue_vue_type_style_index_0_id_db896bde_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -20562,13 +20724,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Markdowntoolbar_vue_vue_type_template_id_db896bde__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Markdowntoolbar.vue?vue&type=template&id=db896bde */ "./resources/js/components/Markdowntoolbar.vue?vue&type=template&id=db896bde");
 /* harmony import */ var _Markdowntoolbar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Markdowntoolbar.vue?vue&type=script&lang=js */ "./resources/js/components/Markdowntoolbar.vue?vue&type=script&lang=js");
-/* harmony import */ var F_Projects_wordleup_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Markdowntoolbar_vue_vue_type_style_index_0_id_db896bde_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css */ "./resources/js/components/Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css");
+/* harmony import */ var F_Projects_wordleup_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,F_Projects_wordleup_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Markdowntoolbar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Markdowntoolbar_vue_vue_type_template_id_db896bde__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Markdowntoolbar.vue"]])
+
+
+const __exports__ = /*#__PURE__*/(0,F_Projects_wordleup_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Markdowntoolbar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Markdowntoolbar_vue_vue_type_template_id_db896bde__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Markdowntoolbar.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -21152,6 +21317,18 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Featurecard_vue_vue_type_style_index_0_id_046892eb_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Featurecard.vue?vue&type=style&index=0&id=046892eb&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Featurecard.vue?vue&type=style&index=0&id=046892eb&scoped=true&lang=css");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/components/Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css ***!
+  \*************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Markdowntoolbar_vue_vue_type_style_index_0_id_db896bde_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css");
 
 
 /***/ }),

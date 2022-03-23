@@ -15,23 +15,26 @@ declare global {
         MarkdownRefButtonElement: typeof MarkdownRefButtonElement;
         MarkdownStrikethroughButtonElement: typeof MarkdownStrikethroughButtonElement;
         MarkdownTableButtonElement: typeof MarkdownTableButtonElement;
+        MarkdownUnderlineButtonElement: typeof MarkdownUnderlineButtonElement;
     }
     interface HTMLElementTagNameMap {
-        'markdown-toolbar': MarkdownToolbarElement;
-        'md-header': MarkdownHeaderButtonElement;
-        'md-bold': MarkdownBoldButtonElement;
-        'md-italic': MarkdownItalicButtonElement;
-        'md-quote': MarkdownQuoteButtonElement;
-        'md-code': MarkdownCodeButtonElement;
-        'md-link': MarkdownLinkButtonElement;
-        'md-image': MarkdownImageButtonElement;
-        'md-unordered-list': MarkdownUnorderedListButtonElement;
-        'md-ordered-list': MarkdownOrderedListButtonElement;
-        'md-task-list': MarkdownTaskListButtonElement;
-        'md-mention': MarkdownMentionButtonElement;
-        'md-ref': MarkdownRefButtonElement;
-        'md-strikethrough': MarkdownStrikethroughButtonElement;
-        'md-table': MarkdownTableButtonElement;
+        "markdown-toolbar": MarkdownToolbarElement;
+        "md-header": MarkdownHeaderButtonElement;
+        "md-bold": MarkdownBoldButtonElement;
+        "md-italic": MarkdownItalicButtonElement;
+        "md-quote": MarkdownQuoteButtonElement;
+        "md-code": MarkdownCodeButtonElement;
+        "md-link": MarkdownLinkButtonElement;
+        "md-image": MarkdownImageButtonElement;
+        "md-unordered-list": MarkdownUnorderedListButtonElement;
+        "md-ordered-list": MarkdownOrderedListButtonElement;
+        "md-task-list": MarkdownTaskListButtonElement;
+        "md-mention": MarkdownMentionButtonElement;
+        "md-ref": MarkdownRefButtonElement;
+        "md-strikethrough": MarkdownStrikethroughButtonElement;
+        "md-table": MarkdownTableButtonElement;
+        "md-underline": MarkdownUnderlineButtonElement;
+        "md-linedivider": MarkdownLinedividerButtonElement;
     }
 }
 declare class MarkdownButtonElement extends HTMLElement {
@@ -43,6 +46,12 @@ declare class MarkdownHeaderButtonElement extends MarkdownButtonElement {
     constructor();
 }
 declare class MarkdownTableButtonElement extends MarkdownButtonElement {
+    constructor();
+}
+declare class MarkdownUnderlineButtonElement extends MarkdownButtonElement {
+    constructor();
+}
+declare class MarkdownLinedividerButtonElement extends MarkdownButtonElement {
     constructor();
 }
 declare class MarkdownBoldButtonElement extends MarkdownButtonElement {

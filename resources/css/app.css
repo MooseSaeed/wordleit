@@ -23,5 +23,6 @@
     prose-table:border-gray-600
     prose-code:overflow-auto
     prose-code:text-white
-    prose-ol:text-white;
+    prose-ol:text-white
+    prose-hr:m-4;
 }

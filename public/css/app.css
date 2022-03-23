@@ -1285,6 +1285,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding: 0.5rem;
 }
 
+.devto :is(:where(hr):not(:where([class~="not-prose"] *))) {
+  margin: 1rem;
+}
+
 .focus-within\:outline-none:focus-within {
   outline: 2px solid transparent;
   outline-offset: 2px;
