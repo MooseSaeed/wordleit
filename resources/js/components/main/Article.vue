@@ -18,6 +18,7 @@
         <div class="item sm:flex sm:flex-col h-full w-full">
             <Markdowntoolbar />
             <textarea
+                @scroll="handleScrollMove"
                 name="myTextArea"
                 id="myTextArea"
                 v-model="markdown"
@@ -28,6 +29,8 @@
         </div>
 
         <div
+            id="outputDiv"
+            @scroll="handleScrollMoveBack"
             class="rounded-xl bg-gray-900 devto overflow-x-auto break-words item w-full h-44 sm:h-full"
         >
             <div v-html="markdownToHtml" class="p-2 font-sans"></div>
@@ -51,6 +54,8 @@ export default {
     data() {
         return {
             markdown: "",
+            scrollVertically: "",
+            scrollVerticallyTwo: "",
         };
     },
     mounted() {
@@ -66,6 +71,20 @@ export default {
     computed: {
         markdownToHtml() {
             return this.md(this.markdown);
+        },
+    },
+    methods: {
+        handleScrollMove() {
+            var scrollBase = document
+                .getElementById("myTextArea")
+                .scrollTop.toFixed();
+            document.getElementById("outputDiv").scrollTop = scrollBase;
+        },
+        handleScrollMoveBack() {
+            var scrollBase = document
+                .getElementById("outputDiv")
+                .scrollTop.toFixed();
+            document.getElementById("myTextArea").scrollTop = scrollBase;
         },
     },
 };

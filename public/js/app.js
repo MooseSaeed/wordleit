@@ -17827,7 +17827,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      markdown: ""
+      markdown: "",
+      scrollVertically: "",
+      scrollVerticallyTwo: ""
     };
   },
   mounted: function mounted() {
@@ -17843,6 +17845,16 @@ __webpack_require__.r(__webpack_exports__);
   computed: {
     markdownToHtml: function markdownToHtml() {
       return this.md(this.markdown);
+    }
+  },
+  methods: {
+    handleScrollMove: function handleScrollMove() {
+      var scrollBase = document.getElementById("myTextArea").scrollTop.toFixed();
+      document.getElementById("outputDiv").scrollTop = scrollBase;
+    },
+    handleScrollMoveBack: function handleScrollMoveBack() {
+      var scrollBase = document.getElementById("outputDiv").scrollTop.toFixed();
+      document.getElementById("myTextArea").scrollTop = scrollBase;
     }
   }
 });
@@ -18493,11 +18505,8 @@ var _hoisted_2 = {
 var _hoisted_3 = {
   "class": "item sm:flex sm:flex-col h-full w-full"
 };
-var _hoisted_4 = {
-  "class": "rounded-xl bg-gray-900 devto overflow-x-auto break-words item w-full h-44 sm:h-full"
-};
-var _hoisted_5 = ["innerHTML"];
-var _hoisted_6 = {
+var _hoisted_4 = ["innerHTML"];
+var _hoisted_5 = {
   "class": "mt-5",
   id: "learnmore"
 };
@@ -18507,21 +18516,32 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Learnmore = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Learnmore");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Markdowntoolbar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
+    onScroll: _cache[0] || (_cache[0] = function () {
+      return $options.handleScrollMove && $options.handleScrollMove.apply($options, arguments);
+    }),
     name: "myTextArea",
     id: "myTextArea",
-    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $data.markdown = $event;
     }),
     "class": "w-full flex-1 rounded-xl p-2 focus:ring-0 h-44",
     placeholder: "Write your magic here.. It will show up there 👀\r\n                Happy writing ♥️"
-  }, null, 512
-  /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.markdown]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  }, null, 544
+  /* HYDRATE_EVENTS, NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.markdown]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    id: "outputDiv",
+    onScroll: _cache[2] || (_cache[2] = function () {
+      return $options.handleScrollMoveBack && $options.handleScrollMoveBack.apply($options, arguments);
+    }),
+    "class": "rounded-xl bg-gray-900 devto overflow-x-auto break-words item w-full h-44 sm:h-full"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     innerHTML: $options.markdownToHtml,
     "class": "p-2 font-sans"
   }, null, 8
   /* PROPS */
-  , _hoisted_5)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Learnmore)])], 64
+  , _hoisted_4)], 32
+  /* HYDRATE_EVENTS */
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Learnmore)])], 64
   /* STABLE_FRAGMENT */
   );
 }
