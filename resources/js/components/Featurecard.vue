@@ -1,12 +1,12 @@
 <template>
     <section
-        class="grid lg:grid-cols-3 md:grid-cols-2 gap-y-10 justify-items-center items-center"
+        class="grid grid-cols-1 gap-y-10 justify-items-center items-center"
     >
         <router-link to="/article">
             <Card dataImage="./images/pic-sample.jpg">
                 <template v-slot:header>
                     <h2 class="text-white text-2xl font-bold">
-                        WordleUp Text Editor
+                        Wordleit Text Editor
                     </h2>
                 </template>
                 <template v-slot:content>

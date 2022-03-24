@@ -18003,13 +18003,13 @@ var _withScopeId = function _withScopeId(n) {
 };
 
 var _hoisted_1 = {
-  "class": "grid lg:grid-cols-3 md:grid-cols-2 gap-y-10 justify-items-center items-center"
+  "class": "grid grid-cols-1 gap-y-10 justify-items-center items-center"
 };
 
 var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
     "class": "text-white text-2xl font-bold"
-  }, " WordleUp Text Editor ", -1
+  }, " Wordleit Text Editor ", -1
   /* HOISTED */
   );
 });
@@ -18605,7 +18605,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onScroll: _cache[3] || (_cache[3] = function () {
       return $options.handleScrollMoveBack && $options.handleScrollMoveBack.apply($options, arguments);
     }),
-    "class": "rounded-xl bg-gray-900 devto overflow-x-auto break-words item w-full h-44 sm:h-full"
+    "class": "rounded-xl p-2 bg-gray-900 devto overflow-x-auto break-words item w-full h-44 sm:h-full"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     innerHTML: $options.markdownToHtml,
     "class": "p-2 font-sans"
