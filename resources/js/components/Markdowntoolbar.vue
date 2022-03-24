@@ -42,119 +42,163 @@
         class="bg-gray-900 p-2 text-white rounded-xl mb-2 grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 flex-row gap-1"
         for="myTextArea"
     >
-        <md-bold
-            class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
-        >
-            <img src="/images/bold-editor.svg" width="18" alt="Bold Button" />
-        </md-bold>
+        <dfn title="Bold">
+            <md-bold
+                class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+            >
+                <img
+                    src="/images/bold-editor.svg"
+                    width="18"
+                    alt="Bold Button"
+                />
+            </md-bold>
+        </dfn>
 
-        <md-italic
-            class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
-        >
-            <img
-                src="/images/italic-editor.svg"
-                width="18"
-                alt="Italic Button"
-            />
-        </md-italic>
+        <dfn title="Italic">
+            <md-italic
+                class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+            >
+                <img
+                    src="/images/italic-editor.svg"
+                    width="18"
+                    alt="Italic Button"
+                />
+            </md-italic>
+        </dfn>
 
-        <md-link
-            class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
-        >
-            <img src="/images/link-editor.svg" width="18" alt="Link Button" />
-        </md-link>
+        <dfn title="Link">
+            <md-link
+                class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+            >
+                <img
+                    src="/images/link-editor.svg"
+                    width="18"
+                    alt="Link Button"
+                />
+            </md-link>
+        </dfn>
 
-        <md-ordered-list
-            class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
-        >
-            <img
-                src="/images/odlist-editor.svg"
-                width="18"
-                alt="Ordered List Button"
-            />
-        </md-ordered-list>
+        <dfn title="Ordered List">
+            <md-ordered-list
+                class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+            >
+                <img
+                    src="/images/odlist-editor.svg"
+                    width="18"
+                    alt="Ordered List Button"
+                />
+            </md-ordered-list>
+        </dfn>
 
-        <md-unordered-list
-            class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
-        >
-            <img
-                src="/images/ullist-editor.svg"
-                width="18"
-                alt="Unordered List Button"
-            />
-        </md-unordered-list>
+        <dfn title="Unordered List">
+            <md-unordered-list
+                class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+            >
+                <img
+                    src="/images/ullist-editor.svg"
+                    width="18"
+                    alt="Unordered List Button"
+                />
+            </md-unordered-list>
+        </dfn>
 
-        <md-header
-            class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
-        >
-            <img
-                src="/images/heading-editor.png"
-                width="18"
-                alt="Heading Button"
-            />
-        </md-header>
+        <dfn title="Heading">
+            <md-header
+                class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+            >
+                <img
+                    src="/images/heading-editor.png"
+                    width="18"
+                    alt="Heading Button"
+                />
+            </md-header>
+        </dfn>
 
-        <md-quote
-            class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
-        >
-            <img
-                src="/images/quote-editor.png"
-                width="20"
-                alt="Heading Button"
-            />
-        </md-quote>
+        <dfn title="Quote">
+            <md-quote
+                class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+            >
+                <img
+                    src="/images/quote-editor.png"
+                    width="20"
+                    alt="Quote Button"
+                />
+            </md-quote>
+        </dfn>
 
-        <md-code
-            class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
-        >
-            <img
-                src="/images/code-editor.png"
-                width="20"
-                alt="Heading Button"
-            />
-        </md-code>
+        <dfn title="Code (Inline & Block)">
+            <md-code
+                class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+            >
+                <img
+                    src="/images/code-editor.png"
+                    width="20"
+                    alt="Code Button"
+                />
+            </md-code>
+        </dfn>
 
-        <md-table
-            data-md-button
-            class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
-        >
-            <img src="/images/table-editor.svg" width="20" alt="Table Button" />
-        </md-table>
+        <dfn title="Table">
+            <md-table
+                data-md-button
+                class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+            >
+                <img
+                    src="/images/table-editor.svg"
+                    width="20"
+                    alt="Table Button"
+                />
+            </md-table>
+        </dfn>
 
-        <md-image
-            class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
-        >
-            <img src="/images/image-editor.svg" width="20" alt="Image Button" />
-        </md-image>
+        <dfn title="Image">
+            <md-image
+                class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+            >
+                <img
+                    src="/images/image-editor.svg"
+                    width="20"
+                    alt="Image Button"
+                />
+            </md-image>
+        </dfn>
 
-        <md-underline
-            class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
-        >
-            <img
-                src="/images/underline-editor.svg"
-                width="20"
-                alt="Underline Button"
-            />
-        </md-underline>
-        <md-strikethrough
-            class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
-        >
-            <img
-                src="/images/strikethrough-editor.svg"
-                width="20"
-                alt="Strikethrough Button"
-            />
-        </md-strikethrough>
-        <md-linedivider
-            class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
-        >
-            <img
-                src="/images/linedivider-editor.svg"
-                width="20"
-                alt="Line Divider Button"
-                class="linedivider"
-            />
-        </md-linedivider>
+        <dfn title="Underline">
+            <md-underline
+                class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+            >
+                <img
+                    src="/images/underline-editor.svg"
+                    width="20"
+                    alt="Underline Button"
+                />
+            </md-underline>
+        </dfn>
+
+        <dfn title="Strikethrough">
+            <md-strikethrough
+                class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+            >
+                <img
+                    src="/images/strikethrough-editor.svg"
+                    width="20"
+                    alt="Strikethrough Button"
+                />
+            </md-strikethrough>
+        </dfn>
+
+        <dfn title="Line Divider">
+            <md-linedivider
+                class="hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit"
+            >
+                <img
+                    src="/images/linedivider-editor.svg"
+                    width="20"
+                    alt="Line Divider Button"
+                    class="linedivider"
+                />
+            </md-linedivider>
+        </dfn>
     </markdown-toolbar>
 </template>
 
