@@ -18523,7 +18523,7 @@ var _hoisted_4 = {
   "class": "flex flex-row justify-center items-center"
 };
 var _hoisted_5 = {
-  "for": "toogleA",
+  "for": "toggleA",
   "class": "flex flex-row justify-between items-center cursor-pointer"
 };
 var _hoisted_6 = {
@@ -18583,10 +18583,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[0] || (_cache[0] = function () {
       return $options.syncToggle && $options.syncToggle.apply($options, arguments);
     }),
-    id: "toogleA",
+    id: "toggleA",
     type: "checkbox",
-    "class": "sr-only"
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" line "), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" dot "), _hoisted_8])]), $data.isSyncing ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_9, _hoisted_12)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$data.isSyncing ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_13, " Scroll Syncing Deactivated ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Markdowntoolbar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
+    "class": "sr-only",
+    checked: ""
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" line "), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" dot "), _hoisted_8])]), this.isSyncing ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_9, _hoisted_12)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !this.isSyncing ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_13, " Scroll Syncing Deactivated ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Markdowntoolbar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
     onScroll: _cache[1] || (_cache[1] = function () {
       return $options.handleScrollMove && $options.handleScrollMove.apply($options, arguments);
     }),
@@ -19970,7 +19971,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\ninput ~ .dot[data-v-5b52636a] {\r\n    transform: translateX(100%);\r\n    background-color: #48bb78;\n}\ninput:checked ~ .dot[data-v-5b52636a] {\r\n    transform: translateX(0%);\r\n    background-color: #a3a3a3;\n}\n.item[data-v-5b52636a] {\r\n    flex-grow: 1;\r\n    flex-shrink: 0;\r\n    flex-basis: 0;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\ninput:checked ~ .dot[data-v-5b52636a] {\r\n    transform: translateX(100%);\r\n    background-color: #48bb78;\n}\ninput ~ .dot[data-v-5b52636a] {\r\n    transform: translateX(0%);\r\n    background-color: #a3a3a3;\n}\n.item[data-v-5b52636a] {\r\n    flex-grow: 1;\r\n    flex-shrink: 0;\r\n    flex-basis: 0;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

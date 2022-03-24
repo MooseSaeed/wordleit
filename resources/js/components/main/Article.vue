@@ -19,16 +19,17 @@
         <div class="absolute left-7 top-0">
             <div class="flex flex-row justify-center items-center">
                 <label
-                    for="toogleA"
+                    for="toggleA"
                     class="flex flex-row justify-between items-center cursor-pointer"
                 >
                     <!-- toggle -->
                     <div class="relative">
                         <input
                             @click="syncToggle"
-                            id="toogleA"
+                            id="toggleA"
                             type="checkbox"
                             class="sr-only"
+                            checked
                         />
                         <!-- line -->
                         <div
@@ -40,11 +41,11 @@
                         ></div>
                     </div>
                 </label>
-                <p v-if="isSyncing" class="flex-1 ml-2 text-gray-500">
+                <p v-if="this.isSyncing" class="flex-1 ml-2 text-gray-500">
                     Scroll Syncing
                     <span class="text-green-700 font-bold">Activated</span>
                 </p>
-                <p v-if="!isSyncing" class="flex-1 ml-2 text-gray-500">
+                <p v-if="!this.isSyncing" class="flex-1 ml-2 text-gray-500">
                     Scroll Syncing Deactivated
                 </p>
             </div>
@@ -133,11 +134,11 @@ export default {
 </script>
 
 <style scoped>
-input ~ .dot {
+input:checked ~ .dot {
     transform: translateX(100%);
     background-color: #48bb78;
 }
-input:checked ~ .dot {
+input ~ .dot {
     transform: translateX(0%);
     background-color: #a3a3a3;
 }
