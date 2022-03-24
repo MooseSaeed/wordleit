@@ -12,11 +12,46 @@
         </div>
     </header>
 
+    <!-- Scroll Syncing Toggle -->
     <div
-        class="bg-blue-500/25 border mx-3 border-gray-900 rounded-xl sm:h-screen px-6 py-5 sm:flex gap-2 flex-col sm:flex-row basis-full justify-center items-center"
+        class="relative bg-blue-500/25 border mx-3 border-gray-900 rounded-xl sm:h-screen px-6 py-6 sm:flex gap-2 flex-col sm:flex-row basis-full justify-center items-center"
     >
+        <div class="absolute left-7 top-0">
+            <div class="flex flex-row justify-center items-center">
+                <label
+                    for="toogleA"
+                    class="flex flex-row justify-between items-center cursor-pointer"
+                >
+                    <!-- toggle -->
+                    <div class="relative">
+                        <input
+                            @click="syncToggle"
+                            id="toogleA"
+                            type="checkbox"
+                            class="sr-only"
+                        />
+                        <!-- line -->
+                        <div
+                            class="w-7 h-2 bg-gray-400 rounded-full shadow-inner"
+                        ></div>
+                        <!-- dot -->
+                        <div
+                            class="dot absolute w-4 h-4 bg-white rounded-full shadow -left-1 -top-1 transition"
+                        ></div>
+                    </div>
+                </label>
+                <p v-if="isSyncing" class="flex-1 ml-2 text-gray-500">
+                    Scroll Syncing
+                    <span class="text-green-700 font-bold">Activated</span>
+                </p>
+                <p v-if="!isSyncing" class="flex-1 ml-2 text-gray-500">
+                    Scroll Syncing Deactivated
+                </p>
+            </div>
+        </div>
         <div class="item sm:flex sm:flex-col h-full w-full">
             <Markdowntoolbar />
+
             <textarea
                 @scroll="handleScrollMove"
                 name="myTextArea"
@@ -25,7 +60,8 @@
                 class="w-full flex-1 rounded-xl p-2 focus:ring-0 h-44"
                 placeholder="Write your magic here.. It will show up there 👀
                 Happy writing ♥️"
-            ></textarea>
+            >
+            </textarea>
         </div>
 
         <div
@@ -54,8 +90,7 @@ export default {
     data() {
         return {
             markdown: "",
-            scrollVertically: "",
-            scrollVerticallyTwo: "",
+            isSyncing: true,
         };
     },
     mounted() {
@@ -74,23 +109,39 @@ export default {
         },
     },
     methods: {
+        syncToggle() {
+            this.isSyncing = !this.isSyncing;
+        },
         handleScrollMove() {
             var scrollBase = document
                 .getElementById("myTextArea")
                 .scrollTop.toFixed();
-            document.getElementById("outputDiv").scrollTop = scrollBase;
+            if (this.isSyncing === true) {
+                document.getElementById("outputDiv").scrollTop = scrollBase;
+            }
         },
         handleScrollMoveBack() {
             var scrollBase = document
                 .getElementById("outputDiv")
                 .scrollTop.toFixed();
-            document.getElementById("myTextArea").scrollTop = scrollBase;
+            if (this.isSyncing === true) {
+                document.getElementById("myTextArea").scrollTop = scrollBase;
+            }
         },
     },
 };
 </script>
 
-<style>
+<style scoped>
+input ~ .dot {
+    transform: translateX(100%);
+    background-color: #48bb78;
+}
+input:checked ~ .dot {
+    transform: translateX(0%);
+    background-color: #a3a3a3;
+}
+
 .item {
     flex-grow: 1;
     flex-shrink: 0;
