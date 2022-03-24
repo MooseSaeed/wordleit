@@ -12,5 +12,27 @@ const mix = require("laravel-mix");
  */
 
 mix.js("resources/js/app.js", "public/js")
-    .vue()
+    .vue({
+        options: {
+            compilerOptions: {
+                isCustomElement: (tag) =>
+                    [
+                        "md-linedivider",
+                        "md-bold",
+                        "md-italic",
+                        "md-link",
+                        "md-ordered-list",
+                        "md-unordered-list",
+                        "md-header",
+                        "md-quote",
+                        "md-code",
+                        "md-table",
+                        "md-image",
+                        "md-underline",
+                        "md-strikethrough",
+                        "markdown-toolbar",
+                    ].includes(tag),
+            },
+        },
+    })
     .postCss("resources/css/app.css", "public/css", [require("tailwindcss")]);
