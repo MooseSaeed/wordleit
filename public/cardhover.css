@@ -3,6 +3,7 @@ html {
 }
 body {
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 .card-wrap {
     will-change: transform;

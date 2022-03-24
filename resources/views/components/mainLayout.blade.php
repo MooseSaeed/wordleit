@@ -16,7 +16,7 @@
 
 </head>
 
-<body id="app" class="relative" style="font-family: Open Sans, sans-serif">
+<body id="app" class="relative">
 
     {{ $slot }}
 

@@ -443,6 +443,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: auto;
   margin-right: auto;
 }
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
 .mt-4 {
   margin-top: 1rem;
 }
@@ -494,11 +498,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-72 {
   height: 18rem;
 }
-.h-screen {
-  height: 100vh;
-}
 .h-full {
   height: 100%;
+}
+.h-44 {
+  height: 11rem;
 }
 .w-full {
   width: 100%;
@@ -738,6 +742,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .text-center {
   text-align: center;
+}
+.font-sans {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 .text-2xl {
   font-size: 1.5rem;
@@ -1393,12 +1400,24 @@ Ensure the default browser behavior of the `hidden` attribute.
     display: flex;
   }
 
+  .sm\:h-screen {
+    height: 100vh;
+  }
+
+  .sm\:h-full {
+    height: 100%;
+  }
+
   .sm\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .sm\:flex-row {
     flex-direction: row;
+  }
+
+  .sm\:flex-col {
+    flex-direction: column;
   }
 
   .sm\:justify-between {

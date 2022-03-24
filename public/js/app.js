@@ -18614,24 +18614,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", {
-  "class": "max-w-xl mx-auto text-center mb-16 text-white"
+  "class": "max-w-xl mx-auto mb-16 text-white"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "mx-3"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
-  "class": "text-4xl text-white font-bold mb-5"
-}, "WordleUp Text Editor"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  "class": "text-4xl text-white font-bold mb-5 text-center"
+}, " WordleUp Text Editor "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   "class": "text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-xs sm:text-sm px-3 py-1 sm:px-5 sm:py-2.5 text-center mr-2 mb-2",
   href: "#learnmore"
-}, "Click me to learn more about it 🤓")], -1
+}, "Click me to learn more about it 🤓")])], -1
 /* HOISTED */
 );
 
 var _hoisted_2 = {
-  "class": "bg-blue-500/25 border border-gray-900 rounded-xl h-screen px-6 py-5 flex gap-2 flex-col sm:flex-row basis-full justify-center items-center"
+  "class": "bg-blue-500/25 border mx-3 border-gray-900 rounded-xl sm:h-screen px-6 py-5 sm:flex gap-2 flex-col sm:flex-row basis-full justify-center items-center"
 };
 var _hoisted_3 = {
-  "class": "item flex flex-col h-full w-full"
+  "class": "item sm:flex sm:flex-col h-full w-full"
 };
 var _hoisted_4 = {
-  "class": "rounded-xl bg-gray-900 devto overflow-x-auto break-words item w-full h-full"
+  "class": "rounded-xl bg-gray-900 devto overflow-x-auto break-words item w-full h-44 sm:h-full"
 };
 var _hoisted_5 = ["innerHTML"];
 var _hoisted_6 = {
@@ -18649,13 +18651,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $data.markdown = $event;
     }),
-    "class": "w-full flex-1 rounded-xl p-2 focus:ring-0",
+    "class": "w-full flex-1 rounded-xl p-2 focus:ring-0 h-44",
     placeholder: "Write your magic here.. It will show up there 👀\r\n                Happy writing ♥️"
   }, null, 512
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.markdown]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     innerHTML: $options.markdownToHtml,
-    "class": "p-2"
+    "class": "p-2 font-sans"
   }, null, 8
   /* PROPS */
   , _hoisted_5)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Learnmore)])], 64
@@ -18678,7 +18680,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "devto learnmoreTool"
+  "class": "devto learnmoreTool mx-3"
 };
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<h2 id=\"hello-cool-writers-👋\">Hello Cool Writers 👋</h2><p> Welcome to the most convenient text editor for tech writers where you can write even with you voice! 😎. </p><p><img src=\"https://66.media.tumblr.com/72c66d6e04e015eeefdb5b79f39fa591/49e7c39d4e7440c4-be/s400x600/034e75d3e73bfa9122ca27ab2a6a2d4448925223.gif\" alt=\"Whoa!\"></p><p> I tried to include anything there is to be included that could help you to only focus on writing and also easily structure and style your articles as you write it. Let me show you what can <strong>Wordleit</strong> editor do 🚀 </p><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>Content Cell</td><td>Content Cell</td></tr><tr><td>Content Cell</td><td>Content Cell</td></tr></tbody></table>", 5);

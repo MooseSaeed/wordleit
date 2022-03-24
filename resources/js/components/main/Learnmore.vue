@@ -1,5 +1,5 @@
 <template>
-    <article class="devto learnmoreTool">
+    <article class="devto learnmoreTool mx-3">
         <h2 id="hello-cool-writers-👋">Hello Cool Writers 👋</h2>
         <p>
             Welcome to the most convenient text editor for tech writers where
