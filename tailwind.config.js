@@ -7,6 +7,9 @@ module.exports = {
 
     theme: {
         extend: {
+            colors: {
+                devtoBg: "#0e0e0e",
+            },
             typography: ({ theme }) => ({
                 devtoStyle: {
                     css: {

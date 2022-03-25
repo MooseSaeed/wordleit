@@ -39,7 +39,7 @@
         </div>
     </div>
     <markdown-toolbar
-        class="bg-gray-900 p-2 text-white rounded-xl mb-2 grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 flex-row gap-1"
+        class="bg-devtoBg p-2 text-white rounded-xl mb-2 grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 flex-row gap-1"
         for="myTextArea"
     >
         <dfn title="Bold">

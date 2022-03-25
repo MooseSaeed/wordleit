@@ -8,7 +8,7 @@
         </div>
 
         <h5 class="text-2xl sm:text-3xl">
-            Subscribe to my newsletter and stay up to date
+            Subscribe to my newsletter and stay up to date.
         </h5>
         <p class="text-sm mt-3">
             Promise to keep the inbox clean. No nonesense.

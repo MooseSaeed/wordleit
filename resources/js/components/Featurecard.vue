@@ -11,8 +11,7 @@
                 </template>
                 <template v-slot:content>
                     <p class="relative text-white">
-                        A text editor supported with Github Markdown features
-                        and AI Speech
+                        A markdown text editor supported with AI Speech
                     </p>
                 </template>
             </Card>

@@ -68,7 +68,7 @@
         <div
             id="outputDiv"
             @scroll="handleScrollMoveBack"
-            class="rounded-xl p-2 bg-gray-900 devto overflow-x-auto break-words item w-full h-44 sm:h-full"
+            class="rounded-xl p-2 bg-devtoBg devto overflow-x-auto break-words item w-full h-44 sm:h-full"
         >
             <div v-html="markdownToHtml" class="p-2 font-sans"></div>
         </div>
