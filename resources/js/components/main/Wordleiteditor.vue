@@ -84,6 +84,7 @@ import Markdowntoolbar from "../Markdowntoolbar.vue";
 import Learnmore from "./Learnmore.vue";
 
 export default {
+    name: "Wordleiteditor",
     components: {
         Markdowntoolbar,
         Learnmore,

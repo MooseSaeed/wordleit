@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import Featurecard from "../components/Featurecard.vue";
 import Card from "../components/card/Card.vue";
-import Article from "../components/main/Article.vue";
+import Wordleiteditor from "../components/main/Wordleiteditor.vue";
 
 const routes = [
     {
@@ -16,9 +16,9 @@ const routes = [
         },
     },
     {
-        path: "/article",
-        name: "Article",
-        component: Article,
+        path: "/wordleiteditor",
+        name: "Wordleiteditor",
+        component: Wordleiteditor,
         meta: {
             enterClass: "animate__animated animate__fadeInLeft",
             leaveClass: "animate__animated animate__bounceOutUp",

@@ -2,7 +2,7 @@
     <section
         class="grid grid-cols-1 gap-y-10 justify-items-center items-center"
     >
-        <router-link to="/article">
+        <router-link to="/wordleiteditor">
             <Card dataImage="./images/pic-sample.jpg">
                 <template v-slot:header>
                     <h2 class="text-white text-2xl font-bold">
