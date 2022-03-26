@@ -1,7 +1,7 @@
 <x-mainLayout>
     <Bodycomponent>
 
-        <App />
+        <Myapp />
 
     </Bodycomponent>
 </x-mainLayout>

@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 import router from "./router";
-import App from "./App.vue";
+import Myapp from "./Myapp.vue";
 import "animate.css";
 import Featurecard from "./components/Featurecard";
 import Bodycomponent from "./components/Bodycomponent";
@@ -21,7 +21,7 @@ const markedMixin = {
 
 createApp({
     components: {
-        App,
+        Myapp,
         Featurecard,
         Bodycomponent,
         marked,
