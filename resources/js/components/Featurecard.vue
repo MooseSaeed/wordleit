@@ -1,5 +1,7 @@
 <template>
-    <section class="grid grid-cols-2 justify-items-center items-center">
+    <section
+        class="grid gap-y-10 sm:grid-cols-2 justify-items-center items-center"
+    >
         <router-link to="/wordleiteditor">
             <Card dataImage="./images/wordleitoutcombined.gif">
                 <template v-slot:header>

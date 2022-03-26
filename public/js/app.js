@@ -18031,7 +18031,7 @@ var _withScopeId = function _withScopeId(n) {
 };
 
 var _hoisted_1 = {
-  "class": "grid grid-cols-2 justify-items-center items-center"
+  "class": "grid gap-y-10 sm:grid-cols-2 justify-items-center items-center"
 };
 
 var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
@@ -18531,7 +18531,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "relative card-info"
+  "class": "relative card-info self-end lg:self-auto"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
