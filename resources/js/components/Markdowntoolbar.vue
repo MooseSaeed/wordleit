@@ -247,7 +247,7 @@ export default {
 
                     const socket = new WebSocket(
                         "wss://api.deepgram.com/v1/listen?language=" + language,
-                        ["token", process.env.VUE_APP_DEEPGRAM_KEY]
+                        ["token", process.env.MIX_VUE_APP_DEEPGRAM_KEY]
                     );
 
                     socket.onopen = () => {
