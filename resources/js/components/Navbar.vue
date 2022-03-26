@@ -4,7 +4,7 @@
     >
         <div>
             <a href="/">
-                <img src="/images/my-logo-dark.png" alt="" />
+                <Wordleitlogo />
             </a>
         </div>
 
@@ -20,7 +20,12 @@
 </template>
 
 <script>
-export default {};
+import Wordleitlogo from "./Wordleitlogo.vue";
+export default {
+    components: {
+        Wordleitlogo,
+    },
+};
 </script>
 
 <style></style>

@@ -1,15 +1,13 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import Featurecard from "../components/Featurecard.vue";
-import Card from "../components/card/Card.vue";
+import Homepage from "../components/main/Homepage.vue";
 import Wordleiteditor from "../components/main/Wordleiteditor.vue";
 
 const routes = [
     {
         path: "/",
-        name: "Featurecard",
-        component: Featurecard,
-        Card,
+        name: "Homepage",
+        component: Homepage,
         meta: {
             enterClass: "animate__animated animate__bounceInDown animate__slow",
             leaveClass: "animate__animated animate__bounceOutUp",
