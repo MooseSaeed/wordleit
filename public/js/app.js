@@ -17586,82 +17586,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Markdowntoolbar.vue?vue&type=script&lang=js":
-/*!*********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Markdowntoolbar.vue?vue&type=script&lang=js ***!
-  \*********************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _components_SVGs_Microphone_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/SVGs/Microphone.vue */ "./resources/js/components/SVGs/Microphone.vue");
-/* harmony import */ var _components_SVGs_Stoprecroding_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/SVGs/Stoprecroding.vue */ "./resources/js/components/SVGs/Stoprecroding.vue");
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  components: {
-    Microphone: _components_SVGs_Microphone_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Stoprecroding: _components_SVGs_Stoprecroding_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    lang: ""
-  },
-  data: function data() {
-    return {
-      recording: false
-    };
-  },
-  methods: {
-    toggleRecording: function toggleRecording() {
-      this.recording = !this.recording;
-
-      if (this.recording) {
-        this.initRecorder();
-      } else {
-        this.stopRecording();
-      }
-    },
-    initRecorder: function initRecorder() {
-      this.startTranscript();
-    },
-    stopRecording: function stopRecording() {
-      WebSocket.close;
-    },
-    startTranscript: function startTranscript() {
-      navigator.mediaDevices.getUserMedia({
-        audio: true
-      }).then(function (stream) {
-        var mediaRecorder = new MediaRecorder(stream, {
-          mimeType: "audio/webm"
-        });
-        var language = document.querySelector("select").value;
-        var socket = new WebSocket("wss://api.deepgram.com/v1/listen?language=" + language, ["token", "f5877aff8c5aa45112b63e645ddb3841472df7a6"]);
-
-        socket.onopen = function () {
-          mediaRecorder.addEventListener("dataavailable", function (event) {
-            socket.send(event.data);
-          });
-          mediaRecorder.start(250);
-        };
-
-        socket.onmessage = function (message) {
-          var received = JSON.parse(message.data);
-          var transcript = received.channel.alternatives[0].transcript;
-
-          if (transcript && received.is_final) {
-            document.querySelector("#myTextArea").textContent += transcript + " ";
-            console.log(transcript);
-          }
-
-          console.log(transcript);
-        };
-      });
-    }
-  }
-});
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Navbar.vue?vue&type=script&lang=js":
 /*!************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Navbar.vue?vue&type=script&lang=js ***!
@@ -17860,19 +17784,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Wordleitlogo_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Wordleitlogo.vue */ "./resources/js/components/Wordleitlogo.vue");
-/* harmony import */ var _Markdowntoolbar_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Markdowntoolbar.vue */ "./resources/js/components/Markdowntoolbar.vue");
+/* harmony import */ var _SVGs_Microphone_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../SVGs/Microphone.vue */ "./resources/js/components/SVGs/Microphone.vue");
+/* harmony import */ var _SVGs_Stoprecroding_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../SVGs/Stoprecroding.vue */ "./resources/js/components/SVGs/Stoprecroding.vue");
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Wordleiteditor",
   components: {
-    Markdowntoolbar: _Markdowntoolbar_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    Wordleitlogo: _Wordleitlogo_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    Wordleitlogo: _Wordleitlogo_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    Microphone: _SVGs_Microphone_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Stoprecroding: _SVGs_Stoprecroding_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
     return {
       markdown: "",
-      isSyncing: true
+      isSyncing: true,
+      lang: ""
     };
   },
   mounted: function mounted() {
@@ -17891,6 +17819,51 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    toggleRecording: function toggleRecording() {
+      this.recording = !this.recording;
+
+      if (this.recording) {
+        this.initRecorder();
+      } else {
+        this.stopRecording();
+      }
+    },
+    initRecorder: function initRecorder() {
+      this.startTranscript();
+    },
+    stopRecording: function stopRecording() {
+      WebSocket.close;
+    },
+    startTranscript: function startTranscript() {
+      navigator.mediaDevices.getUserMedia({
+        audio: true
+      }).then(function (stream) {
+        var mediaRecorder = new MediaRecorder(stream, {
+          mimeType: "audio/webm"
+        });
+        var language = document.querySelector("select").value;
+        var socket = new WebSocket("wss://api.deepgram.com/v1/listen?language=" + language, ["token", "f5877aff8c5aa45112b63e645ddb3841472df7a6"]);
+
+        socket.onopen = function () {
+          mediaRecorder.addEventListener("dataavailable", function (event) {
+            socket.send(event.data);
+          });
+          mediaRecorder.start(250);
+        };
+
+        socket.onmessage = function (message) {
+          var received = JSON.parse(message.data);
+          var transcript = received.channel.alternatives[0].transcript;
+
+          if (transcript && received.is_final) {
+            document.querySelector("#myTextArea").textContent += transcript + " ";
+            console.log(transcript);
+          }
+
+          console.log(transcript);
+        };
+      });
+    },
     syncToggle: function syncToggle() {
       this.isSyncing = !this.isSyncing;
     },
@@ -18176,62 +18149,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Svgnewsletterdark = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Svgnewsletterdark");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("footer", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Svgnewsletterdark)]), _hoisted_2, _hoisted_3, _hoisted_4, _hoisted_5]);
-}
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Markdowntoolbar.vue?vue&type=template&id=db896bde":
-/*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Markdowntoolbar.vue?vue&type=template&id=db896bde ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render)
-/* harmony export */ });
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-
-var _hoisted_1 = {
-  "class": "grid grid-cols-1 gap-1"
-};
-var _hoisted_2 = {
-  type: "button",
-  "class": "flex flex-col gap-1 lg:flex-row justify-between items-center font-semibold text-white text-bold w-full bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg text-sm px-5 py-1 text-center mr-2 mb-2"
-};
-
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)(" Start AI Speech <select class=\"max-w-max block w-full px-3 py-1.5 text-sm text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none\" name=\"lang\" id=\"lang\"><option value=\"en\">General English</option><option value=\"en-US\">United States - English</option><option value=\"en-GB\">United Kingdom - English</option><option value=\"en-AU\">Australia - English</option><option value=\"en-IN\">India - English</option><option value=\"en-NZ\">New Zealand - English</option><option value=\"uk\">Ukrainian</option><option value=\"fr\">French</option><option value=\"fr-CA\">Canada - French</option><option value=\"de\">German</option><option value=\"ru\">Russian</option><option value=\"es\">Spanish</option><option value=\"es-419\">Latin America - Spanish</option><option value=\"hi\">Hindi</option><option value=\"nl\">Dutch</option></select>", 2);
-
-var _hoisted_5 = {
-  "class": "relative"
-};
-
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<markdown-toolbar class=\"bg-devtoBg p-2 text-white rounded-xl mb-2 grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 flex-row gap-1\" for=\"myTextArea\"><dfn title=\"Bold\"><md-bold class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/bold-editor.svg\" width=\"18\" alt=\"Bold Button\"></md-bold></dfn><dfn title=\"Italic\"><md-italic class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/italic-editor.svg\" width=\"18\" alt=\"Italic Button\"></md-italic></dfn><dfn title=\"Link\"><md-link class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/link-editor.svg\" width=\"18\" alt=\"Link Button\"></md-link></dfn><dfn title=\"Ordered List\"><md-ordered-list class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/odlist-editor.svg\" width=\"18\" alt=\"Ordered List Button\"></md-ordered-list></dfn><dfn title=\"Unordered List\"><md-unordered-list class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/ullist-editor.svg\" width=\"18\" alt=\"Unordered List Button\"></md-unordered-list></dfn><dfn title=\"Heading\"><md-header class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/heading-editor.png\" width=\"18\" alt=\"Heading Button\"></md-header></dfn><dfn title=\"Quote\"><md-quote class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/quote-editor.png\" width=\"20\" alt=\"Quote Button\"></md-quote></dfn><dfn title=\"Code (Inline &amp; Block)\"><md-code class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/code-editor.png\" width=\"20\" alt=\"Code Button\"></md-code></dfn><dfn title=\"Table\"><md-table data-md-button class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/table-editor.svg\" width=\"20\" alt=\"Table Button\"></md-table></dfn><dfn title=\"Image\"><md-image class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/image-editor.svg\" width=\"20\" alt=\"Image Button\"></md-image></dfn><dfn title=\"Underline\"><md-underline class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/underline-editor.svg\" width=\"20\" alt=\"Underline Button\"></md-underline></dfn><dfn title=\"Strikethrough\"><md-strikethrough class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/strikethrough-editor.svg\" width=\"20\" alt=\"Strikethrough Button\"></md-strikethrough></dfn><dfn title=\"Line Divider\"><md-linedivider class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/linedivider-editor.svg\" width=\"20\" alt=\"Line Divider Button\" class=\"linedivider\"></md-linedivider></dfn></markdown-toolbar>", 1);
-
-function render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_Stoprecroding = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Stoprecroding");
-
-  var _component_Microphone = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Microphone");
-
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [$data.recording ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Stoprecroding, {
-    key: 0,
-    onClick: $options.toggleRecording
-  }, null, 8
-  /* PROPS */
-  , ["onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.recording ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Stoprecroding, {
-    key: 1,
-    onClick: $options.toggleRecording,
-    "class": "animate-ping absolute top-0 right-0"
-  }, null, 8
-  /* PROPS */
-  , ["onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), !$data.recording ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Microphone, {
-    key: 0,
-    onClick: $options.toggleRecording
-  }, null, 8
-  /* PROPS */
-  , ["onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), _hoisted_6], 64
-  /* STABLE_FRAGMENT */
-  );
 }
 
 /***/ }),
@@ -18685,15 +18602,33 @@ var _hoisted_17 = {
 var _hoisted_18 = {
   "class": "item sm:flex sm:flex-col h-full w-full"
 };
-var _hoisted_19 = ["innerHTML"];
+var _hoisted_19 = {
+  "class": "grid grid-cols-1 gap-1"
+};
 var _hoisted_20 = {
+  type: "button",
+  "class": "flex flex-col gap-1 lg:flex-row justify-between items-center font-semibold text-white text-bold w-full bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg text-sm px-5 py-1 text-center mr-2 mb-2"
+};
+
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)(" Start AI Speech <select class=\"max-w-max block w-full px-3 py-1.5 text-sm text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none\" name=\"lang\" id=\"lang\" data-v-ca5483d4><option value=\"en\" data-v-ca5483d4>General English</option><option value=\"en-US\" data-v-ca5483d4>United States - English</option><option value=\"en-GB\" data-v-ca5483d4>United Kingdom - English</option><option value=\"en-AU\" data-v-ca5483d4>Australia - English</option><option value=\"en-IN\" data-v-ca5483d4>India - English</option><option value=\"en-NZ\" data-v-ca5483d4>New Zealand - English</option><option value=\"uk\" data-v-ca5483d4>Ukrainian</option><option value=\"fr\" data-v-ca5483d4>French</option><option value=\"fr-CA\" data-v-ca5483d4>Canada - French</option><option value=\"de\" data-v-ca5483d4>German</option><option value=\"ru\" data-v-ca5483d4>Russian</option><option value=\"es\" data-v-ca5483d4>Spanish</option><option value=\"es-419\" data-v-ca5483d4>Latin America - Spanish</option><option value=\"hi\" data-v-ca5483d4>Hindi</option><option value=\"nl\" data-v-ca5483d4>Dutch</option></select>", 2);
+
+var _hoisted_23 = {
+  "class": "relative"
+};
+
+var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<markdown-toolbar class=\"bg-devtoBg p-2 text-white rounded-xl mb-2 grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 flex-row gap-1\" for=\"myTextArea\" data-v-ca5483d4><dfn title=\"Bold\" data-v-ca5483d4><md-bold class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\" data-v-ca5483d4><img src=\"/images/bold-editor.svg\" width=\"18\" alt=\"Bold Button\" data-v-ca5483d4></md-bold></dfn><dfn title=\"Italic\" data-v-ca5483d4><md-italic class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\" data-v-ca5483d4><img src=\"/images/italic-editor.svg\" width=\"18\" alt=\"Italic Button\" data-v-ca5483d4></md-italic></dfn><dfn title=\"Link\" data-v-ca5483d4><md-link class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\" data-v-ca5483d4><img src=\"/images/link-editor.svg\" width=\"18\" alt=\"Link Button\" data-v-ca5483d4></md-link></dfn><dfn title=\"Ordered List\" data-v-ca5483d4><md-ordered-list class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\" data-v-ca5483d4><img src=\"/images/odlist-editor.svg\" width=\"18\" alt=\"Ordered List Button\" data-v-ca5483d4></md-ordered-list></dfn><dfn title=\"Unordered List\" data-v-ca5483d4><md-unordered-list class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\" data-v-ca5483d4><img src=\"/images/ullist-editor.svg\" width=\"18\" alt=\"Unordered List Button\" data-v-ca5483d4></md-unordered-list></dfn><dfn title=\"Heading\" data-v-ca5483d4><md-header class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\" data-v-ca5483d4><img src=\"/images/heading-editor.png\" width=\"18\" alt=\"Heading Button\" data-v-ca5483d4></md-header></dfn><dfn title=\"Quote\" data-v-ca5483d4><md-quote class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\" data-v-ca5483d4><img src=\"/images/quote-editor.png\" width=\"20\" alt=\"Quote Button\" data-v-ca5483d4></md-quote></dfn><dfn title=\"Code (Inline &amp; Block)\" data-v-ca5483d4><md-code class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\" data-v-ca5483d4><img src=\"/images/code-editor.png\" width=\"20\" alt=\"Code Button\" data-v-ca5483d4></md-code></dfn><dfn title=\"Table\" data-v-ca5483d4><md-table data-md-button class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\" data-v-ca5483d4><img src=\"/images/table-editor.svg\" width=\"20\" alt=\"Table Button\" data-v-ca5483d4></md-table></dfn><dfn title=\"Image\" data-v-ca5483d4><md-image class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\" data-v-ca5483d4><img src=\"/images/image-editor.svg\" width=\"20\" alt=\"Image Button\" data-v-ca5483d4></md-image></dfn><dfn title=\"Underline\" data-v-ca5483d4><md-underline class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\" data-v-ca5483d4><img src=\"/images/underline-editor.svg\" width=\"20\" alt=\"Underline Button\" data-v-ca5483d4></md-underline></dfn><dfn title=\"Strikethrough\" data-v-ca5483d4><md-strikethrough class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\" data-v-ca5483d4><img src=\"/images/strikethrough-editor.svg\" width=\"20\" alt=\"Strikethrough Button\" data-v-ca5483d4></md-strikethrough></dfn><dfn title=\"Line Divider\" data-v-ca5483d4><md-linedivider class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\" data-v-ca5483d4><img src=\"/images/linedivider-editor.svg\" width=\"20\" alt=\"Line Divider Button\" class=\"linedivider\" data-v-ca5483d4></md-linedivider></dfn></markdown-toolbar>", 1);
+
+var _hoisted_25 = ["innerHTML"];
+var _hoisted_26 = {
   "class": "mt-5",
   id: "learnmore"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Wordleitlogo = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Wordleitlogo");
 
-  var _component_Markdowntoolbar = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Markdowntoolbar");
+  var _component_Stoprecroding = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Stoprecroding");
+
+  var _component_Microphone = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Microphone");
 
   var _component_Learnmore = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Learnmore");
 
@@ -18705,7 +18640,23 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     type: "checkbox",
     "class": "sr-only",
     checked: ""
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" line "), _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" dot "), _hoisted_12])]), this.isSyncing ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_13, _hoisted_16)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !this.isSyncing ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_17, " Scroll Syncing Deactivated ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Markdowntoolbar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" line "), _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" dot "), _hoisted_12])]), this.isSyncing ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_13, _hoisted_16)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !this.isSyncing ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_17, " Scroll Syncing Deactivated ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [_hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [_ctx.recording ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Stoprecroding, {
+    key: 0,
+    onClick: $options.toggleRecording
+  }, null, 8
+  /* PROPS */
+  , ["onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.recording ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Stoprecroding, {
+    key: 1,
+    onClick: $options.toggleRecording,
+    "class": "animate-ping absolute top-0 right-0"
+  }, null, 8
+  /* PROPS */
+  , ["onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), !_ctx.recording ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Microphone, {
+    key: 0,
+    onClick: $options.toggleRecording
+  }, null, 8
+  /* PROPS */
+  , ["onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), _hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
     onScroll: _cache[1] || (_cache[1] = function () {
       return $options.handleScrollMove && $options.handleScrollMove.apply($options, arguments);
     }),
@@ -18729,9 +18680,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "p-2 font-sans"
   }, null, 8
   /* PROPS */
-  , _hoisted_19)], 32
+  , _hoisted_25)], 32
   /* HYDRATE_EVENTS */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Learnmore)])], 64
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Learnmore)])], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -20026,29 +19977,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, "\nh2[data-v-046892eb],\r\np[data-v-046
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css":
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.linedivider {\r\n    fill: rgb(33, 33, 219) !important;\n}\r\n", ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Wordleiteditor.vue?vue&type=style&index=0&id=ca5483d4&scoped=true&lang=css":
 /*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Wordleiteditor.vue?vue&type=style&index=0&id=ca5483d4&scoped=true&lang=css ***!
@@ -20243,35 +20171,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Featurecard_vue_vue_type_style_index_0_id_046892eb_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css":
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Markdowntoolbar_vue_vue_type_style_index_0_id_db896bde_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Markdowntoolbar_vue_vue_type_style_index_0_id_db896bde_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Markdowntoolbar_vue_vue_type_style_index_0_id_db896bde_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -20717,36 +20616,6 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/js/components/Markdowntoolbar.vue":
-/*!*****************************************************!*\
-  !*** ./resources/js/components/Markdowntoolbar.vue ***!
-  \*****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _Markdowntoolbar_vue_vue_type_template_id_db896bde__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Markdowntoolbar.vue?vue&type=template&id=db896bde */ "./resources/js/components/Markdowntoolbar.vue?vue&type=template&id=db896bde");
-/* harmony import */ var _Markdowntoolbar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Markdowntoolbar.vue?vue&type=script&lang=js */ "./resources/js/components/Markdowntoolbar.vue?vue&type=script&lang=js");
-/* harmony import */ var _Markdowntoolbar_vue_vue_type_style_index_0_id_db896bde_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css */ "./resources/js/components/Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css");
-/* harmony import */ var F_Projects_wordleup_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
-
-
-
-
-;
-
-
-const __exports__ = /*#__PURE__*/(0,F_Projects_wordleup_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Markdowntoolbar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Markdowntoolbar_vue_vue_type_template_id_db896bde__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Markdowntoolbar.vue"]])
-/* hot reload */
-if (false) {}
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
-
-/***/ }),
-
 /***/ "./resources/js/components/Navbar.vue":
 /*!********************************************!*\
   !*** ./resources/js/components/Navbar.vue ***!
@@ -21026,21 +20895,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/Markdowntoolbar.vue?vue&type=script&lang=js":
-/*!*****************************************************************************!*\
-  !*** ./resources/js/components/Markdowntoolbar.vue?vue&type=script&lang=js ***!
-  \*****************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Markdowntoolbar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Markdowntoolbar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Markdowntoolbar.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Markdowntoolbar.vue?vue&type=script&lang=js");
- 
-
-/***/ }),
-
 /***/ "./resources/js/components/Navbar.vue?vue&type=script&lang=js":
 /*!********************************************************************!*\
   !*** ./resources/js/components/Navbar.vue?vue&type=script&lang=js ***!
@@ -21221,21 +21075,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/Markdowntoolbar.vue?vue&type=template&id=db896bde":
-/*!***********************************************************************************!*\
-  !*** ./resources/js/components/Markdowntoolbar.vue?vue&type=template&id=db896bde ***!
-  \***********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Markdowntoolbar_vue_vue_type_template_id_db896bde__WEBPACK_IMPORTED_MODULE_0__.render)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Markdowntoolbar_vue_vue_type_template_id_db896bde__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Markdowntoolbar.vue?vue&type=template&id=db896bde */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Markdowntoolbar.vue?vue&type=template&id=db896bde");
-
-
-/***/ }),
-
 /***/ "./resources/js/components/Navbar.vue?vue&type=template&id=6dde423b":
 /*!**************************************************************************!*\
   !*** ./resources/js/components/Navbar.vue?vue&type=template&id=6dde423b ***!
@@ -21376,18 +21215,6 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Featurecard_vue_vue_type_style_index_0_id_046892eb_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Featurecard.vue?vue&type=style&index=0&id=046892eb&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Featurecard.vue?vue&type=style&index=0&id=046892eb&scoped=true&lang=css");
-
-
-/***/ }),
-
-/***/ "./resources/js/components/Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css":
-/*!*************************************************************************************************!*\
-  !*** ./resources/js/components/Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css ***!
-  \*************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Markdowntoolbar_vue_vue_type_style_index_0_id_db896bde_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css");
 
 
 /***/ }),
