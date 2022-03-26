@@ -219,7 +219,7 @@ export default {
     methods: {
         toggleRecording() {
             this.recording = !this.recording;
-            console.log(this.recording);
+
             if (this.recording) {
                 this.initRecorder();
             } else {
@@ -268,7 +268,9 @@ export default {
                         if (transcript && received.is_final) {
                             document.querySelector("#myTextArea").textContent +=
                                 transcript + " ";
+                            console.log(transcript);
                         }
+                        console.log(transcript);
                     };
                 });
         },
