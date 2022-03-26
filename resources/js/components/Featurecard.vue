@@ -19,7 +19,7 @@
                 <h2 class="text-white text-xl font-bold">Coming Soon!</h2>
             </template>
             <template v-slot:content>
-                <p class="relative text-white">Stay Tuned</p>
+                <p class="relative text-white">Stay Tuned.</p>
             </template>
         </Card>
     </section>
