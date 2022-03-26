@@ -209,11 +209,11 @@ export default {
     components: {
         Microphone,
         Stoprecroding,
-        lang: "",
     },
     data() {
         return {
             recording: false,
+            lang: "",
         };
     },
     methods: {
@@ -228,6 +228,7 @@ export default {
 
         initRecorder() {
             this.startTranscript();
+            document.querySelector("#myTextArea").textContent += "Hello" + " ";
         },
 
         stopRecording() {
@@ -265,7 +266,7 @@ export default {
                         const transcript =
                             received.channel.alternatives[0].transcript;
                         if (transcript && received.is_final) {
-                            document.querySelector("#myTextArea").textContent +=
+                            document.querySelector("#myTextArea").value +=
                                 transcript + " ";
                         }
                     };
