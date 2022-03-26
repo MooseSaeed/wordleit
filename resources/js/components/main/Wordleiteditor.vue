@@ -1,9 +1,14 @@
 <template>
-    <header class="max-w-xl mx-auto mb-16 text-white">
+    <header class="max-w-4xl mx-auto mb-16 text-white">
         <div class="mx-3">
-            <h1 class="text-4xl text-white font-bold mb-5 text-center">
-                Wordleit Text Editor
-            </h1>
+            <div
+                class="flex flex-col sm:flex-row justify-center items-center mb-7"
+            >
+                <Wordleitlogo />
+                <h1 class="text-4xl ml-2 text-white font-bold text-center">
+                    Markdown
+                </h1>
+            </div>
             <a
                 class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-xs sm:text-sm px-3 py-1 sm:px-5 sm:py-2.5 text-center mr-2 mb-2"
                 href="#learnmore"
@@ -80,12 +85,14 @@
 </template>
 
 <script>
+import Wordleitlogo from "../Wordleitlogo.vue";
 import Markdowntoolbar from "../Markdowntoolbar.vue";
 
 export default {
     name: "Wordleiteditor",
     components: {
         Markdowntoolbar,
+        Wordleitlogo,
     },
     data() {
         return {

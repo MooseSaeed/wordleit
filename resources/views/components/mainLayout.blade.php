@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Hight quality Web Development knowledge source. Most probably you will find what you're looking for" />
-    <meta property="og:title" content="iSaidCode! Blog" />
-    <meta property="og:description" content="Hight quality Web Development knowledge source. Most probably you will find what you're looking for" />
+    <meta name="description" content="Hight quality Markdown Text Editor for tech writers." />
+    <meta property="og:title" content="Wordleit" />
+    <meta property="og:description" content="Hight quality Markdown Text Editor for tech writers." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://i.imgur.com/MBWxgds.png" />
-    <title>I Said Code! Blog</title>
-    <link rel="stylesheet" href="{{ asset('/css/app.css') }}" />
-    <link rel="stylesheet" href="{{ asset('/cardhover.css') }}" />
-    <script src="{{ asset('/js/app.js') }}" defer></script>
+    <meta property="og:image" content="https://i.imgur.com/vqzCPAL.png" />
+    <title>Wordleit</title>
+    <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="/cardhover.css" />
+    <script src="/js/app.js" defer></script>
 
 </head>
 

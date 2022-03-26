@@ -17857,12 +17857,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Markdowntoolbar_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Markdowntoolbar.vue */ "./resources/js/components/Markdowntoolbar.vue");
+/* harmony import */ var _Wordleitlogo_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Wordleitlogo.vue */ "./resources/js/components/Wordleitlogo.vue");
+/* harmony import */ var _Markdowntoolbar_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Markdowntoolbar.vue */ "./resources/js/components/Markdowntoolbar.vue");
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Wordleiteditor",
   components: {
-    Markdowntoolbar: _Markdowntoolbar_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    Markdowntoolbar: _Markdowntoolbar_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Wordleitlogo: _Wordleitlogo_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   data: function data() {
     return {
@@ -18597,39 +18600,51 @@ var _withScopeId = function _withScopeId(n) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-ca5483d4"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
 };
 
-var _hoisted_1 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", {
-    "class": "max-w-xl mx-auto mb-16 text-white"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "mx-3"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
-    "class": "text-4xl text-white font-bold mb-5 text-center"
-  }, " Wordleit Text Editor "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-    "class": "text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-xs sm:text-sm px-3 py-1 sm:px-5 sm:py-2.5 text-center mr-2 mb-2",
-    href: "#learnmore"
-  }, "Click me to learn more about it 🤓")])], -1
+var _hoisted_1 = {
+  "class": "max-w-4xl mx-auto mb-16 text-white"
+};
+var _hoisted_2 = {
+  "class": "mx-3"
+};
+var _hoisted_3 = {
+  "class": "flex flex-col sm:flex-row justify-center items-center mb-7"
+};
+
+var _hoisted_4 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
+    "class": "text-4xl ml-2 text-white font-bold text-center"
+  }, " Markdown ", -1
   /* HOISTED */
   );
 });
 
-var _hoisted_2 = {
+var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    "class": "text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-xs sm:text-sm px-3 py-1 sm:px-5 sm:py-2.5 text-center mr-2 mb-2",
+    href: "#learnmore"
+  }, "Click me to learn more about it 🤓", -1
+  /* HOISTED */
+  );
+});
+
+var _hoisted_6 = {
   "class": "relative bg-blue-500/25 border mx-3 border-gray-900 rounded-xl sm:h-screen px-6 py-6 sm:flex gap-2 flex-col sm:flex-row basis-full justify-center items-center"
 };
-var _hoisted_3 = {
+var _hoisted_7 = {
   "class": "absolute left-7 top-0"
 };
-var _hoisted_4 = {
+var _hoisted_8 = {
   "class": "flex flex-row justify-center items-center"
 };
-var _hoisted_5 = {
+var _hoisted_9 = {
   "for": "toggleA",
   "class": "flex flex-row justify-between items-center cursor-pointer"
 };
-var _hoisted_6 = {
+var _hoisted_10 = {
   "class": "relative"
 };
 
-var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_11 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "w-7 h-2 bg-gray-400 rounded-full shadow-inner"
   }, null, -1
@@ -18637,7 +18652,7 @@ var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_12 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "dot absolute w-4 h-4 bg-white rounded-full shadow -left-1 -top-1 transition"
   }, null, -1
@@ -18645,14 +18660,14 @@ var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_9 = {
+var _hoisted_13 = {
   key: 0,
   "class": "flex-1 ml-2 text-gray-500"
 };
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Scroll Syncing ");
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Scroll Syncing ");
 
-var _hoisted_11 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_15 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": "text-green-700 font-bold"
   }, "Activated", -1
@@ -18660,25 +18675,27 @@ var _hoisted_11 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_12 = [_hoisted_10, _hoisted_11];
-var _hoisted_13 = {
+var _hoisted_16 = [_hoisted_14, _hoisted_15];
+var _hoisted_17 = {
   key: 1,
   "class": "flex-1 ml-2 text-gray-500"
 };
-var _hoisted_14 = {
+var _hoisted_18 = {
   "class": "item sm:flex sm:flex-col h-full w-full"
 };
-var _hoisted_15 = ["innerHTML"];
-var _hoisted_16 = {
+var _hoisted_19 = ["innerHTML"];
+var _hoisted_20 = {
   "class": "mt-5",
   id: "learnmore"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_Wordleitlogo = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Wordleitlogo");
+
   var _component_Markdowntoolbar = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Markdowntoolbar");
 
   var _component_Learnmore = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Learnmore");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Scroll Syncing Toggle "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" toggle "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Wordleitlogo), _hoisted_4]), _hoisted_5])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Scroll Syncing Toggle "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" toggle "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     onClick: _cache[0] || (_cache[0] = function () {
       return $options.syncToggle && $options.syncToggle.apply($options, arguments);
     }),
@@ -18686,7 +18703,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     type: "checkbox",
     "class": "sr-only",
     checked: ""
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" line "), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" dot "), _hoisted_8])]), this.isSyncing ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_9, _hoisted_12)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !this.isSyncing ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_13, " Scroll Syncing Deactivated ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Markdowntoolbar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" line "), _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" dot "), _hoisted_12])]), this.isSyncing ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_13, _hoisted_16)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !this.isSyncing ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_17, " Scroll Syncing Deactivated ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Markdowntoolbar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
     onScroll: _cache[1] || (_cache[1] = function () {
       return $options.handleScrollMove && $options.handleScrollMove.apply($options, arguments);
     }),
@@ -18710,9 +18727,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "p-2 font-sans"
   }, null, 8
   /* PROPS */
-  , _hoisted_15)], 32
+  , _hoisted_19)], 32
   /* HYDRATE_EVENTS */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Learnmore)])], 64
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Learnmore)])], 64
   /* STABLE_FRAGMENT */
   );
 }
