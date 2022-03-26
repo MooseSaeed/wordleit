@@ -199,6 +199,13 @@
                 />
             </md-linedivider>
         </dfn>
+        <textarea
+            name="testing"
+            id="testing"
+            cols="30"
+            rows="10"
+            class="text-black"
+        ></textarea>
     </markdown-toolbar>
 </template>
 
@@ -219,7 +226,6 @@ export default {
     methods: {
         toggleRecording() {
             this.recording = !this.recording;
-            console.log(this.recording);
             if (this.recording) {
                 this.initRecorder();
             } else {
@@ -266,7 +272,7 @@ export default {
                         const transcript =
                             received.channel.alternatives[0].transcript;
                         if (transcript && received.is_final) {
-                            document.querySelector("#myTextArea").textContent +=
+                            document.querySelector("#testing").textContent +=
                                 transcript + " ";
                         }
                     };
