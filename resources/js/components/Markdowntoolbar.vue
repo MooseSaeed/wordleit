@@ -219,7 +219,6 @@ export default {
     methods: {
         toggleRecording() {
             this.recording = !this.recording;
-            console.log(this.recording);
             if (this.recording) {
                 this.initRecorder();
             } else {
