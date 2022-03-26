@@ -17652,6 +17652,8 @@ __webpack_require__.r(__webpack_exports__);
             document.querySelector("#myTextArea").textContent += transcript + " ";
             console.log(transcript);
           }
+
+          console.log(transcript);
         };
       });
     }

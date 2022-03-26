@@ -270,6 +270,7 @@ export default {
                                 transcript + " ";
                             console.log(transcript);
                         }
+                        console.log(transcript);
                     };
                 });
         },
