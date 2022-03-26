@@ -219,7 +219,7 @@ export default {
     methods: {
         toggleRecording() {
             this.recording = !this.recording;
-
+            console.log(this.recording);
             if (this.recording) {
                 this.initRecorder();
             } else {
@@ -247,7 +247,7 @@ export default {
 
                     const socket = new WebSocket(
                         "wss://api.deepgram.com/v1/listen?language=" + language,
-                        ["token", process.env.VUE_APP_DEEPGRAM_KEY]
+                        ["token", process.env.MIX_VUE_APP_DEEPGRAM_KEY]
                     );
 
                     socket.onopen = () => {
@@ -268,9 +268,7 @@ export default {
                         if (transcript && received.is_final) {
                             document.querySelector("#myTextArea").textContent +=
                                 transcript + " ";
-                            console.log(transcript);
                         }
-                        console.log(transcript);
                     };
                 });
         },
