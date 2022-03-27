@@ -488,6 +488,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mr-2 {
   margin-right: 0.5rem;
 }
+.ml-2 {
+  margin-left: 0.5rem;
+}
 .mt-8 {
   margin-top: 2rem;
 }
@@ -496,9 +499,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mb-7 {
   margin-bottom: 1.75rem;
-}
-.ml-2 {
-  margin-left: 0.5rem;
 }
 .mt-5 {
   margin-top: 1.25rem;
@@ -608,6 +608,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .items-center {
   align-items: center;
+}
+.justify-start {
+  justify-content: flex-start;
 }
 .justify-center {
   justify-content: center;

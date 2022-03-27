@@ -8,7 +8,7 @@
     <meta property="og:title" content="Wordleit" />
     <meta property="og:description" content="Hight quality Markdown Text Editor for tech writers." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://i.imgur.com/vqzCPAL.png" />
+    <meta property="og:image" content="https://i.ibb.co/k3C82xd/wordleitsmalllogo.png" />
     <title>Wordleit</title>
     <link rel="stylesheet" href="/css/app.css" />
     <link rel="stylesheet" href="/cardhover.css" />
