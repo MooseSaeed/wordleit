@@ -5,7 +5,7 @@
                 Welcome To My Wordle<span class="wordle">it</span>! 👋
             </h2>
             <p>
-                <strong>Wordleit</strong> is a free open source markdown text
+                <strong>Wordleit</strong> is a free in-browser markdown text
                 editor that gives you a seamless experience as both a reader and
                 a writer. It&#39;s using
                 <a href="https://marked.js.org/">MarkedJS</a> so that you have
@@ -30,13 +30,40 @@
                 what&#39;s on your mind into an article and then style it with
                 only few clicks. The AI speech to text is also useful for
                 writing articles from your phone anytime during the day.
-                That&#39;s not all, let&#39;s check everything out in details 🚀
             </p>
         </h1>
     </div>
 
     <div class="flex flex-row">
-        <div class="devto">
+        <div class="devto item devtoOutput">
+            <h3 id="deepgram-ai-speech-to-text">Deepgram AI Speech To Text:</h3>
+            <p>
+                <a href="https://deepgram.com/">Deepgram</a> is offering a great
+                AI Speech Recognition service and it provides an accurate and
+                fast transcription for many languages and accents. With Wordleit
+                markdown editor, you&#39;ll be able to use your voice to write
+                as many articles as you want. This is how you can use this
+                feature:
+            </p>
+            <ul>
+                <li>
+                    Connect a microphone to your device and insure that it&#39;s
+                    working properly.
+                </li>
+                <li>Click on the mic icon above the toolbar</li>
+                <li>Allow browser to use microphone.</li>
+                <li>Start speaking and watch it happen.</li>
+            </ul>
+            <h4 id="please-note">Please note:</h4>
+            <ul>
+                <li>
+                    Transcription output starts from the last letter inserted in
+                    text area.
+                </li>
+                <li>Punctuation is turned off for transcription.</li>
+            </ul>
+        </div>
+        <div class="devto devtoOutput pl-2 border-l border-l-white item">
             <h2 id="hello-cool-writers-👋">Hello Cool Writers 👋</h2>
             <p>
                 Welcome to the most convenient markdown text editor for tech
@@ -49,7 +76,7 @@
                 />
             </p>
             <p>
-                <strong>Wordleit</strong> is a free open source markdown text
+                <strong>Wordleit</strong> is a free in-browser markdown text
                 editor that gives you a seamless experience as both a reader and
                 a writer. It&#39;s using
                 <a href="https://marked.js.org/">MarkedJS</a> so that you have
@@ -78,49 +105,7 @@
                 />
             </p>
         </div>
-        <div class="devto pl-2 border-l border-l-white">
-            <h2 id="hello-cool-writers-👋">Hello Cool Writers 👋</h2>
-            <p>
-                Welcome to the most convenient markdown text editor for tech
-                writers where you can write even with you voice! 😎
-            </p>
-            <p>
-                <img
-                    src="https://media0.giphy.com/media/3oKIPlLZEbEbacWqOc/200w.gif?cid=82a1493byqvzeoqmlz4xqllgpxvaqzxa4xw8je2jufeyu4v2&rid=200w.gif&ct=g"
-                    alt="Whoa"
-                />
-            </p>
-            <p>
-                <strong>Wordleit</strong> is a free open source markdown text
-                editor that gives you a seamless experience as both a reader and
-                a writer. It&#39;s using
-                <a href="https://marked.js.org/">MarkedJS</a> so that you have
-                everything
-                <a
-                    href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet"
-                    >Github Flavored Markdown</a
-                >
-                offers and styled with
-                <a href="https://tailwindcss.com/">TailwindCSS </a> to match
-                <a href="https://dev.to/">Dev.to</a> and
-                <a href="https://hashnode.com/">Hashnode</a> dark theme. The
-                toolbar has the most common markdown syntax including tables,
-                code blocks and many more. If you&#39;re addicted to tech
-                writing, <strong>Wordleit</strong> isn&#39;t going to help you
-                recover anytime soon, as with
-                <a href="https://deepgram.com/">Deepgram</a> AI speech and
-                it&#39;s super accurate transcription you will be able to speak
-                what&#39;s on your mind into an article and then style it with
-                only few clicks. The AI speech to text is also useful for
-                writing articles from your phone anytime during the day.
-                That&#39;s not all, let&#39;s check everything out in details 🚀
-                <img
-                    src="https://c.tenor.com/0-OsChk-Z7gAAAAC/leonardo-di-caprio-you-have-my-attention.gif"
-                    alt="Whoa"
-                />
-            </p>
-        </div>
-        <div class="devto pl-2 border-l border-l-white">
+        <div class="devto devtoOutput pl-2 border-l border-l-white item">
             <h2 id="hello-cool-writers-👋">Hello Cool Writers 👋</h2>
             <p>
                 Welcome to the most convenient markdown text editor for tech
@@ -176,5 +161,10 @@ export default {};
 .wordle {
     color: #ba02b5;
     font-size: 1.1em;
+}
+.item {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 0;
 }
 </style>

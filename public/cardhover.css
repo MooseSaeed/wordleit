@@ -5,6 +5,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 .card-wrap {
     will-change: transform;
     transform: perspective(1150px);

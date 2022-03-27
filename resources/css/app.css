@@ -5,7 +5,17 @@
 .devto {
     @apply prose text-left
     prose-headings:text-white 
-    prose-headings:m-1.5
+    prose-headings:m-1
+    prose-headings:leading-5
+    prose-headings:mb-1.5
+    prose-h1:text-3xl
+    prose-h1:font-bold
+    prose-h2:text-2xl
+    prose-h2:font-bold
+    prose-h3:text-xl
+    prose-h3:font-bold
+    prose-h4:text-lg
+    prose-h4:font-bold
     prose-strong:text-inherit
     prose-p:m-1
     prose-p:text-white

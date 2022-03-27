@@ -75,7 +75,7 @@
             @scroll="handleScrollMoveBack"
             class="rounded-xl p-2 bg-devtoBg devto overflow-x-auto break-words item w-full h-44 sm:h-full"
         >
-            <div v-html="markdownToHtml" class="p-2 font-sans"></div>
+            <div v-html="markdownToHtml" class="p-2 devtoOutput"></div>
         </div>
     </div>
 
@@ -141,7 +141,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 input:checked ~ .dot {
     transform: translateX(100%);
     background-color: #48bb78;
@@ -155,5 +155,35 @@ input ~ .dot {
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: 0;
+}
+.devtoOutput {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+}
+
+.devtoOutput h5 {
+    color: white !important;
+    font-size: 0.8rem !important;
+    font-weight: 700;
+    line-height: 1.25rem;
+    margin: 0.25rem;
+    margin-bottom: 0.375rem;
+}
+.devtoOutput h6 {
+    color: white !important;
+    font-size: 0.5rem !important;
+    font-weight: 700;
+    line-height: 1.25rem;
+    margin: 0.25rem;
+    margin-bottom: 0.375rem;
+}
+
+.devtoOutput #h1,
+.devtoOutput #h2,
+.devtoOutput #h3,
+.devtoOutput #h4,
+.devtoOutput #h5,
+.devtoOutput #h6 {
+    font-weight: 700 !important;
 }
 </style>
