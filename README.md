@@ -3,8 +3,8 @@
   <a href="http://wordleit.herokuapp.com/wordleiteditor#learnmore" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-  <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">
-    <img alt="License: https://www.apache.org/licenses/LICENSE--2.0" src="https://img.shields.io/badge/License-https://www.apache.org/licenses/LICENSE--2.0-yellow.svg" />
+  <a href="https://github.com/MooseSaeed/wordleup/blob/master/LICENSE" target="_blank">
+    <img alt="License: https://github.com/MooseSaeed/wordleup/blob/master/LICENSE" src="https://img.shields.io/badge/License-https://opensource.org/licenses/MIT-yellow.svg" />
   </a>
   <a href="https://twitter.com/Moose_Said" target="_blank">
     <img alt="Twitter: Moose_Said" src="https://img.shields.io/twitter/follow/Moose_Said.svg?style=social" />
@@ -164,7 +164,7 @@ Give a ⭐️ if this project helped you!
 ## 📝 License
 
 Copyright © 2022 [Mostafa Said](https://github.com/MooseSaeed).<br />
-This project is [Apache LICENSE-2.0](https://github.com/MooseSaeed/wordleup/blob/master/LICENSE) licensed.
+This project is [MIT License (MIT)](https://github.com/MooseSaeed/wordleup/blob/master/LICENSE) licensed.
 
 ## 🟢 Permessions
 

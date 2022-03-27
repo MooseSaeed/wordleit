@@ -1,5 +1,5 @@
 <template>
-    <div class="devto exceptiondevto border-b border-b-white pb-2 mb-2">
+    <div class="devto mx-2 exceptiondevto border-b border-b-white pb-2 mb-2">
         <h1>
             <h2 id="hello-cool-writers-👋">
                 Welcome To My Wordle<span class="wordle">it</span>! 👋
@@ -39,8 +39,10 @@
         </h1>
     </div>
 
-    <div class="flex flex-row footerInfo">
-        <div class="devto item devtoOutput">
+    <div class="flex flex-col md:flex-row footerInfo mx-2">
+        <div
+            class="devto item devtoOutput border-b border-b-white pb-2 mb-2 md:border-b-0 md:pb-0 md:mb-2"
+        >
             <h3 id="deepgram-ai-speech-to-text">Deepgram AI Speech To Text:</h3>
             <p>
                 <a href="https://deepgram.com/" target="_blank">Deepgram</a> is
@@ -82,7 +84,7 @@
             </ul>
         </div>
         <div
-            class="devto devtoOutput pl-2 border-l border-l-white item middle-footer"
+            class="devto devtoOutput border-b border-b-white md:border-b-0 pb-2 md:pb-0 md:pl-2 md:border-l md:border-l-white item middle-footer"
         >
             <h3 id="development-tool-">Development tool :</h3>
             <ul>
@@ -214,47 +216,56 @@
                 </li>
             </ul>
         </div>
-        <div class="devto devtoOutput pl-2 border-l border-l-white item">
-            <h2 id="hello-cool-writers-👋">Hello Cool Writers 👋</h2>
-            <p>
-                Welcome to the most convenient markdown text editor for tech
-                writers where you can write even with you voice! 😎
-            </p>
-            <p>
-                <img
-                    src="https://media0.giphy.com/media/3oKIPlLZEbEbacWqOc/200w.gif?cid=82a1493byqvzeoqmlz4xqllgpxvaqzxa4xw8je2jufeyu4v2&rid=200w.gif&ct=g"
-                    alt="Whoa"
-                />
-            </p>
-            <p>
-                <strong>Wordleit</strong> is a free open source markdown text
-                editor that gives you a seamless experience as both a reader and
-                a writer. It&#39;s using
-                <a href="https://marked.js.org/">MarkedJS</a> so that you have
-                everything
+        <div
+            class="devto devtoOutput md:pl-2 md:border-l md:border-l-white item"
+        >
+            <div>
+                <h3 id="hello-cool-writers-👋">About</h3>
+                <p>
+                    Created by Mostafa Said
+                    <a href="https://twitter.com/Moose_Said" target="_blank">
+                        <img
+                            alt="Twitter: Moose_Said"
+                            src="https://img.shields.io/twitter/follow/Moose_Said.svg?style=social"
+                            class="inline-block"
+                        />
+                    </a>
+                </p>
+            </div>
+
+            <div>
+                <h3 id="license">License:</h3>
+                <p>
+                    This project is free to use by everyone
+                    <a
+                        href="https://github.com/MooseSaeed/wordleup/blob/master/LICENSE"
+                    >
+                        <img
+                            class="inline-block"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/License_icon-mit.svg/1024px-License_icon-mit.svg.png"
+                            alt="MIT"
+                            width="40"
+                            height="40"
+                        /> </a
+                    >.
+                </p>
+            </div>
+
+            <div>
+                <h3 id="license">Github:</h3>
                 <a
-                    href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet"
-                    >Github Flavored Markdown</a
-                >
-                offers and styled with
-                <a href="https://tailwindcss.com/">TailwindCSS </a> to match
-                <a href="https://dev.to/">Dev.to</a> and
-                <a href="https://hashnode.com/">Hashnode</a> dark theme. The
-                toolbar has the most common markdown syntax including tables,
-                code blocks and many more. If you&#39;re addicted to tech
-                writing, <strong>Wordleit</strong> isn&#39;t going to help you
-                recover anytime soon, as with
-                <a href="https://deepgram.com/">Deepgram</a> AI speech and
-                it&#39;s super accurate transcription you will be able to speak
-                what&#39;s on your mind into an article and then style it with
-                only few clicks. The AI speech to text is also useful for
-                writing articles from your phone anytime during the day.
-                That&#39;s not all, let&#39;s check everything out in details 🚀
-                <img
-                    src="https://c.tenor.com/0-OsChk-Z7gAAAAC/leonardo-di-caprio-you-have-my-attention.gif"
-                    alt="Whoa"
-                />
-            </p>
+                    href="https://github.com/MooseSaeed/wordleup/issues/new"
+                    class="mt-10 issueBtn bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                    >Submit New Issue
+                    <img
+                        src="https://joshuapenalba.files.wordpress.com/2014/12/github-icon.png?w=640"
+                        width="30"
+                        height="30"
+                        alt="github"
+                        class="inline-block"
+                    />
+                </a>
+            </div>
         </div>
     </div>
 </template>
@@ -269,6 +280,11 @@ export default {
 </script>
 
 <style scoped>
+.issueBtn {
+    color: white !important;
+    text-decoration: none;
+    margin-top: 10rem !important;
+}
 .exceptiondevto {
     max-width: 100% !important;
 }
