@@ -59,10 +59,14 @@
                     working properly.
                 </li>
                 <li>
-                    <div class="flex flex-row justify-start items-center">
-                        <p class="mr-2">Click on the</p>
-                        <span><Microphone class="inline-block" /></span>
-                        <p class="ml-2">icon above the toolbar.</p>
+                    <div>
+                        <div>
+                            <p class="mr-2">
+                                Click on the
+                                <Microphone class="inline-block" /> icon above
+                                the toolbar.
+                            </p>
+                        </div>
                     </div>
                 </li>
                 <li>Allow browser to use microphone.</li>
@@ -77,7 +81,9 @@
                 <li>Punctuation is turned off for transcription.</li>
             </ul>
         </div>
-        <div class="devto devtoOutput pl-2 border-l border-l-white item">
+        <div
+            class="devto devtoOutput pl-2 border-l border-l-white item middle-footer"
+        >
             <h3 id="development-tool-">Development tool :</h3>
             <ul>
                 <li>
@@ -270,7 +276,7 @@ export default {
 .footerInfo img {
     margin: 0 !important;
 }
-.footerInfo li {
+.middle-footer li {
     margin-bottom: 1rem !important;
 }
 .wordle {
