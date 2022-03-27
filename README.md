@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to Wordleit 👋</h1>
 <p>
-  <a href="http://wordleit.herokuapp.com/wordleiteditor" target="_blank">
+  <a href="http://wordleit.herokuapp.com/wordleiteditor#learnmore" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
   <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">
@@ -11,8 +11,9 @@
   </a>
 </p>
 
-> **Wordleit** is a free open source markdown text editor that gives you a seamless experience as both a reader and a writer. It's using [MarkedJS](https://marked.js.org/) so that you have everything [Github Flavored Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) offers and styled with [TailwindCSS ](https://tailwindcss.com/) to match [Dev.to](https://dev.to/) and [Hashnode](https://hashnode.com/) dark theme. The toolbar has the most common markdown syntax including tables, code blocks and many more. </br>
-> If you're addicted to tech writing, **Wordleit** isn't going to help you recover anytime soon, as with [Deepgram](https://deepgram.com/) AI speech and it's super accurate transcription you will be able to speak what's on your mind into an article and then style it with only few clicks. The AI speech to text is also useful for writing articles from your phone anytime during the day.
+![Wordleit Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6htc048yedak9oxx29yx.png)
+
+> **Wordleit** is a free open source markdown text editor that gives you a seamless experience as both a reader and a writer. Supported with AI Speech Recognition.
 
 ### 🏠 [Homepage](http://wordleit.herokuapp.com/)
 
@@ -29,7 +30,132 @@
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](issues). You can also take a look at the [contributing guide](cont).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](<[issues](https://github.com/MooseSaeed/wordleup/issues)>).
+
+## ⚙️ Built with:
+
+<ul>
+                <li>
+                    <div>
+                        <img
+                            class="inline-block"
+                            src="https://code.visualstudio.com/assets/branding/app-icon.png"
+                            alt="visual studio code"
+                            width="40"
+                            height="40"
+                        />
+                        <a
+                            href="https://code.visualstudio.com/"
+                            target="_blank"
+                            class="ml-2"
+                            >Visual Studio Code</a
+                        >
+                    </div>
+                </li>
+            </ul>
+<ul>
+<li>
+<div>
+<img
+class="inline-block"
+src="https://raw.githubusercontent.com/devicons/devicon/master/icons/laravel/laravel-plain-wordmark.svg"
+alt="laravel"
+width="40"
+height="40"/><a
+class="ml-2"
+target="\_blank"
+href="https://laravel.com/"> Laravel 9</a>
+
+</div>
+</li>
+<li>
+<div>
+<img
+class="inline-block"
+src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original-wordmark.svg"
+alt="vuejs"
+width="40"
+height="40"
+/>
+<a
+class="ml-2"
+href="https://vuejs.org/"
+target="_blank"
+>VueJS 3</a
+>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <img
+                            class="inline-block"
+                            src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg"
+                            alt="tailwind"
+                            width="40"
+                            height="40"
+                        />
+                        <a
+                            class="ml-2"
+                            href="https://tailwindcss.com/"
+                            target="_blank"
+                            >TailwindCSS</a
+                        >
+                    </div>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <div>
+                        <img
+                            class="inline-block"
+                            src="https://avatars.githubusercontent.com/u/17422641?s=200"
+                            alt="deepgram"
+                            width="40"
+                            height="40"
+                        />
+                        <a
+                            class="ml-2"
+                            href="https://deepgram.com/"
+                            target="_blank"
+                            >Deepgram</a
+                        >
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <img
+                            class="inline-block"
+                            src="https://marked.js.org/img/logo-black.svg"
+                            alt="deepgram"
+                            width="40"
+                            height="40"
+                        />
+                        <a
+                            class="ml-2"
+                            href="https://marked.js.org/"
+                            target="_blank"
+                            >MarkedJS</a
+                        >
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <img
+                            class="inline-block"
+                            src="https://i.ibb.co/SKVJRns/animatecss.png"
+                            alt="animatecss"
+                            width="40"
+                            height="40"
+                        />
+                        <a
+                            class="ml-2"
+                            href="https://animate.style/"
+                            target="_blank"
+                            >AnimateCSS</a
+                        >
+                    </div>
+                </li>
+            </ul>
 
 ## Show your support
 
@@ -38,4 +164,8 @@ Give a ⭐️ if this project helped you!
 ## 📝 License
 
 Copyright © 2022 [Mostafa Said](https://github.com/MooseSaeed).<br />
-This project is [Apache LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0) licensed.
+This project is [Apache LICENSE-2.0](https://github.com/MooseSaeed/wordleup/blob/master/LICENSE) licensed.
+
+## 🟢 Permessions
+
+Please feel free to add more features and functionalities to the repo and I will look into them and get back to you as soon as possible.
