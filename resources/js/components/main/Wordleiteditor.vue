@@ -87,12 +87,14 @@
 <script>
 import Wordleitlogo from "../Wordleitlogo.vue";
 import Markdowntoolbar from "../Markdowntoolbar.vue";
+import Learnmore from "../Learnmore.vue";
 
 export default {
     name: "Wordleiteditor",
     components: {
         Markdowntoolbar,
         Wordleitlogo,
+        Learnmore,
     },
     data() {
         return {

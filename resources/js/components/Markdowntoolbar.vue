@@ -228,7 +228,6 @@ export default {
 
         initRecorder() {
             this.startTranscript();
-            document.querySelector("#myTextArea").textContent += "Hello" + " ";
         },
 
         stopRecording() {
@@ -249,7 +248,6 @@ export default {
                         "wss://api.deepgram.com/v1/listen?language=" + language,
                         ["token", process.env.MIX_VUE_APP_DEEPGRAM_KEY]
                     );
-
                     socket.onopen = () => {
                         mediaRecorder.addEventListener(
                             "dataavailable",
@@ -266,8 +264,9 @@ export default {
                         const transcript =
                             received.channel.alternatives[0].transcript;
                         if (transcript && received.is_final) {
-                            document.querySelector("#myTextArea").value +=
-                                transcript + " ";
+                            const textarea =
+                                document.getElementById("myTextArea");
+                            textarea.value += transcript + " ";
                         }
                     };
                 });

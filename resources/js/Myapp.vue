@@ -9,7 +9,9 @@
                         :leave-active-class="route.meta.leaveClass"
                         mode="out-in"
                     >
-                        <Component :is="Component" />
+                        <div :key="route.name">
+                            <Component :is="Component" />
+                        </div>
                     </transition>
                 </router-view>
             </section>

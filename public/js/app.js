@@ -17586,6 +17586,20 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Learnmore.vue?vue&type=script&lang=js":
+/*!***************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Learnmore.vue?vue&type=script&lang=js ***!
+  \***************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Markdowntoolbar.vue?vue&type=script&lang=js":
 /*!*********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Markdowntoolbar.vue?vue&type=script&lang=js ***!
@@ -17623,7 +17637,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     initRecorder: function initRecorder() {
       this.startTranscript();
-      document.querySelector("#myTextArea").textContent += "Hello" + " ";
     },
     stopRecording: function stopRecording() {
       WebSocket.close;
@@ -17650,7 +17663,8 @@ __webpack_require__.r(__webpack_exports__);
           var transcript = received.channel.alternatives[0].transcript;
 
           if (transcript && received.is_final) {
-            document.querySelector("#myTextArea").value += transcript + " ";
+            var textarea = document.getElementById("myTextArea");
+            textarea.value += transcript + " ";
           }
         };
       });
@@ -17859,13 +17873,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Wordleitlogo_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Wordleitlogo.vue */ "./resources/js/components/Wordleitlogo.vue");
 /* harmony import */ var _Markdowntoolbar_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Markdowntoolbar.vue */ "./resources/js/components/Markdowntoolbar.vue");
+/* harmony import */ var _Learnmore_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Learnmore.vue */ "./resources/js/components/Learnmore.vue");
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Wordleiteditor",
   components: {
     Markdowntoolbar: _Markdowntoolbar_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    Wordleitlogo: _Wordleitlogo_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    Wordleitlogo: _Wordleitlogo_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    Learnmore: _Learnmore_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
     return {
@@ -17949,7 +17966,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         mode: "out-in"
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)((0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveDynamicComponent)(Component)))];
+          return [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+            key: route.name
+          }, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)((0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveDynamicComponent)(Component)))]))];
         }),
         _: 2
         /* DYNAMIC */
@@ -18174,6 +18193,31 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Svgnewsletterdark = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Svgnewsletterdark");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("footer", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Svgnewsletterdark)]), _hoisted_2, _hoisted_3, _hoisted_4, _hoisted_5]);
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Learnmore.vue?vue&type=template&id=9c620584&scoped=true":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Learnmore.vue?vue&type=template&id=9c620584&scoped=true ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+
+var _withScopeId = function _withScopeId(n) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-9c620584"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
+};
+
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"devto exceptiondevto border-b border-b-white pb-2 mb-2\" data-v-9c620584><h1 data-v-9c620584><h2 id=\"hello-cool-writers-👋\" data-v-9c620584> Welcome To My Wordle<span class=\"wordle\" data-v-9c620584>it</span>! 👋 </h2><p data-v-9c620584><strong data-v-9c620584>Wordleit</strong> is a free open source markdown text editor that gives you a seamless experience as both a reader and a writer. It&#39;s using <a href=\"https://marked.js.org/\" data-v-9c620584>MarkedJS</a> so that you have everything <a href=\"https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet\" data-v-9c620584>Github Flavored Markdown</a> offers and styled with <a href=\"https://tailwindcss.com/\" data-v-9c620584>TailwindCSS </a> to match <a href=\"https://dev.to/\" data-v-9c620584>Dev.to</a> and <a href=\"https://hashnode.com/\" data-v-9c620584>Hashnode</a> dark theme. The toolbar has the most common markdown syntax including tables, code blocks and many more. </p><p data-v-9c620584> If you&#39;re addicted to tech writing, <strong data-v-9c620584>Wordleit</strong> isn&#39;t going to help you recover anytime soon, as with <a href=\"https://deepgram.com/\" data-v-9c620584>Deepgram</a> AI speech and it&#39;s super accurate transcription you will be able to speak what&#39;s on your mind into an article and then style it with only few clicks. The AI speech to text is also useful for writing articles from your phone anytime during the day. That&#39;s not all, let&#39;s check everything out in details 🚀 </p></h1></div><div class=\"flex flex-row\" data-v-9c620584><div class=\"devto\" data-v-9c620584><h2 id=\"hello-cool-writers-👋\" data-v-9c620584>Hello Cool Writers 👋</h2><p data-v-9c620584> Welcome to the most convenient markdown text editor for tech writers where you can write even with you voice! 😎 </p><p data-v-9c620584><img src=\"https://media0.giphy.com/media/3oKIPlLZEbEbacWqOc/200w.gif?cid=82a1493byqvzeoqmlz4xqllgpxvaqzxa4xw8je2jufeyu4v2&amp;rid=200w.gif&amp;ct=g\" alt=\"Whoa\" data-v-9c620584></p><p data-v-9c620584><strong data-v-9c620584>Wordleit</strong> is a free open source markdown text editor that gives you a seamless experience as both a reader and a writer. It&#39;s using <a href=\"https://marked.js.org/\" data-v-9c620584>MarkedJS</a> so that you have everything <a href=\"https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet\" data-v-9c620584>Github Flavored Markdown</a> offers and styled with <a href=\"https://tailwindcss.com/\" data-v-9c620584>TailwindCSS </a> to match <a href=\"https://dev.to/\" data-v-9c620584>Dev.to</a> and <a href=\"https://hashnode.com/\" data-v-9c620584>Hashnode</a> dark theme. The toolbar has the most common markdown syntax including tables, code blocks and many more. If you&#39;re addicted to tech writing, <strong data-v-9c620584>Wordleit</strong> isn&#39;t going to help you recover anytime soon, as with <a href=\"https://deepgram.com/\" data-v-9c620584>Deepgram</a> AI speech and it&#39;s super accurate transcription you will be able to speak what&#39;s on your mind into an article and then style it with only few clicks. The AI speech to text is also useful for writing articles from your phone anytime during the day. That&#39;s not all, let&#39;s check everything out in details 🚀 <img src=\"https://c.tenor.com/0-OsChk-Z7gAAAAC/leonardo-di-caprio-you-have-my-attention.gif\" alt=\"Whoa\" data-v-9c620584></p></div><div class=\"devto pl-2 border-l border-l-white\" data-v-9c620584><h2 id=\"hello-cool-writers-👋\" data-v-9c620584>Hello Cool Writers 👋</h2><p data-v-9c620584> Welcome to the most convenient markdown text editor for tech writers where you can write even with you voice! 😎 </p><p data-v-9c620584><img src=\"https://media0.giphy.com/media/3oKIPlLZEbEbacWqOc/200w.gif?cid=82a1493byqvzeoqmlz4xqllgpxvaqzxa4xw8je2jufeyu4v2&amp;rid=200w.gif&amp;ct=g\" alt=\"Whoa\" data-v-9c620584></p><p data-v-9c620584><strong data-v-9c620584>Wordleit</strong> is a free open source markdown text editor that gives you a seamless experience as both a reader and a writer. It&#39;s using <a href=\"https://marked.js.org/\" data-v-9c620584>MarkedJS</a> so that you have everything <a href=\"https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet\" data-v-9c620584>Github Flavored Markdown</a> offers and styled with <a href=\"https://tailwindcss.com/\" data-v-9c620584>TailwindCSS </a> to match <a href=\"https://dev.to/\" data-v-9c620584>Dev.to</a> and <a href=\"https://hashnode.com/\" data-v-9c620584>Hashnode</a> dark theme. The toolbar has the most common markdown syntax including tables, code blocks and many more. If you&#39;re addicted to tech writing, <strong data-v-9c620584>Wordleit</strong> isn&#39;t going to help you recover anytime soon, as with <a href=\"https://deepgram.com/\" data-v-9c620584>Deepgram</a> AI speech and it&#39;s super accurate transcription you will be able to speak what&#39;s on your mind into an article and then style it with only few clicks. The AI speech to text is also useful for writing articles from your phone anytime during the day. That&#39;s not all, let&#39;s check everything out in details 🚀 <img src=\"https://c.tenor.com/0-OsChk-Z7gAAAAC/leonardo-di-caprio-you-have-my-attention.gif\" alt=\"Whoa\" data-v-9c620584></p></div><div class=\"devto pl-2 border-l border-l-white\" data-v-9c620584><h2 id=\"hello-cool-writers-👋\" data-v-9c620584>Hello Cool Writers 👋</h2><p data-v-9c620584> Welcome to the most convenient markdown text editor for tech writers where you can write even with you voice! 😎 </p><p data-v-9c620584><img src=\"https://media0.giphy.com/media/3oKIPlLZEbEbacWqOc/200w.gif?cid=82a1493byqvzeoqmlz4xqllgpxvaqzxa4xw8je2jufeyu4v2&amp;rid=200w.gif&amp;ct=g\" alt=\"Whoa\" data-v-9c620584></p><p data-v-9c620584><strong data-v-9c620584>Wordleit</strong> is a free open source markdown text editor that gives you a seamless experience as both a reader and a writer. It&#39;s using <a href=\"https://marked.js.org/\" data-v-9c620584>MarkedJS</a> so that you have everything <a href=\"https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet\" data-v-9c620584>Github Flavored Markdown</a> offers and styled with <a href=\"https://tailwindcss.com/\" data-v-9c620584>TailwindCSS </a> to match <a href=\"https://dev.to/\" data-v-9c620584>Dev.to</a> and <a href=\"https://hashnode.com/\" data-v-9c620584>Hashnode</a> dark theme. The toolbar has the most common markdown syntax including tables, code blocks and many more. If you&#39;re addicted to tech writing, <strong data-v-9c620584>Wordleit</strong> isn&#39;t going to help you recover anytime soon, as with <a href=\"https://deepgram.com/\" data-v-9c620584>Deepgram</a> AI speech and it&#39;s super accurate transcription you will be able to speak what&#39;s on your mind into an article and then style it with only few clicks. The AI speech to text is also useful for writing articles from your phone anytime during the day. That&#39;s not all, let&#39;s check everything out in details 🚀 <img src=\"https://c.tenor.com/0-OsChk-Z7gAAAAC/leonardo-di-caprio-you-have-my-attention.gif\" alt=\"Whoa\" data-v-9c620584></p></div></div>", 2);
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return _hoisted_1;
 }
 
 /***/ }),
@@ -20024,6 +20068,29 @@ ___CSS_LOADER_EXPORT___.push([module.id, "\nh2[data-v-046892eb],\r\np[data-v-046
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Learnmore.vue?vue&type=style&index=0&id=9c620584&scoped=true&lang=css":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Learnmore.vue?vue&type=style&index=0&id=9c620584&scoped=true&lang=css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n.exceptiondevto[data-v-9c620584] {\r\n    max-width: 100% !important;\n}\n.wordle[data-v-9c620584] {\r\n    color: #ba02b5;\r\n    font-size: 1.1em;\n}\r\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css":
 /*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Markdowntoolbar.vue?vue&type=style&index=0&id=db896bde&lang=css ***!
@@ -20241,6 +20308,35 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Featurecard_vue_vue_type_style_index_0_id_046892eb_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Learnmore.vue?vue&type=style&index=0&id=9c620584&scoped=true&lang=css":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Learnmore.vue?vue&type=style&index=0&id=9c620584&scoped=true&lang=css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Learnmore_vue_vue_type_style_index_0_id_9c620584_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Learnmore.vue?vue&type=style&index=0&id=9c620584&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Learnmore.vue?vue&type=style&index=0&id=9c620584&scoped=true&lang=css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Learnmore_vue_vue_type_style_index_0_id_9c620584_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Learnmore_vue_vue_type_style_index_0_id_9c620584_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -20715,6 +20811,36 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/components/Learnmore.vue":
+/*!***********************************************!*\
+  !*** ./resources/js/components/Learnmore.vue ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Learnmore_vue_vue_type_template_id_9c620584_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Learnmore.vue?vue&type=template&id=9c620584&scoped=true */ "./resources/js/components/Learnmore.vue?vue&type=template&id=9c620584&scoped=true");
+/* harmony import */ var _Learnmore_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Learnmore.vue?vue&type=script&lang=js */ "./resources/js/components/Learnmore.vue?vue&type=script&lang=js");
+/* harmony import */ var _Learnmore_vue_vue_type_style_index_0_id_9c620584_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Learnmore.vue?vue&type=style&index=0&id=9c620584&scoped=true&lang=css */ "./resources/js/components/Learnmore.vue?vue&type=style&index=0&id=9c620584&scoped=true&lang=css");
+/* harmony import */ var F_Projects_wordleup_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+
+
+const __exports__ = /*#__PURE__*/(0,F_Projects_wordleup_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Learnmore_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Learnmore_vue_vue_type_template_id_9c620584_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-9c620584"],['__file',"resources/js/components/Learnmore.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/components/Markdowntoolbar.vue":
 /*!*****************************************************!*\
   !*** ./resources/js/components/Markdowntoolbar.vue ***!
@@ -21024,6 +21150,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Learnmore.vue?vue&type=script&lang=js":
+/*!***********************************************************************!*\
+  !*** ./resources/js/components/Learnmore.vue?vue&type=script&lang=js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Learnmore_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Learnmore_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Learnmore.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Learnmore.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/components/Markdowntoolbar.vue?vue&type=script&lang=js":
 /*!*****************************************************************************!*\
   !*** ./resources/js/components/Markdowntoolbar.vue?vue&type=script&lang=js ***!
@@ -21219,6 +21360,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Learnmore.vue?vue&type=template&id=9c620584&scoped=true":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/components/Learnmore.vue?vue&type=template&id=9c620584&scoped=true ***!
+  \*****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Learnmore_vue_vue_type_template_id_9c620584_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Learnmore_vue_vue_type_template_id_9c620584_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Learnmore.vue?vue&type=template&id=9c620584&scoped=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Learnmore.vue?vue&type=template&id=9c620584&scoped=true");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Markdowntoolbar.vue?vue&type=template&id=db896bde":
 /*!***********************************************************************************!*\
   !*** ./resources/js/components/Markdowntoolbar.vue?vue&type=template&id=db896bde ***!
@@ -21374,6 +21530,18 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Featurecard_vue_vue_type_style_index_0_id_046892eb_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Featurecard.vue?vue&type=style&index=0&id=046892eb&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Featurecard.vue?vue&type=style&index=0&id=046892eb&scoped=true&lang=css");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Learnmore.vue?vue&type=style&index=0&id=9c620584&scoped=true&lang=css":
+/*!*******************************************************************************************************!*\
+  !*** ./resources/js/components/Learnmore.vue?vue&type=style&index=0&id=9c620584&scoped=true&lang=css ***!
+  \*******************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Learnmore_vue_vue_type_style_index_0_id_9c620584_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Learnmore.vue?vue&type=style&index=0&id=9c620584&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Learnmore.vue?vue&type=style&index=0&id=9c620584&scoped=true&lang=css");
 
 
 /***/ }),
