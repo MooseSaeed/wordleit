@@ -1,6 +1,6 @@
 <h1 align="center">Welcome To My Wordleit 👋</h1>
 <p>
-  <a href="http://wordleit.herokuapp.com/wordleiteditor#learnmore" target="_blank">
+  <a href="https://wordleit.herokuapp.com/wordleiteditor#learnmore" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
   <a href="https://github.com/MooseSaeed/wordleup/blob/master/LICENSE" target="_blank">
@@ -15,9 +15,9 @@
 
 > **Wordleit** is a free open source markdown text editor that gives you a seamless experience as both a reader and a writer. Supported with AI Speech Recognition.
 
-### 🏠 [Homepage](http://wordleit.herokuapp.com/)
+### 🏠 [Homepage](https://wordleit.herokuapp.com/)
 
-### ✨ [Demo](http://wordleit.herokuapp.com/wordleiteditor)
+### ✨ [Demo](https://wordleit.herokuapp.com/wordleiteditor)
 
 ## Author
 

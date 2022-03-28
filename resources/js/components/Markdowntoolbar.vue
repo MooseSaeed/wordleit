@@ -235,10 +235,6 @@ export default {
         },
 
         startTranscript() {
-            alert(
-                "This feature is currently not working due to Heroku isn't providing free SSL. Working on deploying the project somewhere else :)"
-            );
-
             navigator.mediaDevices
                 .getUserMedia({ audio: true, video: false })
                 .then((stream) => {

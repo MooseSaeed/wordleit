@@ -17576,13 +17576,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _SVGs_Svgnewsletterdark_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SVGs/Svgnewsletterdark.vue */ "./resources/js/components/SVGs/Svgnewsletterdark.vue");
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  components: {
-    Svgnewsletterdark: _SVGs_Svgnewsletterdark_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
-  }
-});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
 
@@ -17648,7 +17642,6 @@ __webpack_require__.r(__webpack_exports__);
       WebSocket.close;
     },
     startTranscript: function startTranscript() {
-      alert("This feature is currently not working due to Heroku isn't providing free SSL. Working on deploying the project somewhere else :)");
       navigator.mediaDevices.getUserMedia({
         audio: true,
         video: false
@@ -17720,20 +17713,6 @@ __webpack_require__.r(__webpack_exports__);
 /*!************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/SVGs/Stoprecroding.vue?vue&type=script&lang=js ***!
   \************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/SVGs/Svgnewsletterdark.vue?vue&type=script&lang=js":
-/*!****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/SVGs/Svgnewsletterdark.vue?vue&type=script&lang=js ***!
-  \****************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -18153,54 +18132,11 @@ var _hoisted_1 = {
   "class": "bg-blue-500/25 border border-gray-900 text-white rounded-xl text-center py-16 px-10 mt-16 flex flex-col justify-center items-center"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
-  "class": "text-2xl sm:text-3xl"
-}, " Subscribe to my newsletter and stay up to date. ", -1
-/* HOISTED */
-);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<img width=\"400\" src=\"/images/My-logo.png\" alt=\"\"><div class=\"mt-3 flex flex-col sd:flex-row gap-5 items-center justify-center text-white\"><div class=\"flex flex-col sm:flex-row items-center justify-center\"><p class=\"mr-2 mb-2 sm:mb-0 text-sm xs:text-lg\">Find me here</p><div class=\"flex flex-row gap-2\"><a href=\"https://twitter.com/Moose_Said\" target=\"_blank\"><img class=\"transition-transform hover:scale-125\" width=\"40\" src=\"/images/twitter.png\" alt=\"Twitter icons created by Hight Quality Icons\"></a><a href=\"https://github.com/MooseSaeed\" target=\"_blank\"><img class=\"transition-transform hover:scale-125\" width=\"40\" src=\"/images/github.png\" alt=\"github icons created by Hight Quality Icons\"></a><a href=\"https://dev.to/moose_said\" target=\"_blank\"><img class=\"transition-transform hover:scale-125\" width=\"40\" src=\"/images/dev.png\" alt=\"devto icons created by Hight Quality Icons\"></a></div></div><div class=\"flex xs:flex-row flex-col items-center justify-center\"><p class=\"mr-2 mb-2 xs:mb-0 text-sm xs:text-lg\"> Or just fire me an E-Mail </p><a href=\"mailto:mostafasaid1994@gmail.com\" target=\"_blank\"><img class=\"transition-transform hover:scale-125\" width=\"40\" src=\"/images/email.png\" alt=\"email icons created by Hight Quality Icons\"></a></div></div>", 2);
 
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "text-sm mt-3"
-}, " Promise to keep the inbox clean. No nonesense. ", -1
-/* HOISTED */
-);
-
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  id: "newsletter",
-  "class": "mt-10"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "relative inline-block mx-auto bg-blue-100 rounded-full"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
-  method: "POST",
-  action: "/newsletter",
-  "class": "sm:flex text-sm"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "py-1 px-3 flex items-center"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": "email",
-  "class": "inline-block"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "/images/mailbox-icon.svg",
-  alt: "mailbox-letter"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  id: "email",
-  name: "email",
-  type: "text",
-  placeholder: "Your email address",
-  "class": "bg-transparent text-center sm:text-left py-1 pl-3 md:py-2 md:pl-4 focus-within:outline-none outline-none border-none"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  href: "#newsletter",
-  "class": "text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-semibold rounded-full ml-1 py-1 px-6 text-sm mb-2 sm:mb-0"
-}, " Subscribe ")])])], -1
-/* HOISTED */
-);
-
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"mt-10 flex flex-col sd:flex-row gap-5 items-center justify-center text-white\"><div class=\"flex flex-col sm:flex-row items-center justify-center\"><p class=\"mr-2 mb-2 sm:mb-0 text-sm xs:text-lg\">Find me here</p><div class=\"flex flex-row gap-2\"><a href=\"https://twitter.com/Moose_Said\" target=\"_blank\"><img class=\"transition-transform hover:scale-125\" width=\"40\" src=\"/images/twitter.png\" alt=\"Twitter icons created by Hight Quality Icons\"></a><a href=\"https://github.com/MooseSaeed\" target=\"_blank\"><img class=\"transition-transform hover:scale-125\" width=\"40\" src=\"/images/github.png\" alt=\"github icons created by Hight Quality Icons\"></a><a href=\"https://dev.to/moose_said\" target=\"_blank\"><img class=\"transition-transform hover:scale-125\" width=\"40\" src=\"/images/dev.png\" alt=\"devto icons created by Hight Quality Icons\"></a></div></div><div class=\"flex xs:flex-row flex-col items-center justify-center\"><p class=\"mr-2 mb-2 xs:mb-0 text-sm xs:text-lg\"> Or just fire me an E-Mail </p><a href=\"mailto:mostafasaid1994@gmail.com\" target=\"_blank\"><img class=\"transition-transform hover:scale-125\" width=\"40\" src=\"/images/email.png\" alt=\"email icons created by Hight Quality Icons\"></a></div></div>", 1);
-
+var _hoisted_4 = [_hoisted_2];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_Svgnewsletterdark = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Svgnewsletterdark");
-
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("footer", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Svgnewsletterdark)]), _hoisted_2, _hoisted_3, _hoisted_4, _hoisted_5]);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("footer", _hoisted_1, _hoisted_4);
 }
 
 /***/ }),
@@ -18294,7 +18230,7 @@ var _hoisted_14 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"devto devtoOutput border-b border-b-white md:border-b-0 pb-2 md:pb-0 md:pl-2 md:border-l md:border-l-white item middle-footer\" data-v-9c620584><h3 id=\"development-tool-\" data-v-9c620584>Development tool :</h3><ul data-v-9c620584><li data-v-9c620584><div data-v-9c620584><img class=\"inline-block\" src=\"https://code.visualstudio.com/assets/branding/app-icon.png\" alt=\"visual studio code\" width=\"40\" height=\"40\" data-v-9c620584><a href=\"https://code.visualstudio.com/\" target=\"_blank\" class=\"ml-2\" data-v-9c620584>Visual Studio Code</a></div></li></ul><h3 id=\"built-with\" data-v-9c620584>Built with:</h3><ul data-v-9c620584><li data-v-9c620584><div data-v-9c620584><img class=\"inline-block\" src=\"https://raw.githubusercontent.com/devicons/devicon/master/icons/laravel/laravel-plain-wordmark.svg\" alt=\"laravel\" width=\"40\" height=\"40\" data-v-9c620584><a class=\"ml-2\" target=\"_blank\" href=\"https://laravel.com/\" data-v-9c620584>Laravel 9</a></div></li><li data-v-9c620584><div data-v-9c620584><img class=\"inline-block\" src=\"https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original-wordmark.svg\" alt=\"vuejs\" width=\"40\" height=\"40\" data-v-9c620584><a class=\"ml-2\" href=\"https://vuejs.org/\" target=\"_blank\" data-v-9c620584>VueJS 3</a></div></li><li data-v-9c620584><div data-v-9c620584><img class=\"inline-block\" src=\"https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg\" alt=\"tailwind\" width=\"40\" height=\"40\" data-v-9c620584><a class=\"ml-2\" href=\"https://tailwindcss.com/\" target=\"_blank\" data-v-9c620584>TailwindCSS</a></div></li></ul><h3 id=\"dependencies\" data-v-9c620584>Dependencies:</h3><ul data-v-9c620584><li data-v-9c620584><div data-v-9c620584><img class=\"inline-block\" src=\"https://avatars.githubusercontent.com/u/17422641?s=200\" alt=\"deepgram\" width=\"40\" height=\"40\" data-v-9c620584><a class=\"ml-2\" href=\"https://deepgram.com/\" target=\"_blank\" data-v-9c620584>Deepgram</a></div></li><li data-v-9c620584><div data-v-9c620584><img class=\"inline-block\" src=\"https://marked.js.org/img/logo-black.svg\" alt=\"deepgram\" width=\"40\" height=\"40\" data-v-9c620584><a class=\"ml-2\" href=\"https://marked.js.org/\" target=\"_blank\" data-v-9c620584>MarkedJS</a></div></li><li data-v-9c620584><div data-v-9c620584><img class=\"inline-block\" src=\"https://i.ibb.co/SKVJRns/animatecss.png\" alt=\"animatecss\" width=\"40\" height=\"40\" data-v-9c620584><a class=\"ml-2\" href=\"https://animate.style/\" target=\"_blank\" data-v-9c620584>AnimateCSS</a></div></li></ul></div><div class=\"devto devtoOutput md:pl-2 md:border-l md:border-l-white item\" data-v-9c620584><div data-v-9c620584><h3 id=\"hello-cool-writers-👋\" data-v-9c620584>About</h3><p data-v-9c620584> Created by Mostafa Said <a href=\"https://twitter.com/Moose_Said\" target=\"_blank\" data-v-9c620584><img alt=\"Twitter: Moose_Said\" src=\"https://img.shields.io/twitter/follow/Moose_Said.svg?style=social\" class=\"inline-block\" data-v-9c620584></a></p></div><div data-v-9c620584><h3 id=\"license\" data-v-9c620584>License:</h3><p data-v-9c620584> This project is free to use by everyone <a href=\"https://github.com/MooseSaeed/wordleup/blob/master/LICENSE\" data-v-9c620584><img class=\"inline-block\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/License_icon-mit.svg/1024px-License_icon-mit.svg.png\" alt=\"MIT\" width=\"40\" height=\"40\" data-v-9c620584></a>. </p></div><div data-v-9c620584><div data-v-9c620584><h3 id=\"license\" data-v-9c620584>Github:</h3></div><div class=\"mt-10\" data-v-9c620584><p data-v-9c620584><a target=\"_blank\" href=\"https://github.com/MooseSaeed/wordleup/issues/new\" class=\"issueBtn bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center\" data-v-9c620584>Submit New Issue <img src=\"https://joshuapenalba.files.wordpress.com/2014/12/github-icon.png?w=640\" width=\"30\" height=\"30\" alt=\"github\" class=\"inline-block\" data-v-9c620584></a></p></div></div></div>", 2);
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"devto devtoOutput border-b border-b-white md:border-b-0 pb-2 md:pb-0 md:pl-2 md:border-l md:border-l-white item middle-footer\" data-v-9c620584><h3 id=\"development-tool-\" data-v-9c620584>Development tool :</h3><ul data-v-9c620584><li data-v-9c620584><div data-v-9c620584><img class=\"inline-block\" src=\"https://code.visualstudio.com/assets/branding/app-icon.png\" alt=\"visual studio code\" width=\"40\" height=\"40\" data-v-9c620584><a href=\"https://code.visualstudio.com/\" target=\"_blank\" class=\"ml-2\" data-v-9c620584>Visual Studio Code</a></div></li></ul><h3 id=\"built-with\" data-v-9c620584>Built with:</h3><ul data-v-9c620584><li data-v-9c620584><div data-v-9c620584><img class=\"inline-block\" src=\"https://raw.githubusercontent.com/devicons/devicon/master/icons/laravel/laravel-plain-wordmark.svg\" alt=\"laravel\" width=\"40\" height=\"40\" data-v-9c620584><a class=\"ml-2\" target=\"_blank\" href=\"https://laravel.com/\" data-v-9c620584>Laravel 9</a></div></li><li data-v-9c620584><div data-v-9c620584><img class=\"inline-block\" src=\"https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original-wordmark.svg\" alt=\"vuejs\" width=\"40\" height=\"40\" data-v-9c620584><a class=\"ml-2\" href=\"https://vuejs.org/\" target=\"_blank\" data-v-9c620584>VueJS 3</a></div></li><li data-v-9c620584><div data-v-9c620584><img class=\"inline-block\" src=\"https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg\" alt=\"tailwind\" width=\"40\" height=\"40\" data-v-9c620584><a class=\"ml-2\" href=\"https://tailwindcss.com/\" target=\"_blank\" data-v-9c620584>TailwindCSS</a></div></li></ul><h3 id=\"dependencies\" data-v-9c620584>Dependencies:</h3><ul data-v-9c620584><li data-v-9c620584><div data-v-9c620584><img class=\"inline-block\" src=\"https://avatars.githubusercontent.com/u/17422641?s=200\" alt=\"deepgram\" width=\"40\" height=\"40\" data-v-9c620584><a class=\"ml-2\" href=\"https://deepgram.com/\" target=\"_blank\" data-v-9c620584>Deepgram</a></div></li><li data-v-9c620584><div data-v-9c620584><img class=\"inline-block\" src=\"https://marked.js.org/img/logo-black.svg\" alt=\"deepgram\" width=\"40\" height=\"40\" data-v-9c620584><a class=\"ml-2\" href=\"https://marked.js.org/\" target=\"_blank\" data-v-9c620584>MarkedJS</a></div></li><li data-v-9c620584><div data-v-9c620584><img class=\"inline-block\" src=\"https://i.ibb.co/SKVJRns/animatecss.png\" alt=\"animatecss\" width=\"40\" height=\"40\" data-v-9c620584><a class=\"ml-2\" href=\"https://animate.style/\" target=\"_blank\" data-v-9c620584>AnimateCSS</a></div></li></ul></div><div class=\"devto devtoOutput md:pl-2 md:border-l md:border-l-white item\" data-v-9c620584><div data-v-9c620584><h3 id=\"hello-cool-writers-👋\" data-v-9c620584>About</h3><p data-v-9c620584> Created by Mostafa Said <a href=\"https://twitter.com/Moose_Said\" target=\"_blank\" data-v-9c620584><img alt=\"Twitter: Moose_Said\" src=\"https://img.shields.io/twitter/follow/Moose_Said.svg?style=social\" class=\"inline-block\" data-v-9c620584></a></p></div><div data-v-9c620584><h3 id=\"license\" data-v-9c620584>License:</h3><p data-v-9c620584> This project is free to use by everyone <a href=\"https://github.com/MooseSaeed/wordleup/blob/master/LICENSE\" data-v-9c620584><img class=\"inline-block\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/License_icon-mit.svg/1024px-License_icon-mit.svg.png\" alt=\"MIT\" width=\"40\" height=\"40\" data-v-9c620584></a>. </p></div><div data-v-9c620584><div data-v-9c620584><h3 id=\"license\" data-v-9c620584>Github:</h3></div><div class=\"mt-10\" data-v-9c620584><p data-v-9c620584><a target=\"_blank\" href=\"https://github.com/MooseSaeed/wordleup/issues/new\" class=\"issueBtn bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center\" data-v-9c620584>Submit New Issue <img src=\"https://joshuapenalba.files.wordpress.com/2014/12/github-icon.png?w=640\" width=\"30\" height=\"30\" alt=\"github\" class=\"inline-block\" data-v-9c620584></a></p></div><div class=\"mt-10\" data-v-9c620584><p data-v-9c620584><a target=\"_blank\" href=\"https://github.com/MooseSaeed/wordleup\" class=\"issueBtn bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center\" data-v-9c620584>Star The Repo <img src=\"https://joshuapenalba.files.wordpress.com/2014/12/github-icon.png?w=640\" width=\"30\" height=\"30\" alt=\"github\" class=\"inline-block\" data-v-9c620584></a></p></div></div></div>", 2);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Microphone = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Microphone");
@@ -18388,7 +18324,7 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: "#NewsletterSection",
   "class": "text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 text-sm font-semibold rounded-full py-3 px-9"
-}, " NEWSLETTER ")], -1
+}, " CONTACT ")], -1
 /* HOISTED */
 );
 
@@ -18590,29 +18526,6 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("dfn", _hoisted_1, _hoisted_3);
-}
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/SVGs/Svgnewsletterdark.vue?vue&type=template&id=b98353c4":
-/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/SVGs/Svgnewsletterdark.vue?vue&type=template&id=b98353c4 ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render)
-/* harmony export */ });
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-
-var _hoisted_1 = {
-  src: "/images/My-Logo-Newsletter-Dark.png",
-  width: "240",
-  alt: "Newsletter logo dark"
-};
-function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("img", _hoisted_1);
 }
 
 /***/ }),
@@ -21023,33 +20936,6 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/js/components/SVGs/Svgnewsletterdark.vue":
-/*!************************************************************!*\
-  !*** ./resources/js/components/SVGs/Svgnewsletterdark.vue ***!
-  \************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _Svgnewsletterdark_vue_vue_type_template_id_b98353c4__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Svgnewsletterdark.vue?vue&type=template&id=b98353c4 */ "./resources/js/components/SVGs/Svgnewsletterdark.vue?vue&type=template&id=b98353c4");
-/* harmony import */ var _Svgnewsletterdark_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Svgnewsletterdark.vue?vue&type=script&lang=js */ "./resources/js/components/SVGs/Svgnewsletterdark.vue?vue&type=script&lang=js");
-/* harmony import */ var F_Projects_wordleup_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
-
-
-
-
-;
-const __exports__ = /*#__PURE__*/(0,F_Projects_wordleup_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Svgnewsletterdark_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Svgnewsletterdark_vue_vue_type_template_id_b98353c4__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/SVGs/Svgnewsletterdark.vue"]])
-/* hot reload */
-if (false) {}
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
-
-/***/ }),
-
 /***/ "./resources/js/components/Wordleitlogo.vue":
 /*!**************************************************!*\
   !*** ./resources/js/components/Wordleitlogo.vue ***!
@@ -21296,21 +21182,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/SVGs/Svgnewsletterdark.vue?vue&type=script&lang=js":
-/*!************************************************************************************!*\
-  !*** ./resources/js/components/SVGs/Svgnewsletterdark.vue?vue&type=script&lang=js ***!
-  \************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Svgnewsletterdark_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Svgnewsletterdark_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Svgnewsletterdark.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/SVGs/Svgnewsletterdark.vue?vue&type=script&lang=js");
- 
-
-/***/ }),
-
 /***/ "./resources/js/components/Wordleitlogo.vue?vue&type=script&lang=js":
 /*!**************************************************************************!*\
   !*** ./resources/js/components/Wordleitlogo.vue?vue&type=script&lang=js ***!
@@ -21502,21 +21373,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Stoprecroding_vue_vue_type_template_id_034a0914__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Stoprecroding_vue_vue_type_template_id_034a0914__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Stoprecroding.vue?vue&type=template&id=034a0914 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/SVGs/Stoprecroding.vue?vue&type=template&id=034a0914");
-
-
-/***/ }),
-
-/***/ "./resources/js/components/SVGs/Svgnewsletterdark.vue?vue&type=template&id=b98353c4":
-/*!******************************************************************************************!*\
-  !*** ./resources/js/components/SVGs/Svgnewsletterdark.vue?vue&type=template&id=b98353c4 ***!
-  \******************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Svgnewsletterdark_vue_vue_type_template_id_b98353c4__WEBPACK_IMPORTED_MODULE_0__.render)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Svgnewsletterdark_vue_vue_type_template_id_b98353c4__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Svgnewsletterdark.vue?vue&type=template&id=b98353c4 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/SVGs/Svgnewsletterdark.vue?vue&type=template&id=b98353c4");
 
 
 /***/ }),
