@@ -252,19 +252,26 @@
             </div>
 
             <div>
-                <h3 id="license">Github:</h3>
-                <a
-                    href="https://github.com/MooseSaeed/wordleup/issues/new"
-                    class="mt-10 issueBtn bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-                    >Submit New Issue
-                    <img
-                        src="https://joshuapenalba.files.wordpress.com/2014/12/github-icon.png?w=640"
-                        width="30"
-                        height="30"
-                        alt="github"
-                        class="inline-block"
-                    />
-                </a>
+                <div>
+                    <h3 id="license">Github:</h3>
+                </div>
+                <div class="mt-10">
+                    <p>
+                        <a
+                            target="_blank"
+                            href="https://github.com/MooseSaeed/wordleup/issues/new"
+                            class="issueBtn bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                            >Submit New Issue
+                            <img
+                                src="https://joshuapenalba.files.wordpress.com/2014/12/github-icon.png?w=640"
+                                width="30"
+                                height="30"
+                                alt="github"
+                                class="inline-block"
+                            />
+                        </a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>

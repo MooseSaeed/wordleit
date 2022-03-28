@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Wordleit 👋</h1>
+<h1 align="center">Welcome To My Wordleit 👋</h1>
 <p>
   <a href="http://wordleit.herokuapp.com/wordleiteditor#learnmore" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
