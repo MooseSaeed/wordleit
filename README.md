@@ -11,7 +11,7 @@
   </a>
 </p>
 
-![Wordleit Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6htc048yedak9oxx29yx.png)
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ejr7d77zv0jhg3epbfxv.png)
 
 > **Wordleit** is a free open source markdown text editor that gives you a seamless experience as both a reader and a writer. Supported with AI Speech Recognition.
 
