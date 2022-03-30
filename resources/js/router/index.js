@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import Homepage from "../components/main/Homepage.vue";
 import Wordleiteditor from "../components/main/Wordleiteditor.vue";
+import Streamer from "../components/main/Streamer.vue";
 
 const routes = [
     {
@@ -17,6 +18,15 @@ const routes = [
         path: "/wordleiteditor",
         name: "Wordleiteditor",
         component: Wordleiteditor,
+        meta: {
+            enterClass: "animate__animated animate__fadeInLeft",
+            leaveClass: "animate__animated animate__bounceOutUp",
+        },
+    },
+    {
+        path: "/streamer",
+        name: "Streamer",
+        component: Streamer,
         meta: {
             enterClass: "animate__animated animate__fadeInLeft",
             leaveClass: "animate__animated animate__bounceOutUp",

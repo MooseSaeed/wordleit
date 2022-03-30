@@ -16,14 +16,18 @@
                 </template>
             </Card>
         </router-link>
-        <Card dataImage="./images/pic-sample.jpg">
-            <template v-slot:header>
-                <h2 class="text-white text-xl font-bold">Coming Soon!</h2>
-            </template>
-            <template v-slot:content>
-                <p class="relative text-white">Stay Tuned</p>
-            </template>
-        </Card>
+        <router-link to="/streamer">
+            <Card dataImage="./images/pic-sample.jpg">
+                <template v-slot:header>
+                    <h2 class="text-white text-xl font-bold">Streamer</h2>
+                </template>
+                <template v-slot:content>
+                    <p class="relative text-white">
+                        A video streamer and audio transcriptor.
+                    </p>
+                </template>
+            </Card>
+        </router-link>
     </section>
 </template>
 
