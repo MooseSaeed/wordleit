@@ -48,56 +48,97 @@
             </vue-plyr>
         </div>
 
-        <div>
+        <div class="md:flex md:flex-row justify-center items-center">
             <div
-                type="button"
-                class="flex flex-col gap-1 lg:flex-row justify-between items-center font-semibold text-white text-bold w-full bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg text-sm px-5 py-1 text-center mr-2 mb-2"
+                class="devto item devtoOutput border-b border-b-white pb-2 mb-2 md:border-b-0 md:pb-0 md:mb-2 md:mr-2"
             >
-                Start Transcription
-                <select
-                    class="max-w-max block w-full px-3 py-1.5 text-sm text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    name="lang"
-                    id="lang"
-                >
-                    <option value="en">General English</option>
-                    <option value="en-US">United States - English</option>
-                    <option value="en-GB">United Kingdom - English</option>
-                    <option value="en-AU">Australia - English</option>
-                    <option value="en-IN">India - English</option>
-                    <option value="en-NZ">New Zealand - English</option>
-                    <option value="uk">Ukrainian</option>
-                    <option value="fr">French</option>
-                    <option value="fr-CA">Canada - French</option>
-                    <option value="de">German</option>
-                    <option value="ru">Russian</option>
-                    <option value="es">Spanish</option>
-                    <option value="es-419">Latin America - Spanish</option>
-                    <option value="hi">Hindi</option>
-                    <option value="nl">Dutch</option>
-                </select>
-                <div class="relative">
-                    <Stoprecroding v-if="recording" @click="toggleRecording" />
-                    <Stoprecroding
-                        @click="toggleRecording"
-                        v-if="recording"
-                        class="animate-ping absolute top-0 right-0"
-                    />
-                </div>
-
-                <Microphone v-if="!recording" @click="toggleRecording" />
+                <h3 id="deepgram-ai-speech-to-text">
+                    Deepgram AI Speech To Text:
+                </h3>
+                <p>
+                    <a href="https://deepgram.com/" target="_blank">Deepgram</a>
+                    is offering a great AI Speech Recognition service and it
+                    provides an accurate and fast transcription for many
+                    languages and accents.
+                </p>
+                <ul>
+                    <li>
+                        Connect a microphone to your device and insure that
+                        it&#39;s working properly.
+                    </li>
+                    <li>
+                        <div>
+                            <div>
+                                <p class="mr-2">
+                                    Click on the
+                                    <Microphone class="inline-block" /> icon
+                                    above the toolbar.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>Allow browser to use microphone.</li>
+                    <li>
+                        Play the video and insure that the sound coming from
+                        external speaker.
+                    </li>
+                    <li>Get yout microphone closer to your speaker.</li>
+                </ul>
             </div>
-            <div
-                id="videoTranscription"
-                class="rounded-xl p-2 bg-devtoBg devto overflow-x-auto break-words item w-full h-44 sm:h-full"
-            >
-                <div class="p-2 devtoOutput h-40 w-full"></div>
+            <div class="h-full item pl-5 md:border-white md:border-l-2">
+                <div
+                    type="button"
+                    class="flex flex-col gap-1 lg:flex-row justify-between items-center font-semibold text-white text-bold w-full bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg text-sm px-5 py-1 text-center mr-2 mb-2"
+                >
+                    Start Transcription
+                    <select
+                        class="max-w-max block w-full px-3 py-1.5 text-sm text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        name="lang"
+                        id="lang"
+                    >
+                        <option value="en">General English</option>
+                        <option value="en-US">United States - English</option>
+                        <option value="en-GB">United Kingdom - English</option>
+                        <option value="en-AU">Australia - English</option>
+                        <option value="en-IN">India - English</option>
+                        <option value="en-NZ">New Zealand - English</option>
+                        <option value="uk">Ukrainian</option>
+                        <option value="fr">French</option>
+                        <option value="fr-CA">Canada - French</option>
+                        <option value="de">German</option>
+                        <option value="ru">Russian</option>
+                        <option value="es">Spanish</option>
+                        <option value="es-419">Latin America - Spanish</option>
+                        <option value="hi">Hindi</option>
+                        <option value="nl">Dutch</option>
+                    </select>
+                    <div class="relative">
+                        <Stoprecroding
+                            v-if="recording"
+                            @click="toggleRecording"
+                        />
+                        <Stoprecroding
+                            @click="toggleRecording"
+                            v-if="recording"
+                            class="animate-ping absolute top-0 right-0"
+                        />
+                    </div>
+                    <Microphone v-if="!recording" @click="toggleRecording" />
+                </div>
+                <div
+                    class="rounded-xl p-2 bg-devtoBg text-white text-left overflow-x-auto break-words item w-full h-full"
+                >
+                    <div
+                        id="videoTranscription"
+                        class="p-2 h-44 md:h-72 w-full"
+                    ></div>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import { ref } from "vue";
 import Microphone from "../components/SVGs/Microphone.vue";
 import Stoprecroding from "../components/SVGs/Stoprecroding.vue";
 export default {
@@ -119,8 +160,6 @@ export default {
         addID() {
             const provider = document.querySelector("#provider").value;
 
-            console.log(provider);
-
             if (provider == "youtube") {
                 this.url = "https://www.youtube.com/embed/";
             } else {
@@ -128,63 +167,69 @@ export default {
             }
             const input = document.querySelector("input").value;
             this.id = input;
-            console.log(input);
         },
-    },
-    setup() {
-        const insertedStream = ref(null);
-
-        const startTranscripting = () => {
-            const language = document.querySelector("select").value;
-            const socket = new WebSocket(
-                "wss://api.deepgram.com/v1/listen?language=" + language,
-                ["token", process.env.MIX_VUE_APP_DEEPGRAM_KEY]
-            );
-
-            const input = document.querySelector("input").value;
-
-            insertedStream.value = input;
-
-            socket.onopen = () => {
-                const url = insertedStream.value;
-
-                fetch(url)
-                    .then((response) => response.body)
-                    .then((body) => {
-                        readAllChunks(body);
-                        console.log(readAllChunks(body));
-                    });
-            };
-
-            async function readAllChunks(readableStream) {
-                const reader = readableStream.getReader();
-                const chunks = [];
-                let done, value;
-                while (!done) {
-                    ({ value, done } = await reader.read());
-                    socket.send(value);
-                    if (done) {
-                        return chunks;
-                    }
-                    chunks.push(value);
-                }
+        toggleRecording() {
+            this.recording = !this.recording;
+            if (this.recording) {
+                this.initRecorder();
+            } else {
+                this.stopRecording();
             }
+        },
 
-            socket.onmessage = (message) => {
-                const received = JSON.parse(message.data);
-                const transcript = received.channel.alternatives[0].transcript;
-                if (transcript && received.is_final) {
-                    console.log(transcript);
-                }
-            };
-        };
+        initRecorder() {
+            this.startTranscript();
+        },
 
-        return {
-            insertedStream,
-            startTranscripting,
-        };
+        stopRecording() {
+            WebSocket.close;
+        },
+
+        startTranscript() {
+            navigator.mediaDevices
+                .getUserMedia({ audio: true, video: false })
+                .then((stream) => {
+                    const mediaRecorder = new MediaRecorder(stream, {
+                        mimeType: "audio/webm",
+                    });
+
+                    const language = document.querySelector("select").value;
+
+                    const socket = new WebSocket(
+                        "wss://api.deepgram.com/v1/listen?language=" + language,
+                        ["token", process.env.MIX_VUE_APP_DEEPGRAM_KEY]
+                    );
+                    socket.onopen = () => {
+                        mediaRecorder.addEventListener(
+                            "dataavailable",
+                            (event) => {
+                                socket.send(event.data);
+                            }
+                        );
+
+                        mediaRecorder.start(250);
+                    };
+
+                    socket.onmessage = (message) => {
+                        const received = JSON.parse(message.data);
+                        const transcript =
+                            received.channel.alternatives[0].transcript;
+                        if (transcript && received.is_final) {
+                            document.querySelector(
+                                "#videoTranscription"
+                            ).textContent += transcript + " ";
+                        }
+                    };
+                });
+        },
     },
 };
 </script>
 
-<style></style>
+<style scoped>
+.item {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 0;
+}
+</style>

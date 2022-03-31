@@ -8,16 +8,11 @@
                     Wordleit Streamer
                 </h1>
             </div>
-            <a
-                class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-3 py-1 sm:px-5 sm:py-2.5 text-center mr-2 mb-2"
-                href="#learnmore"
-                >Click me to learn more 🤓</a
-            >
         </div>
     </header>
 
     <div
-        class="relative bg-blue-500/25 border mx-3 border-gray-900 rounded-xl px-6 py-6"
+        class="relative bg-blue-500/25 border mx-3 border-gray-900 h-full rounded-xl px-6 py-6"
     >
         <div class="h-full w-full">
             <Videoplayer />
@@ -26,7 +21,6 @@
 </template>
 
 <script>
-import { ref } from "vue";
 import Videoplayer from "../Videoplayer.vue";
 export default {
     name: "Streamer",

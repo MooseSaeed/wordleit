@@ -31,6 +31,7 @@ mix.js("resources/js/app.js", "public/js")
                         "md-underline",
                         "md-strikethrough",
                         "markdown-toolbar",
+                        "vue-plyr",
                     ].includes(tag),
             },
         },
