@@ -13,11 +13,15 @@
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ejr7d77zv0jhg3epbfxv.png)
 
-> **Wordleit** is a free open source markdown text editor that gives you a seamless experience as both a reader and a writer. Supported with AI Speech Recognition.
+> **Wordleit Editor** is a free open source markdown text editor that gives you a seamless experience as both a reader and a writer. Supported with AI Speech Recognition.
+
+> **Wordleit Streamer** is a free open source video streamer and online transcriptor tool.
 
 ### 🏠 [Homepage](https://wordleit.herokuapp.com/)
 
-### ✨ [Demo](https://wordleit.herokuapp.com/wordleiteditor)
+### ✨ [Editor Demo](https://wordleit.herokuapp.com/wordleiteditor)
+
+### ✨ [Streamer Demo](https://wordleit.herokuapp.com/streamer)
 
 ## Author
 
@@ -118,6 +122,22 @@ target="_blank"
                             href="https://deepgram.com/"
                             target="_blank"
                             >Deepgram</a
+                        >
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <img
+                            class="inline-block"
+                            src="https://user-images.githubusercontent.com/23579958/143738613-d374adcf-24b8-4f44-8e75-673d5681c1a5.png"
+                            alt="plyr"
+                            height="20"
+                        />
+                        <a
+                            class="ml-2"
+                            href="https://github.com/redxtech/vue-plyr"
+                            target="_blank"
+                            >Plyr Vue</a
                         >
                     </div>
                 </li>
