@@ -17,9 +17,11 @@
             </Card>
         </router-link>
         <router-link to="/streamer">
-            <Card dataImage="./images/pic-sample.jpg">
+            <Card dataImage="./images/streamerposter.png">
                 <template v-slot:header>
-                    <h2 class="text-white text-xl font-bold">Streamer</h2>
+                    <h2 class="text-white text-xl font-bold">
+                        Wordleit Streamer
+                    </h2>
                 </template>
                 <template v-slot:content>
                     <p class="relative text-white">

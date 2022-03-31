@@ -1,9 +1,27 @@
 <template>
     <div class="relative flex flex-col justify-center items-center h-full">
+        <div class="flex flex-row justify-center items-center gap-5 mb-5">
+            <button
+                @click="sourceLocal"
+                class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+            >
+                Import video locally
+            </button>
+            <button
+                @click="sourceOnline"
+                class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+            >
+                Youtube / Vimeo
+            </button>
+        </div>
+
         <div
             class="relative flex flex-col gap-6 w-full justify-center items-center"
         >
-            <div class="flex flex-row gap-3 justify-center items-center">
+            <div
+                v-if="!local"
+                class="flex flex-row gap-3 justify-center items-center"
+            >
                 <label for="videoID" class="text-white text-lg"
                     >Select Provider</label
                 >
@@ -19,14 +37,30 @@
 
             <div class="flex flex-row gap-3 justify-center items-center w-full">
                 <input
+                    v-if="!local"
                     type="text"
                     id="videoID"
                     name="videoID"
                     class="w-full rounded-xl p-3 focus:border-0 max-w-xs"
                     placeholder="Video ID"
                 />
+                <div v-if="local">
+                    <p class="text-red-500 mb-1">
+                        Warning: Only mp4 video format is accepted
+                    </p>
+                    <input
+                        @change="handleFileUpload($event)"
+                        type="file"
+                        accept="video/*"
+                        id="videoPath"
+                        name="videoPath"
+                        class="w-full rounded-xl p-3 focus:border-0 max-w-xs bg-blue-300/25 text-white"
+                        placeholder="Video ID"
+                    />
+                </div>
                 <p>
                     <button
+                        v-if="!local"
                         @click="addID"
                         class="issueBtn bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                     >
@@ -37,7 +71,7 @@
         </div>
 
         <div class="w-full h-96">
-            <vue-plyr>
+            <vue-plyr v-if="!local">
                 <iframe
                     class="w-full h-4/5 mx-auto my-5 bg-blue-300/20"
                     :src="this.url + this.id"
@@ -45,6 +79,17 @@
                     allowtransparency
                     allow="autoplay"
                 ></iframe>
+            </vue-plyr>
+            <vue-plyr v-if="local" :options="options">
+                <video
+                    id="video-preview"
+                    class="w-full h-4/5 mx-auto my-5 bg-blue-300/20"
+                    controls
+                    crossorigin
+                    playsinline
+                >
+                    <source size="1080" :src="this.path" type="video/mp4" />
+                </video>
             </vue-plyr>
         </div>
 
@@ -151,11 +196,39 @@ export default {
             url: "",
             id: "",
             recording: false,
+            local: null,
+            path: "",
         };
     },
     methods: {
+        sourceLocal() {
+            this.local = true;
+        },
+        sourceOnline() {
+            this.local = false;
+        },
         toggleRecording() {
             this.recording = !this.recording;
+        },
+        addLocally() {
+            const path = document.querySelector("#videoPath").value;
+
+            this.path = URL.createObjectURL(path.files[0]);
+
+            console.log(this.path);
+        },
+        previewVideo() {
+            let video = document.getElementById("video-preview");
+            let reader = new FileReader();
+
+            reader.readAsDataURL(this.file);
+            reader.addEventListener("load", function () {
+                video.src = reader.result;
+            });
+        },
+        handleFileUpload(event) {
+            this.file = event.target.files[0];
+            this.previewVideo();
         },
         addID() {
             const provider = document.querySelector("#provider").value;

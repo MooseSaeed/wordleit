@@ -499,6 +499,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-8 {
   margin-top: 2rem;
 }
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
 .mb-16 {
   margin-bottom: 4rem;
 }
@@ -507,9 +513,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mt-5 {
   margin-top: 1.25rem;
-}
-.ml-5 {
-  margin-left: 1.25rem;
 }
 .block {
   display: block;
@@ -535,9 +538,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-44 {
   height: 11rem;
 }
-.h-40 {
-  height: 10rem;
-}
 .h-72 {
   height: 18rem;
 }
@@ -546,17 +546,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-4 {
   height: 1rem;
-}
-.h-max {
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-}
-.h-32 {
-  height: 8rem;
-}
-.h-20 {
-  height: 5rem;
 }
 .w-full {
   width: 100%;
@@ -697,9 +686,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-b {
   border-bottom-width: 1px;
 }
-.border-l-2 {
-  border-left-width: 2px;
-}
 .border-solid {
   border-style: solid;
 }
@@ -710,10 +696,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
-}
-.border-white {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 .border-b-white {
   --tw-border-opacity: 1;
@@ -729,6 +711,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-devtoBg {
   --tw-bg-opacity: 1;
   background-color: rgb(14 14 14 / var(--tw-bg-opacity));
+}
+.bg-blue-300\/25 {
+  background-color: rgb(147 197 253 / 0.25);
 }
 .bg-blue-300\/20 {
   background-color: rgb(147 197 253 / 0.2);
@@ -889,6 +874,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 .text-gray-500 {
   --tw-text-opacity: 1;
@@ -1570,12 +1559,12 @@ Ensure the default browser behavior of the `hidden` attribute.
     display: flex;
   }
 
-  .sm\:h-full {
-    height: 100%;
-  }
-
   .sm\:h-screen {
     height: 100vh;
+  }
+
+  .sm\:h-full {
+    height: 100%;
   }
 
   .sm\:grid-cols-2 {

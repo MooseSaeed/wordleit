@@ -3,9 +3,9 @@
         class="bg-blue-500/25 border border-gray-900 px-6 py-5 flex sm:flex-row flex-col justify-center items-center sm:justify-between"
     >
         <div>
-            <a href="/">
+            <router-link to="/">
                 <Wordleitlogo />
-            </a>
+            </router-link>
         </div>
 
         <div class="mt-8 sm:mt-0">

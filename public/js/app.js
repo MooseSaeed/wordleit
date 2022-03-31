@@ -17750,12 +17750,37 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     return {
       url: "",
       id: "",
-      recording: false
+      recording: false,
+      local: null,
+      path: ""
     };
   },
   methods: (_methods = {
+    sourceLocal: function sourceLocal() {
+      this.local = true;
+    },
+    sourceOnline: function sourceOnline() {
+      this.local = false;
+    },
     toggleRecording: function toggleRecording() {
       this.recording = !this.recording;
+    },
+    addLocally: function addLocally() {
+      var path = document.querySelector("#videoPath").value;
+      this.path = URL.createObjectURL(path.files[0]);
+      console.log(this.path);
+    },
+    previewVideo: function previewVideo() {
+      var video = document.getElementById("video-preview");
+      var reader = new FileReader();
+      reader.readAsDataURL(this.file);
+      reader.addEventListener("load", function () {
+        video.src = reader.result;
+      });
+    },
+    handleFileUpload: function handleFileUpload(event) {
+      this.file = event.target.files[0];
+      this.previewVideo();
     },
     addID: function addID() {
       var provider = document.querySelector("#provider").value;
@@ -18170,7 +18195,7 @@ var _hoisted_3 = /*#__PURE__*/_withScopeId(function () {
 var _hoisted_4 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
     "class": "text-white text-xl font-bold"
-  }, "Streamer", -1
+  }, " Wordleit Streamer ", -1
   /* HOISTED */
   );
 });
@@ -18214,7 +18239,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Card, {
-        dataImage: "./images/pic-sample.jpg"
+        dataImage: "./images/streamerposter.png"
       }, {
         header: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
           return [_hoisted_4];
@@ -18435,11 +18460,8 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "bg-blue-500/25 border border-gray-900 px-6 py-5 flex sm:flex-row flex-col justify-center items-center sm:justify-between"
 };
-var _hoisted_2 = {
-  href: "/"
-};
 
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "mt-8 sm:mt-0"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: "#NewsletterSection",
@@ -18451,7 +18473,18 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Wordleitlogo = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Wordleitlogo");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("nav", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Wordleitlogo)])]), _hoisted_3]);
+  var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("nav", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "/"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Wordleitlogo)];
+    }),
+    _: 1
+    /* STABLE */
+
+  })]), _hoisted_2]);
 }
 
 /***/ }),
@@ -18671,39 +18704,88 @@ var _hoisted_1 = {
   "class": "relative flex flex-col justify-center items-center h-full"
 };
 var _hoisted_2 = {
+  "class": "flex flex-row justify-center items-center gap-5 mb-5"
+};
+var _hoisted_3 = {
   "class": "relative flex flex-col gap-6 w-full justify-center items-center"
 };
-
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"flex flex-row gap-3 justify-center items-center\" data-v-3a103401><label for=\"videoID\" class=\"text-white text-lg\" data-v-3a103401>Select Provider</label><select name=\"provider\" id=\"provider\" class=\"max-w-max block w-full px-3 py-1.5 text-sm text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none\" data-v-3a103401><option value=\"youtube\" selected data-v-3a103401>Youtube</option><option value=\"vimeo\" data-v-3a103401>Vimeo</option></select></div>", 1);
-
 var _hoisted_4 = {
-  "class": "flex flex-row gap-3 justify-center items-center w-full"
+  key: 0,
+  "class": "flex flex-row gap-3 justify-center items-center"
 };
 
 var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "text",
-    id: "videoID",
-    name: "videoID",
-    "class": "w-full rounded-xl p-3 focus:border-0 max-w-xs",
-    placeholder: "Video ID"
-  }, null, -1
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "videoID",
+    "class": "text-white text-lg"
+  }, "Select Provider", -1
   /* HOISTED */
   );
 });
 
-var _hoisted_6 = {
-  "class": "w-full h-96"
-};
-var _hoisted_7 = ["src"];
+var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+    name: "provider",
+    id: "provider",
+    "class": "max-w-max block w-full px-3 py-1.5 text-sm text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+    value: "youtube",
+    selected: ""
+  }, "Youtube"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+    value: "vimeo"
+  }, "Vimeo")], -1
+  /* HOISTED */
+  );
+});
+
+var _hoisted_7 = [_hoisted_5, _hoisted_6];
 var _hoisted_8 = {
-  "class": "md:flex md:flex-row justify-center items-center"
+  "class": "flex flex-row gap-3 justify-center items-center w-full"
 };
 var _hoisted_9 = {
+  key: 0,
+  type: "text",
+  id: "videoID",
+  name: "videoID",
+  "class": "w-full rounded-xl p-3 focus:border-0 max-w-xs",
+  placeholder: "Video ID"
+};
+var _hoisted_10 = {
+  key: 1
+};
+
+var _hoisted_11 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+    "class": "text-red-500 mb-1"
+  }, " Warning: Only mp4 video format is accepted ", -1
+  /* HOISTED */
+  );
+});
+
+var _hoisted_12 = {
+  "class": "w-full h-96"
+};
+var _hoisted_13 = {
+  key: 0
+};
+var _hoisted_14 = ["src"];
+var _hoisted_15 = ["options"];
+var _hoisted_16 = {
+  id: "video-preview",
+  "class": "w-full h-4/5 mx-auto my-5 bg-blue-300/20",
+  controls: "",
+  crossorigin: "",
+  playsinline: ""
+};
+var _hoisted_17 = ["src"];
+var _hoisted_18 = {
+  "class": "md:flex md:flex-row justify-center items-center"
+};
+var _hoisted_19 = {
   "class": "devto item devtoOutput border-b border-b-white pb-2 mb-2 md:border-b-0 md:pb-0 md:mb-2 md:mr-2"
 };
 
-var _hoisted_10 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_20 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
     id: "deepgram-ai-speech-to-text"
   }, " Deepgram AI Speech To Text: ", -1
@@ -18711,7 +18793,7 @@ var _hoisted_10 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_11 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_21 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     href: "https://deepgram.com/",
     target: "_blank"
@@ -18720,53 +18802,53 @@ var _hoisted_11 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_12 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_22 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, " Connect a microphone to your device and insure that it's working properly. ", -1
   /* HOISTED */
   );
 });
 
-var _hoisted_13 = {
+var _hoisted_23 = {
   "class": "mr-2"
 };
 
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Click on the ");
+var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Click on the ");
 
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" icon above the toolbar. ");
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" icon above the toolbar. ");
 
-var _hoisted_16 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_26 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, "Allow browser to use microphone.", -1
   /* HOISTED */
   );
 });
 
-var _hoisted_17 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_27 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, " Play the video and insure that the sound coming from external speaker. ", -1
   /* HOISTED */
   );
 });
 
-var _hoisted_18 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_28 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, "Get yout microphone closer to your speaker.", -1
   /* HOISTED */
   );
 });
 
-var _hoisted_19 = {
+var _hoisted_29 = {
   "class": "h-full item pl-5 md:border-white md:border-l-2"
 };
-var _hoisted_20 = {
+var _hoisted_30 = {
   type: "button",
   "class": "flex flex-col gap-1 lg:flex-row justify-between items-center font-semibold text-white text-bold w-full bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg text-sm px-5 py-1 text-center mr-2 mb-2"
 };
 
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)(" Start Transcription <select class=\"max-w-max block w-full px-3 py-1.5 text-sm text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none\" name=\"lang\" id=\"lang\" data-v-3a103401><option value=\"en\" data-v-3a103401>General English</option><option value=\"en-US\" data-v-3a103401>United States - English</option><option value=\"en-GB\" data-v-3a103401>United Kingdom - English</option><option value=\"en-AU\" data-v-3a103401>Australia - English</option><option value=\"en-IN\" data-v-3a103401>India - English</option><option value=\"en-NZ\" data-v-3a103401>New Zealand - English</option><option value=\"uk\" data-v-3a103401>Ukrainian</option><option value=\"fr\" data-v-3a103401>French</option><option value=\"fr-CA\" data-v-3a103401>Canada - French</option><option value=\"de\" data-v-3a103401>German</option><option value=\"ru\" data-v-3a103401>Russian</option><option value=\"es\" data-v-3a103401>Spanish</option><option value=\"es-419\" data-v-3a103401>Latin America - Spanish</option><option value=\"hi\" data-v-3a103401>Hindi</option><option value=\"nl\" data-v-3a103401>Dutch</option></select>", 2);
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)(" Start Transcription <select class=\"max-w-max block w-full px-3 py-1.5 text-sm text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none\" name=\"lang\" id=\"lang\" data-v-3a103401><option value=\"en\" data-v-3a103401>General English</option><option value=\"en-US\" data-v-3a103401>United States - English</option><option value=\"en-GB\" data-v-3a103401>United Kingdom - English</option><option value=\"en-AU\" data-v-3a103401>Australia - English</option><option value=\"en-IN\" data-v-3a103401>India - English</option><option value=\"en-NZ\" data-v-3a103401>New Zealand - English</option><option value=\"uk\" data-v-3a103401>Ukrainian</option><option value=\"fr\" data-v-3a103401>French</option><option value=\"fr-CA\" data-v-3a103401>Canada - French</option><option value=\"de\" data-v-3a103401>German</option><option value=\"ru\" data-v-3a103401>Russian</option><option value=\"es\" data-v-3a103401>Spanish</option><option value=\"es-419\" data-v-3a103401>Latin America - Spanish</option><option value=\"hi\" data-v-3a103401>Hindi</option><option value=\"nl\" data-v-3a103401>Dutch</option></select>", 2);
 
-var _hoisted_23 = {
+var _hoisted_33 = {
   "class": "relative"
 };
 
-var _hoisted_24 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_34 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "rounded-xl p-2 bg-devtoBg text-white text-left overflow-x-auto break-words item w-full h-full"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -18782,12 +18864,35 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_Stoprecroding = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Stoprecroding");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[0] || (_cache[0] = function () {
+      return $options.sourceLocal && $options.sourceLocal.apply($options, arguments);
+    }),
+    "class": "text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+  }, " Import video locally "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    onClick: _cache[1] || (_cache[1] = function () {
+      return $options.sourceOnline && $options.sourceOnline.apply($options, arguments);
+    }),
+    "class": "text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+  }, " Youtube / Vimeo ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [!$data.local ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, _hoisted_7)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [!$data.local ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("input", _hoisted_9)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.local ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    onChange: _cache[2] || (_cache[2] = function ($event) {
+      return $options.handleFileUpload($event);
+    }),
+    type: "file",
+    accept: "video/*",
+    id: "videoPath",
+    name: "videoPath",
+    "class": "w-full rounded-xl p-3 focus:border-0 max-w-xs bg-blue-300/25 text-white",
+    placeholder: "Video ID"
+  }, null, 32
+  /* HYDRATE_EVENTS */
+  )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [!$data.local ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
+    key: 0,
+    onClick: _cache[3] || (_cache[3] = function () {
       return $options.addID && $options.addID.apply($options, arguments);
     }),
     "class": "issueBtn bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-  }, " Hit it! ")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("vue-plyr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("iframe", {
+  }, " Hit it! ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [!$data.local ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("vue-plyr", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("iframe", {
     "class": "w-full h-4/5 mx-auto my-5 bg-blue-300/20",
     src: this.url + this.id,
     allowfullscreen: "",
@@ -18795,9 +18900,20 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     allow: "autoplay"
   }, null, 8
   /* PROPS */
-  , _hoisted_7)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Microphone, {
+  , _hoisted_14)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.local ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("vue-plyr", {
+    key: 1,
+    options: _ctx.options
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("video", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("source", {
+    size: "1080",
+    src: this.path,
+    type: "video/mp4"
+  }, null, 8
+  /* PROPS */
+  , _hoisted_17)])], 8
+  /* PROPS */
+  , _hoisted_15)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [_hoisted_20, _hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [_hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_23, [_hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Microphone, {
     "class": "inline-block"
-  }), _hoisted_15])])])]), _hoisted_16, _hoisted_17, _hoisted_18])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [_hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [$data.recording ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Stoprecroding, {
+  }), _hoisted_25])])])]), _hoisted_26, _hoisted_27, _hoisted_28])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [_hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [$data.recording ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Stoprecroding, {
     key: 0,
     onClick: $options.toggleRecording
   }, null, 8
@@ -18813,7 +18929,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: $options.toggleRecording
   }, null, 8
   /* PROPS */
-  , ["onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), _hoisted_24])])]);
+  , ["onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), _hoisted_34])])]);
 }
 
 /***/ }),
