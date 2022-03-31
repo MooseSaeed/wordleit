@@ -6,6 +6,7 @@ import Featurecard from "./components/Featurecard";
 import Bodycomponent from "./components/Bodycomponent";
 import { marked } from "marked";
 import "../../public/markdowntoolbar";
+import VuePlyr from "vue-plyr";
 
 marked.setOptions({
     breaks: true,
@@ -28,5 +29,5 @@ createApp({
     },
 })
     .mixin(markedMixin)
-    .use(router)
+    .use(router, VuePlyr)
     .mount("#app");
