@@ -17624,7 +17624,10 @@ __webpack_require__.r(__webpack_exports__);
       recording: false,
       lang: "",
       socket: null,
-      stream: null
+      stream: null,
+      transcript: [""],
+      magicKeys: ["apply bold", "apply link", "apply heading"],
+      keyIncluded: false
     };
   },
   methods: {
@@ -17645,6 +17648,24 @@ __webpack_require__.r(__webpack_exports__);
       this.stream.getTracks().forEach(function (track) {
         track.stop();
       });
+    },
+    makeItBold: function makeItBold() {
+      document.querySelector("md-bold").click();
+    },
+    makeItLink: function makeItLink() {
+      document.querySelector("md-link").click();
+    },
+    makeItHeading: function makeItHeading() {
+      document.querySelector("md-header").click();
+    },
+    vocalCommands: function vocalCommands() {
+      if (this.transcript.includes("apply bold")) {
+        this.makeItBold();
+      } else if (this.transcript.includes("apply link")) {
+        this.makeItLink();
+      } else if (this.transcript.includes("apply heading")) {
+        this.makeItHeading();
+      }
     },
     startTranscript: function startTranscript() {
       var _this = this;
@@ -17674,7 +17695,22 @@ __webpack_require__.r(__webpack_exports__);
 
           if (transcript && received.is_final) {
             var textarea = document.getElementById("myTextArea");
-            textarea.value += transcript + " ";
+            var magicKeys = _this.magicKeys;
+            magicKeys.forEach(function (key) {
+              if (transcript.includes(key)) {
+                _this.keyIncluded = true;
+              }
+            });
+
+            if (!_this.keyIncluded) {
+              textarea.value += transcript + " ";
+            } else {
+              _this.transcript = transcript;
+
+              _this.vocalCommands();
+
+              _this.keyIncluded = false;
+            }
           }
         };
       });

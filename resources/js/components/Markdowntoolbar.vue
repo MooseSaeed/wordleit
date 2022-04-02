@@ -205,6 +205,7 @@
 <script>
 import Microphone from "../components/SVGs/Microphone.vue";
 import Stoprecroding from "../components/SVGs/Stoprecroding.vue";
+
 export default {
     components: {
         Microphone,
@@ -216,6 +217,9 @@ export default {
             lang: "",
             socket: null,
             stream: null,
+            transcript: [""],
+            magicKeys: ["apply bold", "apply link", "apply heading"],
+            keyIncluded: false,
         };
     },
     methods: {
@@ -237,6 +241,25 @@ export default {
             this.stream.getTracks().forEach(function (track) {
                 track.stop();
             });
+        },
+        makeItBold() {
+            document.querySelector("md-bold").click();
+        },
+        makeItLink() {
+            document.querySelector("md-link").click();
+        },
+        makeItHeading() {
+            document.querySelector("md-header").click();
+        },
+
+        vocalCommands() {
+            if (this.transcript.includes("apply bold")) {
+                this.makeItBold();
+            } else if (this.transcript.includes("apply link")) {
+                this.makeItLink();
+            } else if (this.transcript.includes("apply heading")) {
+                this.makeItHeading();
+            }
         },
 
         startTranscript() {
@@ -275,7 +298,22 @@ export default {
                         if (transcript && received.is_final) {
                             const textarea =
                                 document.getElementById("myTextArea");
-                            textarea.value += transcript + " ";
+
+                            const magicKeys = this.magicKeys;
+
+                            magicKeys.forEach((key) => {
+                                if (transcript.includes(key)) {
+                                    this.keyIncluded = true;
+                                }
+                            });
+
+                            if (!this.keyIncluded) {
+                                textarea.value += transcript + " ";
+                            } else {
+                                this.transcript = transcript;
+                                this.vocalCommands();
+                                this.keyIncluded = false;
+                            }
                         }
                     };
                 });
