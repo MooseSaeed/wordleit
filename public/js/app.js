@@ -17622,7 +17622,9 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       recording: false,
-      lang: ""
+      lang: "",
+      socket: null,
+      stream: null
     };
   },
   methods: {
@@ -17639,18 +17641,25 @@ __webpack_require__.r(__webpack_exports__);
       this.startTranscript();
     },
     stopRecording: function stopRecording() {
-      WebSocket.close;
+      this.socket.close;
+      this.stream.getTracks().forEach(function (track) {
+        track.stop();
+      });
     },
     startTranscript: function startTranscript() {
+      var _this = this;
+
       navigator.mediaDevices.getUserMedia({
         audio: true,
         video: false
       }).then(function (stream) {
+        _this.stream = stream;
         var mediaRecorder = new MediaRecorder(stream, {
           mimeType: "audio/webm"
         });
         var language = document.querySelector("select").value;
         var socket = new WebSocket("wss://api.deepgram.com/v1/listen?language=" + language, ["token", "f5877aff8c5aa45112b63e645ddb3841472df7a6"]);
+        _this.socket = socket;
 
         socket.onopen = function () {
           mediaRecorder.addEventListener("dataavailable", function (event) {
@@ -17752,7 +17761,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       id: "",
       recording: false,
       local: null,
-      path: ""
+      path: "",
+      socket: null,
+      stream: null
     };
   },
   methods: (_methods = {
@@ -17805,17 +17816,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   }), _defineProperty(_methods, "initRecorder", function initRecorder() {
     this.startTranscript();
   }), _defineProperty(_methods, "stopRecording", function stopRecording() {
-    WebSocket.close;
+    this.socket.close;
+    this.stream.getTracks().forEach(function (track) {
+      track.stop();
+    });
   }), _defineProperty(_methods, "startTranscript", function startTranscript() {
+    var _this = this;
+
     navigator.mediaDevices.getUserMedia({
       audio: true,
       video: false
     }).then(function (stream) {
+      _this.stream = stream;
       var mediaRecorder = new MediaRecorder(stream, {
         mimeType: "audio/webm"
       });
       var language = document.querySelector("select").value;
       var socket = new WebSocket("wss://api.deepgram.com/v1/listen?language=" + language, ["token", "f5877aff8c5aa45112b63e645ddb3841472df7a6"]);
+      _this.socket = socket;
 
       socket.onopen = function () {
         mediaRecorder.addEventListener("dataavailable", function (event) {

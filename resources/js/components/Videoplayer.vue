@@ -198,6 +198,8 @@ export default {
             recording: false,
             local: null,
             path: "",
+            socket: null,
+            stream: null,
         };
     },
     methods: {
@@ -255,13 +257,17 @@ export default {
         },
 
         stopRecording() {
-            WebSocket.close;
+            this.socket.close;
+            this.stream.getTracks().forEach(function (track) {
+                track.stop();
+            });
         },
 
         startTranscript() {
             navigator.mediaDevices
                 .getUserMedia({ audio: true, video: false })
                 .then((stream) => {
+                    this.stream = stream;
                     const mediaRecorder = new MediaRecorder(stream, {
                         mimeType: "audio/webm",
                     });
@@ -272,6 +278,9 @@ export default {
                         "wss://api.deepgram.com/v1/listen?language=" + language,
                         ["token", process.env.MIX_VUE_APP_DEEPGRAM_KEY]
                     );
+
+                    this.socket = socket;
+
                     socket.onopen = () => {
                         mediaRecorder.addEventListener(
                             "dataavailable",
