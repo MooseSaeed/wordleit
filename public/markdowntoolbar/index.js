@@ -161,8 +161,8 @@ class MarkdownTableButtonElement extends MarkdownButtonElement {
     constructor() {
         super();
         styles.set(this, {
-            prefix: "| Cool Header  | Cool Header | \n",
-            suffix: "| ----------------- | ------------------ |\n| Content Cell  | Content Cell  |",
+            prefix: "| Cool Header  | Cool Header |\n",
+            suffix: "| ------------ | ----------- |\n|   Content    |   Content   |",
             surroundWithNewlines: true,
         });
     }

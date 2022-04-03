@@ -16,7 +16,7 @@ declare global {
         MarkdownStrikethroughButtonElement: typeof MarkdownStrikethroughButtonElement;
         MarkdownTableButtonElement: typeof MarkdownTableButtonElement;
         MarkdownUnderlineButtonElement: typeof MarkdownUnderlineButtonElement;
-        MarkdownNextLineButtonElement: typeof MarkdownUnderlineButtonElement;
+        MarkdownNextLineButtonElement: typeof MarkdownNextLineButtonElement;
     }
     interface HTMLElementTagNameMap {
         "markdown-toolbar": MarkdownToolbarElement;

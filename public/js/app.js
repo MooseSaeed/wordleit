@@ -17753,7 +17753,7 @@ __webpack_require__.r(__webpack_exports__);
             });
 
             if (!_this.keyIncluded) {
-              textarea.value += transcript + " ";
+              _this.insertAtCursor(textarea, transcript + " ");
             } else {
               _this.transcript = transcript;
 
@@ -17764,6 +17764,23 @@ __webpack_require__.r(__webpack_exports__);
           }
         };
       });
+    },
+    insertAtCursor: function insertAtCursor(myField, myValue) {
+      //IE support
+      if (document.selection) {
+        myField.focus();
+        sel = document.selection.createRange();
+        sel.text = myValue;
+      } //MOZILLA and others
+      else if (myField.selectionStart || myField.selectionStart == "0") {
+        var startPos = myField.selectionStart;
+        var endPos = myField.selectionEnd;
+        myField.value = myField.value.substring(0, startPos) + myValue + myField.value.substring(endPos, myField.value.length);
+        myField.selectionStart = startPos + myValue.length;
+        myField.selectionEnd = startPos + myValue.length;
+      } else {
+        myField.value += myValue;
+      }
     }
   }
 });
@@ -19652,8 +19669,8 @@ var MarkdownTableButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen8) 
 
     _this9 = _super9.call(this);
     styles.set(_assertThisInitialized(_this9), {
-      prefix: "| Cool Header  | Cool Header | \n",
-      suffix: "| ----------------- | ------------------ |\n| Content Cell  | Content Cell  |",
+      prefix: "| Cool Header  | Cool Header |\n",
+      suffix: "| ------------ | ----------- |\n|   Content    |   Content   |",
       surroundWithNewlines: true
     });
     return _this9;
