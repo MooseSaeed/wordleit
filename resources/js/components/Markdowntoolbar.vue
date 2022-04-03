@@ -27,6 +27,18 @@
                 <option value="nl">Dutch</option>
             </select>
             <div class="relative">
+                <button
+                    class="font-semibold bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 background-animate focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 text-white rounded-full text-xs py-1 px-2 mt-1 lg:mt-0"
+                >
+                    Magic Keys
+                </button>
+                <button
+                    class="hover:animate-ping absolute top-0 right-0 font-semibold text-xs py-1 px-2 mt-1 lg:mt-0"
+                >
+                    Magic Keys
+                </button>
+            </div>
+            <div class="relative">
                 <Stoprecroding v-if="recording" @click="toggleRecording" />
                 <Stoprecroding
                     @click="toggleRecording"
@@ -420,5 +432,21 @@ export default {
 <style>
 .linedivider {
     fill: rgb(33, 33, 219) !important;
+}
+.background-animate {
+    background-size: 400%;
+    -webkit-animation: gradColor 3s ease infinite;
+    -moz-animation: gradColor 3s ease infinite;
+    animation: gradColor 3s ease infinite;
+}
+
+@keyframes gradColor {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 }
 </style>
