@@ -17626,7 +17626,7 @@ __webpack_require__.r(__webpack_exports__);
       socket: null,
       stream: null,
       transcript: [""],
-      magicKeys: ["apply bold", "apply link", "apply heading"],
+      magicKeys: ["apply bold", "apply link", "apply heading", "apply list", "apply bullet list", "apply quotation", "apply coding", "apply table", "apply image", "apply underline", "apply line divider"],
       keyIncluded: false
     };
   },
@@ -17658,6 +17658,33 @@ __webpack_require__.r(__webpack_exports__);
     makeItHeading: function makeItHeading() {
       document.querySelector("md-header").click();
     },
+    makeItList: function makeItList() {
+      document.querySelector("md-ordered-list").click();
+    },
+    makeItUnorderedList: function makeItUnorderedList() {
+      document.querySelector("md-unordered-list").click();
+    },
+    makeItQuotation: function makeItQuotation() {
+      document.querySelector("md-quote").click();
+    },
+    makeItCode: function makeItCode() {
+      document.querySelector("md-code").click();
+    },
+    makeItTable: function makeItTable() {
+      document.querySelector("md-table").click();
+    },
+    makeItImage: function makeItImage() {
+      document.querySelector("md-image").click();
+    },
+    makeItUnderline: function makeItUnderline() {
+      document.querySelector("md-underline").click();
+    },
+    makeItStrikethrough: function makeItStrikethrough() {
+      document.querySelector("md-strikethrough").click();
+    },
+    makeItDivider: function makeItDivider() {
+      document.querySelector("md-linedivider").click();
+    },
     vocalCommands: function vocalCommands() {
       if (this.transcript.includes("apply bold")) {
         this.makeItBold();
@@ -17665,6 +17692,24 @@ __webpack_require__.r(__webpack_exports__);
         this.makeItLink();
       } else if (this.transcript.includes("apply heading")) {
         this.makeItHeading();
+      } else if (this.transcript.includes("apply list")) {
+        this.makeItList();
+      } else if (this.transcript.includes("apply bullet list")) {
+        this.makeItUnorderedList();
+      } else if (this.transcript.includes("apply quotation")) {
+        this.makeItQuotation();
+      } else if (this.transcript.includes("apply coding")) {
+        this.makeItCode();
+      } else if (this.transcript.includes("apply table")) {
+        this.makeItTable();
+      } else if (this.transcript.includes("apply image")) {
+        this.makeItImage();
+      } else if (this.transcript.includes("apply underline")) {
+        this.makeItUnderline();
+      } else if (this.transcript.includes("apply strike through")) {
+        this.makeItStrikethrough();
+      } else if (this.transcript.includes("apply line divider")) {
+        this.makeItDivider();
       }
     },
     startTranscript: function startTranscript() {
