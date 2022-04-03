@@ -17,6 +17,7 @@ declare global {
         MarkdownTableButtonElement: typeof MarkdownTableButtonElement;
         MarkdownUnderlineButtonElement: typeof MarkdownUnderlineButtonElement;
         MarkdownNextLineButtonElement: typeof MarkdownNextLineButtonElement;
+        MarkdownAddSpaceButtonElement: typeof MarkdownAddSpaceButtonElement;
     }
     interface HTMLElementTagNameMap {
         "markdown-toolbar": MarkdownToolbarElement;
@@ -37,12 +38,16 @@ declare global {
         "md-underline": MarkdownUnderlineButtonElement;
         "md-linedivider": MarkdownLinedividerButtonElement;
         "md-next-line": MarkdownNextLineButtonElement;
+        "md-add-space": MarkdownAddSpaceButtonElement;
     }
 }
 declare class MarkdownButtonElement extends HTMLElement {
     constructor();
     connectedCallback(): void;
     click(): void;
+}
+declare class MarkdownAddSpaceButtonElement extends MarkdownButtonElement {
+    constructor();
 }
 declare class MarkdownHeaderButtonElement extends MarkdownButtonElement {
     constructor();

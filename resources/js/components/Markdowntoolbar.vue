@@ -199,7 +199,8 @@
                 />
             </md-linedivider>
         </dfn>
-        <md-next-line class="hidden"> </md-next-line>
+        <md-add-space class="hidden"></md-add-space>
+        <md-next-line class="hidden"></md-next-line>
     </markdown-toolbar>
 </template>
 
@@ -220,19 +221,20 @@ export default {
             stream: null,
             transcript: [""],
             magicKeys: [
-                "apply bold",
-                "apply link",
-                "apply heading",
-                "apply list",
-                "apply bullet list",
-                "apply quotation",
-                "apply coding",
-                "apply table",
-                "apply image",
-                "apply underline",
-                "apply strike through",
-                "apply line divider",
-                "apply next line",
+                "magic bold",
+                "magic link",
+                "magic heading",
+                "magic list",
+                "magic bullet list",
+                "magic quotation",
+                "magic coding",
+                "magic table",
+                "magic image",
+                "magic underline",
+                "magic strike through",
+                "magic line divider",
+                "magic next line",
+                "magic to the end",
             ],
             keyIncluded: false,
         };
@@ -296,34 +298,39 @@ export default {
         makeItNextLine() {
             document.querySelector("md-next-line").click();
         },
+        makeItToEnd() {
+            document.querySelector("#myTextArea").value += " ";
+        },
 
         vocalCommands() {
-            if (this.transcript.includes("apply bold")) {
+            if (this.transcript.includes("magic bold")) {
                 this.makeItBold();
-            } else if (this.transcript.includes("apply link")) {
+            } else if (this.transcript.includes("magic link")) {
                 this.makeItLink();
-            } else if (this.transcript.includes("apply heading")) {
+            } else if (this.transcript.includes("magic heading")) {
                 this.makeItHeading();
-            } else if (this.transcript.includes("apply list")) {
+            } else if (this.transcript.includes("magic list")) {
                 this.makeItList();
-            } else if (this.transcript.includes("apply bullet list")) {
+            } else if (this.transcript.includes("magic bullet list")) {
                 this.makeItUnorderedList();
-            } else if (this.transcript.includes("apply quotation")) {
+            } else if (this.transcript.includes("magic quotation")) {
                 this.makeItQuotation();
-            } else if (this.transcript.includes("apply coding")) {
+            } else if (this.transcript.includes("magic coding")) {
                 this.makeItCode();
-            } else if (this.transcript.includes("apply table")) {
+            } else if (this.transcript.includes("magic table")) {
                 this.makeItTable();
-            } else if (this.transcript.includes("apply image")) {
+            } else if (this.transcript.includes("magic image")) {
                 this.makeItImage();
-            } else if (this.transcript.includes("apply underline")) {
+            } else if (this.transcript.includes("magic underline")) {
                 this.makeItUnderline();
-            } else if (this.transcript.includes("apply strike through")) {
+            } else if (this.transcript.includes("magic strike through")) {
                 this.makeItStrikethrough();
-            } else if (this.transcript.includes("apply line divider")) {
+            } else if (this.transcript.includes("magic line divider")) {
                 this.makeItDivider();
-            } else if (this.transcript.includes("apply next line")) {
+            } else if (this.transcript.includes("magic next line")) {
                 this.makeItNextLine();
+            } else if (this.transcript.includes("magic to the end")) {
+                this.makeItToEnd();
             }
         },
 
@@ -364,8 +371,9 @@ export default {
                             const textarea =
                                 document.querySelector("#myTextArea");
 
-                            const magicKeys = this.magicKeys;
+                            // if the key is included in the damn transcript just ignore the transcript
 
+                            const magicKeys = this.magicKeys;
                             magicKeys.forEach((key) => {
                                 if (transcript.includes(key)) {
                                     this.keyIncluded = true;
@@ -373,7 +381,8 @@ export default {
                             });
 
                             if (!this.keyIncluded) {
-                                this.insertAtCursor(textarea, transcript + " ");
+                                this.insertAtCursor(textarea, transcript);
+                                document.querySelector("md-add-space").click();
                             } else {
                                 this.transcript = transcript;
                                 this.vocalCommands();

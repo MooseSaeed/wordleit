@@ -32,6 +32,7 @@ mix.js("resources/js/app.js", "public/js")
                         "md-strikethrough",
                         "markdown-toolbar",
                         "md-next-line",
+                        "md-add-space",
                         "vue-plyr",
                     ].includes(tag),
             },

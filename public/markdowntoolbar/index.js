@@ -17,6 +17,7 @@ const buttonSelectors = [
     "md-underline",
     "md-linedivider",
     "md-next-line",
+    "md-add-space",
 ];
 function getButtons(toolbar) {
     const els = [];
@@ -61,6 +62,7 @@ class MarkdownButtonElement extends HTMLElement {
         applyStyle(this, style);
     }
 }
+
 class MarkdownHeaderButtonElement extends MarkdownButtonElement {
     constructor() {
         super();
@@ -87,6 +89,16 @@ class MarkdownBoldButtonElement extends MarkdownButtonElement {
 if (!window.customElements.get("md-bold")) {
     window.MarkdownBoldButtonElement = MarkdownBoldButtonElement;
     window.customElements.define("md-bold", MarkdownBoldButtonElement);
+}
+class MarkdownAddSpaceButtonElement extends MarkdownButtonElement {
+    constructor() {
+        super();
+        styles.set(this, { prefix: " " });
+    }
+}
+if (!window.customElements.get("md-add-space")) {
+    window.MarkdownAddSpaceButtonElement = MarkdownAddSpaceButtonElement;
+    window.customElements.define("md-add-space", MarkdownAddSpaceButtonElement);
 }
 class MarkdownItalicButtonElement extends MarkdownButtonElement {
     constructor() {
@@ -161,8 +173,8 @@ class MarkdownTableButtonElement extends MarkdownButtonElement {
     constructor() {
         super();
         styles.set(this, {
-            prefix: "| Cool Header  | Cool Header |\n",
-            suffix: "| ------------ | ----------- |\n|   Content    |   Content   |",
+            prefix: "| Cool Header  | Cool Header |\n| ------------ | ----------- |\n|   Content    |   Content   |",
+            suffix: "",
             surroundWithNewlines: true,
         });
     }
