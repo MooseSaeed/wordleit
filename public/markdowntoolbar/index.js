@@ -16,6 +16,7 @@ const buttonSelectors = [
     "md-table",
     "md-underline",
     "md-linedivider",
+    "md-next-line",
 ];
 function getButtons(toolbar) {
     const els = [];
@@ -169,6 +170,20 @@ class MarkdownTableButtonElement extends MarkdownButtonElement {
 if (!window.customElements.get("md-table")) {
     window.MarkdownTableButtonElement = MarkdownTableButtonElement;
     window.customElements.define("md-table", MarkdownTableButtonElement);
+}
+class MarkdownNextLineButtonElement extends MarkdownButtonElement {
+    constructor() {
+        super();
+        styles.set(this, {
+            prefix: "\n",
+            suffix: "",
+            surroundWithNewlines: false,
+        });
+    }
+}
+if (!window.customElements.get("md-next-line")) {
+    window.MarkdownNextLineButtonElement = MarkdownNextLineButtonElement;
+    window.customElements.define("md-next-line", MarkdownNextLineButtonElement);
 }
 class MarkdownUnderlineButtonElement extends MarkdownButtonElement {
     constructor() {

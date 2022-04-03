@@ -17626,7 +17626,7 @@ __webpack_require__.r(__webpack_exports__);
       socket: null,
       stream: null,
       transcript: [""],
-      magicKeys: ["apply bold", "apply link", "apply heading", "apply list", "apply bullet list", "apply quotation", "apply coding", "apply table", "apply image", "apply underline", "apply strike through", "apply line divider"],
+      magicKeys: ["apply bold", "apply link", "apply heading", "apply list", "apply bullet list", "apply quotation", "apply coding", "apply table", "apply image", "apply underline", "apply strike through", "apply line divider", "apply next line"],
       keyIncluded: false
     };
   },
@@ -17685,6 +17685,9 @@ __webpack_require__.r(__webpack_exports__);
     makeItDivider: function makeItDivider() {
       document.querySelector("md-linedivider").click();
     },
+    makeItNextLine: function makeItNextLine() {
+      document.querySelector("md-next-line").click();
+    },
     vocalCommands: function vocalCommands() {
       if (this.transcript.includes("apply bold")) {
         this.makeItBold();
@@ -17710,6 +17713,8 @@ __webpack_require__.r(__webpack_exports__);
         this.makeItStrikethrough();
       } else if (this.transcript.includes("apply line divider")) {
         this.makeItDivider();
+      } else if (this.transcript.includes("apply next line")) {
+        this.makeItNextLine();
       }
     },
     startTranscript: function startTranscript() {
@@ -18514,7 +18519,7 @@ var _hoisted_5 = {
   "class": "relative"
 };
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<markdown-toolbar class=\"bg-devtoBg p-2 text-white rounded-xl mb-2 grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 flex-row gap-1\" for=\"myTextArea\"><dfn title=\"Bold\"><md-bold class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/bold-editor.svg\" width=\"18\" alt=\"Bold Button\"></md-bold></dfn><dfn title=\"Italic\"><md-italic class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/italic-editor.svg\" width=\"18\" alt=\"Italic Button\"></md-italic></dfn><dfn title=\"Link\"><md-link class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/link-editor.svg\" width=\"18\" alt=\"Link Button\"></md-link></dfn><dfn title=\"Ordered List\"><md-ordered-list class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/odlist-editor.svg\" width=\"18\" alt=\"Ordered List Button\"></md-ordered-list></dfn><dfn title=\"Unordered List\"><md-unordered-list class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/ullist-editor.svg\" width=\"18\" alt=\"Unordered List Button\"></md-unordered-list></dfn><dfn title=\"Heading\"><md-header class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/heading-editor.png\" width=\"18\" alt=\"Heading Button\"></md-header></dfn><dfn title=\"Quote\"><md-quote class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/quote-editor.png\" width=\"20\" alt=\"Quote Button\"></md-quote></dfn><dfn title=\"Code (Inline &amp; Block)\"><md-code class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/code-editor.png\" width=\"20\" alt=\"Code Button\"></md-code></dfn><dfn title=\"Table\"><md-table data-md-button class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/table-editor.svg\" width=\"20\" alt=\"Table Button\"></md-table></dfn><dfn title=\"Image\"><md-image class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/image-editor.svg\" width=\"20\" alt=\"Image Button\"></md-image></dfn><dfn title=\"Underline\"><md-underline class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/underline-editor.svg\" width=\"20\" alt=\"Underline Button\"></md-underline></dfn><dfn title=\"Strikethrough\"><md-strikethrough class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/strikethrough-editor.svg\" width=\"20\" alt=\"Strikethrough Button\"></md-strikethrough></dfn><dfn title=\"Line Divider\"><md-linedivider class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/linedivider-editor.svg\" width=\"20\" alt=\"Line Divider Button\" class=\"linedivider\"></md-linedivider></dfn></markdown-toolbar>", 1);
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<markdown-toolbar class=\"bg-devtoBg p-2 text-white rounded-xl mb-2 grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 flex-row gap-1\" for=\"myTextArea\"><dfn title=\"Bold\"><md-bold class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/bold-editor.svg\" width=\"18\" alt=\"Bold Button\"></md-bold></dfn><dfn title=\"Italic\"><md-italic class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/italic-editor.svg\" width=\"18\" alt=\"Italic Button\"></md-italic></dfn><dfn title=\"Link\"><md-link class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/link-editor.svg\" width=\"18\" alt=\"Link Button\"></md-link></dfn><dfn title=\"Ordered List\"><md-ordered-list class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/odlist-editor.svg\" width=\"18\" alt=\"Ordered List Button\"></md-ordered-list></dfn><dfn title=\"Unordered List\"><md-unordered-list class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/ullist-editor.svg\" width=\"18\" alt=\"Unordered List Button\"></md-unordered-list></dfn><dfn title=\"Heading\"><md-header class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/heading-editor.png\" width=\"18\" alt=\"Heading Button\"></md-header></dfn><dfn title=\"Quote\"><md-quote class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/quote-editor.png\" width=\"20\" alt=\"Quote Button\"></md-quote></dfn><dfn title=\"Code (Inline &amp; Block)\"><md-code class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/code-editor.png\" width=\"20\" alt=\"Code Button\"></md-code></dfn><dfn title=\"Table\"><md-table data-md-button class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/table-editor.svg\" width=\"20\" alt=\"Table Button\"></md-table></dfn><dfn title=\"Image\"><md-image class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/image-editor.svg\" width=\"20\" alt=\"Image Button\"></md-image></dfn><dfn title=\"Underline\"><md-underline class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/underline-editor.svg\" width=\"20\" alt=\"Underline Button\"></md-underline></dfn><dfn title=\"Strikethrough\"><md-strikethrough class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/strikethrough-editor.svg\" width=\"20\" alt=\"Strikethrough Button\"></md-strikethrough></dfn><dfn title=\"Line Divider\"><md-linedivider class=\"hover:bg-gray-100 p-1 rounded-lg flex justify-center w-fit\"><img src=\"/images/linedivider-editor.svg\" width=\"20\" alt=\"Line Divider Button\" class=\"linedivider\"></md-linedivider></dfn><md-next-line class=\"hidden\"></md-next-line></markdown-toolbar>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Stoprecroding = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Stoprecroding");
@@ -19360,7 +19365,7 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-var buttonSelectors = ["[data-md-button]", "md-header", "md-bold", "md-italic", "md-quote", "md-code", "md-link", "md-image", "md-unordered-list", "md-ordered-list", "md-task-list", "md-mention", "md-ref", "md-strikethrough", "md-table", "md-underline", "md-linedivider"];
+var buttonSelectors = ["[data-md-button]", "md-header", "md-bold", "md-italic", "md-quote", "md-code", "md-link", "md-image", "md-unordered-list", "md-ordered-list", "md-task-list", "md-mention", "md-ref", "md-strikethrough", "md-table", "md-underline", "md-linedivider", "md-next-line"];
 
 function getButtons(toolbar) {
   var els = [];
@@ -19662,22 +19667,49 @@ if (!window.customElements.get("md-table")) {
   window.customElements.define("md-table", MarkdownTableButtonElement);
 }
 
-var MarkdownUnderlineButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen9) {
-  _inherits(MarkdownUnderlineButtonElement, _MarkdownButtonElemen9);
+var MarkdownNextLineButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen9) {
+  _inherits(MarkdownNextLineButtonElement, _MarkdownButtonElemen9);
 
-  var _super10 = _createSuper(MarkdownUnderlineButtonElement);
+  var _super10 = _createSuper(MarkdownNextLineButtonElement);
 
-  function MarkdownUnderlineButtonElement() {
+  function MarkdownNextLineButtonElement() {
     var _this10;
 
-    _classCallCheck(this, MarkdownUnderlineButtonElement);
+    _classCallCheck(this, MarkdownNextLineButtonElement);
 
     _this10 = _super10.call(this);
     styles.set(_assertThisInitialized(_this10), {
+      prefix: "\n",
+      suffix: "",
+      surroundWithNewlines: false
+    });
+    return _this10;
+  }
+
+  return _createClass(MarkdownNextLineButtonElement);
+}(MarkdownButtonElement);
+
+if (!window.customElements.get("md-next-line")) {
+  window.MarkdownNextLineButtonElement = MarkdownNextLineButtonElement;
+  window.customElements.define("md-next-line", MarkdownNextLineButtonElement);
+}
+
+var MarkdownUnderlineButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen10) {
+  _inherits(MarkdownUnderlineButtonElement, _MarkdownButtonElemen10);
+
+  var _super11 = _createSuper(MarkdownUnderlineButtonElement);
+
+  function MarkdownUnderlineButtonElement() {
+    var _this11;
+
+    _classCallCheck(this, MarkdownUnderlineButtonElement);
+
+    _this11 = _super11.call(this);
+    styles.set(_assertThisInitialized(_this11), {
       prefix: "<u>",
       suffix: "</u>"
     });
-    return _this10;
+    return _this11;
   }
 
   return _createClass(MarkdownUnderlineButtonElement);
@@ -19688,22 +19720,22 @@ if (!window.customElements.get("md-underline")) {
   window.customElements.define("md-underline", MarkdownUnderlineButtonElement);
 }
 
-var MarkdownLinedividerButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen10) {
-  _inherits(MarkdownLinedividerButtonElement, _MarkdownButtonElemen10);
+var MarkdownLinedividerButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen11) {
+  _inherits(MarkdownLinedividerButtonElement, _MarkdownButtonElemen11);
 
-  var _super11 = _createSuper(MarkdownLinedividerButtonElement);
+  var _super12 = _createSuper(MarkdownLinedividerButtonElement);
 
   function MarkdownLinedividerButtonElement() {
-    var _this11;
+    var _this12;
 
     _classCallCheck(this, MarkdownLinedividerButtonElement);
 
-    _this11 = _super11.call(this);
-    styles.set(_assertThisInitialized(_this11), {
+    _this12 = _super12.call(this);
+    styles.set(_assertThisInitialized(_this12), {
       prefix: "---",
       surroundWithNewlines: true
     });
-    return _this11;
+    return _this12;
   }
 
   return _createClass(MarkdownLinedividerButtonElement);
@@ -19714,23 +19746,23 @@ if (!window.customElements.get("md-linedivider")) {
   window.customElements.define("md-linedivider", MarkdownLinedividerButtonElement);
 }
 
-var MarkdownUnorderedListButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen11) {
-  _inherits(MarkdownUnorderedListButtonElement, _MarkdownButtonElemen11);
+var MarkdownUnorderedListButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen12) {
+  _inherits(MarkdownUnorderedListButtonElement, _MarkdownButtonElemen12);
 
-  var _super12 = _createSuper(MarkdownUnorderedListButtonElement);
+  var _super13 = _createSuper(MarkdownUnorderedListButtonElement);
 
   function MarkdownUnorderedListButtonElement() {
-    var _this12;
+    var _this13;
 
     _classCallCheck(this, MarkdownUnorderedListButtonElement);
 
-    _this12 = _super12.call(this);
-    styles.set(_assertThisInitialized(_this12), {
+    _this13 = _super13.call(this);
+    styles.set(_assertThisInitialized(_this13), {
       prefix: "- ",
       multiline: true,
       unorderedList: true
     });
-    return _this12;
+    return _this13;
   }
 
   return _createClass(MarkdownUnorderedListButtonElement);
@@ -19741,23 +19773,23 @@ if (!window.customElements.get("md-unordered-list")) {
   window.customElements.define("md-unordered-list", MarkdownUnorderedListButtonElement);
 }
 
-var MarkdownOrderedListButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen12) {
-  _inherits(MarkdownOrderedListButtonElement, _MarkdownButtonElemen12);
+var MarkdownOrderedListButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen13) {
+  _inherits(MarkdownOrderedListButtonElement, _MarkdownButtonElemen13);
 
-  var _super13 = _createSuper(MarkdownOrderedListButtonElement);
+  var _super14 = _createSuper(MarkdownOrderedListButtonElement);
 
   function MarkdownOrderedListButtonElement() {
-    var _this13;
+    var _this14;
 
     _classCallCheck(this, MarkdownOrderedListButtonElement);
 
-    _this13 = _super13.call(this);
-    styles.set(_assertThisInitialized(_this13), {
+    _this14 = _super14.call(this);
+    styles.set(_assertThisInitialized(_this14), {
       prefix: "1. ",
       multiline: true,
       orderedList: true
     });
-    return _this13;
+    return _this14;
   }
 
   return _createClass(MarkdownOrderedListButtonElement);
@@ -19768,23 +19800,23 @@ if (!window.customElements.get("md-ordered-list")) {
   window.customElements.define("md-ordered-list", MarkdownOrderedListButtonElement);
 }
 
-var MarkdownTaskListButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen13) {
-  _inherits(MarkdownTaskListButtonElement, _MarkdownButtonElemen13);
+var MarkdownTaskListButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen14) {
+  _inherits(MarkdownTaskListButtonElement, _MarkdownButtonElemen14);
 
-  var _super14 = _createSuper(MarkdownTaskListButtonElement);
+  var _super15 = _createSuper(MarkdownTaskListButtonElement);
 
   function MarkdownTaskListButtonElement() {
-    var _this14;
+    var _this15;
 
     _classCallCheck(this, MarkdownTaskListButtonElement);
 
-    _this14 = _super14.call(this);
-    styles.set(_assertThisInitialized(_this14), {
+    _this15 = _super15.call(this);
+    styles.set(_assertThisInitialized(_this15), {
       prefix: "- [ ] ",
       multiline: true,
       surroundWithNewlines: true
     });
-    return _this14;
+    return _this15;
   }
 
   return _createClass(MarkdownTaskListButtonElement);
@@ -19795,22 +19827,22 @@ if (!window.customElements.get("md-task-list")) {
   window.customElements.define("md-task-list", MarkdownTaskListButtonElement);
 }
 
-var MarkdownMentionButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen14) {
-  _inherits(MarkdownMentionButtonElement, _MarkdownButtonElemen14);
+var MarkdownMentionButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen15) {
+  _inherits(MarkdownMentionButtonElement, _MarkdownButtonElemen15);
 
-  var _super15 = _createSuper(MarkdownMentionButtonElement);
+  var _super16 = _createSuper(MarkdownMentionButtonElement);
 
   function MarkdownMentionButtonElement() {
-    var _this15;
+    var _this16;
 
     _classCallCheck(this, MarkdownMentionButtonElement);
 
-    _this15 = _super15.call(this);
-    styles.set(_assertThisInitialized(_this15), {
+    _this16 = _super16.call(this);
+    styles.set(_assertThisInitialized(_this16), {
       prefix: "@",
       prefixSpace: true
     });
-    return _this15;
+    return _this16;
   }
 
   return _createClass(MarkdownMentionButtonElement);
@@ -19821,22 +19853,22 @@ if (!window.customElements.get("md-mention")) {
   window.customElements.define("md-mention", MarkdownMentionButtonElement);
 }
 
-var MarkdownRefButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen15) {
-  _inherits(MarkdownRefButtonElement, _MarkdownButtonElemen15);
+var MarkdownRefButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen16) {
+  _inherits(MarkdownRefButtonElement, _MarkdownButtonElemen16);
 
-  var _super16 = _createSuper(MarkdownRefButtonElement);
+  var _super17 = _createSuper(MarkdownRefButtonElement);
 
   function MarkdownRefButtonElement() {
-    var _this16;
+    var _this17;
 
     _classCallCheck(this, MarkdownRefButtonElement);
 
-    _this16 = _super16.call(this);
-    styles.set(_assertThisInitialized(_this16), {
+    _this17 = _super17.call(this);
+    styles.set(_assertThisInitialized(_this17), {
       prefix: "#",
       prefixSpace: true
     });
-    return _this16;
+    return _this17;
   }
 
   return _createClass(MarkdownRefButtonElement);
@@ -19847,23 +19879,23 @@ if (!window.customElements.get("md-ref")) {
   window.customElements.define("md-ref", MarkdownRefButtonElement);
 }
 
-var MarkdownStrikethroughButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen16) {
-  _inherits(MarkdownStrikethroughButtonElement, _MarkdownButtonElemen16);
+var MarkdownStrikethroughButtonElement = /*#__PURE__*/function (_MarkdownButtonElemen17) {
+  _inherits(MarkdownStrikethroughButtonElement, _MarkdownButtonElemen17);
 
-  var _super17 = _createSuper(MarkdownStrikethroughButtonElement);
+  var _super18 = _createSuper(MarkdownStrikethroughButtonElement);
 
   function MarkdownStrikethroughButtonElement() {
-    var _this17;
+    var _this18;
 
     _classCallCheck(this, MarkdownStrikethroughButtonElement);
 
-    _this17 = _super17.call(this);
-    styles.set(_assertThisInitialized(_this17), {
+    _this18 = _super18.call(this);
+    styles.set(_assertThisInitialized(_this18), {
       prefix: "~~",
       suffix: "~~",
       trimFirst: true
     });
-    return _this17;
+    return _this18;
   }
 
   return _createClass(MarkdownStrikethroughButtonElement);
@@ -19877,12 +19909,12 @@ if (!window.customElements.get("md-strikethrough")) {
 var MarkdownToolbarElement = /*#__PURE__*/function (_HTMLElement2) {
   _inherits(MarkdownToolbarElement, _HTMLElement2);
 
-  var _super18 = _createSuper(MarkdownToolbarElement);
+  var _super19 = _createSuper(MarkdownToolbarElement);
 
   function MarkdownToolbarElement() {
     _classCallCheck(this, MarkdownToolbarElement);
 
-    return _super18.call(this);
+    return _super19.call(this);
   }
 
   _createClass(MarkdownToolbarElement, [{

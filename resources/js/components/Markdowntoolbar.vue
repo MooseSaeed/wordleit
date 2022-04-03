@@ -199,6 +199,7 @@
                 />
             </md-linedivider>
         </dfn>
+        <md-next-line class="hidden"> </md-next-line>
     </markdown-toolbar>
 </template>
 
@@ -231,6 +232,7 @@ export default {
                 "apply underline",
                 "apply strike through",
                 "apply line divider",
+                "apply next line",
             ],
             keyIncluded: false,
         };
@@ -291,6 +293,9 @@ export default {
         makeItDivider() {
             document.querySelector("md-linedivider").click();
         },
+        makeItNextLine() {
+            document.querySelector("md-next-line").click();
+        },
 
         vocalCommands() {
             if (this.transcript.includes("apply bold")) {
@@ -317,6 +322,8 @@ export default {
                 this.makeItStrikethrough();
             } else if (this.transcript.includes("apply line divider")) {
                 this.makeItDivider();
+            } else if (this.transcript.includes("apply next line")) {
+                this.makeItNextLine();
             }
         },
 
