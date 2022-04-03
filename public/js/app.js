@@ -17626,7 +17626,7 @@ __webpack_require__.r(__webpack_exports__);
       socket: null,
       stream: null,
       transcript: [""],
-      magicKeys: ["apply bold", "apply link", "apply heading", "apply list", "apply bullet list", "apply quotation", "apply coding", "apply table", "apply image", "apply underline", "apply line divider"],
+      magicKeys: ["apply bold", "apply link", "apply heading", "apply list", "apply bullet list", "apply quotation", "apply coding", "apply table", "apply image", "apply underline", "apply strike through", "apply line divider"],
       keyIncluded: false
     };
   },
@@ -17739,7 +17739,7 @@ __webpack_require__.r(__webpack_exports__);
           var transcript = received.channel.alternatives[0].transcript;
 
           if (transcript && received.is_final) {
-            var textarea = document.getElementById("myTextArea");
+            var textarea = document.querySelector("#myTextArea");
             var magicKeys = _this.magicKeys;
             magicKeys.forEach(function (key) {
               if (transcript.includes(key)) {

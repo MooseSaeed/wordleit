@@ -229,6 +229,7 @@ export default {
                 "apply table",
                 "apply image",
                 "apply underline",
+                "apply strike through",
                 "apply line divider",
             ],
             keyIncluded: false,
@@ -354,7 +355,7 @@ export default {
                             received.channel.alternatives[0].transcript;
                         if (transcript && received.is_final) {
                             const textarea =
-                                document.getElementById("myTextArea");
+                                document.querySelector("#myTextArea");
 
                             const magicKeys = this.magicKeys;
 
