@@ -37,7 +37,8 @@
                     Magic Keys
                 </button>
                 <button
-                    class="hover:animate-ping -z-10 absolute top-0 right-0 font-semibold text-xs py-1 px-2 mt-1 lg:mt-0"
+                    @click="showModal = true"
+                    class="hover:animate-ping absolute top-0 right-0 font-semibold text-xs py-1 px-2 mt-1 lg:mt-0"
                 >
                     Magic Keys
                 </button>
