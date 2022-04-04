@@ -1,4 +1,6 @@
 <template>
+    <Magickeymodal v-show="showModal" @close-modal="showModal = false" />
+
     <div class="grid grid-cols-1 gap-1">
         <div
             type="button"
@@ -26,14 +28,16 @@
                 <option value="hi">Hindi</option>
                 <option value="nl">Dutch</option>
             </select>
+
             <div class="relative">
                 <button
+                    @click="showModal = true"
                     class="font-semibold bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 background-animate focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 text-white rounded-full text-xs py-1 px-2 mt-1 lg:mt-0"
                 >
                     Magic Keys
                 </button>
                 <button
-                    class="hover:animate-ping absolute top-0 right-0 font-semibold text-xs py-1 px-2 mt-1 lg:mt-0"
+                    class="hover:animate-ping -z-10 absolute top-0 right-0 font-semibold text-xs py-1 px-2 mt-1 lg:mt-0"
                 >
                     Magic Keys
                 </button>
@@ -219,11 +223,13 @@
 <script>
 import Microphone from "../components/SVGs/Microphone.vue";
 import Stoprecroding from "../components/SVGs/Stoprecroding.vue";
+import Magickeymodal from "../components/Magickeysmodal.vue";
 
 export default {
     components: {
         Microphone,
         Stoprecroding,
+        Magickeymodal,
     },
     data() {
         return {
@@ -232,6 +238,7 @@ export default {
             socket: null,
             stream: null,
             transcript: [""],
+            showModal: false,
             magicKeys: [
                 "magic bold",
                 "magic link",
