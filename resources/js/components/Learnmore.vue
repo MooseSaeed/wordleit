@@ -81,6 +81,9 @@
                     textarea.
                 </li>
                 <li>Punctuation is turned off for transcription.</li>
+                <li>
+                    Don't forget to discover Magic Keys button in the toolbar.
+                </li>
             </ul>
         </div>
         <div
