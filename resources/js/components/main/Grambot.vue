@@ -21,7 +21,7 @@
             ></textarea>
         </div>
 
-        <div>
+        <div class="relative">
             <Botside />
         </div>
     </div>
