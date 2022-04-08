@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Homepage from "../components/main/Homepage.vue";
 import Wordleiteditor from "../components/main/Wordleiteditor.vue";
 import Streamer from "../components/main/Streamer.vue";
+import Grambot from "../components/main/Grambot.vue";
 
 const routes = [
     {
@@ -27,6 +28,15 @@ const routes = [
         path: "/streamer",
         name: "Streamer",
         component: Streamer,
+        meta: {
+            enterClass: "animate__animated animate__fadeInLeft",
+            leaveClass: "animate__animated animate__bounceOutUp",
+        },
+    },
+    {
+        path: "/grambot",
+        name: "Grambot",
+        component: Grambot,
         meta: {
             enterClass: "animate__animated animate__fadeInLeft",
             leaveClass: "animate__animated animate__bounceOutUp",

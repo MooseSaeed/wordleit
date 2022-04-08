@@ -550,6 +550,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-72 {
   height: 18rem;
 }
+.h-screen {
+  height: 100vh;
+}
 .h-2 {
   height: 0.5rem;
 }
