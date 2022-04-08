@@ -12,6 +12,13 @@
                     <Stoprecroding />
                 </template>
             </Userside>
+
+            <textarea
+                name="speechToTextBot"
+                id="speechToTextBot"
+                cols="30"
+                rows="10"
+            ></textarea>
         </div>
 
         <div>

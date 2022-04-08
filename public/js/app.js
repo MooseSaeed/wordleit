@@ -17989,6 +17989,7 @@ __webpack_require__.r(__webpack_exports__);
         });
         var language = document.querySelector("select").value;
         var socket = new WebSocket("wss://api.deepgram.com/v1/listen?language=" + language, ["token", "f5877aff8c5aa45112b63e645ddb3841472df7a6"]);
+        console.log(socket);
         _this.socket = socket;
 
         socket.onopen = function () {
@@ -18003,7 +18004,7 @@ __webpack_require__.r(__webpack_exports__);
           var transcript = received.channel.alternatives[0].transcript;
 
           if (transcript && received.is_final) {
-            var textarea = document.querySelector("#myTextArea"); // if the key is included in the damn transcript just ignore the transcript
+            var textarea = document.querySelector("#speechToTextBot"); // if the key is included in the damn transcript just ignore the transcript
 
             var magicKeys = _this.magicKeys;
             magicKeys.forEach(function (key) {
@@ -18013,9 +18014,7 @@ __webpack_require__.r(__webpack_exports__);
             });
 
             if (!_this.keyIncluded) {
-              _this.insertAtCursor(textarea, transcript);
-
-              document.querySelector("md-add-space").click();
+              textarea.textContent = transcript + " ";
             } else {
               _this.transcript = transcript;
 
@@ -18026,23 +18025,6 @@ __webpack_require__.r(__webpack_exports__);
           }
         };
       });
-    },
-    insertAtCursor: function insertAtCursor(myField, myValue) {
-      //IE support
-      if (document.selection) {
-        myField.focus();
-        sel = document.selection.createRange();
-        sel.text = myValue;
-      } //MOZILLA and others
-      else if (myField.selectionStart || myField.selectionStart == "0") {
-        var startPos = myField.selectionStart;
-        var endPos = myField.selectionEnd;
-        myField.value = myField.value.substring(0, startPos) + myValue + myField.value.substring(endPos, myField.value.length);
-        myField.selectionStart = startPos + myValue.length;
-        myField.selectionEnd = startPos + myValue.length;
-      } else {
-        myField.value += myValue;
-      }
     }
   }
 });
@@ -19221,12 +19203,17 @@ var _hoisted_2 = {
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)(" Start AI Speech <select class=\"max-w-max block w-full px-3 py-1.5 text-sm text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none\" name=\"lang\" id=\"lang\"><option value=\"en\">General English</option><option value=\"en-US\">United States - English</option><option value=\"en-GB\">United Kingdom - English</option><option value=\"en-AU\">Australia - English</option><option value=\"en-IN\">India - English</option><option value=\"en-NZ\">New Zealand - English</option><option value=\"uk\">Ukrainian</option><option value=\"fr\">French</option><option value=\"fr-CA\">Canada - French</option><option value=\"de\">German</option><option value=\"ru\">Russian</option><option value=\"es\">Spanish</option><option value=\"es-419\">Latin America - Spanish</option><option value=\"hi\">Hindi</option><option value=\"nl\">Dutch</option></select>", 2);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "startRecording"), $data.recording ? (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "stopRecording", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, !$data.recording ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
     key: 0,
     onClick: _cache[0] || (_cache[0] = function () {
       return $options.toggleRecording && $options.toggleRecording.apply($options, arguments);
     })
-  }) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]);
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "startRecording")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.recording ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+    key: 1,
+    onClick: _cache[1] || (_cache[1] = function () {
+      return $options.toggleRecording && $options.toggleRecording.apply($options, arguments);
+    })
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "stopRecording")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]);
 }
 
 /***/ }),
@@ -19573,6 +19560,16 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "relative bg-blue-500/25 border mx-3 border-gray-900 h-screen rounded-xl px-6 py-6"
 };
+
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
+  name: "speechToTextBot",
+  id: "speechToTextBot",
+  cols: "30",
+  rows: "10"
+}, null, -1
+/* HOISTED */
+);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Microphone = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Microphone");
 
@@ -19592,7 +19589,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Botside)])]);
+  }), _hoisted_2]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Botside)])]);
 }
 
 /***/ }),

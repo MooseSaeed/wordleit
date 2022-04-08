@@ -27,13 +27,13 @@
                 <option value="nl">Dutch</option>
             </select>
 
-            <slot name="startRecording"></slot>
+            <div @click="toggleRecording" v-if="!recording">
+                <slot name="startRecording"></slot>
+            </div>
 
-            <slot
-                name="stopRecording"
-                @click="toggleRecording"
-                v-if="recording"
-            ></slot>
+            <div @click="toggleRecording" v-if="recording">
+                <slot name="stopRecording"></slot>
+            </div>
         </div>
     </div>
 </template>
@@ -177,6 +177,7 @@ export default {
                         "wss://api.deepgram.com/v1/listen?language=" + language,
                         ["token", process.env.MIX_VUE_APP_DEEPGRAM_KEY]
                     );
+                    console.log(socket);
 
                     this.socket = socket;
 
@@ -197,7 +198,7 @@ export default {
                             received.channel.alternatives[0].transcript;
                         if (transcript && received.is_final) {
                             const textarea =
-                                document.querySelector("#myTextArea");
+                                document.querySelector("#speechToTextBot");
 
                             // if the key is included in the damn transcript just ignore the transcript
 
@@ -209,8 +210,7 @@ export default {
                             });
 
                             if (!this.keyIncluded) {
-                                this.insertAtCursor(textarea, transcript);
-                                document.querySelector("md-add-space").click();
+                                textarea.textContent = transcript + " ";
                             } else {
                                 this.transcript = transcript;
                                 this.vocalCommands();
@@ -219,27 +219,6 @@ export default {
                         }
                     };
                 });
-        },
-        insertAtCursor(myField, myValue) {
-            //IE support
-            if (document.selection) {
-                myField.focus();
-                sel = document.selection.createRange();
-                sel.text = myValue;
-            }
-            //MOZILLA and others
-            else if (myField.selectionStart || myField.selectionStart == "0") {
-                var startPos = myField.selectionStart;
-                var endPos = myField.selectionEnd;
-                myField.value =
-                    myField.value.substring(0, startPos) +
-                    myValue +
-                    myField.value.substring(endPos, myField.value.length);
-                myField.selectionStart = startPos + myValue.length;
-                myField.selectionEnd = startPos + myValue.length;
-            } else {
-                myField.value += myValue;
-            }
         },
     },
 };
