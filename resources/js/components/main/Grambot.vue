@@ -12,13 +12,6 @@
                     <Stoprecroding />
                 </template>
             </Userside>
-
-            <textarea
-                name="speechToTextBot"
-                id="speechToTextBot"
-                cols="30"
-                rows="10"
-            ></textarea>
         </div>
 
         <div class="relative">
@@ -30,8 +23,8 @@
 <script>
 import Microphone from "../SVGs/Microphone.vue";
 import Stoprecroding from "../SVGs/Stoprecroding.vue";
-import Userside from "../Userside.vue";
-import Botside from "../Botside.vue";
+import Userside from "../grambot/Userside.vue";
+import Botside from "../grambot/Botside.vue";
 export default {
     name: "Grambot",
     components: {
