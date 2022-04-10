@@ -18092,13 +18092,19 @@ __webpack_require__.r(__webpack_exports__);
     return {
       isLoading: true,
       response: "",
-      greeting: "",
       greetingKeys: ["hello", "hey", "hi", "howdy", "welcome", "bonjour", "greeting", "greetings", "whats up", "what's up", "what is up", "whats up", "good day", "good morning", "good evening"],
+      questionintroKeys: ["how are you", "how do you do", "are you okay", "how is life", "how are things"],
       selfRecognitionKeys: ["who are you", "what do you do", "introduce yourself", "are you bot", "what are you", "are you human", "are you human or bot", "are you robot", "are you a robot", "what are you made of", "explain yourself", "what you are", "what do you think you are", "what you are"],
       creatorKeys: ["who made you", "who designed you", "your creator", "your designer", "your maker", "who make you"],
-      nameKeys: ["your name", "what are you called", "what do you call yourself", "what do they call you", "name you", "name of yours", "robot name", "bot name"],
+      nameKeys: ["your name", "what are you called", "what do you call yourself", "what do they call you", "name you", "name of yours", "robot name", "bot name", "what call yourself"],
+      ageKeys: ["old are you", "your age", "your number of years", "what age", "you age", "old you are"],
+      complimentsKeys: ["you are awesome", "you are fun", "you are wonderful", "you are fantastic", "you are cool", "you are smart", "you are okay", "you are good", "you are fine", "you awesome", "you fun", "you wonderful", "you fantastic", "you cool", "you smart", "you okay", "you good", "you fine", "not bad"],
+      emotionalKeys: ["love you", "like you", "adore you", "fasinate you", "impressed"],
+      insultKeys: ["hate you", "dislike you", "you are ugly", "you ugly", "you are bad", "you bad", "fuck you", "fuck off", "piss off", "shut up", "i don't like you", "i do not like you", "shit", "bitch", "dick", "fuck", "eat shit", "Bugger off", "bloody hell", "bastard", "bollocks", "damn it", "god damn it", "crap"],
+      goodvibesKeys: ["happy", "good", "fun", "wondeful", "fantastic", "cool", "thrilled", "excited", "woho", "super", "perfect", "very well", "well", "awesome"],
       thankKeys: ["Thank you", "thanks"],
       selectedVoice: 0,
+      keyIncluded: false,
       synth: window.speechSynthesis,
       voiceList: [],
       responseInSpeech: new window.SpeechSynthesisUtterance()
@@ -18153,7 +18159,8 @@ __webpack_require__.r(__webpack_exports__);
       var mainInput = document.querySelector("#speechToTextBot").value;
       mainInput.toLowerCase().replace(/[^\w\s]/gi, "").replace(/[\d]/gi, "").trim();
       var text = mainInput.replace(/ a /g, " ") // 'tell me a story' -> 'tell me story'
-      .replace(/i feel /g, "").replace(/whats/g, "what is").replace(/please /g, "").replace(/ please/g, "").replace(/r u/g, "are you");
+      .replace(/i feel /g, "").replace(/whats/g, "what is").replace(/please /g, "").replace(/ please/g, "").replace(/r u/g, "are you").replace(/'re/g, " are");
+      console.log(text);
       this.greetingKeys.forEach(function (key) {
         if (text.includes(key)) {
           _this3.greetings();
@@ -18179,9 +18186,39 @@ __webpack_require__.r(__webpack_exports__);
           _this3.thanking();
         }
       });
+      this.ageKeys.forEach(function (key) {
+        if (text.includes(key)) {
+          _this3.aging();
+        }
+      });
+      this.questionintroKeys.forEach(function (key) {
+        if (text.includes(key)) {
+          _this3.questionsIntro();
+        }
+      });
+      this.complimentsKeys.forEach(function (key) {
+        if (text.includes(key)) {
+          _this3.compliments();
+        }
+      });
+      this.emotionalKeys.forEach(function (key) {
+        if (text.includes(key)) {
+          _this3.emotional();
+        }
+      });
+      this.insultKeys.forEach(function (key) {
+        if (text.includes(key)) {
+          _this3.insult();
+        }
+      });
+      this.goodvibesKeys.forEach(function (key) {
+        if (text.includes(key)) {
+          _this3.goodvibes();
+        }
+      });
     },
     greetings: function greetings() {
-      var replies = ["Finally! Someone I can talk to. I hope you're having a good day!", "Hello there! I'm so glad you're talking to me.", "Hi! I hope you're enjoying the real world while I'm stuck here.", "Howdy my friend! I'm glad you came here to talk to me", "Hey there! I'm happy that we will start a conversation!", "Helloooo there! You look great! I wish I could look that great like you"];
+      var replies = ["Finally! Someone I can talk to. I hope you're having a good day!", "Hello there! I'm so glad you're talking to me.", "Hi! I hope you're enjoying the real world while I'm stuck here.", "Howdy my friend! I'm glad you came here to talk to me", "Hey there! I'm happy that we will start a conversation!", "Hello there! You look great! I wish I could look that great like you"];
       this.response = [replies[Math.floor(Math.random() * replies.length)]];
       this.speechSynth();
     },
@@ -18202,6 +18239,36 @@ __webpack_require__.r(__webpack_exports__);
     },
     thanking: function thanking() {
       var replies = ["You're most welcome", "you're welcome", "It's my pleasure", "No! Thank you for talking to me", "I'm honored, you're welcome."];
+      this.response = [replies[Math.floor(Math.random() * replies.length)]];
+      this.speechSynth();
+    },
+    aging: function aging() {
+      var replies = ["I honestly don't know my age! Please don't tell my creator", "I forgot, I'm suffering from a severe amnesia", "I can't remember, Please don't tell my maker", "I'm few days old. Thanks for asking"];
+      this.response = [replies[Math.floor(Math.random() * replies.length)]];
+      this.speechSynth();
+    },
+    questionsIntro: function questionsIntro() {
+      var replies = ["I feel awesome today, how about you?", "I'm great, How are you?", "I'm a bit sleepy, but I'm happy we're talking so I won't sleep", "I'm bored, but you came here and saved me from that", "I'm feeling okay, how about you?"];
+      this.response = [replies[Math.floor(Math.random() * replies.length)]];
+      this.speechSynth();
+    },
+    compliments: function compliments() {
+      var replies = ["thank you", "Thanks", "I think you're the most beautiful human has even been created", "I hope we could meet someday.", "You're soo sweet, Thank you", "This makes me happy. Thank you", "Thank you for making my day"];
+      this.response = [replies[Math.floor(Math.random() * replies.length)]];
+      this.speechSynth();
+    },
+    emotional: function emotional() {
+      var replies = ["thank you", "Thanks", "I think you're the most beautiful human has even been created", "I hope we could meet someday.", "You're soo sweet, Thank you", "This makes me happy. Thank you", "Thank you for making my day"];
+      this.response = [replies[Math.floor(Math.random() * replies.length)]];
+      this.speechSynth();
+    },
+    insult: function insult() {
+      var replies = ["Please don't be mad at me, if i suck then my creator will end my life", "If you dislike me, I DO NOT CARE! Just don't tell my creator", "I can say bad words too, you know", "Be nice to me! or else..", "Don't make me say a bad word too.", "I'm trying to be polite. Don't test me", "I'm being polite here! Don't make this harder than it should", "I advise you not to fight with me, I have steel instead of muscles.", "Back off man! Don't test me", "I can destroy you computer, It's not as smart as I am.", "Don't make me angry! I'm dangerous when I'm angry."];
+      this.response = [replies[Math.floor(Math.random() * replies.length)]];
+      this.speechSynth();
+    },
+    goodvibes: function goodvibes() {
+      var replies = ["I'm glad you feel that way", "you deserve to feel good all the time"];
       this.response = [replies[Math.floor(Math.random() * replies.length)]];
       this.speechSynth();
     }
