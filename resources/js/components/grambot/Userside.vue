@@ -40,10 +40,17 @@ export default {
         },
 
         initRecorder() {
+            var audio = new Audio("/audio/audio-start.mp3");
+            audio.play();
             this.startTranscript();
         },
 
         stopRecording() {
+            var audio = new Audio("/audio/audio-end.mp3");
+            audio.play();
+            setTimeout(() => {
+                document.querySelector("#checkForKeysButton").click();
+            }, 1200);
             this.socket.close;
             this.stream.getTracks().forEach(function (track) {
                 track.stop();
@@ -103,7 +110,7 @@ export default {
                             });
 
                             if (!this.keyIncluded) {
-                                textarea.textContent = transcript + " ";
+                                textarea.value = transcript + " ";
                             } else {
                                 this.transcript = transcript;
                                 this.vocalCommands();

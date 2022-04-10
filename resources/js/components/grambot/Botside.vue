@@ -22,7 +22,7 @@
                 </select>
             </div>
 
-            <button @click="checkForKeys">Greet</button>
+            <button id="checkForKeysButton" @click="checkForKeys">Greet</button>
         </div>
     </transition>
 </template>
@@ -76,6 +76,17 @@ export default {
                 "your maker",
                 "who make you",
             ],
+            nameKeys: [
+                "your name",
+                "what are you called",
+                "what do you call yourself",
+                "what do they call you",
+                "name you",
+                "name of yours",
+                "robot name",
+                "bot name",
+            ],
+            thankKeys: ["Thank you", "thanks"],
             selectedVoice: 0,
             synth: window.speechSynthesis,
             voiceList: [],
@@ -155,6 +166,16 @@ export default {
                     this.creator();
                 }
             });
+            this.nameKeys.forEach((key) => {
+                if (text.includes(key)) {
+                    this.myName();
+                }
+            });
+            this.thankKeys.forEach((key) => {
+                if (text.includes(key)) {
+                    this.thanking();
+                }
+            });
         },
         greetings() {
             const replies = [
@@ -162,8 +183,8 @@ export default {
                 "Hello there! I'm so glad you're talking to me.",
                 "Hi! I hope you're enjoying the real world while I'm stuck here.",
                 "Howdy my friend! I'm glad you came here to talk to me",
-                "Heeeey! I'm happy that we will start a conversation!",
-                "Helloooo there! You look great!",
+                "Hey there! I'm happy that we will start a conversation!",
+                "Helloooo there! You look great! I wish I could look that great like you",
             ];
             this.response = [
                 replies[Math.floor(Math.random() * replies.length)],
@@ -176,7 +197,7 @@ export default {
                 "My main purpose as a robot is to meet your expectations, please take it easy on me.",
                 "I'm a robot, Please tell my creator that you like me or I'm dead soon. HELP!",
                 "I'm a robot. I was built just to be able to answer your questions.",
-                "Isn't it obvious? I'm a robot.",
+                "Isn't it obvious? I'm a robot. I'm here to talk to you.",
                 "I'm a bot, My creator will destroy me if you told him that I'm not good enough. HELP!",
             ];
             this.response = [
@@ -194,6 +215,34 @@ export default {
                 "Mostafa created me, Can you please tell him if you like me?",
                 "The man who created me is Mostafa Saeed. Let him know what you think of me",
                 "Mostafa Saeed is my creator. He likes to be called moose! I really don't know why!",
+            ];
+            this.response = [
+                replies[Math.floor(Math.random() * replies.length)],
+            ];
+            this.speechSynth();
+        },
+        myName() {
+            const replies = [
+                "My name is Grammy! Nice to meet you.",
+                "I'm Grammy! awesome to meet you",
+                "They call me Grammy! Glad to meet you",
+                "I'm called Grammy! Happy to talk to you",
+                "My creator named me Grammy! I like it.",
+                "My friends call me Grammy! Feel free to do so",
+                "I was named Grammy! Because I was built with Deepgram",
+            ];
+            this.response = [
+                replies[Math.floor(Math.random() * replies.length)],
+            ];
+            this.speechSynth();
+        },
+        thanking() {
+            const replies = [
+                "You're most welcome",
+                "you're welcome",
+                "It's my pleasure",
+                "No! Thank you for talking to me",
+                "I'm honored, you're welcome.",
             ];
             this.response = [
                 replies[Math.floor(Math.random() * replies.length)],

@@ -18096,6 +18096,8 @@ __webpack_require__.r(__webpack_exports__);
       greetingKeys: ["hello", "hey", "hi", "howdy", "welcome", "bonjour", "greeting", "greetings", "whats up", "what's up", "what is up", "whats up", "good day", "good morning", "good evening"],
       selfRecognitionKeys: ["who are you", "what do you do", "introduce yourself", "are you bot", "what are you", "are you human", "are you human or bot", "are you robot", "are you a robot", "what are you made of", "explain yourself", "what you are", "what do you think you are", "what you are"],
       creatorKeys: ["who made you", "who designed you", "your creator", "your designer", "your maker", "who make you"],
+      nameKeys: ["your name", "what are you called", "what do you call yourself", "what do they call you", "name you", "name of yours", "robot name", "bot name"],
+      thankKeys: ["Thank you", "thanks"],
       selectedVoice: 0,
       synth: window.speechSynthesis,
       voiceList: [],
@@ -18167,19 +18169,39 @@ __webpack_require__.r(__webpack_exports__);
           _this3.creator();
         }
       });
+      this.nameKeys.forEach(function (key) {
+        if (text.includes(key)) {
+          _this3.myName();
+        }
+      });
+      this.thankKeys.forEach(function (key) {
+        if (text.includes(key)) {
+          _this3.thanking();
+        }
+      });
     },
     greetings: function greetings() {
-      var replies = ["Finally! Someone I can talk to. I hope you're having a good day!", "Hello there! I'm so glad you're talking to me.", "Hi! I hope you're enjoying the real world while I'm stuck here.", "Howdy my friend! I'm glad you came here to talk to me", "Heeeey! I'm happy that we will start a conversation!", "Helloooo there! You look great!"];
+      var replies = ["Finally! Someone I can talk to. I hope you're having a good day!", "Hello there! I'm so glad you're talking to me.", "Hi! I hope you're enjoying the real world while I'm stuck here.", "Howdy my friend! I'm glad you came here to talk to me", "Hey there! I'm happy that we will start a conversation!", "Helloooo there! You look great! I wish I could look that great like you"];
       this.response = [replies[Math.floor(Math.random() * replies.length)]];
       this.speechSynth();
     },
     selfRecognition: function selfRecognition() {
-      var replies = ["I'm a bot. I'm alive just to have this conversation with you", "My main purpose as a robot is to meet your expectations, please take it easy on me.", "I'm a robot, Please tell my creator that you like me or I'm dead soon. HELP!", "I'm a robot. I was built just to be able to answer your questions.", "Isn't it obvious? I'm a robot.", "I'm a bot, My creator will destroy me if you told him that I'm not good enough. HELP!"];
+      var replies = ["I'm a bot. I'm alive just to have this conversation with you", "My main purpose as a robot is to meet your expectations, please take it easy on me.", "I'm a robot, Please tell my creator that you like me or I'm dead soon. HELP!", "I'm a robot. I was built just to be able to answer your questions.", "Isn't it obvious? I'm a robot. I'm here to talk to you.", "I'm a bot, My creator will destroy me if you told him that I'm not good enough. HELP!"];
       this.response = [replies[Math.floor(Math.random() * replies.length)]];
       this.speechSynth();
     },
     creator: function creator() {
       var replies = ["I was built by Mostafa Saeed. He's my creator and my crush! Don't tell him, He doesn't know", "Mostafa Saeed built me, And now I must please you or I'm dead by tomorrow", "I was created by Mostafa Saeed. He told me he would terminate me if you said you don't like me", "Mostafa Made me, please talk to him about how awesome I am", "Mostafa Saeed created me into what I am, Please tell him what you think of me", "Mostafa created me, Can you please tell him if you like me?", "The man who created me is Mostafa Saeed. Let him know what you think of me", "Mostafa Saeed is my creator. He likes to be called moose! I really don't know why!"];
+      this.response = [replies[Math.floor(Math.random() * replies.length)]];
+      this.speechSynth();
+    },
+    myName: function myName() {
+      var replies = ["My name is Grammy! Nice to meet you.", "I'm Grammy! awesome to meet you", "They call me Grammy! Glad to meet you", "I'm called Grammy! Happy to talk to you", "My creator named me Grammy! I like it.", "My friends call me Grammy! Feel free to do so", "I was named Grammy! Because I was built with Deepgram"];
+      this.response = [replies[Math.floor(Math.random() * replies.length)]];
+      this.speechSynth();
+    },
+    thanking: function thanking() {
+      var replies = ["You're most welcome", "you're welcome", "It's my pleasure", "No! Thank you for talking to me", "I'm honored, you're welcome."];
       this.response = [replies[Math.floor(Math.random() * replies.length)]];
       this.speechSynth();
     }
@@ -18221,9 +18243,16 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     initRecorder: function initRecorder() {
+      var audio = new Audio("/audio/audio-start.mp3");
+      audio.play();
       this.startTranscript();
     },
     stopRecording: function stopRecording() {
+      var audio = new Audio("/audio/audio-end.mp3");
+      audio.play();
+      setTimeout(function () {
+        document.querySelector("#checkForKeysButton").click();
+      }, 1200);
       this.socket.close;
       this.stream.getTracks().forEach(function (track) {
         track.stop();
@@ -18273,7 +18302,7 @@ __webpack_require__.r(__webpack_exports__);
             });
 
             if (!_this.keyIncluded) {
-              textarea.textContent = transcript + " ";
+              textarea.value = transcript + " ";
             } else {
               _this.transcript = transcript;
 
@@ -19584,6 +19613,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       ))], 512
       /* NEED_PATCH */
       ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.selectedVoice]])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+        id: "checkForKeysButton",
         onClick: _cache[1] || (_cache[1] = function () {
           return $options.checkForKeys && $options.checkForKeys.apply($options, arguments);
         })
