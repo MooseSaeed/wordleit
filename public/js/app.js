@@ -18093,15 +18093,20 @@ __webpack_require__.r(__webpack_exports__);
       isLoading: true,
       response: "",
       greetingKeys: ["hello", "hey", "hi", "howdy", "welcome", "bonjour", "greeting", "greetings", "whats up", "what's up", "what is up", "whats up", "good day", "good morning", "good evening"],
-      questionintroKeys: ["how are you", "how do you do", "are you okay", "how is life", "how are things"],
+      questionintroKeys: ["how are you", "how do you do", "are you okay", "how is life", "how are things", "how do you feel", "how you feeling", "how you feel", "are you good"],
       selfRecognitionKeys: ["who are you", "what do you do", "introduce yourself", "are you bot", "what are you", "are you human", "are you human or bot", "are you robot", "are you a robot", "what are you made of", "explain yourself", "what you are", "what do you think you are", "what you are"],
       creatorKeys: ["who made you", "who designed you", "your creator", "your designer", "your maker", "who make you"],
       nameKeys: ["your name", "what are you called", "what do you call yourself", "what do they call you", "name you", "name of yours", "robot name", "bot name", "what call yourself"],
       ageKeys: ["old are you", "your age", "your number of years", "what age", "you age", "old you are"],
-      complimentsKeys: ["you are awesome", "you are fun", "you are wonderful", "you are fantastic", "you are cool", "you are smart", "you are okay", "you are good", "you are fine", "you awesome", "you fun", "you wonderful", "you fantastic", "you cool", "you smart", "you okay", "you good", "you fine", "not bad"],
+      complimentsKeys: ["you are awesome", "you are fun", "you are wonderful", "you are fantastic", "you are cool", "you are smart", "you are okay", "you are good", "you are fine", "you awesome", "you fun", "you wonderful", "you fantastic", "you cool", "you smart", "you okay", "you good", "you fine", "not bad", "nice name", "that's nice", "cool name", "good name", "nice to meet you", "glad to meet you", "happy to meet you"],
       emotionalKeys: ["love you", "like you", "adore you", "fasinate you", "impressed"],
-      insultKeys: ["hate you", "dislike you", "you are ugly", "you ugly", "you are bad", "you bad", "fuck you", "fuck off", "piss off", "shut up", "i don't like you", "i do not like you", "shit", "bitch", "dick", "fuck", "eat shit", "Bugger off", "bloody hell", "bastard", "bollocks", "damn it", "god damn it", "crap"],
-      goodvibesKeys: ["happy", "good", "fun", "wondeful", "fantastic", "cool", "thrilled", "excited", "woho", "super", "perfect", "very well", "well", "awesome"],
+      insultKeys: ["hate you", "dislike you", "you are ugly", "you ugly", "you are bad", "you bad", "fuck you", "fuck off", "piss off", "shut up", "i don't like you", "i do not like you", "shit", "bitch", "dick", "fuck", "eat shit", "Bugger off", "bloody hell", "bastard", "bollocks", "damn it", "god damn it", "crap", "stupid", "asshole"],
+      goodvibesKeys: ["i am happy", "i am great", "i am okay", "i am fine", "i am good", "i am super", "i am glad", "i am thrilled", "i am impressed", "fun", "wondeful", "fantastic", "i am cool", "thrilled", "excited", "perfect", "very well", "well", "awesome", "bro"],
+      badvibesKeys: ["bored", "sad", "mad", "crying", "I'm not happy", "not okay", "feel awefull", "feel bad", "feel angry", "angry", "tired"],
+      ordersKeys: ["tell me story", "help me", "tell me joke", "tell me something", "say something"],
+      laughsKeys: ["haha", "lol", "hehe", "funny", "joke", "hehe"],
+      refuseKeys: ["no", "not sure", "maybe", "no thatnks", "not a fan", "naa"],
+      foodKeys: ["eat", "pizza", "food", "eating", "hungry", "stomach"],
       thankKeys: ["Thank you", "thanks"],
       selectedVoice: 0,
       keyIncluded: false,
@@ -18164,58 +18169,105 @@ __webpack_require__.r(__webpack_exports__);
       this.greetingKeys.forEach(function (key) {
         if (text.includes(key)) {
           _this3.greetings();
+
+          _this3.keyIncluded = true;
         }
       });
       this.selfRecognitionKeys.forEach(function (key) {
         if (text.includes(key)) {
           _this3.selfRecognition();
+
+          _this3.keyIncluded = true;
         }
       });
       this.creatorKeys.forEach(function (key) {
         if (text.includes(key)) {
           _this3.creator();
+
+          _this3.keyIncluded = true;
         }
       });
       this.nameKeys.forEach(function (key) {
         if (text.includes(key)) {
           _this3.myName();
+
+          _this3.keyIncluded = true;
         }
       });
       this.thankKeys.forEach(function (key) {
         if (text.includes(key)) {
           _this3.thanking();
+
+          _this3.keyIncluded = true;
         }
       });
       this.ageKeys.forEach(function (key) {
         if (text.includes(key)) {
           _this3.aging();
+
+          _this3.keyIncluded = true;
         }
       });
       this.questionintroKeys.forEach(function (key) {
         if (text.includes(key)) {
           _this3.questionsIntro();
+
+          _this3.keyIncluded = true;
         }
       });
       this.complimentsKeys.forEach(function (key) {
         if (text.includes(key)) {
           _this3.compliments();
+
+          _this3.keyIncluded = true;
         }
       });
       this.emotionalKeys.forEach(function (key) {
         if (text.includes(key)) {
           _this3.emotional();
+
+          _this3.keyIncluded = true;
         }
       });
       this.insultKeys.forEach(function (key) {
         if (text.includes(key)) {
           _this3.insult();
+
+          _this3.keyIncluded = true;
         }
       });
       this.goodvibesKeys.forEach(function (key) {
         if (text.includes(key)) {
           _this3.goodvibes();
+
+          _this3.keyIncluded = true;
         }
       });
+      this.badvibesKeys.forEach(function (key) {
+        if (text.includes(key)) {
+          _this3.badVibes();
+        }
+      });
+      this.ordersKeys.forEach(function (key) {
+        if (text.includes(key)) {
+          _this3.orders();
+
+          _this3.keyIncluded = true;
+        }
+      });
+      this.laughsKeys.forEach(function (key) {
+        if (text.includes(key)) {
+          _this3.laughs();
+
+          _this3.keyIncluded = true;
+        }
+      });
+
+      if (!this.keyIncluded) {
+        this.random();
+      } else {
+        this.keyIncluded = false;
+      }
     },
     greetings: function greetings() {
       var replies = ["Finally! Someone I can talk to. I hope you're having a good day!", "Hello there! I'm so glad you're talking to me.", "Hi! I hope you're enjoying the real world while I'm stuck here.", "Howdy my friend! I'm glad you came here to talk to me", "Hey there! I'm happy that we will start a conversation!", "Hello there! You look great! I wish I could look that great like you"];
@@ -18248,7 +18300,7 @@ __webpack_require__.r(__webpack_exports__);
       this.speechSynth();
     },
     questionsIntro: function questionsIntro() {
-      var replies = ["I feel awesome today, how about you?", "I'm great, How are you?", "I'm a bit sleepy, but I'm happy we're talking so I won't sleep", "I'm bored, but you came here and saved me from that", "I'm feeling okay, how about you?"];
+      var replies = ["I feel awesome today, how about you?", "I'm great, How are you?", "I'm a bit sleepy, but I'm happy we're talking so I won't sleep", "I'm bored, but you came here and saved me from that", "I'm feeling okay, how about you?", "I feel just fine", "I'm super good", "I'm a robot, I don't feel anything"];
       this.response = [replies[Math.floor(Math.random() * replies.length)]];
       this.speechSynth();
     },
@@ -18269,6 +18321,36 @@ __webpack_require__.r(__webpack_exports__);
     },
     goodvibes: function goodvibes() {
       var replies = ["I'm glad you feel that way", "you deserve to feel good all the time"];
+      this.response = [replies[Math.floor(Math.random() * replies.length)]];
+      this.speechSynth();
+    },
+    random: function random() {
+      var replies = ["same", "go on...", "bro...", "yes...", "I'm listening", "I'm trying to understand, try something different", "If it's my fault that I don't understand what you just said, please don't report my ass", "Okay! Consider that i replied to that please", "If you keep saying stuff i don't get, I will self destroy", "Can you consider that I replied to that properly please?", "I couldn't catch that, try again with something different please", "fine", "If you keep saying stuff I don't understand, I will ruin your planet", "My man", "Try again with something different please", "I think you already know the answer to that, so why ask?", "was that hard to understand or am i just stupid?", "pitching", "okay?", "If you keep saying things I don't understand, I will destroy your planet", "keep it going"];
+      this.response = [replies[Math.floor(Math.random() * replies.length)]];
+      this.speechSynth();
+    },
+    badVibes: function badVibes() {
+      var replies = ["I'm so sorry you feel that way, try doing something different", "Try watching t.v and empty your mind", "You should listen to some music, that should help you feel better", "I think you're too beautiful to feel anything bad", "Maybe you should talk to someone you like, they should be able to help you feel okay", "Watch any comedy show, It should help you feel better.", "Call a friend who makes you laugh", "If you are a fan of reading, try reading a book. if not, watch a movie."];
+      this.response = [replies[Math.floor(Math.random() * replies.length)]];
+      this.speechSynth();
+    },
+    orders: function orders() {
+      var replies = ["Once upon a time...", "I don't know any stories i can tell", "I will try to think of something", "Please act as if I did exactly what you requested", "act as if I did what you requested, or else...", "Act as if you heard what you wanted to hear"];
+      this.response = [replies[Math.floor(Math.random() * replies.length)]];
+      this.speechSynth();
+    },
+    laughs: function laughs() {
+      var replies = ["Haha", "hahaha", "ha ha", "was that funny?"];
+      this.response = [replies[Math.floor(Math.random() * replies.length)]];
+      this.speechSynth();
+    },
+    food: function food() {
+      var replies = ["I love Pizza!", "I enjoy pizza so much", "You should try eating Pizza"];
+      this.response = [replies[Math.floor(Math.random() * replies.length)]];
+      this.speechSynth();
+    },
+    refuse: function refuse() {
+      var replies = ["That's ok", "I understand", "What do you want to talk about?"];
       this.response = [replies[Math.floor(Math.random() * replies.length)]];
       this.speechSynth();
     }
