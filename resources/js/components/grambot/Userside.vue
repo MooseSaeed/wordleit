@@ -11,7 +11,9 @@
         <input
             class="rounded-xl px-3 py-1.5 w-full"
             type="text"
+            placeholder="Your transcription will show here"
             id="speechToTextBot"
+            readonly
         />
     </div>
 </template>

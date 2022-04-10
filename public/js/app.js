@@ -18106,21 +18106,21 @@ __webpack_require__.r(__webpack_exports__);
     return {
       isLoading: true,
       response: "",
-      greetingKeys: ["hello", "hey", "hi", "howdy", "welcome", "bonjour", "greeting", "greetings", "whats up", "what's up", "what is up", "whats up", "good day", "good morning", "good evening"],
+      greetingKeys: ["hello ", "hey ", "hi ", "howdy ", "welcome ", "bonjour ", "greeting ", "greetings ", "whats up ", "what's up ", "what is up ", "whats up ", "good day ", "good morning ", "good evening "],
       questionintroKeys: ["how are you", "how do you do", "are you happy", "are you feeling okay", "are you okay", "how is life", "how are things", "how do you feel", "how you feeling", "how you feel", "are you good"],
       selfRecognitionKeys: ["who are you", "what do you do", "introduce yourself", "are you bot", "what are you", "are you human", "are you human or bot", "are you robot", "are you a robot", "what are you made of", "explain yourself", "what you are", "what do you think you are", "what you are"],
-      creatorKeys: ["who made you", "who designed you", "your creator", "your designer", "your maker", "who make you"],
-      nameKeys: ["your name", "what are you called", "what do you call yourself", "what do they call you", "name you", "name of yours", "robot name", "bot name", "what call yourself"],
-      ageKeys: ["old are you", "your age", "your number of years", "what age", "you age", "old you are"],
+      creatorKeys: ["who made you", "who designed you", "your creator", "your designer", "your maker", "who make you", "who created you"],
+      nameKeys: ["your name", "what are you called", "what do you call yourself", "what do they call you", "name you", "name of yours", "robot name", "bot name ", "what call yourself"],
+      ageKeys: ["old are you", "your age ", "your number of years", "what age", "you age ", "old you are"],
       complimentsKeys: ["you are awesome", "you are fun", "you are wonderful", "you are fantastic", "you are cool", "you are smart", "you are okay", "you are good", "you are fine", "you awesome", "you fun", "you wonderful", "you fantastic", "you cool", "you smart", "you okay", "you good", "you fine", "not bad", "nice name", "that's nice", "cool name", "good name", "nice to meet you", "glad to meet you", "happy to meet you"],
-      emotionalKeys: ["love you", "like you", "adore you", "fasinate you", "impressed"],
-      insultKeys: ["hate you", "dislike you", "you are ugly", "you ugly", "you are bad", "you bad", "fuck you", "fuck off", "piss off", "shut up", "i don't like you", "i do not like you", "shit", "bitch", "dick", "fuck", "eat shit", "Bugger off", "bloody hell", "bastard", "bollocks", "damn it", "god damn it", "crap", "stupid", "asshole"],
-      goodvibesKeys: ["i am happy", "i am great", "i am okay", "i am fine", "i am good", "i am super", "i am glad", "i am thrilled", "i am impressed", "fun", "wondeful", "fantastic", "i am cool", "thrilled", "excited", "perfect", "very well", "i am well", "awesome", "bro"],
-      badvibesKeys: ["bored", "sad", "crying", "I'm not happy", "not okay", "feel awefull", "feel bad", "feel angry", "angry", "tired"],
+      emotionalKeys: ["love you", "like you", "adore you", "fasinate you", "impressed "],
+      insultKeys: ["hate you", "dislike you", "you are ugly", "you ugly", "you are bad", "you bad", "fuck you", "fuck off", "piss off", "shut up", "i don't like you", "i do not like you", "shit ", "bitch ", "dick ", "fuck ", "eat shit ", "Bugger off", "bloody hell", "bastard ", "bollocks ", "damn it ", "god damn it ", "crap ", "stupid ", "asshole ", "dump "],
+      goodvibesKeys: ["i am happy", "i am great", "i am okay", "i am fine", "i am good", "i am super", "i am glad", "i am thrilled", "i am impressed", "fun ", "wondeful ", "fantastic ", "i am cool ", "thrilled ", "excited ", "perfect ", "very well", "i am well", "awesome ", "bro "],
+      badvibesKeys: ["bored ", "sad ", "crying ", "I'm not happy", "not okay ", "feel awefull ", "feel bad ", "feel angry", "angry ", "tired "],
       ordersKeys: ["tell me story", "help me", "tell me joke", "tell me something", "say something"],
-      laughsKeys: ["haha", "lol", "hehe", "funny", "joke", "hehe"],
-      refuseKeys: ["no", "not sure", "maybe", "no thatnks", "not a fan", "naa"],
-      foodKeys: ["eat", "pizza", "food", "eating", "hungry", "stomach"],
+      laughsKeys: ["haha ", "lol ", "hehe ", "funny ", "joke ", "hehe "],
+      refuseKeys: ["no ", "not sure", "maybe ", "no thatnks", "not a fan", "na "],
+      foodKeys: ["i eat", "pizza", "food", "eating", "hungry", "stomach"],
       thankKeys: ["Thank you", "thanks"],
       selectedVoice: 0,
       keyIncluded: false,
@@ -19861,7 +19861,9 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
   "class": "rounded-xl px-3 py-1.5 w-full",
   type: "text",
-  id: "speechToTextBot"
+  placeholder: "Your transcription will show here",
+  id: "speechToTextBot",
+  readonly: ""
 }, null, -1
 /* HOISTED */
 );
@@ -19900,17 +19902,84 @@ var _withScopeId = function _withScopeId(n) {
 };
 
 var _hoisted_1 = {
-  "class": "relative bg-blue-500/25 border mx-3 border-gray-900 h-screen rounded-xl px-6 py-6 sm:flex gap-2 flex-col sm:flex-row basis-full justify-center items-center"
+  "class": "relative bg-blue-500/25 border mx-3 border-gray-900 sm:h-screen rounded-xl px-6 py-6 sm:flex gap-2 flex-col sm:flex-row basis-full justify-center items-center"
 };
 var _hoisted_2 = {
   "class": "item"
 };
 var _hoisted_3 = {
+  "class": "devto item devtoOutput border-b border-b-white pb-2 mb-2 md:border-b-0 md:pb-0 md:mb-2 md:mr-2"
+};
+
+var _hoisted_4 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
+    id: "deepgram-ai-speech-to-text"
+  }, "Grammy Bot:", -1
+  /* HOISTED */
+  );
+});
+
+var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: "https://deepgram.com/",
+    target: "_blank"
+  }, "Deepgram"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" is offering a great AI Speech Recognition service. Combine it with simple VueJS logic and you get Grammy. ")], -1
+  /* HOISTED */
+  );
+});
+
+var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+    "class": "font-semibold"
+  }, "Read the below for how to use:", -1
+  /* HOISTED */
+  );
+});
+
+var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, " Connect a microphone to your device and insure that it's working. ", -1
+  /* HOISTED */
+  );
+});
+
+var _hoisted_8 = {
+  "class": "mr-2"
+};
+
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Click on the ");
+
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" icon. ");
+
+var _hoisted_11 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, "Allow browser to use microphone.", -1
+  /* HOISTED */
+  );
+});
+
+var _hoisted_12 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, " Start talking to the bot and once finish press on the pause icon to hear the response ", -1
+  /* HOISTED */
+  );
+});
+
+var _hoisted_13 = {
   "class": "relative"
 };
-var _hoisted_4 = {
+var _hoisted_14 = {
   "class": "item"
 };
+var _hoisted_15 = {
+  "class": "mb-5"
+};
+
+var _hoisted_16 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+    "class": "text-md text-white font-semibold"
+  }, " Select bot voice: ", -1
+  /* HOISTED */
+  );
+});
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Microphone = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Microphone");
 
@@ -19918,11 +19987,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_Userside = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Userside");
 
-  var _component_Robotsvg = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Robotsvg");
-
   var _component_Botside = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Botside");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Userside, null, {
+  var _component_Robotsvg = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Robotsvg");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, _hoisted_5, _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Microphone, {
+    "class": "inline-block"
+  }), _hoisted_10])])])]), _hoisted_11, _hoisted_12])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Userside, null, {
     startRecording: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
         onClick: _cache[0] || (_cache[0] = function () {
@@ -19937,7 +20008,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return $options.isRecording && $options.isRecording.apply($options, arguments);
         }),
         "class": "flex flex-col gap-1 lg:flex-row justify-center cursor-pointer items-center font-semibold text-white text-bold w-full bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg text-sm px-5 py-1 text-center mr-2 mb-2"
-      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Stoprecroding), $data.recording ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Stoprecroding, {
+      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Stoprecroding), $data.recording ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Stoprecroding, {
         key: 0,
         "class": "animate-ping absolute top-0 right-0"
       })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])];
@@ -19945,7 +20016,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Robotsvg), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Botside)])]);
+  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Botside)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Robotsvg)])]);
 }
 
 /***/ }),

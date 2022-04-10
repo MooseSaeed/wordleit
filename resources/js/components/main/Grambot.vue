@@ -1,8 +1,41 @@
 <template>
     <div
-        class="relative bg-blue-500/25 border mx-3 border-gray-900 h-screen rounded-xl px-6 py-6 sm:flex gap-2 flex-col sm:flex-row basis-full justify-center items-center"
+        class="relative bg-blue-500/25 border mx-3 border-gray-900 sm:h-screen rounded-xl px-6 py-6 sm:flex gap-2 flex-col sm:flex-row basis-full justify-center items-center"
     >
         <div class="item">
+            <div
+                class="devto item devtoOutput border-b border-b-white pb-2 mb-2 md:border-b-0 md:pb-0 md:mb-2 md:mr-2"
+            >
+                <h3 id="deepgram-ai-speech-to-text">Grammy Bot:</h3>
+                <p>
+                    <a href="https://deepgram.com/" target="_blank">Deepgram</a>
+                    is offering a great AI Speech Recognition service. Combine
+                    it with simple VueJS logic and you get Grammy.
+                </p>
+                <p class="font-semibold">Read the below for how to use:</p>
+                <ul>
+                    <li>
+                        Connect a microphone to your device and insure that
+                        it&#39;s working.
+                    </li>
+                    <li>
+                        <div>
+                            <div>
+                                <p class="mr-2">
+                                    Click on the
+                                    <Microphone class="inline-block" /> icon.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>Allow browser to use microphone.</li>
+                    <li>
+                        Start talking to the bot and once finish press on the
+                        pause icon to hear the response
+                    </li>
+                </ul>
+            </div>
+
             <Userside>
                 <template v-slot:startRecording>
                     <div
@@ -31,8 +64,13 @@
         </div>
 
         <div class="item">
+            <div class="mb-5">
+                <p class="text-md text-white font-semibold">
+                    Select bot voice:
+                </p>
+                <Botside />
+            </div>
             <Robotsvg />
-            <Botside />
         </div>
     </div>
 </template>
