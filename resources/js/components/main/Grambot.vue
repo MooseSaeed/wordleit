@@ -21,10 +21,7 @@
                     <li>
                         <div>
                             <div>
-                                <p class="mr-2">
-                                    Click on the
-                                    <Microphone class="inline-block" /> icon.
-                                </p>
+                                <p class="mr-2">Click on the recording icon.</p>
                             </div>
                         </div>
                     </li>

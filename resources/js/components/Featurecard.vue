@@ -31,15 +31,30 @@
             </Card>
         </router-link>
         <router-link to="/grambot">
-            <Card dataImage="./images/streamerposter.png">
+            <Card dataImage="./images/robotposter.png">
                 <template v-slot:header>
                     <h2 class="text-white text-xl font-bold">Grambot</h2>
                 </template>
                 <template v-slot:content>
-                    <p class="relative text-white">AI speaking bot.</p>
+                    <p class="relative text-white">
+                        AI speaking Pot created just to entertain you.
+                    </p>
                 </template>
             </Card>
         </router-link>
+
+        <a href="https://bereadable.netlify.app/" target="__blank">
+            <Card dataImage="./images/bereadableposter.png">
+                <template v-slot:header>
+                    <h2 class="text-white text-xl font-bold">BeReadable</h2>
+                </template>
+                <template v-slot:content>
+                    <p class="relative text-white">
+                        Online tool for live audio/podcast transcription.
+                    </p>
+                </template>
+            </Card>
+        </a>
     </section>
 </template>
 
