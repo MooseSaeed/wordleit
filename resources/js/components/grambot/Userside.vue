@@ -1,18 +1,18 @@
 <template>
-    <div class="grid grid-cols-1 gap-1">
-        <div
-            type="button"
-            class="flex flex-col gap-1 lg:flex-row justify-between items-center font-semibold text-white text-bold w-full bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg text-sm px-5 py-1 text-center mr-2 mb-2"
-        >
-            <div @click="toggleRecording" v-if="!recording">
-                <slot name="startRecording"></slot>
-            </div>
-
-            <div @click="toggleRecording" v-if="recording">
-                <slot name="stopRecording"></slot>
-            </div>
+    <div>
+        <div @click="toggleRecording" v-if="!recording">
+            <slot name="startRecording"></slot>
         </div>
-        <input type="text" id="speechToTextBot" />
+
+        <div @click="toggleRecording" v-if="recording">
+            <slot name="stopRecording"></slot>
+        </div>
+
+        <input
+            class="rounded-xl px-3 py-1.5 w-full"
+            type="text"
+            id="speechToTextBot"
+        />
     </div>
 </template>
 

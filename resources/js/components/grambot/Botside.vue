@@ -7,7 +7,7 @@
         <div class="form-container">
             <div class="form-group" v-if="voiceList.length">
                 <select
-                    class="form-control"
+                    class="block w-full px-3 py-1.5 text-sm text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                     id="voices"
                     v-model="selectedVoice"
                 >
@@ -22,7 +22,14 @@
                 </select>
             </div>
 
-            <button id="checkForKeysButton" @click="checkForKeys">Greet</button>
+            <button
+                hidden
+                class="invisible"
+                id="checkForKeysButton"
+                @click="checkForKeys"
+            >
+                Greet
+            </button>
         </div>
     </transition>
 </template>
@@ -54,6 +61,8 @@ export default {
             questionintroKeys: [
                 "how are you",
                 "how do you do",
+                "are you happy",
+                "are you feeling okay",
                 "are you okay",
                 "how is life",
                 "how are things",
@@ -186,14 +195,13 @@ export default {
                 "excited",
                 "perfect",
                 "very well",
-                "well",
+                "i am well",
                 "awesome",
                 "bro",
             ],
             badvibesKeys: [
                 "bored",
                 "sad",
-                "mad",
                 "crying",
                 "I'm not happy",
                 "not okay",
@@ -265,8 +273,7 @@ export default {
 
         speechSynth() {
             this.responseInSpeech.text = `${this.response}`;
-            this.responseInSpeech.voice =
-                this.voiceList[4 || this.selectedVoice];
+            this.responseInSpeech.voice = this.voiceList[this.selectedVoice];
             this.synth.speak(this.responseInSpeech);
         },
 
@@ -372,6 +379,13 @@ export default {
                     this.keyIncluded = true;
                 }
             });
+            this.foodKeys.forEach((key) => {
+                if (text.includes(key)) {
+                    this.food();
+                    this.keyIncluded = true;
+                }
+            });
+
             if (!this.keyIncluded) {
                 this.random();
             } else {
