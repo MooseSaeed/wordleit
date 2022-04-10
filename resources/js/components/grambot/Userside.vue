@@ -12,12 +12,7 @@
                 <slot name="stopRecording"></slot>
             </div>
         </div>
-        <textarea
-            name="speechToTextBot"
-            id="speechToTextBot"
-            cols="30"
-            rows="10"
-        ></textarea>
+        <input type="text" id="speechToTextBot" />
     </div>
 </template>
 

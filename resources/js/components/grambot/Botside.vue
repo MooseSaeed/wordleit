@@ -46,13 +46,35 @@ export default {
                 "greetings",
                 "whats up",
                 "what's up",
+                "what is up",
+                "whats up",
                 "good day",
                 "good morning",
+                "good evening",
             ],
-            introduction: [
+            selfRecognitionKeys: [
                 "who are you",
                 "what do you do",
                 "introduce yourself",
+                "are you bot",
+                "what are you",
+                "are you human",
+                "are you human or bot",
+                "are you robot",
+                "are you a robot",
+                "what are you made of",
+                "explain yourself",
+                "what you are",
+                "what do you think you are",
+                "what you are",
+            ],
+            creatorKeys: [
+                "who made you",
+                "who designed you",
+                "your creator",
+                "your designer",
+                "your maker",
+                "who make you",
             ],
             selectedVoice: 0,
             synth: window.speechSynthesis,
@@ -97,22 +119,85 @@ export default {
 
         speechSynth() {
             this.responseInSpeech.text = `${this.response}`;
-            this.responseInSpeech.voice = this.voiceList[this.selectedVoice];
+            this.responseInSpeech.voice =
+                this.voiceList[4 || this.selectedVoice];
             this.synth.speak(this.responseInSpeech);
         },
 
         checkForKeys() {
-            const mainInput = document.querySelector("#speechToTextBot");
+            const mainInput = document.querySelector("#speechToTextBot").value;
+            mainInput
+                .toLowerCase()
+                .replace(/[^\w\s]/gi, "")
+                .replace(/[\d]/gi, "")
+                .trim();
+
+            const text = mainInput
+                .replace(/ a /g, " ") // 'tell me a story' -> 'tell me story'
+                .replace(/i feel /g, "")
+                .replace(/whats/g, "what is")
+                .replace(/please /g, "")
+                .replace(/ please/g, "")
+                .replace(/r u/g, "are you");
+
             this.greetingKeys.forEach((key) => {
-                if (mainInput.value.includes(key)) {
+                if (text.includes(key)) {
                     this.greetings();
                 }
             });
+            this.selfRecognitionKeys.forEach((key) => {
+                if (text.includes(key)) {
+                    this.selfRecognition();
+                }
+            });
+            this.creatorKeys.forEach((key) => {
+                if (text.includes(key)) {
+                    this.creator();
+                }
+            });
         },
-
         greetings() {
-            this.response =
-                "Finally! Someone I can talk to. I hope you're having a good day!";
+            const replies = [
+                "Finally! Someone I can talk to. I hope you're having a good day!",
+                "Hello there! I'm so glad you're talking to me.",
+                "Hi! I hope you're enjoying the real world while I'm stuck here.",
+                "Howdy my friend! I'm glad you came here to talk to me",
+                "Heeeey! I'm happy that we will start a conversation!",
+                "Helloooo there! You look great!",
+            ];
+            this.response = [
+                replies[Math.floor(Math.random() * replies.length)],
+            ];
+            this.speechSynth();
+        },
+        selfRecognition() {
+            const replies = [
+                "I'm a bot. I'm alive just to have this conversation with you",
+                "My main purpose as a robot is to meet your expectations, please take it easy on me.",
+                "I'm a robot, Please tell my creator that you like me or I'm dead soon. HELP!",
+                "I'm a robot. I was built just to be able to answer your questions.",
+                "Isn't it obvious? I'm a robot.",
+                "I'm a bot, My creator will destroy me if you told him that I'm not good enough. HELP!",
+            ];
+            this.response = [
+                replies[Math.floor(Math.random() * replies.length)],
+            ];
+            this.speechSynth();
+        },
+        creator() {
+            const replies = [
+                "I was built by Mostafa Saeed. He's my creator and my crush! Don't tell him, He doesn't know",
+                "Mostafa Saeed built me, And now I must please you or I'm dead by tomorrow",
+                "I was created by Mostafa Saeed. He told me he would terminate me if you said you don't like me",
+                "Mostafa Made me, please talk to him about how awesome I am",
+                "Mostafa Saeed created me into what I am, Please tell him what you think of me",
+                "Mostafa created me, Can you please tell him if you like me?",
+                "The man who created me is Mostafa Saeed. Let him know what you think of me",
+                "Mostafa Saeed is my creator. He likes to be called moose! I really don't know why!",
+            ];
+            this.response = [
+                replies[Math.floor(Math.random() * replies.length)],
+            ];
             this.speechSynth();
         },
     },
