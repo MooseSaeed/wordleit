@@ -178,6 +178,7 @@ export default {
                 "stupid ",
                 "asshole ",
                 "dump ",
+                "not good enough",
             ],
             goodvibesKeys: [
                 "i am happy",
@@ -401,7 +402,7 @@ export default {
                 "Hi! I hope you're enjoying the real world while I'm stuck here.",
                 "Howdy my friend! I'm glad you came here to talk to me",
                 "Hey there! I'm happy that we will start a conversation!",
-                "Hello there! You look great! I wish I could look that great like you",
+                "Hello there! You look great! I wish I could look as great as you",
             ];
             this.response = [
                 replies[Math.floor(Math.random() * replies.length)],

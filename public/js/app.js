@@ -18114,7 +18114,7 @@ __webpack_require__.r(__webpack_exports__);
       ageKeys: ["old are you", "your age ", "your number of years", "what age", "you age ", "old you are"],
       complimentsKeys: ["you are awesome", "you are fun", "you are wonderful", "you are fantastic", "you are cool", "you are smart", "you are okay", "you are good", "you are fine", "you awesome", "you fun", "you wonderful", "you fantastic", "you cool", "you smart", "you okay", "you good", "you fine", "not bad", "nice name", "that's nice", "cool name", "good name", "nice to meet you", "glad to meet you", "happy to meet you"],
       emotionalKeys: ["love you", "like you", "adore you", "fasinate you", "impressed "],
-      insultKeys: ["hate you", "dislike you", "you are ugly", "you ugly", "you are bad", "you bad", "fuck you", "fuck off", "piss off", "shut up", "i don't like you", "i do not like you", "shit ", "bitch ", "dick ", "fuck ", "eat shit ", "Bugger off", "bloody hell", "bastard ", "bollocks ", "damn it ", "god damn it ", "crap ", "stupid ", "asshole ", "dump "],
+      insultKeys: ["hate you", "dislike you", "you are ugly", "you ugly", "you are bad", "you bad", "fuck you", "fuck off", "piss off", "shut up", "i don't like you", "i do not like you", "shit ", "bitch ", "dick ", "fuck ", "eat shit ", "Bugger off", "bloody hell", "bastard ", "bollocks ", "damn it ", "god damn it ", "crap ", "stupid ", "asshole ", "dump ", "not good enough"],
       goodvibesKeys: ["i am happy", "i am great", "i am okay", "i am fine", "i am good", "i am super", "i am glad", "i am thrilled", "i am impressed", "fun ", "wondeful ", "fantastic ", "i am cool ", "thrilled ", "excited ", "perfect ", "very well", "i am well", "awesome ", "bro "],
       badvibesKeys: ["bored ", "sad ", "crying ", "I'm not happy", "not okay ", "feel awefull ", "feel bad ", "feel angry", "angry ", "tired "],
       ordersKeys: ["tell me story", "help me", "tell me joke", "tell me something", "say something"],
@@ -18291,7 +18291,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     greetings: function greetings() {
-      var replies = ["Finally! Someone I can talk to. I hope you're having a good day!", "Hello there! I'm so glad you're talking to me.", "Hi! I hope you're enjoying the real world while I'm stuck here.", "Howdy my friend! I'm glad you came here to talk to me", "Hey there! I'm happy that we will start a conversation!", "Hello there! You look great! I wish I could look that great like you"];
+      var replies = ["Finally! Someone I can talk to. I hope you're having a good day!", "Hello there! I'm so glad you're talking to me.", "Hi! I hope you're enjoying the real world while I'm stuck here.", "Howdy my friend! I'm glad you came here to talk to me", "Hey there! I'm happy that we will start a conversation!", "Hello there! You look great! I wish I could look as great as you"];
       this.response = [replies[Math.floor(Math.random() * replies.length)]];
       this.speechSynth();
     },
@@ -18396,10 +18396,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       recording: false,
       socket: null,
-      stream: null,
-      transcript: [""],
-      magicKeys: ["magic bold", "magic link"],
-      keyIncluded: false
+      stream: null
     };
   },
   methods: {
@@ -18462,24 +18459,8 @@ __webpack_require__.r(__webpack_exports__);
           var transcript = received.channel.alternatives[0].transcript;
 
           if (transcript && received.is_final) {
-            var textarea = document.querySelector("#speechToTextBot"); // if the key is included in the damn transcript just ignore the transcript
-
-            var magicKeys = _this.magicKeys;
-            magicKeys.forEach(function (key) {
-              if (transcript.includes(key)) {
-                _this.keyIncluded = true;
-              }
-            });
-
-            if (!_this.keyIncluded) {
-              textarea.value = transcript + " ";
-            } else {
-              _this.transcript = transcript;
-
-              _this.vocalCommands();
-
-              _this.keyIncluded = false;
-            }
+            var textarea = document.querySelector("#speechToTextBot");
+            textarea.value = transcript + " ";
           }
         };
       });
@@ -18801,7 +18782,7 @@ var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
 var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
     "class": "text-white text-xl font-bold"
-  }, "Grambot", -1
+  }, " Wordleit Grammy ", -1
   /* HOISTED */
   );
 });
@@ -19892,11 +19873,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  "class": "rounded-xl px-3 py-1.5 w-full",
+  "class": "rounded-xl px-3 py-1.5 w-full bg-gray-700 text-white h-32",
   type: "text",
   placeholder: "Your transcription will show here",
-  id: "speechToTextBot",
-  readonly: ""
+  id: "speechToTextBot"
 }, null, -1
 /* HOISTED */
 );

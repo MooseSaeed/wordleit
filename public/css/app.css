@@ -553,6 +553,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-72 {
   height: 18rem;
 }
+.h-32 {
+  height: 8rem;
+}
 .h-2 {
   height: 0.5rem;
 }
@@ -729,6 +732,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .bg-blue-300\/20 {
   background-color: rgb(147 197 253 / 0.2);
+}
+.bg-gray-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
 .bg-gray-400 {
   --tw-bg-opacity: 1;

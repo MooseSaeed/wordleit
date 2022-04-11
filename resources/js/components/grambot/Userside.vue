@@ -9,11 +9,10 @@
         </div>
 
         <input
-            class="rounded-xl px-3 py-1.5 w-full"
+            class="rounded-xl px-3 py-1.5 w-full bg-gray-700 text-white h-32"
             type="text"
             placeholder="Your transcription will show here"
             id="speechToTextBot"
-            readonly
         />
     </div>
 </template>
@@ -26,9 +25,6 @@ export default {
             recording: false,
             socket: null,
             stream: null,
-            transcript: [""],
-            magicKeys: ["magic bold", "magic link"],
-            keyIncluded: false,
         };
     },
     methods: {
@@ -102,22 +98,7 @@ export default {
                             const textarea =
                                 document.querySelector("#speechToTextBot");
 
-                            // if the key is included in the damn transcript just ignore the transcript
-
-                            const magicKeys = this.magicKeys;
-                            magicKeys.forEach((key) => {
-                                if (transcript.includes(key)) {
-                                    this.keyIncluded = true;
-                                }
-                            });
-
-                            if (!this.keyIncluded) {
-                                textarea.value = transcript + " ";
-                            } else {
-                                this.transcript = transcript;
-                                this.vocalCommands();
-                                this.keyIncluded = false;
-                            }
+                            textarea.value = transcript + " ";
                         }
                     };
                 });
