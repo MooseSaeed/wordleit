@@ -18109,14 +18109,14 @@ __webpack_require__.r(__webpack_exports__);
       response: "",
       greetingKeys: ["hello ", "hey ", "hi ", "howdy ", "welcome ", "bonjour ", "greeting ", "greetings ", "whats up ", "what's up ", "what is up ", "whats up ", "good day ", "good morning ", "good evening "],
       questionintroKeys: ["how are you", "how is your day", "how do you do", "are you happy", "are you feeling okay", "are you okay", "how is life", "how are things", "how do you feel", "how you feeling", "how you feel", "are you good"],
-      selfRecognitionKeys: ["who are you", "what do you do", "introduce yourself", "are you bot", "what are you", "are you human", "are you human or bot", "are you robot", "are you a robot", "what are you made of", "explain yourself", "what you are", "what do you think you are", "what you are"],
+      selfRecognitionKeys: ["who are you", "who you are", "what do you do", "introduce yourself", "are you bot", "what are you", "are you human", "are you human or bot", "are you robot", "are you a robot", "what are you made of", "explain yourself", "what you are", "what do you think you are", "what you are"],
       creatorKeys: ["who made you", "who designed you", "your creator", "your designer", "your maker", "who make you", "who created you"],
       nameKeys: ["your name", "what are you called", "what do you call yourself", "what do they call you", "name you", "name of yours", "robot name", "bot name ", "what call yourself"],
       ageKeys: ["old are you", "your age ", "your number of years", "what age", "you age ", "old you are"],
-      complimentsKeys: ["you are awesome", "you are fun", "you are wonderful", "you are fantastic", "you are cool", "you are smart", "you are okay", "you are good", "you are fine", "you awesome", "you fun", "you wonderful", "you fantastic", "you cool", "you smart", "you okay", "you good", "you fine", "not bad", "nice name", "that's nice", "cool name", "good name", "nice to meet you", "glad to meet you", "happy to meet you"],
-      emotionalKeys: ["love you", "like you", "adore you", "fasinate you", "impressed "],
-      insultKeys: ["hate you", "dislike you", "you are ugly", "you ugly", "you are bad", "you bad", "fuck you", "fuck off", "piss off", "shut up", "i don't like you", "i do not like you", "shit ", "bitch ", "dick ", "fuck ", "eat shit ", "Bugger off", "bloody hell", "bastard ", "bollocks ", "damn it ", "god damn it ", "crap ", "stupid ", "asshole ", "dump ", "not good enough"],
-      goodvibesKeys: ["i am happy", "i am great", "i am okay", "i am fine", "i am good", "i am super", "i am glad", "i am thrilled", "i am impressed", "I feel happy", "i feel great", "i feel okay", "i feel fine", "i feel good", "i feel super", "i feel glad", "i feel thrilled", "i feel impressed", "enjoying ", "fun ", "wondeful ", "fantastic ", "i am cool ", "thrilled ", "excited ", "perfect ", "very well", "i am well", "awesome ", "bro "],
+      complimentsKeys: ["you are awesome", "you are fun", "you are wonderful", "you are fantastic", "you are cool", "you are smart", "you are okay", "you are good", "you are fine", "you are great", "you awesome", "you fun", "you wonderful", "you fantastic", "you cool", "you smart", "you okay", "you good", "you fine", "not bad", "nice name", "that's nice", "cool name", "good name", "nice to meet you", "glad to meet you", "happy to meet you"],
+      emotionalKeys: ["i love you", "i like you", "adore you", "fasinate you", "impressed "],
+      insultKeys: [" hate you", "dislike you", "you are ugly", " you ugly", " you are bad", " you bad", "fuck you", "fuck off", "piss off", "shut up", "i don't like you", "i do not like you", "shit ", "bitch ", "dick ", "fuck ", "eat shit ", "Bugger off", "bloody hell", "bastard ", "bollocks ", "damn it ", "god damn it ", "crap ", "stupid ", "asshole ", "dump ", "not good enough"],
+      goodvibesKeys: [" am happy", " am great", " am okay", " am fine", " am good", " am super", " am glad", " am thrilled", " am impressed", " i'm happy", " i'm great", " i'm okay", " i'm fine", " i'm good", " i'm super", " i'm glad", " i'm thrilled", " i'm impressed", " feel happy ", " feel great", " feel okay", " feel fine", " feel good", " feel super", " feel glad", " feel thrilled", " feel impressed", " feeling happy ", " feeling great", " feeling okay", " feeling fine", " feeling good", " feeling super", " feeling glad", " feeling thrilled", " feeling impressed", "enjoying ", "fun ", "wondeful ", "fantastic ", "i am cool ", "thrilled ", "excited ", "perfect ", "very well", "i am well", "awesome ", "bro "],
       badvibesKeys: ["bored ", "sad ", "crying ", "I'm not happy", "not okay ", "feel awefull ", "feel bad ", "feel angry", "angry ", "tired "],
       ordersKeys: ["tell me story", "talk about ", "tell me a story", "help me ", "tell me joke", "tell me a joke", "tell me something", "say something"],
       laughsKeys: ["haha ", "lol ", "hehe ", "funny ", "joke ", "hehe "],
@@ -18393,7 +18393,7 @@ __webpack_require__.r(__webpack_exports__);
       this.speechSynth();
     },
     refuse: function refuse() {
-      var replies = ["That's ok", "I understand", "What do you want to talk about?"];
+      var replies = ["That's ok", "I understand", "What do you want to talk about?", "I can understand", "fine", "Okay"];
       this.response = [replies[Math.floor(Math.random() * replies.length)]];
       this.speechSynth();
     },
