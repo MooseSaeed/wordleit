@@ -1,5 +1,5 @@
 <template>
-    <Magickeymodal v-show="showModal" @close-modal="showModal = false" />
+    <Magickeysmodal v-show="showModal" @close-modal="showModal = false" />
 
     <div class="grid grid-cols-1 gap-1">
         <div
@@ -216,6 +216,8 @@
                 />
             </md-linedivider>
         </dfn>
+
+        <slot />
         <md-add-space class="hidden"></md-add-space>
         <md-next-line class="hidden"></md-next-line>
     </markdown-toolbar>
@@ -224,13 +226,13 @@
 <script>
 import Microphone from "../components/SVGs/Microphone.vue";
 import Stoprecroding from "../components/SVGs/Stoprecroding.vue";
-import Magickeymodal from "../components/Magickeysmodal.vue";
+import Magickeysmodal from "../components/Magickeysmodal.vue";
 
 export default {
     components: {
         Microphone,
         Stoprecroding,
-        Magickeymodal,
+        Magickeysmodal,
     },
     data() {
         return {

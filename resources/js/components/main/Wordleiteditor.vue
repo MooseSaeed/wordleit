@@ -1,4 +1,38 @@
 <template>
+    <Magickeysmodal v-show="showModal" @close-modal="showModal = false" />
+    <Mpmodal v-show="showModal" @close-modal="showModal = false">
+        <transition name="fade" v-if="isLoading">
+            <pulse-loader></pulse-loader>
+        </transition>
+        <h2 class="text-white my-3 font-bold text-3xl">Import Mp3 File</h2>
+        <p class="text-left text-white font-semibold text-2xl mt-8">
+            To import mp3 file:
+        </p>
+        <p class="text-left text-white font-semibold text-base my-10">
+            <span class="text-red-500 font-semibold text-base"
+                >Please note</span
+            >
+            that this may take a while, depending on your internet speed and
+            file size.
+        </p>
+        <div class="w-full p-2 bg-gray-600/75 rounded-xl mt-3">
+            <input
+                class="rounded-xl text-black m-1 p-1 border-0 shadow-none"
+                type="file"
+                id="specialFile"
+                required
+            />
+            <button
+                @click="startTranscript"
+                class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-3 py-1 sm:px-5 sm:py-2.5 text-center mr-2 mb-2"
+            >
+                Fire
+            </button>
+        </div>
+        <p class="text-green-500 font-semibold">{{ successMessage }}</p>
+        <p class="text-red-500 text-xs">{{ uploadError }}</p>
+    </Mpmodal>
+
     <header class="max-w-4xl mx-auto mb-16 text-white">
         <div class="mx-3">
             <div
@@ -56,7 +90,16 @@
             </div>
         </div>
         <div class="item sm:flex sm:flex-col h-full w-full">
-            <Markdowntoolbar />
+            <Markdowntoolbar>
+                <div class="col-span-2 flex justify-center w-fit">
+                    <button
+                        @click="showModal = true"
+                        class="text-white bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none font-semibold rounded-lg text-xs px-3 py-1 text-center"
+                    >
+                        Import MP3
+                    </button>
+                </div>
+            </Markdowntoolbar>
 
             <textarea
                 @scroll="handleScrollMove"
@@ -93,18 +136,20 @@
 
                 <div @click="toggleReading" class="flex justify-center">
                     <p
-                        class="font-semibold text-green-500 text-center py-2"
+                        class="font-semibold text-green-500 text-sm sm:text-base text-center py-2"
                         v-if="!isReading"
                     >
                         Start 🔊
                     </p>
                     <p
-                        class="font-semibold text-red-500 text-center py-2"
+                        class="font-semibold text-red-500 text-center text-sm sm:text-base py-2"
                         v-if="isReading"
                     >
                         Stop 🔇
                     </p>
-                    <p class="font-semibold text-white text-center py-2">
+                    <p
+                        class="font-semibold text-white text-center py-2 text-sm sm:text-base ml-1"
+                    >
                         listening to what you wrote.
                     </p>
                 </div>
@@ -115,7 +160,7 @@
                 @scroll="handleScrollMoveBack"
                 class="rounded-xl p-2 bg-devtoBg devto flex-1 overflow-x-auto break-words overflow-auto"
             >
-                <div v-html="markdownToHtml" class="p-2 devtoOutput"></div>
+                <div v-html="markdownToHtml" class="p-2 devtoOutput h-44"></div>
             </div>
         </div>
     </div>
@@ -126,9 +171,12 @@
 </template>
 
 <script>
+import PulseLoader from "vue-spinner/src/PulseLoader.vue";
 import Wordleitlogo from "../Wordleitlogo.vue";
 import Markdowntoolbar from "../Markdowntoolbar.vue";
 import Learnmore from "../Learnmore.vue";
+import Mpmodal from "../Mpmodal.vue";
+import Magickeysmodal from "../Magickeysmodal.vue";
 
 export default {
     name: "Wordleiteditor",
@@ -136,6 +184,9 @@ export default {
         Markdowntoolbar,
         Wordleitlogo,
         Learnmore,
+        Mpmodal,
+        Magickeysmodal,
+        PulseLoader,
     },
     data() {
         return {
@@ -147,8 +198,15 @@ export default {
             voiceList: [],
             responseInSpeech: new window.SpeechSynthesisUtterance(),
             isReading: false,
+            received: null,
+            mpOutput: "",
+            showModal: false,
+            uploadError: "",
+            successMessage: "",
+            isLoading: false,
         };
     },
+
     mounted() {
         if (localStorage.markdown) {
             this.markdown = localStorage.markdown;
@@ -171,6 +229,38 @@ export default {
         },
     },
     methods: {
+        startTranscript() {
+            var input = document.querySelector("#specialFile");
+            var inputFile = input.files[0];
+
+            if (!inputFile) {
+                this.uploadError = "Please select Mp3 File";
+            } else {
+                this.isLoading = true;
+                fetch("https://api.deepgram.com/v1/listen?punctuate=true", {
+                    method: "POST",
+                    headers: {
+                        "content-type": "audio/mpeg",
+                        Authorization:
+                            "Token " + process.env.MIX_VUE_APP_DEEPGRAM_KEY,
+                    },
+                    body: inputFile,
+                })
+                    .then((response) => response.json())
+                    .then((success) => this.checkForText(success))
+                    .catch(
+                        (error) => (this.uploadError = "Error:" + error) // Handle the error response object
+                    );
+            }
+        },
+
+        checkForText(success) {
+            this.markdown =
+                success.results.channels[0].alternatives[0].transcript;
+            this.isLoading = false;
+            this.showModal = false;
+        },
+
         listenForSpeechEvents() {
             this.responseInSpeech.onstart = () => {
                 this.isReading = true;
@@ -290,5 +380,25 @@ input ~ .dot {
     50% {
         background-position: 100% 50%;
     }
+}
+.v-spinner {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity ease 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
 }
 </style>
