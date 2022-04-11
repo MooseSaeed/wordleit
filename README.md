@@ -13,15 +13,19 @@
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ejr7d77zv0jhg3epbfxv.png)
 
-> **Wordleit Editor** is a free open source markdown text editor that gives you a seamless experience as both a reader and a writer. Supported with AI Speech Recognition.
+> **Wordleit Editor** is a free open source markdown text editor that gives you a seamless experience as both a reader and a writer. Supported with AI Speech Recognition. Text to speech - Speech to text - Mp3 to Text.
 
 > **Wordleit Streamer** is a free open source video streamer and online transcriptor tool.
+>
+> **Wordleit Grammy AI Bot** AI speaking Bot created to serve your purposes.
 
 ### 🏠 [Homepage](https://wordleit.herokuapp.com/)
 
 ### ✨ [Editor Demo](https://wordleit.herokuapp.com/wordleiteditor)
 
 ### ✨ [Streamer Demo](https://wordleit.herokuapp.com/streamer)
+
+### ✨ [Grammy Demo](https://wordleit.herokuapp.com/grammy)
 
 ## Author
 
