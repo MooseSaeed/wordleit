@@ -18624,6 +18624,8 @@ __webpack_require__.r(__webpack_exports__);
     this.synth.onvoiceschanged = function () {
       _this.voiceList = _this.synth.getVoices();
     };
+
+    this.listenForSpeechEvents();
   },
   watch: {
     markdown: function markdown(newInput) {
@@ -18636,8 +18638,20 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    listenForSpeechEvents: function listenForSpeechEvents() {
+      var _this2 = this;
+
+      this.responseInSpeech.onstart = function () {
+        _this2.isReading = true;
+      };
+
+      this.responseInSpeech.onend = function () {
+        _this2.isReading = false;
+      };
+    },
     speechSynth: function speechSynth() {
-      this.response = this.md(this.markdown);
+      var customeResponse = this.markdown.replace(/[&\/\\#+()$~%'":*?<>{}]/g, "");
+      this.response = customeResponse;
       this.responseInSpeech.text = "".concat(this.response);
       this.responseInSpeech.voice = this.voiceList[this.selectedVoice];
       this.synth.speak(this.responseInSpeech);

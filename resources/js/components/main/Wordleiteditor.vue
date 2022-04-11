@@ -158,6 +158,7 @@ export default {
         this.synth.onvoiceschanged = () => {
             this.voiceList = this.synth.getVoices();
         };
+        this.listenForSpeechEvents();
     },
     watch: {
         markdown(newInput) {
@@ -170,8 +171,21 @@ export default {
         },
     },
     methods: {
+        listenForSpeechEvents() {
+            this.responseInSpeech.onstart = () => {
+                this.isReading = true;
+            };
+
+            this.responseInSpeech.onend = () => {
+                this.isReading = false;
+            };
+        },
         speechSynth() {
-            this.response = this.md(this.markdown);
+            const customeResponse = this.markdown.replace(
+                /[&\/\\#+()$~%'":*?<>{}]/g,
+                ""
+            );
+            this.response = customeResponse;
             this.responseInSpeech.text = `${this.response}`;
             this.responseInSpeech.voice = this.voiceList[this.selectedVoice];
             this.synth.speak(this.responseInSpeech);
