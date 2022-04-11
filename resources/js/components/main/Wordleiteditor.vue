@@ -182,7 +182,7 @@ export default {
         },
         speechSynth() {
             const customeResponse = this.markdown.replace(
-                /[&\/\\#+()$~%'":*?<>{}]/g,
+                /[&\/\\#+()$~%'":*<>{}]/g,
                 ""
             );
             this.response = customeResponse;
@@ -202,6 +202,7 @@ export default {
                 this.speechSynthOff();
             }
         },
+
         syncToggle() {
             this.isSyncing = !this.isSyncing;
         },

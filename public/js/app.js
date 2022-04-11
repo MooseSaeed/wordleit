@@ -18650,7 +18650,7 @@ __webpack_require__.r(__webpack_exports__);
       };
     },
     speechSynth: function speechSynth() {
-      var customeResponse = this.markdown.replace(/[&\/\\#+()$~%'":*?<>{}]/g, "");
+      var customeResponse = this.markdown.replace(/[&\/\\#+()$~%'":*<>{}]/g, "");
       this.response = customeResponse;
       this.responseInSpeech.text = "".concat(this.response);
       this.responseInSpeech.voice = this.voiceList[this.selectedVoice];
