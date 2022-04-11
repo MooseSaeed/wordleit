@@ -18103,11 +18103,12 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
+    // Use the data to set your array of keywords
     return {
       isLoading: true,
       response: "",
       greetingKeys: ["hello ", "hey ", "hi ", "howdy ", "welcome ", "bonjour ", "greeting ", "greetings ", "whats up ", "what's up ", "what is up ", "whats up ", "good day ", "good morning ", "good evening "],
-      questionintroKeys: ["how are you", "how do you do", "are you happy", "are you feeling okay", "are you okay", "how is life", "how are things", "how do you feel", "how you feeling", "how you feel", "are you good"],
+      questionintroKeys: ["how are you", "how is your day", "how do you do", "are you happy", "are you feeling okay", "are you okay", "how is life", "how are things", "how do you feel", "how you feeling", "how you feel", "are you good"],
       selfRecognitionKeys: ["who are you", "what do you do", "introduce yourself", "are you bot", "what are you", "are you human", "are you human or bot", "are you robot", "are you a robot", "what are you made of", "explain yourself", "what you are", "what do you think you are", "what you are"],
       creatorKeys: ["who made you", "who designed you", "your creator", "your designer", "your maker", "who make you", "who created you"],
       nameKeys: ["your name", "what are you called", "what do you call yourself", "what do they call you", "name you", "name of yours", "robot name", "bot name ", "what call yourself"],
@@ -18115,13 +18116,14 @@ __webpack_require__.r(__webpack_exports__);
       complimentsKeys: ["you are awesome", "you are fun", "you are wonderful", "you are fantastic", "you are cool", "you are smart", "you are okay", "you are good", "you are fine", "you awesome", "you fun", "you wonderful", "you fantastic", "you cool", "you smart", "you okay", "you good", "you fine", "not bad", "nice name", "that's nice", "cool name", "good name", "nice to meet you", "glad to meet you", "happy to meet you"],
       emotionalKeys: ["love you", "like you", "adore you", "fasinate you", "impressed "],
       insultKeys: ["hate you", "dislike you", "you are ugly", "you ugly", "you are bad", "you bad", "fuck you", "fuck off", "piss off", "shut up", "i don't like you", "i do not like you", "shit ", "bitch ", "dick ", "fuck ", "eat shit ", "Bugger off", "bloody hell", "bastard ", "bollocks ", "damn it ", "god damn it ", "crap ", "stupid ", "asshole ", "dump ", "not good enough"],
-      goodvibesKeys: ["i am happy", "i am great", "i am okay", "i am fine", "i am good", "i am super", "i am glad", "i am thrilled", "i am impressed", "fun ", "wondeful ", "fantastic ", "i am cool ", "thrilled ", "excited ", "perfect ", "very well", "i am well", "awesome ", "bro "],
+      goodvibesKeys: ["i am happy", "i am great", "i am okay", "i am fine", "i am good", "i am super", "i am glad", "i am thrilled", "i am impressed", "I feel happy", "i feel great", "i feel okay", "i feel fine", "i feel good", "i feel super", "i feel glad", "i feel thrilled", "i feel impressed", "enjoying ", "fun ", "wondeful ", "fantastic ", "i am cool ", "thrilled ", "excited ", "perfect ", "very well", "i am well", "awesome ", "bro "],
       badvibesKeys: ["bored ", "sad ", "crying ", "I'm not happy", "not okay ", "feel awefull ", "feel bad ", "feel angry", "angry ", "tired "],
-      ordersKeys: ["tell me story", "help me", "tell me joke", "tell me something", "say something"],
+      ordersKeys: ["tell me story", "talk about ", "tell me a story", "help me ", "tell me joke", "tell me a joke", "tell me something", "say something"],
       laughsKeys: ["haha ", "lol ", "hehe ", "funny ", "joke ", "hehe "],
       refuseKeys: ["no ", "not sure", "maybe ", "no thatnks", "not a fan", "na "],
-      foodKeys: ["i eat", "pizza", "food", "eating", "hungry", "stomach"],
-      thankKeys: ["Thank you", "thanks"],
+      agreeKeys: ["yes ", "ok ", "okay "],
+      foodKeys: [" eat ", "pizza", "food ", "eating ", "hungry ", "stomach "],
+      thankKeys: ["thank you", "thanks"],
       selectedVoice: 0,
       keyIncluded: false,
       synth: window.speechSynthesis,
@@ -18136,7 +18138,6 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     // wait for voices to load
-    // I can't get FF to work without calling this first
     // Chrome works on the onvoiceschanged function
     this.voiceList = this.synth.getVoices();
 
@@ -18167,6 +18168,7 @@ __webpack_require__.r(__webpack_exports__);
         _this2.isLoading = false;
       };
     },
+    // This is used to make the robot speak the selected response in the selected voice
     speechSynth: function speechSynth() {
       this.responseInSpeech.text = "".concat(this.response);
       this.responseInSpeech.voice = this.voiceList[this.selectedVoice];
@@ -18178,8 +18180,9 @@ __webpack_require__.r(__webpack_exports__);
       var mainInput = document.querySelector("#speechToTextBot").value;
       mainInput.toLowerCase().replace(/[^\w\s]/gi, "").replace(/[\d]/gi, "").trim();
       var text = mainInput.replace(/ a /g, " ") // 'tell me a story' -> 'tell me story'
-      .replace(/i feel /g, "").replace(/whats/g, "what is").replace(/please /g, "").replace(/ please/g, "").replace(/r u/g, "are you").replace(/'re/g, " are");
-      console.log(text);
+      .replace(/i feel /g, "").replace(/whats/g, "what is").replace(/please /g, "").replace(/ please/g, "").replace(/r u/g, "are you").replace(/'re/g, " are"); // It goes like this, I check every array of keywords seperately
+      // If any key detected it fires the related method and changes keyIncluded to True
+
       this.greetingKeys.forEach(function (key) {
         if (text.includes(key)) {
           _this3.greetings();
@@ -18260,6 +18263,8 @@ __webpack_require__.r(__webpack_exports__);
       this.badvibesKeys.forEach(function (key) {
         if (text.includes(key)) {
           _this3.badVibes();
+
+          _this3.keyIncluded = true;
         }
       });
       this.ordersKeys.forEach(function (key) {
@@ -18283,6 +18288,21 @@ __webpack_require__.r(__webpack_exports__);
           _this3.keyIncluded = true;
         }
       });
+      this.refuseKeys.forEach(function (key) {
+        if (text.includes(key)) {
+          _this3.refuse();
+
+          _this3.keyIncluded = true;
+        }
+      });
+      this.agreeKeys.forEach(function (key) {
+        if (text.includes(key)) {
+          _this3.agree();
+
+          _this3.keyIncluded = true;
+        }
+      }); // If no key detected it fires the related method and
+      // Turns back keyIncluded to false
 
       if (!this.keyIncluded) {
         this.random();
@@ -18290,8 +18310,10 @@ __webpack_require__.r(__webpack_exports__);
         this.keyIncluded = false;
       }
     },
+    // The below is how to set an array of responses
     greetings: function greetings() {
-      var replies = ["Finally! Someone I can talk to. I hope you're having a good day!", "Hello there! I'm so glad you're talking to me.", "Hi! I hope you're enjoying the real world while I'm stuck here.", "Howdy my friend! I'm glad you came here to talk to me", "Hey there! I'm happy that we will start a conversation!", "Hello there! You look great! I wish I could look as great as you"];
+      var replies = ["Finally! Someone I can talk to. I hope you're having a good day!", "Hello there! I'm so glad you're talking to me.", "Hi! I hope you're enjoying the real world while I'm stuck here.", "Howdy my friend! I'm glad you came here to talk to me", "Hey there! I'm happy that we will start a conversation!", "Hello there! You look great! I wish I could look as great as you"]; // The robot will respond with these responses randomly
+
       this.response = [replies[Math.floor(Math.random() * replies.length)]];
       this.speechSynth();
     },
@@ -18316,7 +18338,7 @@ __webpack_require__.r(__webpack_exports__);
       this.speechSynth();
     },
     aging: function aging() {
-      var replies = ["I honestly don't know my age! Please don't tell my creator", "I forgot, I'm suffering from a severe amnesia", "I can't remember, Please don't tell my maker", "I'm few days old. Thanks for asking"];
+      var replies = ["I honestly don't know my age! Please don't tell my creator", "I forgot. I'm suffering from a severe amnesia", "I can't remember, Please don't tell my maker", "I think I'm few days old. Thanks for asking"];
       this.response = [replies[Math.floor(Math.random() * replies.length)]];
       this.speechSynth();
     },
@@ -18356,7 +18378,7 @@ __webpack_require__.r(__webpack_exports__);
       this.speechSynth();
     },
     orders: function orders() {
-      var replies = ["Once upon a time...", "I don't know any stories i can tell", "I will try to think of something", "Please act as if I did exactly what you requested", "act as if I did what you requested, or else...", "Act as if you heard what you wanted to hear"];
+      var replies = ["Once upon a time... ", "I don't know any stories i can tell", "I will try to think of something", "Please act as if I did exactly what you requested", "act as if I did what you requested, or else...", "Act as if you heard what you wanted to hear"];
       this.response = [replies[Math.floor(Math.random() * replies.length)]];
       this.speechSynth();
     },
@@ -18372,6 +18394,11 @@ __webpack_require__.r(__webpack_exports__);
     },
     refuse: function refuse() {
       var replies = ["That's ok", "I understand", "What do you want to talk about?"];
+      this.response = [replies[Math.floor(Math.random() * replies.length)]];
+      this.speechSynth();
+    },
+    agree: function agree() {
+      var replies = ["okay!", "Great!", "Okay Fine!"];
       this.response = [replies[Math.floor(Math.random() * replies.length)]];
       this.speechSynth();
     }
@@ -18400,6 +18427,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    // Toggling between starting and stopping listening to user audio
     toggleRecording: function toggleRecording() {
       this.recording = !this.recording;
 
@@ -18425,14 +18453,7 @@ __webpack_require__.r(__webpack_exports__);
         track.stop();
       });
     },
-    makeItBold: function makeItBold() {
-      document.querySelector("md-bold").click();
-    },
-    vocalCommands: function vocalCommands() {
-      if (this.transcript.includes("magic bold")) {
-        this.makeItBold();
-      }
-    },
+    // Initializing connection with Deepgram (Replace Deepgram Key with yours)
     startTranscript: function startTranscript() {
       var _this = this;
 
@@ -18470,10 +18491,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Grambot.vue?vue&type=script&lang=js":
-/*!******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Grambot.vue?vue&type=script&lang=js ***!
-  \******************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Grammybot.vue?vue&type=script&lang=js":
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Grammybot.vue?vue&type=script&lang=js ***!
+  \********************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -18491,7 +18512,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "Grambot",
+  name: "Grammybot",
   components: {
     Userside: _grambot_Userside_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     Botside: _grambot_Botside_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
@@ -18864,7 +18885,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* STABLE */
 
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "/grambot"
+    to: "/grammy"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Card, {
@@ -19897,10 +19918,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Grambot.vue?vue&type=template&id=81a1b736&scoped=true":
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Grambot.vue?vue&type=template&id=81a1b736&scoped=true ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Grammybot.vue?vue&type=template&id=579a588e&scoped=true":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Grammybot.vue?vue&type=template&id=579a588e&scoped=true ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -19911,7 +19932,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _withScopeId = function _withScopeId(n) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-81a1b736"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-579a588e"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
 };
 
 var _hoisted_1 = {
@@ -19921,7 +19942,7 @@ var _hoisted_2 = {
   "class": "item"
 };
 
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"devto item devtoOutput border-b border-b-white pb-2 mb-2 md:border-b-0 md:pb-0 md:mb-2 md:mr-2\" data-v-81a1b736><h3 id=\"deepgram-ai-speech-to-text\" data-v-81a1b736>Grammy Bot:</h3><p data-v-81a1b736><a href=\"https://deepgram.com/\" target=\"_blank\" data-v-81a1b736>Deepgram</a> is offering a great AI Speech Recognition service. Combine it with simple VueJS logic and you get Grammy. </p><p class=\"font-semibold\" data-v-81a1b736>Read the below for how to use:</p><ul data-v-81a1b736><li data-v-81a1b736> Connect a microphone to your device and insure that it&#39;s working. </li><li data-v-81a1b736><div data-v-81a1b736><div data-v-81a1b736><p class=\"mr-2\" data-v-81a1b736>Click on the recording icon.</p></div></div></li><li data-v-81a1b736>Allow browser to use microphone.</li><li data-v-81a1b736> Start talking to the bot and once finish press on the pause icon to hear the response </li></ul></div>", 1);
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"devto item devtoOutput border-b border-b-white pb-2 mb-2 md:border-b-0 md:pb-0 md:mb-2 md:mr-2\" data-v-579a588e><h3 id=\"deepgram-ai-speech-to-text\" data-v-579a588e>Grammy Bot:</h3><p data-v-579a588e><a href=\"https://deepgram.com/\" target=\"_blank\" data-v-579a588e>Deepgram</a> is offering a great AI Speech Recognition service. Combine it with simple VueJS logic and you get Grammy. </p><p class=\"font-semibold\" data-v-579a588e>Read the below for how to use:</p><ul data-v-579a588e><li data-v-579a588e> Connect a microphone to your device and insure that it&#39;s working. </li><li data-v-579a588e><div data-v-579a588e><div data-v-579a588e><p class=\"mr-2\" data-v-579a588e>Click on the recording icon.</p></div></div></li><li data-v-579a588e>Allow browser to use microphone.</li><li data-v-579a588e> Start talking to the bot and once finish press on the pause icon to hear the response </li></ul></div>", 1);
 
 var _hoisted_4 = {
   "class": "relative"
@@ -21426,7 +21447,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_main_Homepage_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/main/Homepage.vue */ "./resources/js/components/main/Homepage.vue");
 /* harmony import */ var _components_main_Wordleiteditor_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/main/Wordleiteditor.vue */ "./resources/js/components/main/Wordleiteditor.vue");
 /* harmony import */ var _components_main_Streamer_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/main/Streamer.vue */ "./resources/js/components/main/Streamer.vue");
-/* harmony import */ var _components_main_Grambot_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/main/Grambot.vue */ "./resources/js/components/main/Grambot.vue");
+/* harmony import */ var _components_main_Grammybot_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/main/Grammybot.vue */ "./resources/js/components/main/Grammybot.vue");
 
 
 
@@ -21457,9 +21478,9 @@ var routes = [{
     leaveClass: "animate__animated animate__bounceOutUp"
   }
 }, {
-  path: "/grambot",
-  name: "Grambot",
-  component: _components_main_Grambot_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+  path: "/grammy",
+  name: "Grammybot",
+  component: _components_main_Grammybot_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
   meta: {
     enterClass: "animate__animated animate__fadeInLeft",
     leaveClass: "animate__animated animate__bounceOutUp"
@@ -21702,10 +21723,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, "\n.linedivider {\r\n    fill: rgb(33, 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Grambot.vue?vue&type=style&index=0&id=81a1b736&scoped=true&lang=css":
-/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Grambot.vue?vue&type=style&index=0&id=81a1b736&scoped=true&lang=css ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Grammybot.vue?vue&type=style&index=0&id=579a588e&scoped=true&lang=css":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Grammybot.vue?vue&type=style&index=0&id=579a588e&scoped=true&lang=css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -21718,7 +21739,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.item[data-v-81a1b736] {\r\n    flex-grow: 1;\r\n    flex-shrink: 0;\r\n    flex-basis: 0;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.item[data-v-579a588e] {\r\n    flex-grow: 1;\r\n    flex-shrink: 0;\r\n    flex-basis: 0;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -22125,10 +22146,10 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Grambot.vue?vue&type=style&index=0&id=81a1b736&scoped=true&lang=css":
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Grambot.vue?vue&type=style&index=0&id=81a1b736&scoped=true&lang=css ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Grammybot.vue?vue&type=style&index=0&id=579a588e&scoped=true&lang=css":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Grammybot.vue?vue&type=style&index=0&id=579a588e&scoped=true&lang=css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -22137,7 +22158,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Grambot_vue_vue_type_style_index_0_id_81a1b736_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Grambot.vue?vue&type=style&index=0&id=81a1b736&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Grambot.vue?vue&type=style&index=0&id=81a1b736&scoped=true&lang=css");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Grammybot_vue_vue_type_style_index_0_id_579a588e_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Grammybot.vue?vue&type=style&index=0&id=579a588e&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Grammybot.vue?vue&type=style&index=0&id=579a588e&scoped=true&lang=css");
 
             
 
@@ -22146,11 +22167,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Grambot_vue_vue_type_style_index_0_id_81a1b736_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Grammybot_vue_vue_type_style_index_0_id_579a588e_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Grambot_vue_vue_type_style_index_0_id_81a1b736_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Grammybot_vue_vue_type_style_index_0_id_579a588e_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -23035,19 +23056,19 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/js/components/main/Grambot.vue":
-/*!**************************************************!*\
-  !*** ./resources/js/components/main/Grambot.vue ***!
-  \**************************************************/
+/***/ "./resources/js/components/main/Grammybot.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/components/main/Grammybot.vue ***!
+  \****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Grambot_vue_vue_type_template_id_81a1b736_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Grambot.vue?vue&type=template&id=81a1b736&scoped=true */ "./resources/js/components/main/Grambot.vue?vue&type=template&id=81a1b736&scoped=true");
-/* harmony import */ var _Grambot_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Grambot.vue?vue&type=script&lang=js */ "./resources/js/components/main/Grambot.vue?vue&type=script&lang=js");
-/* harmony import */ var _Grambot_vue_vue_type_style_index_0_id_81a1b736_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Grambot.vue?vue&type=style&index=0&id=81a1b736&scoped=true&lang=css */ "./resources/js/components/main/Grambot.vue?vue&type=style&index=0&id=81a1b736&scoped=true&lang=css");
+/* harmony import */ var _Grammybot_vue_vue_type_template_id_579a588e_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Grammybot.vue?vue&type=template&id=579a588e&scoped=true */ "./resources/js/components/main/Grammybot.vue?vue&type=template&id=579a588e&scoped=true");
+/* harmony import */ var _Grammybot_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Grammybot.vue?vue&type=script&lang=js */ "./resources/js/components/main/Grammybot.vue?vue&type=script&lang=js");
+/* harmony import */ var _Grammybot_vue_vue_type_style_index_0_id_579a588e_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Grammybot.vue?vue&type=style&index=0&id=579a588e&scoped=true&lang=css */ "./resources/js/components/main/Grammybot.vue?vue&type=style&index=0&id=579a588e&scoped=true&lang=css");
 /* harmony import */ var F_Projects_wordleup_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
@@ -23056,7 +23077,7 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,F_Projects_wordleup_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Grambot_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Grambot_vue_vue_type_template_id_81a1b736_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-81a1b736"],['__file',"resources/js/components/main/Grambot.vue"]])
+const __exports__ = /*#__PURE__*/(0,F_Projects_wordleup_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Grammybot_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Grammybot_vue_vue_type_template_id_579a588e_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-579a588e"],['__file',"resources/js/components/main/Grammybot.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -23374,17 +23395,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/main/Grambot.vue?vue&type=script&lang=js":
-/*!**************************************************************************!*\
-  !*** ./resources/js/components/main/Grambot.vue?vue&type=script&lang=js ***!
-  \**************************************************************************/
+/***/ "./resources/js/components/main/Grammybot.vue?vue&type=script&lang=js":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/main/Grammybot.vue?vue&type=script&lang=js ***!
+  \****************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Grambot_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Grammybot_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Grambot_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Grambot.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Grambot.vue?vue&type=script&lang=js");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Grammybot_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Grammybot.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Grammybot.vue?vue&type=script&lang=js");
  
 
 /***/ }),
@@ -23674,17 +23695,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/main/Grambot.vue?vue&type=template&id=81a1b736&scoped=true":
-/*!********************************************************************************************!*\
-  !*** ./resources/js/components/main/Grambot.vue?vue&type=template&id=81a1b736&scoped=true ***!
-  \********************************************************************************************/
+/***/ "./resources/js/components/main/Grammybot.vue?vue&type=template&id=579a588e&scoped=true":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/main/Grammybot.vue?vue&type=template&id=579a588e&scoped=true ***!
+  \**********************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Grambot_vue_vue_type_template_id_81a1b736_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Grammybot_vue_vue_type_template_id_579a588e_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Grambot_vue_vue_type_template_id_81a1b736_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Grambot.vue?vue&type=template&id=81a1b736&scoped=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Grambot.vue?vue&type=template&id=81a1b736&scoped=true");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Grammybot_vue_vue_type_template_id_579a588e_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Grammybot.vue?vue&type=template&id=579a588e&scoped=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Grammybot.vue?vue&type=template&id=579a588e&scoped=true");
 
 
 /***/ }),
@@ -23842,14 +23863,14 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/main/Grambot.vue?vue&type=style&index=0&id=81a1b736&scoped=true&lang=css":
-/*!**********************************************************************************************************!*\
-  !*** ./resources/js/components/main/Grambot.vue?vue&type=style&index=0&id=81a1b736&scoped=true&lang=css ***!
-  \**********************************************************************************************************/
+/***/ "./resources/js/components/main/Grammybot.vue?vue&type=style&index=0&id=579a588e&scoped=true&lang=css":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/components/main/Grammybot.vue?vue&type=style&index=0&id=579a588e&scoped=true&lang=css ***!
+  \************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Grambot_vue_vue_type_style_index_0_id_81a1b736_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader/dist/cjs.js!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Grambot.vue?vue&type=style&index=0&id=81a1b736&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Grambot.vue?vue&type=style&index=0&id=81a1b736&scoped=true&lang=css");
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Grammybot_vue_vue_type_style_index_0_id_579a588e_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader/dist/cjs.js!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Grammybot.vue?vue&type=style&index=0&id=579a588e&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/main/Grammybot.vue?vue&type=style&index=0&id=579a588e&scoped=true&lang=css");
 
 
 /***/ }),

@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Homepage from "../components/main/Homepage.vue";
 import Wordleiteditor from "../components/main/Wordleiteditor.vue";
 import Streamer from "../components/main/Streamer.vue";
-import Grambot from "../components/main/Grambot.vue";
+import Grammybot from "../components/main/Grammybot.vue";
 
 const routes = [
     {
@@ -34,9 +34,9 @@ const routes = [
         },
     },
     {
-        path: "/grambot",
-        name: "Grambot",
-        component: Grambot,
+        path: "/grammy",
+        name: "Grammybot",
+        component: Grammybot,
         meta: {
             enterClass: "animate__animated animate__fadeInLeft",
             leaveClass: "animate__animated animate__bounceOutUp",

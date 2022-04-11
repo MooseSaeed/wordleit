@@ -28,6 +28,7 @@ export default {
         };
     },
     methods: {
+        // Toggling between starting and stopping listening to user audio
         toggleRecording() {
             this.recording = !this.recording;
             if (this.recording) {
@@ -54,16 +55,8 @@ export default {
                 track.stop();
             });
         },
-        makeItBold() {
-            document.querySelector("md-bold").click();
-        },
 
-        vocalCommands() {
-            if (this.transcript.includes("magic bold")) {
-                this.makeItBold();
-            }
-        },
-
+        // Initializing connection with Deepgram (Replace Deepgram Key with yours)
         startTranscript() {
             navigator.mediaDevices
                 .getUserMedia({ audio: true, video: false })

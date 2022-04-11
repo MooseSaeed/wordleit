@@ -38,6 +38,7 @@
 import PulseLoader from "vue-spinner/src/PulseLoader.vue";
 export default {
     data() {
+        // Use the data to set your array of keywords
         return {
             isLoading: true,
             response: "",
@@ -60,6 +61,7 @@ export default {
             ],
             questionintroKeys: [
                 "how are you",
+                "how is your day",
                 "how do you do",
                 "are you happy",
                 "are you feeling okay",
@@ -190,6 +192,16 @@ export default {
                 "i am glad",
                 "i am thrilled",
                 "i am impressed",
+                "I feel happy",
+                "i feel great",
+                "i feel okay",
+                "i feel fine",
+                "i feel good",
+                "i feel super",
+                "i feel glad",
+                "i feel thrilled",
+                "i feel impressed",
+                "enjoying ",
                 "fun ",
                 "wondeful ",
                 "fantastic ",
@@ -216,8 +228,11 @@ export default {
             ],
             ordersKeys: [
                 "tell me story",
-                "help me",
+                "talk about ",
+                "tell me a story",
+                "help me ",
                 "tell me joke",
+                "tell me a joke",
                 "tell me something",
                 "say something",
             ],
@@ -230,8 +245,16 @@ export default {
                 "not a fan",
                 "na ",
             ],
-            foodKeys: ["i eat", "pizza", "food", "eating", "hungry", "stomach"],
-            thankKeys: ["Thank you", "thanks"],
+            agreeKeys: ["yes ", "ok ", "okay "],
+            foodKeys: [
+                " eat ",
+                "pizza",
+                "food ",
+                "eating ",
+                "hungry ",
+                "stomach ",
+            ],
+            thankKeys: ["thank you", "thanks"],
             selectedVoice: 0,
             keyIncluded: false,
             synth: window.speechSynthesis,
@@ -244,7 +267,6 @@ export default {
     },
     mounted() {
         // wait for voices to load
-        // I can't get FF to work without calling this first
         // Chrome works on the onvoiceschanged function
         this.voiceList = this.synth.getVoices();
 
@@ -274,6 +296,7 @@ export default {
             };
         },
 
+        // This is used to make the robot speak the selected response in the selected voice
         speechSynth() {
             this.responseInSpeech.text = `${this.response}`;
             this.responseInSpeech.voice = this.voiceList[this.selectedVoice];
@@ -297,7 +320,8 @@ export default {
                 .replace(/r u/g, "are you")
                 .replace(/'re/g, " are");
 
-            console.log(text);
+            // It goes like this, I check every array of keywords seperately
+            // If any key detected it fires the related method and changes keyIncluded to True
 
             this.greetingKeys.forEach((key) => {
                 if (text.includes(key)) {
@@ -368,6 +392,7 @@ export default {
             this.badvibesKeys.forEach((key) => {
                 if (text.includes(key)) {
                     this.badVibes();
+                    this.keyIncluded = true;
                 }
             });
             this.ordersKeys.forEach((key) => {
@@ -388,6 +413,21 @@ export default {
                     this.keyIncluded = true;
                 }
             });
+            this.refuseKeys.forEach((key) => {
+                if (text.includes(key)) {
+                    this.refuse();
+                    this.keyIncluded = true;
+                }
+            });
+            this.agreeKeys.forEach((key) => {
+                if (text.includes(key)) {
+                    this.agree();
+                    this.keyIncluded = true;
+                }
+            });
+
+            // If no key detected it fires the related method and
+            // Turns back keyIncluded to false
 
             if (!this.keyIncluded) {
                 this.random();
@@ -395,6 +435,9 @@ export default {
                 this.keyIncluded = false;
             }
         },
+
+        // The below is how to set an array of responses
+
         greetings() {
             const replies = [
                 "Finally! Someone I can talk to. I hope you're having a good day!",
@@ -404,6 +447,7 @@ export default {
                 "Hey there! I'm happy that we will start a conversation!",
                 "Hello there! You look great! I wish I could look as great as you",
             ];
+            // The robot will respond with these responses randomly
             this.response = [
                 replies[Math.floor(Math.random() * replies.length)],
             ];
@@ -470,9 +514,9 @@ export default {
         aging() {
             const replies = [
                 "I honestly don't know my age! Please don't tell my creator",
-                "I forgot, I'm suffering from a severe amnesia",
+                "I forgot. I'm suffering from a severe amnesia",
                 "I can't remember, Please don't tell my maker",
-                "I'm few days old. Thanks for asking",
+                "I think I'm few days old. Thanks for asking",
             ];
             this.response = [
                 replies[Math.floor(Math.random() * replies.length)],
@@ -601,7 +645,7 @@ export default {
         },
         orders() {
             const replies = [
-                "Once upon a time...",
+                "Once upon a time... ",
                 "I don't know any stories i can tell",
                 "I will try to think of something",
                 "Please act as if I did exactly what you requested",
@@ -637,6 +681,13 @@ export default {
                 "I understand",
                 "What do you want to talk about?",
             ];
+            this.response = [
+                replies[Math.floor(Math.random() * replies.length)],
+            ];
+            this.speechSynth();
+        },
+        agree() {
+            const replies = ["okay!", "Great!", "Okay Fine!"];
             this.response = [
                 replies[Math.floor(Math.random() * replies.length)],
             ];

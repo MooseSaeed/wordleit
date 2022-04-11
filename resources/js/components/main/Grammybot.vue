@@ -79,7 +79,7 @@ import Userside from "../grambot/Userside.vue";
 import Botside from "../grambot/Botside.vue";
 import Robotsvg from "../SVGs/Robotsvg.vue";
 export default {
-    name: "Grambot",
+    name: "Grammybot",
     components: {
         Userside,
         Botside,
