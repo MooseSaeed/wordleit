@@ -674,6 +674,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .self-end {
   align-self: flex-end;
 }
+.overflow-auto {
+  overflow: auto;
+}
 .overflow-hidden {
   overflow: hidden;
 }
@@ -763,6 +766,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-gradient-from: #ec4899;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(236 72 153 / 0));
 }
+.from-gray-900 {
+  --tw-gradient-from: #111827;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(17 24 39 / 0));
+}
 .via-purple-600 {
   --tw-gradient-stops: var(--tw-gradient-from), #9333ea, var(--tw-gradient-to, rgb(147 51 234 / 0));
 }
@@ -771,6 +778,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .via-red-500 {
   --tw-gradient-stops: var(--tw-gradient-from), #ef4444, var(--tw-gradient-to, rgb(239 68 68 / 0));
+}
+.via-purple-900 {
+  --tw-gradient-stops: var(--tw-gradient-from), #581c87, var(--tw-gradient-to, rgb(88 28 135 / 0));
 }
 .to-purple-700 {
   --tw-gradient-to: #7e22ce;
@@ -783,6 +793,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .to-yellow-500 {
   --tw-gradient-to: #eab308;
+}
+.to-blue-900 {
+  --tw-gradient-to: #1e3a8a;
 }
 .bg-clip-padding {
   background-clip: padding-box;
@@ -923,6 +936,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-green-700 {
   --tw-text-opacity: 1;
   color: rgb(21 128 61 / var(--tw-text-opacity));
+}
+.text-green-500 {
+  --tw-text-opacity: 1;
+  color: rgb(34 197 94 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;
@@ -1625,10 +1642,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .sm\:h-screen {
     height: 100vh;
-  }
-
-  .sm\:h-full {
-    height: 100%;
   }
 
   .sm\:grid-cols-2 {

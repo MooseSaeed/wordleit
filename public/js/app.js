@@ -18602,13 +18602,28 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       markdown: "",
-      isSyncing: true
+      isSyncing: true,
+      response: "",
+      selectedVoice: 0,
+      synth: window.speechSynthesis,
+      voiceList: [],
+      responseInSpeech: new window.SpeechSynthesisUtterance(),
+      isReading: false
     };
   },
   mounted: function mounted() {
+    var _this = this;
+
     if (localStorage.markdown) {
       this.markdown = localStorage.markdown;
     }
+
+    this.synth.cancel();
+    this.voiceList = this.synth.getVoices();
+
+    this.synth.onvoiceschanged = function () {
+      _this.voiceList = _this.synth.getVoices();
+    };
   },
   watch: {
     markdown: function markdown(newInput) {
@@ -18621,6 +18636,24 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    speechSynth: function speechSynth() {
+      this.response = this.md(this.markdown);
+      this.responseInSpeech.text = "".concat(this.response);
+      this.responseInSpeech.voice = this.voiceList[this.selectedVoice];
+      this.synth.speak(this.responseInSpeech);
+    },
+    speechSynthOff: function speechSynthOff() {
+      this.synth.cancel();
+    },
+    toggleReading: function toggleReading() {
+      this.isReading = !this.isReading;
+
+      if (this.isReading) {
+        this.speechSynth();
+      } else {
+        this.speechSynthOff();
+      }
+    },
     syncToggle: function syncToggle() {
       this.isSyncing = !this.isSyncing;
     },
@@ -20147,8 +20180,33 @@ var _hoisted_17 = {
 var _hoisted_18 = {
   "class": "item sm:flex sm:flex-col h-full w-full"
 };
-var _hoisted_19 = ["innerHTML"];
+var _hoisted_19 = {
+  "class": "item sm:flex sm:flex-col h-full w-full"
+};
 var _hoisted_20 = {
+  "class": "rounded-xl cursor-pointer mb-2 bg-gray-700 bg-gradient-to-r from-gray-900 via-purple-900 to-blue-900 background-animate focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800"
+};
+var _hoisted_21 = {
+  key: 0
+};
+var _hoisted_22 = ["data-lang", "value"];
+var _hoisted_23 = {
+  key: 0,
+  "class": "font-semibold text-green-500 text-center py-2"
+};
+var _hoisted_24 = {
+  key: 1,
+  "class": "font-semibold text-red-500 text-center py-2"
+};
+
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  "class": "font-semibold text-white text-center py-2"
+}, " listening to what you wrote. ", -1
+/* HOISTED */
+);
+
+var _hoisted_26 = ["innerHTML"];
+var _hoisted_27 = {
   "class": "mt-5",
   id: "learnmore"
 };
@@ -20180,20 +20238,43 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: "Write your magic here.. It will show up there 👀\r\n                Happy writing ♥️"
   }, "\r\n            ", 544
   /* HYDRATE_EVENTS, NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.markdown]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.markdown]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [$data.voiceList.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+    "class": "block w-full px-3 py-1.5 text-sm text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none",
+    id: "voices",
+    "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
+      return $data.selectedVoice = $event;
+    })
+  }, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.voiceList, function (voice, index) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", {
+      key: index,
+      "data-lang": voice.lang,
+      value: index
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(voice.name) + " (" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(voice.lang) + ") ", 9
+    /* TEXT, PROPS */
+    , _hoisted_22);
+  }), 128
+  /* KEYED_FRAGMENT */
+  ))], 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.selectedVoice]])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    onClick: _cache[4] || (_cache[4] = function () {
+      return $options.toggleReading && $options.toggleReading.apply($options, arguments);
+    }),
+    "class": "flex justify-center"
+  }, [!$data.isReading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_23, " Start 🔊 ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.isReading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_24, " Stop 🔇 ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_25])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     id: "outputDiv",
-    onScroll: _cache[3] || (_cache[3] = function () {
+    onScroll: _cache[5] || (_cache[5] = function () {
       return $options.handleScrollMoveBack && $options.handleScrollMoveBack.apply($options, arguments);
     }),
-    "class": "rounded-xl p-2 bg-devtoBg devto overflow-x-auto break-words item w-full h-44 sm:h-full"
+    "class": "rounded-xl p-2 bg-devtoBg devto flex-1 overflow-x-auto break-words overflow-auto"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     innerHTML: $options.markdownToHtml,
     "class": "p-2 devtoOutput"
   }, null, 8
   /* PROPS */
-  , _hoisted_19)], 32
+  , _hoisted_26)], 32
   /* HYDRATE_EVENTS */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Learnmore)])], 64
+  )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Learnmore)])], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -21762,7 +21843,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\ninput:checked ~ .dot {\r\n    transform: translateX(100%);\r\n    background-color: #48bb78;\n}\ninput ~ .dot {\r\n    transform: translateX(0%);\r\n    background-color: #a3a3a3;\n}\n.item {\r\n    flex-grow: 1;\r\n    flex-shrink: 0;\r\n    flex-basis: 0;\n}\n.devtoOutput {\r\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen,\r\n        Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif !important;\n}\n#myTextArea {\r\n    font-family: \"SF Mono\", SFMono-Regular, Consolas, \"Liberation Mono\", Menlo,\r\n        Courier, monospace !important;\n}\n.devtoOutput h5 {\r\n    color: white !important;\r\n    font-size: 0.8rem !important;\r\n    font-weight: 700;\r\n    line-height: 1.25rem;\r\n    margin: 0.25rem;\r\n    margin-bottom: 0.375rem;\n}\n.devtoOutput h6 {\r\n    color: white !important;\r\n    font-size: 0.5rem !important;\r\n    font-weight: 700;\r\n    line-height: 1.25rem;\r\n    margin: 0.25rem;\r\n    margin-bottom: 0.375rem;\n}\n.devtoOutput #h1,\r\n.devtoOutput #h2,\r\n.devtoOutput #h3,\r\n.devtoOutput #h4,\r\n.devtoOutput #h5,\r\n.devtoOutput #h6 {\r\n    font-weight: 700 !important;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\ninput:checked ~ .dot {\r\n    transform: translateX(100%);\r\n    background-color: #48bb78;\n}\ninput ~ .dot {\r\n    transform: translateX(0%);\r\n    background-color: #a3a3a3;\n}\n.item {\r\n    flex-grow: 1;\r\n    flex-shrink: 0;\r\n    flex-basis: 0;\n}\n.devtoOutput {\r\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen,\r\n        Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif !important;\n}\n#myTextArea {\r\n    font-family: \"SF Mono\", SFMono-Regular, Consolas, \"Liberation Mono\", Menlo,\r\n        Courier, monospace !important;\n}\n.devtoOutput h5 {\r\n    color: white !important;\r\n    font-size: 0.8rem !important;\r\n    font-weight: 700;\r\n    line-height: 1.25rem;\r\n    margin: 0.25rem;\r\n    margin-bottom: 0.375rem;\n}\n.devtoOutput h6 {\r\n    color: white !important;\r\n    font-size: 0.5rem !important;\r\n    font-weight: 700;\r\n    line-height: 1.25rem;\r\n    margin: 0.25rem;\r\n    margin-bottom: 0.375rem;\n}\n.devtoOutput #h1,\r\n.devtoOutput #h2,\r\n.devtoOutput #h3,\r\n.devtoOutput #h4,\r\n.devtoOutput #h5,\r\n.devtoOutput #h6 {\r\n    font-weight: 700 !important;\n}\n.background-animate {\r\n    background-size: 400%;\r\n    -webkit-animation: gradColor 3s ease infinite;\r\n    animation: gradColor 3s ease infinite;\n}\n@-webkit-keyframes gradColor {\n0%,\r\n    100% {\r\n        background-position: 0% 50%;\n}\n50% {\r\n        background-position: 100% 50%;\n}\n}\n@keyframes gradColor {\n0%,\r\n    100% {\r\n        background-position: 0% 50%;\n}\n50% {\r\n        background-position: 100% 50%;\n}\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

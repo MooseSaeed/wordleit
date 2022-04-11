@@ -70,12 +70,53 @@
             </textarea>
         </div>
 
-        <div
-            id="outputDiv"
-            @scroll="handleScrollMoveBack"
-            class="rounded-xl p-2 bg-devtoBg devto overflow-x-auto break-words item w-full h-44 sm:h-full"
-        >
-            <div v-html="markdownToHtml" class="p-2 devtoOutput"></div>
+        <div class="item sm:flex sm:flex-col h-full w-full">
+            <div
+                class="rounded-xl cursor-pointer mb-2 bg-gray-700 bg-gradient-to-r from-gray-900 via-purple-900 to-blue-900 background-animate focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800"
+            >
+                <div v-if="voiceList.length">
+                    <select
+                        class="block w-full px-3 py-1.5 text-sm text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        id="voices"
+                        v-model="selectedVoice"
+                    >
+                        <option
+                            v-for="(voice, index) in voiceList"
+                            :key="index"
+                            :data-lang="voice.lang"
+                            :value="index"
+                        >
+                            {{ voice.name }} ({{ voice.lang }})
+                        </option>
+                    </select>
+                </div>
+
+                <div @click="toggleReading" class="flex justify-center">
+                    <p
+                        class="font-semibold text-green-500 text-center py-2"
+                        v-if="!isReading"
+                    >
+                        Start 🔊
+                    </p>
+                    <p
+                        class="font-semibold text-red-500 text-center py-2"
+                        v-if="isReading"
+                    >
+                        Stop 🔇
+                    </p>
+                    <p class="font-semibold text-white text-center py-2">
+                        listening to what you wrote.
+                    </p>
+                </div>
+            </div>
+
+            <div
+                id="outputDiv"
+                @scroll="handleScrollMoveBack"
+                class="rounded-xl p-2 bg-devtoBg devto flex-1 overflow-x-auto break-words overflow-auto"
+            >
+                <div v-html="markdownToHtml" class="p-2 devtoOutput"></div>
+            </div>
         </div>
     </div>
 
@@ -100,12 +141,23 @@ export default {
         return {
             markdown: "",
             isSyncing: true,
+            response: "",
+            selectedVoice: 0,
+            synth: window.speechSynthesis,
+            voiceList: [],
+            responseInSpeech: new window.SpeechSynthesisUtterance(),
+            isReading: false,
         };
     },
     mounted() {
         if (localStorage.markdown) {
             this.markdown = localStorage.markdown;
         }
+        this.synth.cancel();
+        this.voiceList = this.synth.getVoices();
+        this.synth.onvoiceschanged = () => {
+            this.voiceList = this.synth.getVoices();
+        };
     },
     watch: {
         markdown(newInput) {
@@ -118,6 +170,24 @@ export default {
         },
     },
     methods: {
+        speechSynth() {
+            this.response = this.md(this.markdown);
+            this.responseInSpeech.text = `${this.response}`;
+            this.responseInSpeech.voice = this.voiceList[this.selectedVoice];
+            this.synth.speak(this.responseInSpeech);
+        },
+        speechSynthOff() {
+            this.synth.cancel();
+        },
+
+        toggleReading() {
+            this.isReading = !this.isReading;
+            if (this.isReading) {
+                this.speechSynth();
+            } else {
+                this.speechSynthOff();
+            }
+        },
         syncToggle() {
             this.isSyncing = !this.isSyncing;
         },
@@ -189,5 +259,21 @@ input ~ .dot {
 .devtoOutput #h5,
 .devtoOutput #h6 {
     font-weight: 700 !important;
+}
+.background-animate {
+    background-size: 400%;
+    -webkit-animation: gradColor 3s ease infinite;
+    -moz-animation: gradColor 3s ease infinite;
+    animation: gradColor 3s ease infinite;
+}
+
+@keyframes gradColor {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 }
 </style>
