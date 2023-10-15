@@ -27,6 +27,18 @@
 
 ### ✨ [Grammy Demo](https://wordleit.herokuapp.com/grammy)
 
+## Hackathon Submissions: 
+- Wordleit Editor
+1- https://dev.to/moose_said/write-articles-with-ai-speech-recognition-and-live-preview-508k
+2- https://dev.to/moose_said/use-vocal-commands-to-apply-markdown-to-your-article-99
+3- https://dev.to/moose_said/text-editor-with-text-to-speech-and-speech-to-text-4l37
+
+- Wordleit Streamer:
+https://dev.to/moose_said/online-video-streamer-and-audio-transcription-2ein
+
+- Wordleit Grammy
+https://dev.to/moose_said/add-ai-robot-to-your-portfolio-or-company-website-3045
+
 ## Author
 
 👤 **Mostafa Said**
